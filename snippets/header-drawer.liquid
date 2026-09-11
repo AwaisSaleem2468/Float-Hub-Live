@@ -3,7 +3,7 @@
 
   @param {boolean} [show_country_selector] - Whether to render the country selector in the drawer.
   @param {boolean} [show_language_selector] - Whether to render the language selector in the drawer.
-  @param {boolean} [show_social_links] - Whether to render social links list in the drawer.
+  @param {boolean} [show_book_now] - Whether to render the Book Now button at the bottom of the drawer.
 
   @example
   {% render 'header-drawer', show_language_selector: true %}
@@ -28,19 +28,29 @@
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
+                    <div class="menu-drawer__menu-item-row">
+                      <a
                         id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        href="{{ link.url }}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current or link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
                       >
                         {{ link.title | escape }}
-                        <span class="svg-wrapper">
-                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                        </span>
-                        <span class="svg-wrapper">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </span>
-                      </summary>
+                      </a>
+                      <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                        <summary
+                          class="menu-drawer__submenu-opener focus-inset"
+                          aria-label="{{ link.title | escape }} {{ 'sections.header.menu' | t }}"
+                        >
+                          <span class="svg-wrapper">
+                            {{- 'icon-arrow.svg' | inline_asset_content -}}
+                          </span>
+                          <span class="svg-wrapper">
+                            {{- 'icon-caret.svg' | inline_asset_content -}}
+                          </span>
+                        </summary>
                       <div
                         id="link-{{ link.handle | escape }}"
                         class="menu-drawer__submenu has-submenu gradient motion-reduce"
@@ -68,19 +78,29 @@
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
+                                  <div class="menu-drawer__menu-item-row">
+                                    <a
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                      href="{{ childlink.url }}"
+                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current or childlink.child_active %} menu-drawer__menu-item--active{% endif %}"
+                                      {% if childlink.current %}
+                                        aria-current="page"
+                                      {% endif %}
                                     >
                                       {{ childlink.title | escape }}
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                      </span>
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                                      </span>
-                                    </summary>
+                                    </a>
+                                    <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                      <summary
+                                        class="menu-drawer__submenu-opener focus-inset"
+                                        aria-label="{{ childlink.title | escape }} {{ 'sections.header.menu' | t }}"
+                                      >
+                                        <span class="svg-wrapper">
+                                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                        </span>
+                                        <span class="svg-wrapper">
+                                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                                        </span>
+                                      </summary>
                                     <div
                                       id="childlink-{{ childlink.handle | escape }}"
                                       class="menu-drawer__submenu has-submenu gradient motion-reduce"
@@ -116,6 +136,7 @@
                                       </ul>
                                     </div>
                                   </details>
+                                  </div>
                                 {%- endif -%}
                               </li>
                             {%- endfor -%}
@@ -123,6 +144,7 @@
                         </div>
                       </div>
                     </details>
+                    </div>
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
@@ -139,7 +161,7 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links">
+          <div class="menu-drawer__utility-links{% if show_book_now %} menu-drawer__utility-links--cta{% endif %}">
             {%- if show_country_selector or show_language_selector -%}
               <div class="menu-drawer__localization header-localization">
                 {%- if show_country_selector -%}
@@ -263,6 +285,15 @@
                 {%- endif -%}
               </ul>
             {% endif %}
+            {%- if show_book_now -%}
+              <a
+                href="{{ section.settings.book_now_link | default: '#' }}"
+                class="menu-drawer__book-now"
+                {% if section.settings.book_now_link == blank %}aria-disabled="true"{% endif %}
+              >
+                {{ section.settings.book_now_label | escape }}
+              </a>
+            {%- endif -%}
           </div>
         </div>
       </div>

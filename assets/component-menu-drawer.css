@@ -108,6 +108,53 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding-right: 5.2rem;
 }
 
+.menu-drawer__menu-item-row {
+  display: flex;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.menu-drawer__menu-item-row > .menu-drawer__menu-item {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-right: 1.2rem;
+}
+
+.menu-drawer__menu-item-row > details {
+  position: static;
+  flex: 0 0 5.2rem;
+  overflow: visible;
+}
+
+.menu-drawer__submenu-opener {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  min-height: 4.4rem;
+  padding: 1.1rem 1.5rem 1.1rem 0.8rem;
+  margin: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+.menu-drawer__submenu-opener:hover,
+.menu-drawer__submenu-opener:focus {
+  color: rgb(var(--color-foreground));
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+.menu-drawer__submenu-opener .svg-wrapper {
+  width: 15px;
+  position: static;
+  transform: none;
+}
+
+.js .menu-drawer__submenu-opener .icon-caret {
+  display: none;
+}
+
 .menu-drawer__menu-item--active,
 .menu-drawer__menu-item:focus,
 .menu-drawer__close-button:focus,
@@ -176,8 +223,37 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .header--has-localizations .menu-drawer__utility-links,
-.header--has-social .menu-drawer__utility-links {
+.header--has-social .menu-drawer__utility-links,
+.menu-drawer__utility-links--cta {
   padding: 2rem 3rem;
+}
+
+.menu-drawer__book-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 4.8rem;
+  margin-top: 0.8rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  color: #ffffff !important;
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.menu-drawer__book-now:hover {
+  filter: brightness(1.05);
+  color: #ffffff !important;
+}
+
+.menu-drawer .list-social + .menu-drawer__book-now {
+  margin-top: 1.6rem;
 }
 
 .menu-drawer .list-social {

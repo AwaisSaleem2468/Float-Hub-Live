@@ -110,13 +110,54 @@
     width: 26rem !important;
     text-align: left;
 }
+.header__icons {
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.header__icons:has(.header__book-now) .header__icon--cart {
+  margin-right: 0;
+}
+
+.header__icons .header__icon--account,
+.header__icons .header__icon--cart {
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  color: #ffffff !important;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.header__icons .header__icon--account .svg-wrapper,
+.header__icons .header__icon--account .svg-wrapper svg,
+.header__icons .header__icon--cart .svg-wrapper,
+.header__icons .header__icon--cart .svg-wrapper svg {
+  color: #ffffff;
+}
+
+.header__icons .header__icon--account:hover,
+.header__icons .header__icon--cart:hover,
+.header__book-now:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  color: #ffffff !important;
+}
+
+.header__icons .header__icon--cart .cart-count-bubble {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
 .header__book-now {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 4rem;
   padding: 0.85rem 1.6rem;
-  margin-left: 0.4rem;
+  margin-left: 0;
   border-radius: 10px;
   border: 1px solid transparent;
   background: linear-gradient(to right, #3b82f6, #22d3ee);
@@ -131,16 +172,37 @@
 }
 
 .header__book-now:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
   color: #ffffff !important;
 }
 
+@media screen and (max-width: 989px) {
+  .header__icons .header__book-now {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 749px) {
-  .header__book-now {
-    min-height: 3.6rem;
-    padding: 0.7rem 1.2rem;
-    font-size: 1.3rem;
+  .header__icons {
+    padding-right: 0;
+    gap: 0.4rem;
+  }
+
+  .header__icons .header__icon--account,
+  .header__icons .header__icon--cart,
+  .header__icons .header__icon--cart .icon {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  .header__icons .header__icon .svg-wrapper {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .menu-drawer__book-now {
+    display: none;
   }
 }
 </style>
@@ -294,7 +356,7 @@
       assign language_selector = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if country_selector or language_selector %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %} header--has-account{% if country_selector or language_selector %} header--has-localizations{% endif %}">
     {%- liquid
       assign show_book_now = false
       if section.settings.show_book_now_button and section.settings.book_now_label != blank
@@ -309,7 +371,7 @@
       endif
 
       if section.settings.menu != blank
-        render 'header-drawer', show_country_selector: country_selector, show_language_selector: language_selector, show_social_links: social_links
+        render 'header-drawer', show_country_selector: country_selector, show_language_selector: language_selector, show_social_links: social_links, show_book_now: show_book_now
       endif
 
       if render_search_left
@@ -421,14 +483,39 @@
         {% render 'header-search', input_id: 'Search-In-Modal' %}
       {%- endunless -%}
 
+      {%- if show_book_now -%}
+        <a
+          href="{{ section.settings.book_now_link | default: '#' }}"
+          class="header__book-now"
+          {% if section.settings.book_now_link == blank %}aria-disabled="true"{% endif %}
+        >
+          {{ section.settings.book_now_label | escape }}
+        </a>
+      {%- endif -%}
+
       {%- if shop.customer_accounts_enabled -%}
         <shopify-account
           menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
           class="header__icon header__icon--account link focus-inset"
         >
           <span slot="signed-out-avatar" class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-          <span slot="signed-out-avatar" class="visually-hidden">{{ 'customer.log_in' | t }}</span>
+          <span slot="signed-in-avatar" class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+          <span class="visually-hidden">{{ 'customer.log_in' | t }}</span>
         </shopify-account>
+      {%- else -%}
+        <a
+          href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+          class="header__icon header__icon--account link focus-inset"
+        >
+          <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+          <span class="visually-hidden">
+            {%- if customer -%}
+              {{ 'customer.account.title' | t }}
+            {%- else -%}
+              {{ 'customer.log_in' | t }}
+            {%- endif -%}
+          </span>
+        </a>
       {%- endif -%}
 
       {%- for block in section.blocks -%}
@@ -438,32 +525,22 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      {%- if show_book_now -%}
-        <a
-          href="{{ section.settings.book_now_link | default: '#' }}"
-          class="header__book-now"
-          {% if section.settings.book_now_link == blank %}aria-disabled="true"{% endif %}
-        >
-          {{ section.settings.book_now_label | escape }}
-        </a>
-      {%- else -%}
-        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-          {% if cart == empty %}
-            <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
-          {% else %}
-            <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
-          {% endif %}
-          <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-          {%- if cart != empty -%}
-            <div class="cart-count-bubble">
-              {%- if cart.item_count < 100 -%}
-                <span aria-hidden="true">{{ cart.item_count }}</span>
-              {%- endif -%}
-              <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-            </div>
-          {%- endif -%}
-        </a>
-      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {% if cart == empty %}
+          <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+        {% else %}
+          <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+        {% endif %}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
     </div>
   </header>
 </{{ header_tag }}>
@@ -775,7 +852,7 @@
       "id": "show_book_now_button",
       "label": "Show Book Now button",
       "default": true,
-      "info": "When enabled, the Book Now button replaces the search and cart icons. When disabled, search and cart icons are shown."
+      "info": "When enabled, the Book Now button is shown beside the account and cart icons. Search stays hidden while this is on."
     },
     {
       "type": "text",
