@@ -1,0 +1,262 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_section_innerpage_banner_7znEUK": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/3C38CEAC-9224-4DA3-8BF9-783FA1E21A96-478-00000071656752E4-scaled.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 40,
+        "section_height": 70,
+        "section_height_mobile": 65,
+        "show_badge": false,
+        "badge_text": "",
+        "eyebrow": "",
+        "eyebrow_size": 13,
+        "heading": "Revolutionizing Wellness in London",
+        "heading_accent": "The Float Hub Difference in Red Light Therapy",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "description": "",
+        "description_size_desktop": 16,
+        "description_size_mobile": 14,
+        "button_label_1": "",
+        "button_link_1": "",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "center",
+        "content_position_vertical": "middle",
+        "text_alignment": "center",
+        "content_width": 1400
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": false,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_rEF8Xh": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_aCBC7N": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is red light therapy safe?",
+            "icon": "none",
+            "row_content": "<p>Yes, it is a non-toxic, non-invasive treatment.We provide protective goggles on request and have staff on hand to ensure you’re comfortable and safe.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_npTKnL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I expect during a session?",
+            "icon": "none",
+            "row_content": "<p>ou’ll lie comfortably in our bed while the LEDs bathe your body in a gentle, warm light.The sessions are relaxing and take just 15-20 minutes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9YDhy3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many sessions do I need?",
+            "icon": "none",
+            "row_content": "<p>We recommend a consistent routine for optimal results, and our staff can help you find a plan that works for you. Often 3-5 within the first week, followed by reduced frequency for maintenance, though many customers report benefits felt from one session, the benefits are cumulative with red light therapy.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ej7ctF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who should avoid RLT?",
+            "icon": "none",
+            "row_content": "<p>Individuals with active cancer, photosensitive conditions, or seizure disorders should avoid this therapy. We will go over any contraindications in our waiver before your first session.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_aCBC7N",
+        "collapsible_row_npTKnL",
+        "collapsible_row_9YDhy3",
+        "collapsible_row_Ej7ctF"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Question",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-3",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_RcYpGR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_A4wRgB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience the Difference at Float Hub London"
+          }
+        },
+        "text_mLDjBf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>eady to discover why so many Londoners are making red light therapy part of their routine? Whether you’re an athlete, a professional battling stress, or someone seeking holistic well-being, our <strong>FloatLightPBM bed</strong> is a powerful tool to help you achieve your goals.</p><p><strong>Ready to try it out?</strong> <a href=\"/pages/pricing\" title=\"Pricing\">Book your Red Light Therapy or Float session</a> with us today and experience a new standard of wellness in London.</p>"
+          }
+        },
+        "button_fGamxk": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Session",
+            "button_product": "",
+            "button_redirect_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_product_2": "",
+            "button_redirect_checkout_2": false,
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "button_label_3": "",
+            "button_product_3": "",
+            "button_redirect_checkout_3": false,
+            "button_link_3": "",
+            "button_style_secondary_3": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_A4wRgB",
+        "text_mLDjBf",
+        "button_fGamxk"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 980,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#030915",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_FKBqgG": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "custom_section_innerpage_banner_7znEUK",
+    "main",
+    "collapsible_content_rEF8Xh",
+    "rich_text_RcYpGR",
+    "custom_section_small_banner_FKBqgG"
+  ]
+}

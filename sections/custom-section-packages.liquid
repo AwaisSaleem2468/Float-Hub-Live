@@ -1,0 +1,709 @@
+{%- liquid
+  assign button_label_default = section.settings.button_label | default: 'BUY COURSE'
+-%}
+
+{% style %}
+  #Packages-{{ section.id }} {
+    --pkg-bg: {{ section.settings.background_color }};
+    --pkg-card: {{ section.settings.card_background }};
+    --pkg-border: {{ section.settings.card_border }};
+    --pkg-divider: {{ section.settings.divider_color }};
+    --pkg-text: {{ section.settings.title_color }};
+    --pkg-muted: {{ section.settings.caption_color }};
+    --pkg-price: {{ section.settings.price_color }};
+    --pkg-btn: {{ section.settings.button_color }};
+    --pkg-btn-hover: {{ section.settings.button_hover_color }};
+    --pkg-radius: {{ section.settings.card_radius }}px;
+    --pkg-pad-y: {{ section.settings.row_padding_y }}px;
+    --pkg-pad-x: {{ section.settings.row_padding_x }}px;
+    background-color: var(--pkg-bg);
+    color: var(--pkg-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #Packages-{{ section.id }} .packages__inner {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+
+  #Packages-{{ section.id }} .packages__header {
+    margin: 0 0 {{ section.settings.header_gap }}px;
+    max-width: {{ section.settings.heading_max_width }}px;
+    text-align: {{ section.settings.heading_alignment }};
+    {% if section.settings.heading_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif section.settings.heading_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% endif %}
+  }
+
+  #Packages-{{ section.id }} .packages__heading {
+    margin: 0;
+    color: var(--pkg-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  #Packages-{{ section.id }} .packages__heading-accent {
+    color: {{ section.settings.accent_color }};
+  }
+
+  #Packages-{{ section.id }} .packages__description {
+    margin: 0.85rem 0 0;
+    color: var(--pkg-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.description_size }}px;
+    line-height: 1.6;
+  }
+
+  #Packages-{{ section.id }} .packages__description p {
+    margin: 0;
+  }
+
+  #Packages-{{ section.id }} .packages__description p + p {
+    margin-top: 0.5rem;
+  }
+
+  #Packages-{{ section.id }} .packages__card {
+    background: var(--pkg-card);
+    border: 1px solid var(--pkg-border);
+    border-radius: var(--pkg-radius);
+    overflow: hidden;
+  }
+
+  #Packages-{{ section.id }} .packages__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #Packages-{{ section.id }} .packages__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    column-gap: {{ section.settings.column_gap }}px;
+    row-gap: 0.85rem;
+    padding: var(--pkg-pad-y) var(--pkg-pad-x);
+    border-bottom: 1px solid var(--pkg-divider);
+  }
+
+  #Packages-{{ section.id }} .packages__item:last-child {
+    border-bottom: 0;
+  }
+
+  #Packages-{{ section.id }} .packages__copy {
+    min-width: 0;
+  }
+
+  #Packages-{{ section.id }} .packages__title {
+    margin: 0;
+    color: var(--pkg-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.title_size }}px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  #Packages-{{ section.id }} .packages__caption {
+    margin: 0.45rem 0 0;
+    color: var(--pkg-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.caption_size }}px;
+    line-height: 1.5;
+  }
+
+  #Packages-{{ section.id }} .packages__price {
+    margin: 0;
+    color: var(--pkg-price);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.price_size }}px;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  #Packages-{{ section.id }} .packages__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: {{ section.settings.button_height }}px;
+    min-width: {{ section.settings.button_min_width }}px;
+    padding: 0.65rem 1.15rem;
+    border: 1px solid var(--pkg-btn);
+    border-radius: {{ section.settings.button_radius }}px;
+    background: transparent;
+    color: var(--pkg-btn);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  #Packages-{{ section.id }} .packages__btn:hover {
+    color: var(--pkg-btn-hover);
+    border-color: var(--pkg-btn-hover);
+    background: rgba(13, 170, 239, 0.12);
+  }
+
+  #Packages-{{ section.id }} .packages__btn[aria-disabled='true'] {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  #Packages-{{ section.id }} .packages__empty {
+    margin: 0;
+    padding: var(--pkg-pad-y) var(--pkg-pad-x);
+    color: var(--pkg-muted);
+    font-size: {{ section.settings.caption_size }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #Packages-{{ section.id }} .packages__inner {
+      padding: 0 1rem;
+    }
+
+    #Packages-{{ section.id }} .packages__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #Packages-{{ section.id }} .packages__item {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        'copy price'
+        'btn btn';
+      column-gap: 1rem;
+      row-gap: 1rem;
+      padding: 1.25rem 1.15rem;
+    }
+
+    #Packages-{{ section.id }} .packages__copy {
+      grid-area: copy;
+    }
+
+    #Packages-{{ section.id }} .packages__price {
+      grid-area: price;
+      align-self: start;
+      padding-top: 0.15rem;
+      font-size: {{ section.settings.price_size_mobile }}px;
+    }
+
+    #Packages-{{ section.id }} .packages__actions {
+      grid-area: btn;
+    }
+
+    #Packages-{{ section.id }} .packages__btn {
+      width: 100%;
+    }
+
+    #Packages-{{ section.id }} .packages__title {
+      font-size: {{ section.settings.title_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section id="Packages-{{ section.id }}" class="packages">
+  <div class="page-width">
+    {%- if section.settings.heading != blank or section.settings.heading_accent != blank or section.settings.description != blank -%}
+      <div class="packages__header">
+        {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+          <h2 class="packages__heading">
+            {%- if section.settings.heading != blank -%}
+              <span>{{ section.settings.heading | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_accent != blank -%}
+              {%- if section.settings.heading != blank %} {% endif -%}
+              <span class="packages__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="packages__description rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="packages__card">
+      {%- if section.blocks.size > 0 -%}
+        <ul class="packages__list" role="list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign package_product = block.settings.product
+              assign caption = blank
+              assign button_label = block.settings.button_label | default: button_label_default
+              assign button_link = block.settings.button_link
+
+              if package_product != blank
+                assign caption_metafield = package_product.metafields.custom.product_caption
+                if caption_metafield != blank
+                  assign caption = caption_metafield.value | default: caption_metafield
+                endif
+
+                if block.settings.caption_override != blank
+                  assign caption = block.settings.caption_override
+                endif
+
+                if button_link == blank
+                  if block.settings.redirect_to_checkout and package_product.selected_or_first_available_variant != blank
+                    assign variant_id = package_product.selected_or_first_available_variant.id
+                    assign button_link = routes.cart_add_url | append: '?id=' | append: variant_id | append: '&quantity=1&return_to=/checkout'
+                  else
+                    assign button_link = package_product.url
+                  endif
+                endif
+              endif
+            -%}
+
+            <li class="packages__item" {{ block.shopify_attributes }}>
+              {%- if package_product != blank -%}
+                <div class="packages__copy">
+                  <h3 class="packages__title">{{ package_product.title | escape }}</h3>
+                  {%- if caption != blank -%}
+                    <p class="packages__caption">{{ caption | escape }}</p>
+                  {%- endif -%}
+                </div>
+
+                <p class="packages__price">{{ package_product.price | money }}</p>
+
+                <div class="packages__actions">
+                  <a
+                    class="packages__btn"
+                    href="{{ button_link }}"
+                    {% unless package_product.available %}
+                      aria-disabled="true"
+                    {% endunless %}
+                  >
+                    {%- if package_product.available -%}
+                      {{ button_label | escape }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </a>
+                </div>
+              {%- else -%}
+                <div class="packages__copy">
+                  <h3 class="packages__title">Select a product</h3>
+                  <p class="packages__caption">Choose a product in the theme editor for this row.</p>
+                </div>
+                <p class="packages__price">—</p>
+                <div class="packages__actions">
+                  <span class="packages__btn" aria-disabled="true">{{ button_label | escape }}</span>
+                </div>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <p class="packages__empty">Add package blocks and select products in the theme editor.</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Packages",
+  "tag": "section",
+  "class": "section-custom-packages",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Packages"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "min": 400,
+      "max": 1100,
+      "step": 20,
+      "unit": "px",
+      "label": "Heading max width",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below heading",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content width",
+      "default": 1100
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Card radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "row_padding_y",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Row padding vertical",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "row_padding_x",
+      "min": 16,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Row padding horizontal",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 15,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (mobile)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "caption_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Caption size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Price size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "price_size_mobile",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Price size (mobile)",
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Default button label",
+      "default": "BUY COURSE"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "min": 36,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Button height",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "button_min_width",
+      "min": 100,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "label": "Button min width",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card border",
+      "default": "#243041"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Row divider",
+      "default": "#243041"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "Caption color",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Heading accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#22D3EE"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "package",
+      "name": "Package",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Shows product title, price, and custom.product_caption metafield."
+        },
+        {
+          "type": "textarea",
+          "id": "caption_override",
+          "label": "Caption override",
+          "info": "Optional. Leave blank to use the product metafield custom.product_caption."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "info": "Leave blank to use the section default."
+        },
+        {
+          "type": "checkbox",
+          "id": "redirect_to_checkout",
+          "label": "Redirect to checkout",
+          "default": false,
+          "info": "Skip the product page and add this product straight to checkout. Ignored if a custom button link is set."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link",
+          "info": "Optional. Leave blank to use the product page, or checkout if “Redirect to checkout” is enabled."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Packages",
+      "category": "Custom Sections",
+      "blocks": [
+        { "type": "package" },
+        { "type": "package" },
+        { "type": "package" },
+        { "type": "package" }
+      ]
+    }
+  ]
+}
+{% endschema %}

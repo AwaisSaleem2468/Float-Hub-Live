@@ -1,0 +1,1076 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_section_video_banner_tiAqWk": {
+      "type": "custom-section-video-banner",
+      "name": "Custom Video Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/PCH_3799_blue-scaled_7d33b42b-bfb9-43f9-9d8c-82647f401349.jpg",
+        "video": "shopify://files/videos/Floathub Video.mp4",
+        "video_mobile": "shopify://files/videos/Floathub Video.mp4",
+        "overlay_color": "#061018",
+        "overlay_opacity": 40,
+        "section_height": 100,
+        "section_height_mobile": 85,
+        "show_badge": true,
+        "badge_text": "300+ Five-Star Reviews | London's #1 Float & Recovery Centre",
+        "heading": "",
+        "heading_accent": "",
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 36,
+        "description": "<p>Experience total weightlessness and profound calm in London’s most spacious sensory deprivation pods, or float together in our exclusive double-sized suites. Pair your session with our extra spacious 1.5ATA double HBOT chamber or our premium 26K German-engineered LED full body red light bed for the ultimate neural reset.</p><p>🔥 <strong>Intro Special:</strong> 3 Floats for £99, plus free 90-minute upgrades (subject to availability).</p><p>✨ <strong>HBOT Intro:</strong> Experience the initial shift with our exclusive new client 3-Pack for just £149.</p>",
+        "description_size_desktop": 18,
+        "description_size_mobile": 16,
+        "button_label_1": "3 Float Intro Pack - £99",
+        "button_product_1": "3-float-intro-pack",
+        "button_redirect_checkout_1": true,
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "show_button_arrow_1": false,
+        "button_label_2": "London’s Only Float For Two",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868832534855&servicify-event=15b2c8e2-2408-4c8f-b518-ea6f0b0fe335&servicify-variant=54213836964167",
+        "button_style_2": "primary",
+        "show_button_arrow_2": false,
+        "button_label_3": "HBOT Intro 3-Pack - £149",
+        "button_product_3": "intro-3-pack",
+        "button_redirect_checkout_3": true,
+        "button_link_3": "",
+        "button_style_3": "primary",
+        "show_button_arrow_3": false,
+        "inner_max_width": 1020,
+        "inner_padding_top": 80,
+        "inner_padding_bottom": 80,
+        "inner_padding_horizontal": 16,
+        "inner_padding_top_mobile": 80,
+        "inner_padding_bottom_mobile": 80,
+        "inner_padding_horizontal_mobile": 16,
+        "show_discover": true,
+        "discover_label": "Discover",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "button_primary_bg": "#0daaef",
+        "button_primary_text": "#ffffff"
+      }
+    },
+    "custom_section_static_feature": {
+      "type": "custom-section-static-feature",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "text": "London's Highest Rated Float Centre",
+            "show_icon": true,
+            "link": ""
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "text": "300+ Five-Star Reviews Online",
+            "show_icon": false,
+            "link": ""
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "text": "5 Oversize Float Pods - Largest in London",
+            "show_icon": false,
+            "link": ""
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "text": "Old Street, Shoreditch · EC1V 9NQ",
+            "show_icon": false,
+            "link": ""
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "text": "Open 7 Days - Book Online Instantly",
+            "show_icon": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5"
+      ],
+      "name": "Static Feature Bar",
+      "settings": {
+        "accessibility_label": "Store highlights",
+        "enable_marquee": true,
+        "marquee_speed": 40,
+        "pause_on_hover": true,
+        "background_color": "#121a27",
+        "text_color": "#c8ced8",
+        "icon_color": "#0daaef",
+        "border_color": "#11251e",
+        "border_width": 1,
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "item_gap": 40,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "custom_section_richtext": {
+      "type": "custom-section-richtext",
+      "name": "Custom Rich Text",
+      "settings": {
+        "show_badge": true,
+        "show_stars": true,
+        "badge_text": "21K+ Happy Customers",
+        "badge_size_desktop": 16,
+        "badge_size_mobile": 14,
+        "badge_spacing": 28,
+        "content": "<p>With more than 575kg of high-quality epsom salt, you will float <em>effortlessly </em>in the waters of our spacious float pods for 60 minutes with no light, sound, or external pressures to refresh your mind and restore your health to new levels.</p>",
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "content_width": 760,
+        "background_color": "#0f1827",
+        "text_color": "#c8ced8",
+        "strong_color": "#ffffff",
+        "badge_background": "#243044",
+        "badge_text_color": "#c8ced8",
+        "star_color": "#f5c518",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_img_with_text_HVFxfx": {
+      "type": "custom-section-img-with-text",
+      "name": "Custom Img with text",
+      "settings": {
+        "image": "shopify://shop_images/475794170_2718126955038534_2369070691479450927_n.jpg",
+        "layout": "left",
+        "image_width": "medium",
+        "image_height": "adapt",
+        "image_fixed_height": 520,
+        "image_radius": 20,
+        "mobile_image_first": true,
+        "subtitle": "We have 5 of the biggest tanks in London.",
+        "subtitle_size": 12,
+        "heading": "Who will you be with",
+        "heading_accent": "less pain, more energy, better sleep, and less stress?",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "description": "<p>You may have heard of floating (also called float therapy or (<a href=\"/pages/sensory-deprivation-tanks-guide\" title=\"The Ultimate Guide to Sensory Deprivation Tanks\">sensory deprivation</a>) already from a friend or co-worker due to the profound, holistic benefits you can receive. For many people, it’s the perfect solution to the stress, anxiety and noise of the modern world, allowing you to pause and reconnect to yourself.</p><p>Most people develop a practice of floating around 1 – 4 times per month. The benefits deepen and compound over time with a consistent practice, which is <strong>why we recommend starting with 3 floats to experience the full benefits.</strong></p>",
+        "description_size": 16,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "button_label_1": "Pricing",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/pricing",
+        "button_label_2": "Book Float Now",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "shopify://pages/booking",
+        "button_size": 16,
+        "button_radius": 10,
+        "background_color": "#070d16",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "content_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_featured_collection": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "single-float-60-min",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Now",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10869487665479&servicify-event=3b1aa34f-8168-40d5-9f61-df2e2b5f08ff&servicify-variant=54664191410503"
+          }
+        },
+        "product_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "3-float-intro-pack",
+            "featured": true,
+            "badge_text": "One-Time Purchase",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy Intro Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "float-for-two-couples",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Now",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868832534855&servicify-event=15b2c8e2-2408-4c8f-b518-ea6f0b0fe335&servicify-variant=54213836964167"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_3",
+        "product_card_1",
+        "product_card_2"
+      ],
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "London’s Highest Rated Float Therapy,",
+        "heading": "Float Therapy",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 13,
+        "description": "<p>Our premium recovery centre offers a luxurious, multi-modality wellness experience. Featuring 100% water filtration twice between sessions</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 16,
+        "caption_size": 16,
+        "title_size": 22,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1400,
+        "header_spacing": 40,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#ffffff",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": true,
+        "view_all_label": "View all",
+        "view_all_link": "shopify://pages/pricing",
+        "view_all_style": "solid",
+        "view_all_spacing": 40,
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_float_benefits": {
+      "type": "custom-section-float-benefits",
+      "blocks": {
+        "tab_mind": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Mind",
+            "tab_icon_style": "mind",
+            "tab_icon": "shopify://shop_images/benefits-icon-_7.png",
+            "benefit_1_icon": "shopify://shop_images/benefits-icon-_10.png",
+            "benefit_1_title": "Improved Sleep",
+            "benefit_1_text": "Floating brings your sympathetic and parasympathetic nervous systems back into sync for deeper, more restorative sleep.",
+            "benefit_2_icon": "shopify://shop_images/benefits-icon-_9.png",
+            "benefit_2_title": "Stress Relief",
+            "benefit_2_text": "The lack of sensory input and pressures on your mind and body allow them to go into deep states of rest and healing processes.",
+            "benefit_3_icon": "shopify://shop_images/benefits-icon-_8.png",
+            "benefit_3_title": "Mental Health",
+            "benefit_3_text": "Studies are starting to show the benefits of float therapy for people who struggle with anxiety, depression and PTSD."
+          }
+        },
+        "tab_body": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Body",
+            "tab_icon_style": "body",
+            "tab_icon": "shopify://shop_images/benefits-icon-_12.png",
+            "benefit_1_icon": "shopify://shop_images/benefits-icon-_6.png",
+            "benefit_1_title": "Pain Relief",
+            "benefit_1_text": "Floating's weightlessness relieves all pressure on your body so it can release endorphins that help with chronic pain, fibromyalgia and other conditions.",
+            "benefit_2_icon": "shopify://shop_images/benefits-icon-_5.png",
+            "benefit_2_title": "Faster Recovery",
+            "benefit_2_text": "Many of the world's top performing athletes rely on floating thanks to its role in speeding up recovery times, aiding visualization techniques and supporting injury healing.",
+            "benefit_3_icon": "shopify://shop_images/benefits-icon-_4.png",
+            "benefit_3_title": "Pregnancy Support",
+            "benefit_3_text": "Women who are pregnant have found profound relief from floating to alleviate the weight and pressure on their body, while allowing a deeper connection to their child."
+          }
+        },
+        "tab_performance": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Performance",
+            "tab_icon_style": "performance",
+            "tab_icon": "shopify://shop_images/benefits-icon-_11.png",
+            "benefit_1_icon": "shopify://shop_images/benefits-icon-_3.png",
+            "benefit_1_title": "Faster Learning",
+            "benefit_1_text": "The Navy Seals reduced learning languages from 6 months to 6 weeks, thanks to the improved focus, creativity and state of \"super-learning\" from floating.",
+            "benefit_2_icon": "shopify://shop_images/benefits-icon-_2.png",
+            "benefit_2_title": "Effortless Mindfulness",
+            "benefit_2_text": "The environment and practice of floating allows anyone new to mindfulness to achieve the same deep meditation and Theta brainwaves as expert meditators and yogis.",
+            "benefit_3_icon": "shopify://shop_images/benefits-icon-_1.png",
+            "benefit_3_title": "Focus & Creativity",
+            "benefit_3_text": "Your mind becomes endlessly more productive, creative and clear in the calm state it reaches through floating, which can improve focus and help with problem solving."
+          }
+        }
+      },
+      "block_order": [
+        "tab_mind",
+        "tab_body",
+        "tab_performance"
+      ],
+      "name": "Float Benefits",
+      "settings": {
+        "label": "",
+        "label_size": 12,
+        "heading": "Your mind and body know what to do—",
+        "heading_accent": "when given space.",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "description": "<p>In a float pod, your nervous system drops into deep rest. Heart rate slows. Brainwaves shift. Cortisol falls. What happens next is entirely up to you.</p>",
+        "description_size": 16,
+        "benefit_title_size": 20,
+        "benefit_text_size": 16,
+        "image": "shopify://shop_images/481112418_2741467312704498_3456577850477813194_n.jpg",
+        "show_recommend": true,
+        "recommend_label": "Recommended for",
+        "recommend_text": "Athletes · Anxiety & stress · Chronic pain · Better sleep · Mental performance",
+        "background_color": "#121a27",
+        "card_background": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#c8ced8",
+        "content_width": 1400,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_section_specification_88P8jL": {
+      "type": "custom-section-specification",
+      "blocks": {
+        "hotspot_69PEFY": {
+          "type": "hotspot",
+          "settings": {
+            "label": "Grab handles",
+            "x": 25,
+            "y": 10,
+            "tooltip_position": "right",
+            "popup_text": "<p>The programmable lights inspired by nature help ease you into your float.</p>"
+          }
+        },
+        "hotspot_nm8Lxj": {
+          "type": "hotspot",
+          "settings": {
+            "label": "Filtration",
+            "x": 10,
+            "y": 50,
+            "tooltip_position": "right",
+            "popup_text": "<p>The ultra-wide power-assisted door makes opening and closing effortless.</p>"
+          }
+        },
+        "hotspot_arYh4Q": {
+          "type": "hotspot",
+          "settings": {
+            "label": "Lighting",
+            "x": 55,
+            "y": 40,
+            "tooltip_position": "bottom",
+            "popup_text": "<p>Better accessibility, the moulded grab handles allow the customer to step over the low threshold and in with ease.</p>"
+          }
+        },
+        "hotspot_kReMQH": {
+          "type": "hotspot",
+          "settings": {
+            "label": "Door",
+            "x": 90,
+            "y": 65,
+            "tooltip_position": "left",
+            "popup_text": "<p>Our tanks are designed to comfortably accommodate persons up to 7 foot 4 inches within its internal space. Plus, it feels expansive inside while floating with no light or sound.</p>"
+          }
+        },
+        "hotspot_gnHH4J": {
+          "type": "hotspot",
+          "settings": {
+            "label": "Interior",
+            "x": 45,
+            "y": 90,
+            "tooltip_position": "top",
+            "popup_text": "<p>Auto empties 100% of water between floats. Every customer is safe in the knowledge that their solution has been completely cleaned, filtered then filled just for them.</p>"
+          }
+        },
+        "feature_card_krEncT": {
+          "type": "feature_card",
+          "settings": {
+            "title": "EXTREME CLEANLINESS",
+            "items": "Approx. 575 kg epsom salt\nAdvanced filtration system\nFiltered between every float\nCrystal clear solution\n1-micron filter (no particles)\nUV Sanitation",
+            "content": "",
+            "accent_style": false,
+            "link_items": false,
+            "item_link": ""
+          }
+        },
+        "feature_card_Wk3g7D": {
+          "type": "feature_card",
+          "settings": {
+            "title": "SAFE & COMFORTABLE",
+            "items": "Private, luxurious rooms\nYou have complete control\nExpansive environment\nOptional lights or music\nSafe to fall asleep\nEase of accessibility",
+            "content": "",
+            "accent_style": false,
+            "link_items": false,
+            "item_link": ""
+          }
+        },
+        "feature_card_J3Fjzi": {
+          "type": "feature_card",
+          "settings": {
+            "title": "Backed by Continued Studies",
+            "items": "",
+            "content": "<ul><li><a href=\"https://www.sciencedirect.com/science/article/pii/S2451902218300491\" target=\"_blank\">High Anxiety</a></li><li><a href=\"https://bmccomplementalternmed.biomedcentral.com/articles/10.1186/s12906-016-1089-x\" target=\"_blank\">Generalized Anxiety Disorder</a></li><li><a href=\"http://www.ijpsy.com/volumen11/num2/299.html\" target=\"_blank\">High Stress and Burnout</a></li><li><a href=\"http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0190292\" target=\"_blank\">Depression</a></li><li><a href=\"https://www.sciencedirect.com/science/article/pii/S2211266916300147\" target=\"_blank\">Elite Athletes</a></li><li><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2734516/\" target=\"_blank\">Stress-related Pain</a></li></ul>",
+            "accent_style": true,
+            "link_items": false,
+            "item_link": ""
+          }
+        },
+        "feature_card_pjUGCr": {
+          "type": "feature_card",
+          "settings": {
+            "title": "Recommended By",
+            "items": "Artists\nAthletes\nEntrepreneurs\nStudents\nParents\nPhysiotherapists \nYogis",
+            "content": "",
+            "accent_style": false,
+            "link_items": false,
+            "item_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_69PEFY",
+        "hotspot_nm8Lxj",
+        "hotspot_arYh4Q",
+        "hotspot_kReMQH",
+        "hotspot_gnHH4J",
+        "feature_card_krEncT",
+        "feature_card_Wk3g7D",
+        "feature_card_J3Fjzi",
+        "feature_card_pjUGCr"
+      ],
+      "name": "Custom Specification",
+      "settings": {
+        "subtitle": "",
+        "heading": "5 Of The Most Advanced Floatation Tanks",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "subtitle_size": 13,
+        "heading_alignment": "center",
+        "header_spacing": 40,
+        "image": "shopify://shop_images/Float-hub-pod-opened.png",
+        "media_spacing": 52,
+        "hotspot_size": 30,
+        "tooltip_size": 13,
+        "cards_per_row": 4,
+        "card_gap": 12,
+        "card_padding": 16,
+        "card_radius": 12,
+        "card_title_size": 16,
+        "card_text_size": 14,
+        "button_label": "Book Your Float Now",
+        "button_link": "shopify://pages/booking",
+        "button_alignment": "center",
+        "button_spacing": 40,
+        "button_size": 16,
+        "button_radius": 14,
+        "background_color": "#070d16",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#0daaef",
+        "card_background": "#121a27",
+        "card_border_color": "#243044",
+        "hotspot_color": "#0daaef",
+        "tooltip_background": "#121a27",
+        "tooltip_text_color": "#c8ced8",
+        "content_width": 1400,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_membership_6HFMYW": {
+      "type": "custom-section-membership",
+      "blocks": {
+        "pricing_row_YeyhnK": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Monthly float",
+            "value": "Included",
+            "value_style": "default"
+          }
+        },
+        "pricing_row_KjRHNQ": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Extra floats",
+            "value": "£45 each",
+            "value_style": "default"
+          }
+        },
+        "pricing_row_epHcBr": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Member guest rate",
+            "value": "-20% off",
+            "value_style": "accent"
+          }
+        },
+        "pricing_row_M8jAXc": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Priority booking",
+            "value": "Free",
+            "value_style": "accent"
+          }
+        },
+        "pricing_row_yV3Nmd": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Referral reward",
+            "value": "£10 credit",
+            "value_style": "gold"
+          }
+        },
+        "benefit_HUmAa6": {
+          "type": "benefit",
+          "settings": {
+            "text": "1 float included monthly"
+          }
+        },
+        "benefit_rVr4K3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Member guest rate"
+          }
+        },
+        "benefit_RWwdHk": {
+          "type": "benefit",
+          "settings": {
+            "text": "Retail discount"
+          }
+        },
+        "benefit_47gDan": {
+          "type": "benefit",
+          "settings": {
+            "text": "Priority booking"
+          }
+        },
+        "benefit_bpXzRq": {
+          "type": "benefit",
+          "settings": {
+            "text": "Referral rewards"
+          }
+        },
+        "benefit_LQ7X6T": {
+          "type": "benefit",
+          "settings": {
+            "text": "Cancel anytime"
+          }
+        }
+      },
+      "block_order": [
+        "pricing_row_YeyhnK",
+        "pricing_row_KjRHNQ",
+        "pricing_row_epHcBr",
+        "pricing_row_M8jAXc",
+        "pricing_row_yV3Nmd",
+        "benefit_HUmAa6",
+        "benefit_rVr4K3",
+        "benefit_RWwdHk",
+        "benefit_47gDan",
+        "benefit_bpXzRq",
+        "benefit_LQ7X6T"
+      ],
+      "name": "Custom Membership",
+      "settings": {
+        "label": "FLOAT HUB Referral Program",
+        "heading": "Share, Refer, Earn Credit!",
+        "heading_accent": "Transform deeply.",
+        "subheading": "REFER A FRIEND & BOTH RECEIVE £10 OFF YOUR NEXT PURCHASE",
+        "text": "<p>New customers can enter your code in the Promotional Code box on our online booking page and will automatically get £10.00 off their first purchase.</p><p>You’ll receive a free £10.00 account credit for every new customer who uses your code. We’ll send you an email every time someone uses your code.</p><p>Ask our hosts to enrol you in the Referral Scheme, and you will receive your promotional code.</p><p>If you have any questions, please email <a href=\"mailto:team@floathub.co.uk\" title=\"mailto:team@floathub.co.uk\"><strong>team@floathub.co.uk</strong></a></p>",
+        "label_size": 12,
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "subheading_size": 18,
+        "text_size": 16,
+        "content_alignment": "left",
+        "card_title": "Float Hub MEMBERSHIP",
+        "card_title_size": 12,
+        "row_text_size": 16,
+        "card_padding": 20,
+        "card_radius": 12,
+        "benefits_title": "MEMBER BENEFITS",
+        "benefits": "1 float included monthly\nMember guest rate\nRetail discount\nPriority booking\nReferral rewards\nCancel anytime",
+        "benefits_title_size": 14,
+        "benefit_text_size": 13,
+        "show_highlight": true,
+        "highlight_label": "Your monthly cost",
+        "highlight_price": "£45",
+        "highlight_compare": "vs £65 pay-as-you-go",
+        "highlight_save": "Save £20 per session · £240 per year",
+        "highlight_label_size": 14,
+        "highlight_price_size": 42,
+        "highlight_compare_size": 16,
+        "highlight_save_size": 16,
+        "highlight_radius": 12,
+        "button_label": "Join for £45 / month",
+        "button_link": "shopify://pages/float-hub-memberships",
+        "button_note": "Cancel anytime · No minimum term",
+        "button_size": 16,
+        "button_note_size": 14,
+        "button_radius": 12,
+        "background_color": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "gold_color": "#d4af37",
+        "card_background": "#0f1827",
+        "card_border_color": "#1e2a3c",
+        "highlight_background": "#0f2436",
+        "content_width": 1400,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_section_testimonial_XpLhbw": {
+      "type": "custom-section-testimonial",
+      "blocks": {
+        "testimonial_9wFD6Y": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.46.55-PM-300x296.jpg",
+            "review_title": "The most relaxing hour of my year so far!",
+            "review_text": "This experience is honestly not to be underestimated - I was in so much pain from a gym session... and it wiped away all my pain in that hour alone! p.s. it’s not claustrophobic at all, I’ll be back!",
+            "name": "Elizabeth S.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_WbX8E7": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.18.45-PM.png",
+            "review_title": "Cannot recommend this place enough.",
+            "review_text": "For anyone that is sitting on the fence about this kind of Therapy. I suffer from insomnia, depression and anxiety. This is goal changing for me and thats after ONE session. I will be back. Frequently.",
+            "name": "Wayne Gibbons",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_AignVf": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/avatar008.jpg",
+            "review_title": "My first float, but definitely not my last.",
+            "review_text": "I wasn’t really sure what to expect but it had been highly recommended by a friend so I thought I’d give it a go - I’m glad I did. I left feeling completely relaxed and really set up for the week ahead. It was the perfect opportunity to switch off from everything and recharge",
+            "name": "Andrew",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_RmRKHz": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-08-31-at-14.35.16-300x268.png",
+            "review_title": "One of my favourite ways to bring myself into a parasympathetic state, is to do an evening float therapy session.",
+            "review_text": "The magnesium salts, restful position of my body, and focusing on my breath all help my body and mind to relax. Combining this with some yoga poses, and writing down my thoughts, can really help me get a good sleep.\"",
+            "name": "Charlie Tunmore",
+            "designation": ""
+          }
+        },
+        "testimonial_EqACNW": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/11222227_10152970901417396_9044583712647267181_n.jpg",
+            "review_title": "I've used floatation for over 10 years",
+            "review_text": "For relaxation and as a reset, it was great to try out such a lovely new space. The tanks were fabulous and spacious, and the facility was beautifully designed. Looking forward to coming back again soon.",
+            "name": "Beccy Reese",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_NCKbic": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "It’s like floating in space!",
+            "review_text": "This is amazing! So relaxing. Very friendly and helpful staff - Tony was very knowledgable and put me at ease. I would highly recommend this.",
+            "name": "Louise",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_6VwiHp": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-11-at-8.06.14-PM-245x300.png",
+            "review_title": "An Absolute Dream",
+            "review_text": "If you've never tried this before, you really should. A total dream from start to finish. The staff are attentive, the decor is high-end and looks great, the vibe is super chilled, and you hear nothing from the busy streets above you. I had never done anything like it before. I felt safe and warm and completely at peace. My lower back felt great (which is very rare).",
+            "name": "Christopher",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_H4hBJi": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/14991347_10157759337275158_2328856854046519928_o-225x300.jpg",
+            "review_title": "I felt my anxiety melt away I",
+            "review_text": "I had never tried floating before, but it was an incredible experience. I left feeling completely relaxed and reinvigorated. The staff were wonderful and helpful, the facilities were clean and luxurious, and the floatation pods were state of the art.",
+            "name": "J Sergio Del Guidici",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_3xeMpk": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar050-300x300.jpg",
+            "review_title": "I highly recommend it.",
+            "review_text": "This was my first float experience. I found it very interesting and very relaxing. The float equipment is obviously brand new and of first class quality. I did not quite drift off to sleep, but was on the brink. I think that, on a second trip, I would slip into the zone more easily! I have practised meditation in the past (but over 10 years ago) and found that I was able to remember some simply breathing techniques to help me relax.",
+            "name": "Rob",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_ri4GpJ": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "From the moment you enter, a sense of calm and quiet descends over you.",
+            "review_text": "This is embodied by the chic and simple surroundings which promote a sense of wellness and relaxation. The facilities were clean and new and the team looked after my friend and I amazingly. I would relish the opportunity to go back again, making a floating tank a regular part of my wellness regime. I came away feeling as though I'd spent all day in a spa!",
+            "name": "Fabian H.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_wGTTP8": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar055-300x300.jpg",
+            "review_title": "It’s definitely a place I would recommend everyone to visit!",
+            "review_text": "The actual float for me was a positive sensorial challenge, and it opened a personal depth which allowed for deep meditation and self-knowledge. I also liked that, from the moment I stepped through the door until the end, each step of the process was mindfully considered.",
+            "name": "Patricia",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_8XQhHq": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-07-27-at-13.39.26-300x285.png",
+            "review_title": "I had a fantastic experience.",
+            "review_text": "The session was super relaxing and I felt I could let go of tensions and stress. The stuff is very friendly and helpful. The facility is clean and comfortable. I highly recommend it.”",
+            "name": "Francesco Gatti",
+            "designation": "TripAMeditation & Lifestyle expert, author and co-founder of Blissdvisor"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_9wFD6Y",
+        "testimonial_WbX8E7",
+        "testimonial_AignVf",
+        "testimonial_RmRKHz",
+        "testimonial_EqACNW",
+        "testimonial_NCKbic",
+        "testimonial_6VwiHp",
+        "testimonial_H4hBJi",
+        "testimonial_3xeMpk",
+        "testimonial_ri4GpJ",
+        "testimonial_wGTTP8",
+        "testimonial_8XQhHq"
+      ],
+      "name": "Custom Testimonial",
+      "settings": {
+        "subtitle": "",
+        "subtitle_size": 12,
+        "heading": "Members and Celebrities On Float Therapy",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 28,
+        "header_spacing": 40,
+        "slides_desktop": 2,
+        "slides_tablet": 1,
+        "slides_mobile": 1,
+        "enable_autoplay": true,
+        "autoplay_speed": 8,
+        "card_gap": 16,
+        "card_radius": 12,
+        "avatar_size": 64,
+        "review_size": 16,
+        "name_size": 16,
+        "designation_size": 14,
+        "show_button": true,
+        "button_label": "View All Reviews",
+        "button_link": "shopify://pages/all-reviews",
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border_color": "#243044",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "content_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_gallery_CpeGTR": {
+      "type": "custom-section-gallery",
+      "blocks": {
+        "image_MhdQQw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/photo0jpg.jpg",
+            "caption": ""
+          }
+        },
+        "image_RC3APX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-18-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_nTCrc7": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-19-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_PdmVRy": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/a-selection-of-reading.jpg",
+            "caption": ""
+          }
+        },
+        "image_Dibbqz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/we-ve-worked-to-create.jpg",
+            "caption": ""
+          }
+        },
+        "image_gHwcfm": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-17-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_VkcHMW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-15-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_h38bRM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-10-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_htJdyd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-11-London_adf576f2-921c-4f3a-a86c-555b93d39e52.jpg",
+            "caption": ""
+          }
+        },
+        "image_tL3igX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/caption.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_MhdQQw",
+        "image_RC3APX",
+        "image_nTCrc7",
+        "image_PdmVRy",
+        "image_Dibbqz",
+        "image_gHwcfm",
+        "image_VkcHMW",
+        "image_h38bRM",
+        "image_htJdyd",
+        "image_tL3igX"
+      ],
+      "name": "Custom Gallery",
+      "settings": {
+        "subtitle": "",
+        "heading": "Our float center is meticulously engineered for your rest.",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "subtitle_size": 14,
+        "header_spacing": 40,
+        "title_max_width": 800,
+        "show_features": true,
+        "enable_features_marquee": true,
+        "features_pause_on_hover": true,
+        "features_marquee_speed": 28,
+        "features_spacing": 32,
+        "feature_gap": 16,
+        "feature_card_width": 220,
+        "feature_card_width_mobile": 200,
+        "feature_card_bg": "#121a27",
+        "feature_card_border": "#243041",
+        "feature_card_radius": 12,
+        "feature_card_padding": 20,
+        "feature_text_align": "left",
+        "feature_label_size": 12,
+        "feature_label_size_mobile": 11,
+        "feature_text_size": 15,
+        "feature_text_size_mobile": 14,
+        "feature_label_color": "#8b93a1",
+        "feature_text_color": "#ffffff",
+        "grid_gap": 16,
+        "image_radius": 12,
+        "large_image_ratio": "1 / 1",
+        "side_padding": 0,
+        "background_color": "#121a27",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "lightbox_background": "#121a27",
+        "control_color": "#c8ced8",
+        "content_width": 1000,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "featured_blog_VpR4Bi": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "blog",
+        "post_limit": 10,
+        "heading": "",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": true,
+        "show_category": false,
+        "show_excerpt": true,
+        "color_scheme": "scheme-4",
+        "heading_color": "#ffffff",
+        "card_background": "#121a27",
+        "title_color": "#ffffff",
+        "meta_color": "#23a3df",
+        "category_color": "#23a3df",
+        "excerpt_color": "#c8ced8",
+        "button_background": "#23a3df",
+        "button_text_color": "#ffffff",
+        "heading_font_size": 43,
+        "heading_font_size_mobile": 32,
+        "title_font_size": 22,
+        "title_font_size_mobile": 18,
+        "meta_font_size": 14,
+        "meta_font_size_mobile": 13,
+        "category_font_size": 14,
+        "category_font_size_mobile": 12,
+        "excerpt_font_size": 17,
+        "excerpt_font_size_mobile": 14,
+        "card_radius": 16,
+        "image_radius": 12,
+        "image_inset": 12,
+        "card_gap": 16,
+        "button_radius": 12,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_small_banner_rR9WDD": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "shopify://pages/contact",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "custom_section_video_banner_tiAqWk",
+    "custom_section_static_feature",
+    "custom_section_richtext",
+    "custom_section_img_with_text_HVFxfx",
+    "custom_section_featured_collection",
+    "custom_section_float_benefits",
+    "custom_section_specification_88P8jL",
+    "custom_section_membership_6HFMYW",
+    "custom_section_testimonial_XpLhbw",
+    "custom_section_gallery_CpeGTR",
+    "featured_blog_VpR4Bi",
+    "custom_section_small_banner_rR9WDD"
+  ]
+}

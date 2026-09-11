@@ -1,0 +1,1311 @@
+{%- liquid
+  assign columns = section.settings.columns_desktop | default: 2
+-%}
+
+{% style %}
+  #MembershipCards-{{ section.id }} {
+    --mc-bg: {{ section.settings.background_color }};
+    --mc-card-bg: {{ section.settings.card_background }};
+    --mc-text: {{ section.settings.text_color }};
+    --mc-muted: {{ section.settings.muted_color }};
+    --mc-accent: {{ section.settings.accent_color }};
+    --mc-border: {{ section.settings.card_border_color }};
+    --mc-badge-bg: {{ section.settings.badge_background }};
+    --mc-badge-text: {{ section.settings.badge_text_color }};
+    --mc-btn-bg: {{ section.settings.button_background }};
+    --mc-btn-text: {{ section.settings.button_text_color }};
+    --mc-banner-bg: {{ section.settings.banner_background }};
+    --mc-banner-text: {{ section.settings.banner_text_color }};
+    --mc-banner-btn-bg: {{ section.settings.banner_button_background }};
+    --mc-banner-btn-text: {{ section.settings.banner_button_text_color }};
+    --mc-heading-size: {{ section.settings.heading_size_desktop }}px;
+    --mc-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --mc-columns: {{ columns }};
+    background-color: var(--mc-bg);
+    color: var(--mc-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__inner {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__header {
+    text-align: center;
+    max-width: 72rem;
+    margin: 0 auto {{ section.settings.header_spacing }}px;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__heading {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--mc-heading-size);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--mc-text);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__description {
+    margin: 0 auto;
+    max-width: 64rem;
+    color: var(--mc-muted);
+    font-size: {{ section.settings.description_size }}px;
+    line-height: 1.55;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__description p {
+    margin: 0;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--mc-columns), minmax(0, 1fr));
+    gap: {{ section.settings.card_gap }}px;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    #MembershipCards-{{ section.id }} .membership-cards__grid {
+      max-width: {% if columns == 2 %}78rem{% else %}100%{% endif %};
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 3.2rem 2.2rem 2.2rem;
+    border-radius: 1.2rem;
+    background: var(--mc-card-bg);
+    border: 1px solid var(--mc-border);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.55rem;
+    background: var(--mc-badge-bg);
+    color: var(--mc-badge-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__eyebrow {
+    margin: 0.4rem 0 0.85rem;
+    color: var(--mc-muted);
+    font-size: {{ section.settings.caption_size }}px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__title {
+    margin: 0 0 1rem;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--mc-text);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__price {
+    flex: 0 0 auto;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.price_size }}px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--mc-text);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__price-dots {
+    flex: 1 1 auto;
+    min-width: 2rem;
+    height: 0;
+    border-bottom: 2px dotted rgba(255, 255, 255, 0.28);
+    transform: translateY(-0.35rem);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__features {
+    list-style: none;
+    margin: 0 0 1.8rem;
+    padding: 0;
+    flex: 1 1 auto;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 0 0 0.95rem;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: {{ section.settings.feature_size }}px;
+    line-height: 1.45;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__check {
+    flex-shrink: 0;
+    width: 1.45rem;
+    height: 1.45rem;
+    margin-top: 0.15rem;
+    color: var(--mc-accent);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__check svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__subscribe {
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__subscribe-widget {
+    width: 100%;
+    color: var(--mc-text);
+  }
+
+  /* Subscription options UI is hidden — selling plan stays as a hidden input */
+  #MembershipCards-{{ section.id }} .membership-cards__plans,
+  #MembershipCards-{{ section.id }} .membership-cards__plans-legend,
+  #MembershipCards-{{ section.id }} .membership-cards__plan {
+    display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    pointer-events: none !important;
+  }
+
+  /* Hide leftover Seal UI only */
+  #MembershipCards-{{ section.id }} .sealsubs-target-element,
+  #MembershipCards-{{ section.id }} .sealsubs-container,
+  #MembershipCards-{{ section.id }} .sls-purchase-options-container,
+  #MembershipCards-{{ section.id }} #seal-purchase-options-label,
+  #MembershipCards-{{ section.id }} [data-seal-ac],
+  #MembershipCards-{{ section.id }} [data-seal-in],
+  #MembershipCards-{{ section.id }} [data-seal-extension],
+  #MembershipCards-{{ section.id }} [class*='sealsubs'],
+  #MembershipCards-{{ section.id }} [id*='seal-purchase'] {
+    display: none !important;
+  }
+
+  /* Hide theme CTA — keep Float-hub-calendar / booking app button visible */
+  #MembershipCards-{{ section.id }} .membership-cards__btn,
+  #MembershipCards-{{ section.id }} .membership-cards__btn[data-mc-cta] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+  }
+
+  /* Hide Subscription app block UI (Appstle) — keep calendar button */
+  #MembershipCards-{{ section.id }} .membership-cards__app-block,
+  #MembershipCards-{{ section.id }} .membership-cards__app-orphan,
+  #MembershipCards-{{ section.id }} .shopify-app-block:has([class*='appstle']),
+  #MembershipCards-{{ section.id }} .shopify-block:has([class*='appstle']),
+  #MembershipCards-{{ section.id }} [class*='appstle_'],
+  #MembershipCards-{{ section.id }} [class*='Appstle'],
+  #MembershipCards-{{ section.id }} [id*='appstle'],
+  #MembershipCards-{{ section.id }} [id*='Appstle'] {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  #MembershipCards-{{ section.id }} [class*='float-hub-calendar'],
+  #MembershipCards-{{ section.id }} [class*='Float-hub-calendar'],
+  #MembershipCards-{{ section.id }} [id*='float-hub-calendar'],
+  #MembershipCards-{{ section.id }} [id*='Float-hub-calendar'],
+  #MembershipCards-{{ section.id }} button[class*='float-hub'],
+  #MembershipCards-{{ section.id }} a[class*='float-hub'] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 3.2rem !important;
+    margin: 0 !important;
+    clip: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__app-orphan {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner {
+    margin-top: {{ section.settings.banner_spacing }}px;
+    padding: 2.4rem 2rem;
+    border-radius: 0;
+    background: var(--mc-banner-bg);
+    color: var(--mc-banner-text);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-inner {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-copy {
+    max-width: 58rem;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-heading {
+    margin: 0 0 0.55rem;
+    font-family: var(--font-heading-family);
+    font-size: {{ section.settings.banner_heading_size }}px;
+    font-weight: var(--font-heading-weight);
+    line-height: 1.2;
+    color: var(--mc-banner-text);
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-text {
+    margin: 0;
+    font-size: {{ section.settings.banner_text_size }}px;
+    line-height: 1.5;
+    color: var(--mc-banner-text);
+    opacity: 0.95;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-btn {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.2rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 0.25rem;
+    background: var(--mc-banner-btn-bg);
+    color: var(--mc-banner-btn-text);
+    font-size: {{ section.settings.banner_button_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #MembershipCards-{{ section.id }} .membership-cards__banner-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+  }
+
+   #MembershipCards-{{ section.id }} .Float-hub-calendar{
+    display: inline-flex !important;
+    width: 100% !important;
+}
+
+  @media screen and (max-width: 989px) {
+    #MembershipCards-{{ section.id }} .membership-cards__grid {
+      grid-template-columns: 1fr;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #MembershipCards-{{ section.id }} .membership-cards__banner-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #MembershipCards-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    #MembershipCards-{{ section.id }} .membership-cards__inner,
+    #MembershipCards-{{ section.id }} .membership-cards__banner-inner {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    #MembershipCards-{{ section.id }} .membership-cards__heading {
+      font-size: var(--mc-heading-size-mobile);
+    }
+
+    #MembershipCards-{{ section.id }} .membership-cards__banner-btn {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+{%- capture check_icon -%}
+  <span class="membership-cards__check" aria-hidden="true">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.2 8.2l3 3 6.6-6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+{%- endcapture -%}
+
+<section id="MembershipCards-{{ section.id }}" class="membership-cards">
+  <div class="page-width">
+    <div class="membership-cards__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="membership-cards__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="membership-cards__description rte">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- liquid
+      assign claimed_app_ids = ''
+      assign order_pair_index = 0
+    -%}
+
+    <div class="membership-cards__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'product_card' -%}
+            {%- liquid
+              assign card_product = block.settings.product
+              assign button_label = block.settings.button_label
+              assign button_link = block.settings.button_link
+              assign price_override = block.settings.price_override
+              assign price_note = block.settings.price_note
+              assign caption = block.settings.caption
+              assign badge_text = block.settings.badge_text
+              assign allow_subscription = block.settings.allow_subscription
+              if allow_subscription == nil
+                assign allow_subscription = block.settings.allow_seal
+              endif
+              assign matched_app_ids = ''
+              assign matched_app_count = 0
+              assign use_subscription = false
+              assign features_metafield = blank
+
+              if card_product != blank
+                assign features_metafield = card_product.metafields.custom.product_key_feature
+                if caption == blank
+                  assign caption_metafield = card_product.metafields.custom.product_caption
+                  if caption_metafield != blank
+                    assign caption = caption_metafield.value | default: caption_metafield
+                  endif
+                endif
+                if button_link == blank
+                  assign button_link = card_product.url
+                endif
+                if button_label == blank
+                  assign button_label = 'Book Now'
+                endif
+              endif
+            -%}
+
+            {%- if card_product != blank -%}
+              {%- unless allow_subscription == false -%}
+                {%- assign use_subscription = true -%}
+
+                {%- for app_block in section.blocks -%}
+                  {%- if app_block.type == '@app' -%}
+                    {%- assign app_product = app_block.settings.product -%}
+                    {%- if app_product != blank -%}
+                      {%- if app_product.id == card_product.id or app_product.handle == card_product.handle -%}
+                        {%- assign matched_app_count = matched_app_count | plus: 1 -%}
+                        {%- assign matched_app_ids = matched_app_ids | append: app_block.id | append: ',' -%}
+                        {%- assign claimed_app_ids = claimed_app_ids | append: app_block.id | append: ',' -%}
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- if matched_app_count == 0 -%}
+                  {%- assign current_unpaired = 0 -%}
+                  {%- for app_block in section.blocks -%}
+                    {%- if app_block.type == '@app' -%}
+                      {%- assign app_product = app_block.settings.product -%}
+                      {%- assign app_has_card_match = false -%}
+                      {%- if app_product != blank -%}
+                        {%- for card_block in section.blocks -%}
+                          {%- if card_block.type == 'product_card' and card_block.settings.product != blank -%}
+                            {%- if card_block.settings.product.id == app_product.id or card_block.settings.product.handle == app_product.handle -%}
+                              {%- assign app_has_card_match = true -%}
+                              {%- break -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endif -%}
+                      {%- unless app_has_card_match -%}
+                        {%- assign claimed_needle = app_block.id | append: ',' -%}
+                        {%- unless claimed_app_ids contains claimed_needle -%}
+                          {%- if current_unpaired == order_pair_index -%}
+                            {%- assign matched_app_count = matched_app_count | plus: 1 -%}
+                            {%- assign matched_app_ids = matched_app_ids | append: app_block.id | append: ',' -%}
+                            {%- assign claimed_app_ids = claimed_app_ids | append: app_block.id | append: ',' -%}
+                            {%- break -%}
+                          {%- endif -%}
+                          {%- assign current_unpaired = current_unpaired | plus: 1 -%}
+                        {%- endunless -%}
+                      {%- endunless -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- assign order_pair_index = order_pair_index | plus: 1 -%}
+                {%- endif -%}
+              {%- endunless -%}
+
+              <article
+                class="membership-cards__card{% if use_subscription %} membership-cards__card--subscribe{% endif %}"
+                data-mc-product-id="{{ card_product.id }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- if badge_text != blank -%}
+                  <span class="membership-cards__badge">{{ badge_text | escape }}</span>
+                {%- endif -%}
+
+                {%- if caption != blank -%}
+                  <p class="membership-cards__eyebrow">{{ caption | escape }}</p>
+                {%- endif -%}
+
+                <h3 class="membership-cards__title">{{ card_product.title | escape }}</h3>
+
+                <div class="membership-cards__price-row">
+                  <span class="membership-cards__price">
+                    {%- if price_override != blank -%}
+                      {{ price_override | escape }}
+                    {%- else -%}
+                      {{ card_product.price | money }}
+                    {%- endif -%}
+                  </span>
+                  {%- if price_note != blank -%}
+                    <span class="visually-hidden">{{ price_note | escape }}</span>
+                  {%- endif -%}
+                </div>
+
+                {%- if features_metafield != blank and features_metafield.value != blank -%}
+                  <ul class="membership-cards__features">
+                    {%- if features_metafield.type contains 'list.' -%}
+                      {%- for feature in features_metafield.value -%}
+                        {%- assign feature_text = feature | strip -%}
+                        {%- if feature_text != blank -%}
+                          <li class="membership-cards__feature">
+                            {{ check_icon }}
+                            <span>{{ feature_text | escape }}</span>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- else -%}
+                      {%- assign feature_raw = features_metafield | metafield_text | default: features_metafield.value -%}
+                      {%- capture feature_lines -%}{{- feature_raw | newline_to_br -}}{%- endcapture -%}
+                      {%- assign features = feature_lines | split: '<br />' -%}
+                      {%- if features.size == 1 -%}
+                        {%- assign features = feature_lines | split: '<br/>' -%}
+                      {%- endif -%}
+                      {%- for feature in features -%}
+                        {%- assign feature_text = feature | strip_html | strip -%}
+                        {%- if feature_text != blank -%}
+                          <li class="membership-cards__feature">
+                            {{ check_icon }}
+                            <span>{{ feature_text | escape }}</span>
+                          </li>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </ul>
+                {%- elsif block.settings.features != blank -%}
+                  <ul class="membership-cards__features">
+                    {%- assign manual_features = block.settings.features | newline_to_br | split: '<br />' -%}
+                    {%- for feature in manual_features -%}
+                      {%- assign feature_text = feature | strip_html | strip -%}
+                      {%- if feature_text != blank -%}
+                        <li class="membership-cards__feature">
+                          {{ check_icon }}
+                          <span>{{ feature_text | escape }}</span>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+
+                <div class="membership-cards__subscribe">
+                  {%- if use_subscription -%}
+                    {%- assign card_form_id = 'MembershipCardForm-' | append: section.id | append: '-' | append: block.id -%}
+                    {%- assign card_variant = card_product.selected_or_first_available_variant -%}
+                    {%- liquid
+                      assign default_selling_plan = blank
+
+                      for allocation in card_variant.selling_plan_allocations
+                        assign plan_name = allocation.selling_plan.name | downcase
+                        if default_selling_plan == blank
+                          assign default_selling_plan = allocation.selling_plan.id
+                        endif
+                        if plan_name contains 'month' or plan_name contains 'subscribe' or plan_name contains 'subscription' or plan_name contains 'member'
+                          assign default_selling_plan = allocation.selling_plan.id
+                          break
+                        endif
+                      endfor
+
+                      if default_selling_plan == blank and card_product.selling_plan_groups.size > 0
+                        for group in card_product.selling_plan_groups
+                          for plan in group.selling_plans
+                            if default_selling_plan == blank
+                              assign default_selling_plan = plan.id
+                            endif
+                          endfor
+                        endfor
+                      endif
+                    -%}
+                    {% form 'product', card_product, id: card_form_id, class: 'membership-cards__subscribe-form', novalidate: 'novalidate' %}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ card_variant.id }}"
+                        data-mc-locked-id="{{ card_variant.id }}"
+                        data-mc-product-id="{{ card_product.id }}"
+                        {% if card_variant.available == false %}disabled{% endif %}
+                      >
+                      <input type="hidden" name="quantity" value="1">
+                      {%- if default_selling_plan != blank -%}
+                        <input
+                          type="hidden"
+                          name="selling_plan"
+                          value="{{ default_selling_plan }}"
+                          data-mc-plan-fallback
+                          data-mc-default-plan="{{ default_selling_plan }}"
+                        >
+                      {%- endif -%}
+
+                      <div class="membership-cards__subscribe-widget" data-mc-appstle-for="{{ card_product.id }}">
+                        {%- assign membership_card_block = block -%}
+                        {%- assign rendered_app = false -%}
+                        {%- for app_block in section.blocks -%}
+                          {%- if app_block.type == '@app' -%}
+                            {%- assign app_needle = app_block.id | append: ',' -%}
+                            {%- if matched_app_ids contains app_needle -%}
+                              {%- assign app_product = app_block.settings.product -%}
+                              {%- assign app_ok = false -%}
+                              {%- if app_product == blank -%}
+                                {%- assign app_ok = true -%}
+                              {%- elsif app_product.id == card_product.id or app_product.handle == card_product.handle -%}
+                                {%- assign app_ok = true -%}
+                              {%- endif -%}
+                              {%- if app_ok -%}
+                                <div
+                                  class="membership-cards__app-block"
+                                  data-mc-appstle-for="{{ card_product.id }}"
+                                  data-mc-expected-product="{{ card_product.id }}"
+                                  aria-hidden="true"
+                                >
+                                  {%- assign block = app_block -%}
+                                  {% render block %}
+                                  {%- assign block = membership_card_block -%}
+                                </div>
+                                {%- assign rendered_app = true -%}
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      {%- if button_label != blank -%}
+                        {%- assign cta_label = button_label -%}
+                        {%- assign cta_label_downcase = button_label | downcase -%}
+                        {%- if cta_label_downcase contains 'book as member' -%}
+                          {%- assign cta_label = 'Book Now' -%}
+                        {%- endif -%}
+                        <button
+                          type="submit"
+                          name="add"
+                          class="membership-cards__btn"
+                          data-mc-cta
+                          {% if button_link != blank %}data-mc-calendar="{{ button_link }}"{% endif %}
+                          {% if card_variant.available == false %}disabled{% endif %}
+                        >
+                          {{ cta_label | escape }}
+                        </button>
+                      {%- endif -%}
+                    {% endform %}
+                  {%- elsif button_label != blank -%}
+                    <a
+                      class="membership-cards__btn"
+                      data-mc-cta
+                      {% if button_link != blank %}href="{{ button_link }}"{% endif %}
+                      {% if card_product.selected_or_first_available_variant.available == false %}
+                        aria-disabled="true"
+                      {% endif %}
+                    >
+                      {{ button_label | escape }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </article>
+            {%- else -%}
+              <article class="membership-cards__card" {{ block.shopify_attributes }}>
+                <p class="membership-cards__eyebrow">Select a product</p>
+                <h3 class="membership-cards__title">Membership card</h3>
+              </article>
+            {%- endif -%}
+
+          {%- when '@app' -%}
+            {%- assign app_needle = block.id | append: ',' -%}
+            {%- unless claimed_app_ids contains app_needle -%}
+              <div class="membership-cards__app-orphan" {{ block.shopify_attributes }} aria-hidden="true">
+                {% render block %}
+              </div>
+            {%- endunless -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if section.settings.show_banner -%}
+    <div class="membership-cards__banner">
+      <div class="membership-cards__banner-inner">
+        <div class="membership-cards__banner-copy">
+          {%- if section.settings.banner_heading != blank -%}
+            <h3 class="membership-cards__banner-heading">{{ section.settings.banner_heading | escape }}</h3>
+          {%- endif -%}
+          {%- if section.settings.banner_text != blank -%}
+            <p class="membership-cards__banner-text">{{ section.settings.banner_text | escape }}</p>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.banner_button_label != blank -%}
+          <a
+            class="membership-cards__banner-btn"
+            {% if section.settings.banner_button_link != blank %}
+              href="{{ section.settings.banner_button_link }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            {{ section.settings.banner_button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('MembershipCards-{{ section.id }}');
+    if (!root) return;
+
+    function lockVariantIds() {
+      root.querySelectorAll('form.membership-cards__subscribe-form').forEach(function (form) {
+        var locked = form.querySelector('[data-mc-locked-id]');
+        if (!locked) return;
+        var lockedId = locked.getAttribute('data-mc-locked-id');
+        if (!lockedId) return;
+
+        /* Keep our variant id authoritative — Appstle often overwrites name="id" */
+        locked.value = lockedId;
+        locked.disabled = false;
+
+        form.querySelectorAll('input[name="id"]').forEach(function (input) {
+          if (input === locked) return;
+          if (String(input.value) !== String(lockedId)) {
+            input.disabled = true;
+            input.setAttribute('data-mc-stripped-id', input.value);
+            input.removeAttribute('name');
+          }
+        });
+      });
+    }
+
+    function hideSubscriptionAppUi() {
+      /* Hide any leftover subscription option UIs (Liquid or app-injected) */
+      root.querySelectorAll('.membership-cards__plans, .membership-cards__app-block, .membership-cards__app-orphan').forEach(function (el) {
+        el.style.setProperty('display', 'none', 'important');
+        el.setAttribute('aria-hidden', 'true');
+      });
+
+      root.querySelectorAll('.shopify-block, .shopify-app-block, [class*="appstle"], [id*="appstle"]').forEach(function (el) {
+        if (/float-hub-calendar|Float-hub-calendar/i.test((el.className || '') + ' ' + (el.id || ''))) return;
+        if (el.querySelector && el.querySelector('[class*="float-hub-calendar"], [class*="Float-hub-calendar"]')) {
+          Array.prototype.forEach.call(el.children || [], function (child) {
+            if (/float-hub-calendar|Float-hub-calendar/i.test(child.className || '')) return;
+            if (child.querySelector && child.querySelector('[class*="float-hub-calendar"], [class*="Float-hub-calendar"]')) return;
+            child.style.setProperty('display', 'none', 'important');
+          });
+          return;
+        }
+        if (el.closest && el.closest('[class*="float-hub-calendar"]')) return;
+        el.style.setProperty('display', 'none', 'important');
+        el.setAttribute('aria-hidden', 'true');
+      });
+
+      /* Keep only our locked selling_plan hidden input active */
+      root.querySelectorAll('form.membership-cards__subscribe-form').forEach(function (form) {
+        var fallback = form.querySelector('[data-mc-plan-fallback]');
+        form.querySelectorAll('input[name="selling_plan"]').forEach(function (input) {
+          if (input === fallback) {
+            input.disabled = false;
+            input.setAttribute('name', 'selling_plan');
+            return;
+          }
+          input.disabled = true;
+          input.removeAttribute('name');
+          input.setAttribute('data-mc-appstle-plan', input.value || '');
+        });
+        if (fallback && !fallback.getAttribute('name')) {
+          fallback.setAttribute('name', 'selling_plan');
+          fallback.disabled = false;
+        }
+      });
+    }
+
+    function runMaintenance() {
+      lockVariantIds();
+      hideSubscriptionAppUi();
+    }
+
+    runMaintenance();
+    setTimeout(runMaintenance, 400);
+    setTimeout(runMaintenance, 1200);
+    setTimeout(runMaintenance, 2500);
+
+    document.addEventListener('AppstleSubscription:SubscriptionWidget:widgetInitialised', runMaintenance);
+    document.addEventListener('appstle:subscription-widget:loaded', runMaintenance);
+    document.addEventListener('appstle_widget_updated', runMaintenance);
+
+    if (window.MutationObserver) {
+      var timer = null;
+      var observer = new MutationObserver(function () {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(runMaintenance, 50);
+      });
+      observer.observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['value', 'name', 'disabled'] });
+    }
+
+    /* Do not intercept Float-hub-calendar / Appstle buttons — only .membership-cards__btn is hidden */
+    root.addEventListener('submit', function (event) {
+      var form = event.target.closest('form.membership-cards__subscribe-form');
+      if (!form || !root.contains(form)) return;
+
+      var submitter = event.submitter;
+      if (submitter) {
+        var cls = (submitter.className || '') + '';
+        var id = (submitter.id || '') + '';
+        if (/float-hub-calendar|Float-hub-calendar|cowlendar|appstle/i.test(cls + ' ' + id)) {
+          lockVariantIds();
+          return;
+        }
+        if (submitter.classList.contains('membership-cards__btn') || submitter.hasAttribute('data-mc-cta')) {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
+      }
+
+      lockVariantIds();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Membership cards",
+  "tag": "section",
+  "class": "section-membership-cards",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Flexi-Float Memberships"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 24,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 32
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Join Float Hub for the best rates, free session upgrades, and flexible rolling memberships with no long-term commitment.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below header",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Cards per row (desktop)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 900,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content width",
+      "default": 1120
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Card typography"
+    },
+    {
+      "type": "range",
+      "id": "caption_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Caption size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "min": 24,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "Price size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "feature_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border",
+      "default": "#23A3DF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text",
+      "default": "#C8CED8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent / ticks",
+      "default": "#23A3DF"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Badge background",
+      "default": "#23A3DF"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#061018"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#23A3DF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Bottom banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Show bottom banner",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "banner_heading",
+      "label": "Banner heading",
+      "default": "Become a member"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_text",
+      "label": "Banner text",
+      "default": "Unlock member rates, free upgrades, and flexible floating every month."
+    },
+    {
+      "type": "text",
+      "id": "banner_button_label",
+      "label": "Banner button label",
+      "default": "CLICK FOR MEMBERSHIPS"
+    },
+    {
+      "type": "url",
+      "id": "banner_button_link",
+      "label": "Banner button link"
+    },
+    {
+      "type": "color",
+      "id": "banner_background",
+      "label": "Banner background",
+      "default": "#23A3DF"
+    },
+    {
+      "type": "color",
+      "id": "banner_text_color",
+      "label": "Banner text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "banner_button_background",
+      "label": "Banner button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "banner_button_text_color",
+      "label": "Banner button text",
+      "default": "#061018"
+    },
+    {
+      "type": "range",
+      "id": "banner_heading_size",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Banner heading size",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "banner_text_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Banner text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "banner_button_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Banner button size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "banner_spacing",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Space above banner",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "product_card",
+      "name": "Membership card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Uses product title, price, and custom.product_key_feature when available."
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "default": "Most Popular"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "per month | Rolling agreement",
+          "info": "Leave blank to use product caption metafield."
+        },
+        {
+          "type": "text",
+          "id": "price_override",
+          "label": "Price override"
+        },
+        {
+          "type": "text",
+          "id": "price_note",
+          "label": "Price note"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (fallback)",
+          "info": "One feature per line. Used only if product metafield custom.product_key_feature is empty."
+        },
+        {
+          "type": "header",
+          "content": "Appstle subscription"
+        },
+        {
+          "type": "paragraph",
+          "content": "Show Appstle / subscription options on this card. Add block → Apps → Appstle (same product as the card). Enable Appstle in Theme settings → App embeds. Book Now adds the selected plan to cart, then opens the calendar link."
+        },
+        {
+          "type": "checkbox",
+          "id": "allow_subscription",
+          "label": "Show Appstle on this card",
+          "default": true,
+          "info": "Shows subscription options and enables Book Now with the selected selling plan."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Book Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link (calendar)",
+          "info": "Calendar URL after add-to-cart. Set this for each membership product."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Membership cards",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Welcome Bonus",
+            "caption": "per month | Rolling agreement",
+            "button_label": "Book Now",
+            "allow_subscription": true,
+            "features": "Includes 1 x 60-Min Float per month\nFree 90-minute session upgrades\nFlexible rolling agreement\nCancel anytime"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Most Popular",
+            "caption": "per month | Rolling agreement",
+            "button_label": "Book Now",
+            "allow_subscription": true,
+            "features": "Includes 2 x 60-Min Float per month\nFree 90-minute session upgrades\nFlexible rolling agreement\nCancel anytime"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

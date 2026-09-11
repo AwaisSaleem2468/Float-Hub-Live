@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_section_innerpage_banner_iEyrUn": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/Float-Hub-Float-Center-12-London.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 30,
+        "section_height": 50,
+        "section_height_mobile": 60,
+        "show_badge": false,
+        "badge_text": "",
+        "eyebrow": "2026 Updated Edition",
+        "eyebrow_size": 13,
+        "heading": "The Ultimate Guide to",
+        "heading_accent": "Sensory Deprivation Tanks",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "description": "",
+        "description_size_desktop": 16,
+        "description_size_mobile": 14,
+        "button_label_1": "",
+        "button_link_1": "",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "center",
+        "content_position_vertical": "middle",
+        "text_alignment": "center",
+        "content_width": 1400
+      }
+    },
+    "rich_text_b89MYR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yeFU9f": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is a Sensory Deprivation Tank?"
+          }
+        },
+        "text_pRccyE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What is a Sensory Deprivation Tank? This specialized, lightproof, and soundproof environment is filled with 1,200 litres of pristine water and over 500kg of premium Epsom salts. This creates a hyper-buoyant space where you float effortlessly, regardless of your body type. However, not all sensory deprivation tanks in London are created equal.</p><p><a href=\"/pages/booking\" target=\"_blank\" title=\"Booking\">Book your session today</a> to experience the ultimate London reset.</p><p>At Float Hub Shoreditch, we use world-class pods featuring:</p><ul><li><strong>Zero-Gravity Buoyancy:</strong> Achieving total spinal decompression and joint relief.</li><li><strong>Oversize: </strong>All of our pods are large enough for two, and the only pods in London you step (rather than crouch & clamber) into.</li><li><strong>Environmental Control:</strong> You have full control over the internal pod lighting. While we manage the high-fidelity audio system for you, we can select from a range of curated acoustic journeys – from meditative soundscapes to total silence – to suit your session goals.</li><li><strong>1.5 ATA Compatibility:</strong> We are the only Shoreditch centre offering synergistic recovery with our new <a href=\"/pages/hbot-london\" target=\"_blank\" title=\"HBOT London\">London Oxygen Suite.</a></li></ul>"
+          }
+        },
+        "button_CWCY4h": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Session",
+            "button_link": "shopify://pages/booking",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yeFU9f",
+        "text_pRccyE",
+        "button_CWCY4h"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#121a27",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_DiY63V": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TfKazJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Gold Standard of Hygiene: Our 100% Filtration Guarantee"
+          }
+        },
+        "text_Unqhjy": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"https://floathub.co.uk/\"><strong>Float Hub</strong></a><strong> is the only London centre with a 100% filtration guarantee between every single guest. </strong>Most pods, while offering a sterile environment with hydrogen peroxide & high salt levels, only employ a surface skimmer to remove detritus.</p><p>Our state-of-the-art technology ensures that 100% of the water volume is filtered <strong>three times</strong> before your session begins.</p><ol><li><strong>Oversized Pod Design:</strong> We don’t do cramped spaces. Every single one of our custom pods is explicitly engineered to be oversized, entirely eliminating the claustrophobic feel of traditional tanks to give your body true room to drift.</li><li><strong>Industrial-Grade Micron Filtration:</strong> We trap particles as small as 1 micron (standard pool filters often miss anything under 20 microns).</li><li><strong>High-Intensity UV Sterilisation:</strong> Every drop of water passes through powerful Ultraviolet light, neutralizing 99.9% of bacteria and viruses. This UV light reacts with the safe levels of hydrogen peroxide we maintain, meaning the combined sanitising effect is many times stronger than systems without both.</li><li><strong>Natural Mineral Sterility:</strong> The 30% Epsom salt concentration is naturally hostile to pathogens, but we supplement this with automated pH and disinfectant monitoring to ensure laboratory-grade water purity.</li><li><strong>White Light Standard: </strong>We are the only large centre in London that chooses white light either side of sessions, because we are entirely confident in the clarity and extreme cleanliness of our solution. Some other centres use low blue lighting in their pods, making it harder to see impurities and impossible to detect discolouration—either by customers or their own staff performing quality checks.</li></ol>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TfKazJ",
+        "text_Unqhjy"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 40,
+        "background_color": "#030915",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_EeCNyk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_y7yF7G": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Science-Backed Benefits for 2026"
+          }
+        },
+        "text_wHt8yz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Recent 2025-2026 studies continue to validate what our clients feel every day. Floating isn’t just “relaxing”—it’s biological optimization.</p><h4><strong>1. Anxiety & Stress Management</strong></h4><p>Clinical research shows that Floatation-REST significantly reduces <strong>cortisol</strong> (the stress hormone). For those seeking deeper mental health support, we often recommend combining floats with <a href=\"https://floathub.co.uk/how-full-body-red-light-therapy-can-help-with-anxiety/\" target=\"_blank\">Red Light Therapy for Anxiety</a> to reset the autonomic nervous system and lower “state anxiety.”</p><p>The absolute silence of the tank cuts out external stimuli, giving an overstimulated nervous system a much-needed chance to reset. This sensory reset has proven highly effective for neurodivergent minds; explore how the tank can assist with sensory processing in our article on <a href=\"https://floathub.co.uk/adhd-and-float-therapy-london/\" target=\"_blank\">ADHD and float therapy</a>.</p><h4><strong>2. Athletic Recovery & Physical Repair</strong></h4><p>Lactic acid clearing happens twice as fast inside the tank due to improved blood circulation and complete muscle decompression. For athletes looking to dramatically cut down down-time between heavy training blocks, you can read our clinical breakdown on accelerating <a href=\"https://floathub.co.uk/doms-recovery-london/\" target=\"_blank\">DOMS recovery in London</a>.</p><p>The high magnesium content in the water is absorbed through the skin, aiding in muscle protein synthesis and reducing inflammation. To explore the deep physiological data behind these shifts, read more on the <a href=\"https://floathub.co.uk/what-are-the-benefits-of-floating/\" target=\"_blank\">proven science of float therapy</a>.</p><h4><strong>3. Enhanced Sleep Quality & Circadian Reset</strong></h4><p>Slowing down your brain waves into a deep Theta state prepares the mind for deep REM cycles long after you leave the center. If you are struggling with disrupted sleep patterns or sleepless nights, learn about the long-term benefits in our guide to <a href=\"https://floathub.co.uk/float-therapy-and-sleep/\" target=\"_blank\">float therapy and sleep</a>.</p><p>One hour in a pod can feel as restorative as 4-6 hours of deep sleep. By dampening the “noise” of the modern world, your brain can reset its internal clock, helping with insomnia and jet lag. Many professionals use our suites specifically for <a href=\"https://floathub.co.uk/float-therapy-london-burnout/\">recovery from burnout</a> caused by the intensity of London commuting.</p><h4>4. Pain Relief</h4><p>The high concentration of Epsom salts not only keeps you buoyant but is absorbed transdermally to alleviate painful, inflamed joints. Many individuals dealing with persistent discomfort find lasting relief here; read more about managing long-term symptoms in our detailed review of <a href=\"https://floathub.co.uk/float-therapy-for-chronic-pain-relief-londoners-find-solace-in-the-tank/\" target=\"_blank\">float therapy for chronic pain relief</a>.</p><p>By removing the constant strain of gravity, floating allows the muscles surrounding your spine to fully relax. For a deeper look at how weightlessness relieves lumbar pressure, see our clinical guide on how <a href=\"https://floathub.co.uk/does-float-therapy-reduce-back-pain/\" target=\"_blank\">float therapy reduces back pain.</a></p><h4>5. Nervous System Support</h4><p>Floating triggers a shift from the sympathetic ‘fight-or-flight’ state into the parasympathetic nervous system, lowering your heart rate and blood pressure. This process is deeply connected to resetting your body’s stress response; find out more about the biological mechanisms in our post on <a href=\"https://floathub.co.uk/vagus-nerve-stimulation-london/\" target=\"_blank\">vagus nerve stimulation</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_y7yF7G",
+        "text_wHt8yz"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#121a27",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_nTbELB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tjhk3t": {
+          "type": "heading",
+          "settings": {
+            "heading": "The “Theta State”: Why Your Brain Needs a “Dark Mode”"
+          }
+        },
+        "text_zQiLtx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>During a typical 60-minute session, your brain waves transition from active Beta waves to relaxed Alpha waves, eventually settling into the <strong>Theta state</strong>. This is the elusive “twilight” zone usually only accessible during deep REM sleep or years of meditative practice.</p><p>In the Theta state, the two hemispheres of your brain communicate more effectively. This leads to:</p><ul><li><strong>Enhanced Problem Solving:</strong> Many London professionals use the tank to “work through” complex business challenges.</li><li><strong>Emotional Regulation:</strong> A profound sense of detachment that allows you to process stress without the typical physical “fight or flight” response.</li><li><strong>The “Afterglow”:</strong> The mental clarity and calm you feel doesn’t end when you leave the tank; the “Post-Float Afterglow” typically lasts for 24–48 hours.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tjhk3t",
+        "text_zQiLtx"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 40,
+        "background_color": "#030915",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_jtrkYk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TE7C6X": {
+          "type": "heading",
+          "settings": {
+            "heading": "Floating vs. Meditation: Why the Tank is Faster"
+          }
+        },
+        "text_cVkPnW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Traditional meditation is difficult because of physical distractions: a sore back, a noisy street, or the itch you can’t scratch. Sensory deprivation is “meditation on training wheels.” By removing the body’s input to the brain, your mind has no choice but to settle. It is the fastest route to a meditative state available in the modern world.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TE7C6X",
+        "text_cVkPnW"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#121a27",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_gd49ny": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RMqtX7": {
+          "type": "heading",
+          "settings": {
+            "heading": "How to Prepare for Your First Float"
+          }
+        },
+        "text_U3LRXe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To get the most out of your session, follow these 2026 “best practice” protocols:</p><ul><li><strong>Skip the Coffee:</strong> Avoid caffeine 3–4 hours before. You want your heart rate low to enter the Theta state quickly.</li><li><strong>Don’t Shave:</strong> Epsom salt is a natural mineral; it will sting fresh cuts or newly shaved skin!</li><li><strong>Eat Lightly:</strong> A heavy meal can make you hyper-aware of your digestion. A light snack 90 minutes before is ideal.</li><li><strong>Arrive Early:</strong> For your first visit, arrive 15 minutes early for a full tech walkthrough. For a more detailed breakdown of our costs and membership options, check our <a href=\"/pages/pricing\" target=\"_blank\" title=\"Pricing\">Pricing Page.</a></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RMqtX7",
+        "text_U3LRXe"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 40,
+        "background_color": "#030915",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_LjfMf6": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Hwmef8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": " Is it claustrophobic?",
+            "icon": "none",
+            "row_content": "<p>Not at all. Our pods are the most spacious in London, and you are in total control. You can leave the lid open or the lights on until you feel comfortable. Most guests find that once they settle in, the “boundaries” of the tank seem to disappear entirely.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NDWKUJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is the water clean?",
+            "icon": "none",
+            "row_content": "<p>Our water is more sterile than a swimming pool. As the only London centre with a 100% filtration guarantee, we ensure three full cycles of UV and micron filtration between every guest.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6bDWer": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float with a partner?",
+            "icon": "none",
+            "row_content": "<p>Yes! We offer a dedicated<a href=\"https://floathub.co.uk/floating/couples-float-london/\" target=\"_blank\">Couples Float London</a>experience where you can share the journey in a private, specially designed suite</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bHVxk7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What do I need to bring?",
+            "icon": "none",
+            "row_content": "<p>We provide everything: premium towels, earplugs, and organic hair and body care products. Most people prefer to float nude to remove all sensory input, so a swimsuit is optional.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Hwmef8",
+        "collapsible_row_NDWKUJ",
+        "collapsible_row_6bDWer",
+        "collapsible_row_bHVxk7"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Question",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_innerpage_banner_iEyrUn",
+    "rich_text_b89MYR",
+    "rich_text_DiY63V",
+    "rich_text_EeCNyk",
+    "rich_text_nTbELB",
+    "rich_text_jtrkYk",
+    "rich_text_gd49ny",
+    "collapsible_content_LjfMf6"
+  ]
+}

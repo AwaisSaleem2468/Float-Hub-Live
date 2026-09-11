@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_section_newsletter_QfkJAW": {
+      "type": "custom-section-newsletter",
+      "name": "Custom Newsletter",
+      "settings": {
+        "eyebrow": "STAY IN THE LOOP",
+        "eyebrow_size": 13,
+        "heading": "Ready to discover who you will become with float therapy?",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "description": "<p>Join Our Newsletter to get float tips, member offers, and wellness updates delivered to your inbox.</p>",
+        "description_size": 16,
+        "text_max_width": 580,
+        "content_spacing": 32,
+        "email_placeholder": "Enter your email",
+        "button_label": "Subscribe",
+        "success_message": "Thanks for subscribing!",
+        "form_width": 620,
+        "form_gap": 12,
+        "input_size": 16,
+        "button_size": 16,
+        "input_radius": 10,
+        "button_radius": 10,
+        "background_color": "#0f1827",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#0daaef",
+        "input_background": "#243044",
+        "input_border_color": "#243044",
+        "input_text_color": "#c8ced8",
+        "content_width": 900,
+        "padding_top": 80,
+        "padding_bottom": 32
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_kmjJTL": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_MNGAMD": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick Links",
+            "menu": "awa-footer-quick-link"
+          }
+        },
+        "link_list_LeR8qV": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "awa-footer-support"
+          }
+        },
+        "text_4PCCci": {
+          "type": "text",
+          "settings": {
+            "heading": "Float Hum",
+            "subtext": "<p><strong>Address : </strong>346 Old Street, Lower Ground Floor, London, EC1V 9NQ<br/><strong>Phone #</strong> : <a href=\"tel:+442012345678\">+44 20 1234 5678</a><strong><br/>Email: </strong><a href=\"mailto:team@floathub.co.uk\">team@floathub.co.uk</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_kmjJTL",
+        "link_list_MNGAMD",
+        "link_list_LeR8qV",
+        "text_4PCCci"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "custom_section_newsletter_QfkJAW",
+    "footer"
+  ]
+}

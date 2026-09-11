@@ -1,0 +1,1124 @@
+{% style %}
+  #FloatTips-{{ section.id }} {
+    --ft-bg: {{ section.settings.bg_color }};
+    --ft-text: {{ section.settings.heading_color }};
+    --ft-muted: {{ section.settings.body_color }};
+    --ft-accent: {{ section.settings.accent_color }};
+    --ft-icon: {{ section.settings.icon_color }};
+    --ft-card: {{ section.settings.card_bg }};
+    --ft-card-border: {{ section.settings.card_border }};
+    background-color: var(--ft-bg);
+    color: var(--ft-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    overflow-x: hidden;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__header {
+    margin: 0 0 {{ section.settings.header_gap }}px;
+    max-width: 56rem;
+    text-align: {{ section.settings.title_align | default: 'center' }};
+    {% if section.settings.title_align == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% elsif section.settings.title_align == 'left' %}
+      margin-left: 0;
+      margin-right: auto;
+    {% else %}
+      margin-left: auto;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__heading {
+    margin: 0;
+    color: var(--ft-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.heading_size_desktop }}px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__heading-accent {
+    color: var(--ft-accent);
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__description {
+    margin: 1rem 0 0;
+    color: var(--ft-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.description_size }}px;
+    line-height: 1.6;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__description p {
+    margin: 0;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__description p + p {
+    margin-top: 0.65rem;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__slider {
+    position: relative;
+    width: 100%;
+    --ft-slide-gap: {{ section.settings.slide_gap }}px;
+    --ft-grid-gap: {{ section.settings.column_gap }}px;
+    --ft-slides: 1.3;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__viewport {
+    width: 100%;
+    overflow: visible;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__track {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop | default: 3 }}, minmax(0, 1fr));
+    gap: var(--ft-grid-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__slide {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__item {
+    display: grid;
+    grid-template-columns: {{ section.settings.icon_size | plus: 8 }}px minmax(0, 1fr);
+    gap: 0.95rem 1.1rem;
+    align-items: start;
+    min-height: {{ section.settings.card_min_height }}px;
+    height: 100%;
+    padding: {{ section.settings.card_padding }}px;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--ft-card);
+    border: 1px solid var(--ft-card-border);
+    text-align: left;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__item--no-icon {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__item:hover {
+    border-color: color-mix(in srgb, var(--ft-accent) 45%, var(--ft-card-border));
+    transform: translateY(-2px);
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    color: var(--ft-icon);
+    margin-top: 0.15rem;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__icon .svg-wrapper {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    color: inherit;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__icon .svg-wrapper svg,
+  #FloatTips-{{ section.id }} .float-tips__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__icon .svg-wrapper svg,
+  #FloatTips-{{ section.id }} .float-tips__icon .svg-wrapper svg path {
+    fill: currentColor;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__content {
+    min-width: 0;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__title {
+    margin: 0 0 0.55rem;
+    color: var(--ft-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.tip_title_size }}px;
+    line-height: 1.25;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__text {
+    margin: 0;
+    color: var(--ft-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.tip_text_size }}px;
+    line-height: 1.55;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__text p {
+    margin: 0;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__text p + p {
+    margin-top: 0.5rem;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__actions {
+    display: flex;
+    {% case section.settings.button_alignment %}
+      {% when 'left' %}
+        justify-content: flex-start;
+      {% when 'center' %}
+        justify-content: center;
+      {% else %}
+        justify-content: flex-end;
+    {% endcase %}
+    margin-top: {{ section.settings.button_gap }}px;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.2rem;
+    padding: 0.95rem 1.9rem;
+    border-radius: {{ section.settings.button_radius }}px;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #FloatTips-{{ section.id }} .float-tips__btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  @media screen and (max-width: 989px) {
+    #FloatTips-{{ section.id }} .float-tips__heading {
+      font-size: {{ section.settings.heading_size_tablet }}px;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__track {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #FloatTips-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__viewport {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      container-type: inline-size;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__track {
+      display: flex;
+      grid-template-columns: none;
+      gap: var(--ft-slide-gap);
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__slide {
+      flex: 0 0 calc((100% - ((var(--ft-slides) - 1) * var(--ft-slide-gap))) / var(--ft-slides));
+      flex: 0 0 calc((100cqw - ((var(--ft-slides) - 1) * var(--ft-slide-gap))) / var(--ft-slides));
+      scroll-snap-align: start;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__title {
+      font-size: {{ section.settings.tip_title_size_mobile }}px;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__text {
+      font-size: {{ section.settings.tip_text_size_mobile }}px;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__item {
+      min-height: 0;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__item:hover {
+      transform: none;
+    }
+
+    #FloatTips-{{ section.id }} .float-tips__actions {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="FloatTips-{{ section.id }}"
+  class="float-tips"
+  data-autoplay="{{ section.settings.enable_autoplay }}"
+  data-autoplay-speed="{{ section.settings.autoplay_speed }}"
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank or section.settings.heading_accent != blank or section.settings.description != blank -%}
+      <div class="float-tips__header">
+        {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+          <h2 class="float-tips__heading">
+            {%- if section.settings.heading != blank -%}
+              <span>{{ section.settings.heading | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_accent != blank -%}
+              {%- if section.settings.heading != blank %} {% endif -%}
+              <span class="float-tips__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="float-tips__description rte">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="float-tips__slider">
+        <div class="float-tips__viewport" data-float-tips-viewport>
+          <ul class="float-tips__track" data-float-tips-track role="list">
+            {%- for block in section.blocks -%}
+              <li class="float-tips__slide" {{ block.shopify_attributes }}>
+                {%- liquid
+                  assign tip_icon = block.settings.icon
+                  case tip_icon
+                    when 'coffee'
+                      assign tip_icon = 'lightning_bolt'
+                    when 'water'
+                      assign tip_icon = 'snowflake'
+                    when 'face'
+                      assign tip_icon = 'silhouette'
+                    when 'swim'
+                      assign tip_icon = 'pants'
+                    when 'clock'
+                      assign tip_icon = 'stopwatch'
+                    when 'breath'
+                      assign tip_icon = 'return'
+                    when 'arm'
+                      assign tip_icon = 'shirt'
+                  endcase
+
+                  assign tip_has_icon = false
+                  unless section.settings.show_icons == false
+                    if block.settings.custom_icon != blank
+                      assign tip_has_icon = true
+                    elsif tip_icon != blank and tip_icon != 'none'
+                      assign tip_has_icon = true
+                    endif
+                  endunless
+                -%}
+                <div class="float-tips__item{% unless tip_has_icon %} float-tips__item--no-icon{% endunless %}">
+                  {%- if tip_has_icon -%}
+                    <div class="float-tips__icon">
+                      {%- if block.settings.custom_icon != blank -%}
+                        {{
+                          block.settings.custom_icon
+                          | image_url: width: 120
+                          | image_tag: loading: 'lazy', widths: '40, 60, 80, 120', sizes: '40px', alt: ''
+                        }}
+                      {%- else -%}
+                        {% render 'icon-accordion', icon: tip_icon %}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+
+                  <div class="float-tips__content">
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="float-tips__title">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.text != blank -%}
+                      <div class="float-tips__text">{{ block.settings.text }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="float-tips__actions">
+        <a
+          class="float-tips__btn"
+          href="{{ section.settings.button_link | default: '#' }}"
+          {% if section.settings.button_link == blank %}aria-disabled="true"{% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('FloatTips-{{ section.id }}');
+    if (!root) return;
+
+    var viewport = root.querySelector('[data-float-tips-viewport]');
+    var track = root.querySelector('[data-float-tips-track]');
+    var slides = track ? Array.prototype.slice.call(track.children) : [];
+    if (!viewport || !track || !slides.length) return;
+
+    var autoplay = root.getAttribute('data-autoplay') === 'true';
+    var speed = parseInt(root.getAttribute('data-autoplay-speed') || '5', 10) * 1000;
+    var index = 0;
+    var timer = null;
+    var mobileQuery = window.matchMedia('(max-width: 749px)');
+
+    function isMobile() {
+      return mobileQuery.matches;
+    }
+
+    function stepSize() {
+      var styles = window.getComputedStyle(track);
+      var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return slides[0].getBoundingClientRect().width + gap;
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - 1);
+    }
+
+    function goTo(nextIndex) {
+      if (!isMobile()) return;
+      index = Math.min(Math.max(nextIndex, 0), maxIndex());
+      viewport.scrollTo({ left: index * stepSize(), behavior: 'smooth' });
+    }
+
+    function next() {
+      goTo(index >= maxIndex() ? 0 : index + 1);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (!autoplay || !isMobile() || slides.length < 2) return;
+      timer = window.setInterval(next, speed);
+    }
+
+    function stopAutoplay() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    function onModeChange() {
+      stopAutoplay();
+      if (!isMobile()) {
+        viewport.scrollLeft = 0;
+        index = 0;
+        return;
+      }
+      startAutoplay();
+    }
+
+    viewport.addEventListener('pointerdown', stopAutoplay);
+    viewport.addEventListener('touchstart', stopAutoplay, { passive: true });
+    viewport.addEventListener('mouseenter', stopAutoplay);
+    viewport.addEventListener('mouseleave', function () {
+      if (isMobile()) startAutoplay();
+    });
+
+    viewport.addEventListener('scroll', function () {
+      if (!isMobile()) return;
+      var size = stepSize();
+      if (!size) return;
+      index = Math.round(viewport.scrollLeft / size);
+    }, { passive: true });
+
+    if (typeof mobileQuery.addEventListener === 'function') {
+      mobileQuery.addEventListener('change', onModeChange);
+    } else if (typeof mobileQuery.addListener === 'function') {
+      mobileQuery.addListener(onModeChange);
+    }
+
+    onModeChange();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Float Tips",
+  "tag": "section",
+  "class": "section-float-tips",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tips to improve your"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text",
+      "default": "float experience",
+      "info": "Shown in accent blue."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>A few simple tips to help you get the most from every float session.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (tablet)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 22,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (desktop)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Grid gap (desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "slide_gap",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between slides (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "min": 120,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "label": "Card min height",
+      "default": 180
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay (mobile)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Autoplay speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 16,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below heading",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card border",
+      "default": "#243041"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Tips"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons",
+      "label": "Show icons",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "tip_title_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tip title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "tip_title_size_mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tip title size (mobile)",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "tip_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Tip text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tip_text_size_mobile",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Tip text size (mobile)",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment",
+      "label": "Button alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "button_gap",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Space above button",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading / title",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tip",
+      "name": "Tip",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "apple",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
+            },
+            {
+              "value": "banana",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
+            },
+            {
+              "value": "bottle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
+            },
+            {
+              "value": "carrot",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
+            },
+            {
+              "value": "clipboard",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
+            },
+            {
+              "value": "dairy",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
+            },
+            {
+              "value": "dairy_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
+            },
+            {
+              "value": "fire",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
+            },
+            {
+              "value": "gluten_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
+            },
+            {
+              "value": "lightning_bolt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
+            },
+            {
+              "value": "lipstick",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
+            },
+            {
+              "value": "nut_free",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__25.label"
+            },
+            {
+              "value": "paw_print",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__26.label"
+            },
+            {
+              "value": "pepper",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__27.label"
+            },
+            {
+              "value": "perfume",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__28.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__29.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__30.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__31.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__32.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__33.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__34.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__35.label"
+            },
+            {
+              "value": "serving_dish",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__36.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__37.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__38.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__39.label"
+            },
+            {
+              "value": "snowflake",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__40.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__41.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__42.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__43.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
+            }
+          ],
+          "default": "check_mark",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon image",
+          "info": "Optional. Overrides the selected Dawn icon."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tip title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add tip details here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Float Tips",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "lightning_bolt",
+            "title": "No Stimulants",
+            "text": "<p>Avoid caffeine and other stimulants before your float to make it easier for your body and mind to relax.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Be Hydrated",
+            "text": "<p>Try to ensure that you are well hydrated before your session, but don't drink too much right beforehand.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "serving_dish",
+            "title": "Eat A Light Meal",
+            "text": "<p>It's best to have a light meal 60 to 90 mins. before your session, rather than floating with a full or empty stomach.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "silhouette",
+            "title": "No Shaving Before",
+            "text": "<p>Please don't shave anywhere on your face or body before your float session as the epsom salt may sting for some time in the beginning making it more difficult to relax and enjoy your float.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "pants",
+            "title": "Float Nude",
+            "text": "<p>We recommend floating in the nude to ensure there are no external pressures or restrictions on your body. Our tanks are extremely filtered to ensure cleanliness and the water is kept at skin temperature.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "stopwatch",
+            "title": "Don't Stress Over Time",
+            "text": "<p>It's fairly common to obsess or stress over time while floating, try to return your focus to your breath and know that our staff and the music in the pod will let you know when your session is over.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "return",
+            "title": "Focus On Your Breath",
+            "text": "<p>If your mind is busy, you have difficulty relaxing, or any challenge with the unique environment, it's helpful to focus on your breathing. Take deep breathes and keep your attention on that process.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "shirt",
+            "title": "Try Different Positions",
+            "text": "<p>Everyone has different preferences: arms above head, pointed up at your side, or down by your body and if you find yourself getting uncomfortable, it can help to switch your arm position.</p>"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "icon": "heart",
+            "title": "No Expectations",
+            "text": "<p>There is no 'right' way to float, each and every session is different and it's important to not get caught up thinking you're doing it wrong. Breathe, let go and relax to go deeper.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,736 @@
+{%- liquid
+  assign media_type = section.settings.media_type
+  assign desktop_video = section.settings.video
+  assign mobile_video = section.settings.video_mobile
+  if mobile_video == blank
+    assign mobile_video = desktop_video
+  endif
+  assign desktop_image = section.settings.image
+  assign mobile_image = section.settings.image_mobile
+  if mobile_image == blank
+    assign mobile_image = desktop_image
+  endif
+
+  assign overlay_color = section.settings.overlay_color | default: '#061018'
+  assign overlay_opacity = section.settings.overlay_opacity | default: 60
+  assign overlay_alpha = overlay_opacity | times: 1.0 | divided_by: 100.0
+  assign overlay_fill = overlay_color | color_modify: 'alpha', overlay_alpha
+  assign overlay_edge = overlay_color | color_modify: 'alpha', 0.85
+  assign overlay_mid = overlay_color | color_modify: 'alpha', 0.2
+  assign overlay_top = overlay_color | color_modify: 'alpha', 0.55
+-%}
+
+{% style %}
+  #InnerBanner-{{ section.id }} {
+    --ib-accent: {{ section.settings.accent_color }};
+    --ib-badge: {{ section.settings.badge_color }};
+    --ib-text: {{ section.settings.text_color }};
+    --ib-min-height: {{ section.settings.section_height }}vh;
+    --ib-min-height-mobile: {{ section.settings.section_height_mobile }}vh;
+    --ib-heading-size: {{ section.settings.heading_size_desktop }}px;
+    --ib-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --ib-description-size: {{ section.settings.description_size_desktop }}px;
+    --ib-description-size-mobile: {{ section.settings.description_size_mobile }}px;
+    position: relative;
+    display: flex;
+    {% case section.settings.content_position_vertical %}
+      {% when 'top' %}
+        align-items: flex-start;
+      {% when 'bottom' %}
+        align-items: flex-end;
+      {% else %}
+        align-items: center;
+    {% endcase %}
+    min-height: var(--ib-min-height);
+    overflow: hidden;
+    color: var(--ib-text);
+    background: #0a0a0c;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__media video,
+  #InnerBanner-{{ section.id }} .inner-banner__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__media-mobile {
+    display: none;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    background-color: {{ overlay_fill }};
+    background-image:
+      radial-gradient(
+        ellipse 70% 55% at 50% 42%,
+        rgba(0, 0, 0, 0) 0%,
+        {{ overlay_mid }} 50%,
+        {{ overlay_edge }} 100%
+      ),
+      linear-gradient(
+        180deg,
+        {{ overlay_top }} 0%,
+        rgba(0, 0, 0, 0.12) 42%,
+        {{ overlay_edge }} 100%
+      );
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    {% case section.settings.content_position_horizontal %}
+      {% when 'left' %}
+        justify-content: flex-start;
+      {% when 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: center;
+    {% endcase %}
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__inner {
+    width: 100%;
+    max-width: min(100%, {{ section.settings.content_width }}px);
+    margin: 0;
+    padding: 0;
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.1rem;
+    {% if section.settings.text_alignment == 'left' %}
+      margin-left: 0;
+      margin-right: auto;
+    {% elsif section.settings.text_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% endif %}
+    padding: 0.65rem 1.3rem;
+    border: 1px solid color-mix(in srgb, var(--ib-badge) 55%, transparent);
+    border-radius: 999px;
+    color: var(--ib-badge);
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    line-height: 1.2;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__stars {
+    display: inline-flex;
+    gap: 0.12rem;
+    color: var(--ib-badge);
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__eyebrow {
+    margin: 0 0 0.85rem;
+    color: var(--ib-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__heading {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--ib-heading-size);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ib-text);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__heading-main {
+    display: block;
+    color: var(--ib-text);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__heading-accent {
+    display: block;
+    color: var(--ib-accent);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__text {
+    /* max-width: 48rem; */
+    {% if section.settings.text_alignment == 'left' %}
+      margin: 0 auto 1.5rem 0;
+    {% elsif section.settings.text_alignment == 'right' %}
+      margin: 0 0 1.5rem auto;
+    {% else %}
+      margin: 0 auto 1.5rem;
+    {% endif %}
+    color: rgba(255, 255, 255, 0.88);
+    font-size: var(--ib-description-size);
+    line-height: 1.55;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__text p {
+    margin: 0;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__text p + p {
+    margin-top: 0.65rem;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    {% case section.settings.text_alignment %}
+      {% when 'left' %}
+        justify-content: flex-start;
+      {% when 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: center;
+    {% endcase %}
+    gap: 0.85rem;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 4.8rem;
+    padding: 1.2rem 2.2rem;
+    border-radius: 999px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn:hover {
+    transform: translateY(-1px);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn--primary {
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn--primary:hover {
+    filter: brightness(1.05);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn--secondary {
+    background: transparent;
+    color: var(--ib-text);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+  }
+
+  #InnerBanner-{{ section.id }} .inner-banner__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #fff;
+  }
+
+  @media screen and (max-width: 749px) {
+    #InnerBanner-{{ section.id }} {
+      min-height: var(--ib-min-height-mobile);
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__media-desktop {
+      display: none;
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__media-mobile {
+      display: block;
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__container {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__inner {
+      max-width: 100%;
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__heading {
+      font-size: var(--ib-heading-size-mobile);
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__text {
+      font-size: var(--ib-description-size-mobile);
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #InnerBanner-{{ section.id }} .inner-banner__btn {
+      width: 100%;
+      max-width: 100%;
+      min-height: 4.4rem;
+      padding: 1rem 1.6rem;
+      font-size: 1.4rem;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="InnerBanner-{{ section.id }}"
+  class="inner-banner section-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="inner-banner__media" aria-hidden="true">
+    {%- if media_type == 'video' -%}
+      {%- if desktop_video != blank -%}
+        <video
+          class="inner-banner__media-desktop"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if desktop_image != blank %}poster="{{ desktop_image | image_url: width: 2000 }}"{% endif %}
+        >
+          {%- for source in desktop_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+        <video
+          class="inner-banner__media-mobile"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if mobile_image != blank %}poster="{{ mobile_image | image_url: width: 1200 }}"{% endif %}
+        >
+          {%- for source in mobile_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 2400
+          | image_tag:
+            class: 'inner-banner__media-desktop',
+            widths: '800, 1200, 1600, 2000, 2400',
+            sizes: '100vw',
+            loading: 'eager'
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'inner-banner__media-mobile',
+            widths: '400, 600, 800, 1200',
+            sizes: '100vw',
+            loading: 'eager'
+        }}
+      {%- endif -%}
+    {%- else -%}
+      {%- if desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 2400
+          | image_tag:
+            class: 'inner-banner__media-desktop',
+            widths: '800, 1200, 1600, 2000, 2400',
+            sizes: '100vw',
+            loading: 'eager'
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'inner-banner__media-mobile',
+            widths: '400, 600, 800, 1200',
+            sizes: '100vw',
+            loading: 'eager'
+        }}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+
+  <div class="inner-banner__overlay"></div>
+  <div class="page-width inner-banner__container">
+    <div class="inner-banner__inner">
+    {%- if section.settings.show_badge and section.settings.badge_text != blank -%}
+      <div class="inner-banner__badge">
+        <span class="inner-banner__stars" aria-hidden="true">★★★★★</span>
+        <span>{{ section.settings.badge_text | escape }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="inner-banner__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+      <h1 class="inner-banner__heading">
+        {%- if section.settings.heading != blank -%}
+          <span class="inner-banner__heading-main">{{ section.settings.heading | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="inner-banner__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+        {%- endif -%}
+      </h1>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <div class="inner-banner__text rte">
+        {{ section.settings.description }}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
+      <div class="inner-banner__actions">
+        {%- if section.settings.button_label_1 != blank -%}
+          <a
+            class="inner-banner__btn inner-banner__btn--primary"
+            {% if section.settings.button_link_1 != blank %}
+              href="{{ section.settings.button_link_1 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            <span>{{ section.settings.button_label_1 | escape }}</span>
+            {%- if section.settings.show_button_arrow -%}
+              <span aria-hidden="true">→</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_2 != blank -%}
+          <a
+            class="inner-banner__btn inner-banner__btn--secondary"
+            {% if section.settings.button_link_2 != blank %}
+              href="{{ section.settings.button_link_2 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            <span>{{ section.settings.button_label_2 | escape }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+  </div>
+ 
+</section>
+
+{% schema %}
+{
+  "name": "Custom Innerpage Banner",
+  "tag": "section",
+  "class": "section-innerpage-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Background type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Same options as the homepage video banner."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background image (mobile)",
+      "info": "Optional. Falls back to the desktop image."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Background video (desktop)",
+      "info": "Plays automatically (muted, looping)."
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Background video (mobile)",
+      "info": "Optional. Falls back to the desktop video."
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#061018"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay darkness",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Section height"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (desktop)",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (mobile)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show review badge",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "200+ Five-Star Reviews | London's #1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "FLOAT HUB"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 13
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About Float Hub"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent line"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 32
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>London’s premier float therapy centre in Shoreditch.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size (desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size (mobile)",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Primary button label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Primary button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_arrow",
+      "label": "Show arrow on primary button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_position_horizontal",
+      "label": "Content alignment (horizontal)",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "info": "Aligns content inside the page-width container."
+    },
+    {
+      "type": "select",
+      "id": "content_position_vertical",
+      "label": "Content alignment (vertical)",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "middle", "label": "Middle" },
+        { "value": "bottom", "label": "Bottom" }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "info": "Alignment of heading, text, and buttons."
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1200,
+      "info": "Capped by the theme page-width container."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Innerpage Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,831 @@
+{% style %}
+  #Testimonial-{{ section.id }} {
+    --ts-bg: {{ section.settings.background_color }};
+    --ts-card: {{ section.settings.card_background }};
+    --ts-text: {{ section.settings.text_color }};
+    --ts-muted: {{ section.settings.muted_color }};
+    --ts-accent: {{ section.settings.accent_color }};
+    --ts-border: {{ section.settings.card_border_color }};
+    --ts-slides-desktop: {{ section.settings.slides_desktop }};
+    --ts-slides-tablet: {{ section.settings.slides_tablet }};
+    --ts-slides-mobile: {{ section.settings.slides_mobile }};
+    --ts-gap: {{ section.settings.card_gap }}px;
+    background-color: var(--ts-bg);
+    color: var(--ts-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__inner {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto {{ section.settings.header_spacing }}px;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__subtitle {
+    margin: 0 0 0.85rem;
+    color: var(--ts-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.subtitle_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__heading {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: 400;
+    font-size: {{ section.settings.heading_size_desktop }}px;
+    line-height: 1.2;
+    color: var(--ts-text);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__slider {
+    position: relative;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__track {
+    display: flex;
+    gap: var(--ts-gap);
+    transition: transform 0.45s ease;
+    will-change: transform;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__slide {
+    flex: 0 0 calc((100% - (var(--ts-slides-desktop) - 1) * var(--ts-gap)) / var(--ts-slides-desktop));
+    min-width: 0;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__card {
+    height: 100%;
+    padding: 1.75rem;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--ts-card);
+    border: 1px solid var(--ts-border);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__review {
+    display: flow-root;
+    margin: 0 0 1.35rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__avatar {
+    float: left;
+    width: {{ section.settings.avatar_size }}px;
+    height: {{ section.settings.avatar_size }}px;
+    margin: 0 1rem 0.65rem 0;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1a2436;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__avatar-placeholder {
+    float: left;
+    width: {{ section.settings.avatar_size }}px;
+    height: {{ section.settings.avatar_size }}px;
+    margin: 0 1rem 0.65rem 0;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #243147, #121a27);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__title {
+    font-weight: 700;
+    color: var(--ts-text);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__text {
+    margin: 0;
+    color: var(--ts-muted);
+    font-size: {{ section.settings.review_size }}px;
+    line-height: 1.55;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__author {
+    clear: both;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__name {
+    margin: 0 0 0.2rem;
+    font-size: {{ section.settings.name_size }}px;
+    font-weight: 700;
+    color: var(--ts-text);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__designation {
+    margin: 0;
+    color: var(--ts-muted);
+    font-size: {{ section.settings.designation_size }}px;
+    line-height: 1.35;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__arrow:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(36, 49, 71, 0.95);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__arrow--prev {
+    left: -1.6rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__arrow--next {
+    right: -1.4rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__arrow svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__dots {
+    display: none;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 3.2rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__dot {
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__dot.is-active {
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    transform: scale(1.2);
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.2rem;
+    padding: 1.5rem 2.5rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #fff;
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #Testimonial-{{ section.id }} .testimonial__btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  @media screen and (max-width: 989px) {
+    #Testimonial-{{ section.id }} .testimonial__slide {
+      flex-basis: calc((100% - (var(--ts-slides-tablet) - 1) * var(--ts-gap)) / var(--ts-slides-tablet));
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__arrow--prev {
+      left: 0;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__arrow--next {
+      right: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #Testimonial-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__inner {
+      padding: 0 1.25rem;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__slide {
+      flex-basis: calc((100% - (var(--ts-slides-mobile) - 1) * var(--ts-gap)) / var(--ts-slides-mobile));
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__card {
+      padding: 1.35rem;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__arrow {
+      display: none;
+    }
+
+    #Testimonial-{{ section.id }} .testimonial__dots {
+      display: flex;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="Testimonial-{{ section.id }}"
+  class="testimonial"
+  data-testimonial-slider
+  data-autoplay="{{ section.settings.enable_autoplay }}"
+  data-autoplay-speed="{{ section.settings.autoplay_speed }}"
+  data-slides-desktop="{{ section.settings.slides_desktop }}"
+  data-slides-tablet="{{ section.settings.slides_tablet }}"
+  data-slides-mobile="{{ section.settings.slides_mobile }}"
+>
+  <div class="page-width">
+    {%- if section.settings.subtitle != blank or section.settings.heading != blank -%}
+      <div class="testimonial__header">
+        {%- if section.settings.subtitle != blank -%}
+          <p class="testimonial__subtitle">{{ section.settings.subtitle | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="testimonial__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="testimonial__slider">
+        <button type="button" class="testimonial__arrow testimonial__arrow--prev" data-testimonial-prev aria-label="Previous testimonials">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button type="button" class="testimonial__arrow testimonial__arrow--next" data-testimonial-next aria-label="Next testimonials">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="testimonial__viewport">
+          <div class="testimonial__track" data-testimonial-track>
+            {%- for block in section.blocks -%}
+              <article class="testimonial__slide" {{ block.shopify_attributes }}>
+                <div class="testimonial__card">
+                  <div class="testimonial__review">
+                    {%- if block.settings.image != blank -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 160
+                        | image_tag:
+                          class: 'testimonial__avatar',
+                          widths: '80, 120, 160',
+                          loading: 'lazy',
+                          alt: block.settings.name | escape
+                      }}
+                    {%- else -%}
+                      <span class="testimonial__avatar-placeholder" aria-hidden="true"></span>
+                    {%- endif -%}
+
+                    <p class="testimonial__text">
+                      {%- if block.settings.review_title != blank -%}
+                        <span class="testimonial__title">{{ block.settings.review_title | escape }}</span>
+                        {% if block.settings.review_text != blank %} {% endif %}
+                      {%- endif -%}
+                      {%- if block.settings.review_text != blank -%}
+                        {{ block.settings.review_text | escape }}
+                      {%- endif -%}
+                    </p>
+                  </div>
+
+                  <div class="testimonial__author">
+                    {%- if block.settings.name != blank -%}
+                      <p class="testimonial__name">{{ block.settings.name | escape }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.designation != blank -%}
+                      <p class="testimonial__designation">{{ block.settings.designation | escape }}</p>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="testimonial__dots" data-testimonial-dots></div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_button and section.settings.button_label != blank -%}
+      <div class="testimonial__footer">
+        <a
+          class="testimonial__btn"
+          {% if section.settings.button_link != blank %}
+            href="{{ section.settings.button_link }}"
+          {% else %}
+            role="link"
+            aria-disabled="true"
+          {% endif %}
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('Testimonial-{{ section.id }}');
+    if (!root) return;
+
+    var track = root.querySelector('[data-testimonial-track]');
+    var slides = track ? Array.prototype.slice.call(track.children) : [];
+    if (!track || !slides.length) return;
+
+    var prevBtn = root.querySelector('[data-testimonial-prev]');
+    var nextBtn = root.querySelector('[data-testimonial-next]');
+    var dotsWrap = root.querySelector('[data-testimonial-dots]');
+    var autoplay = root.getAttribute('data-autoplay') === 'true';
+    var speed = parseInt(root.getAttribute('data-autoplay-speed') || '5', 10) * 1000;
+    var index = 0;
+    var timer = null;
+
+    function slidesPerView() {
+      var width = window.innerWidth;
+      if (width <= 749) return parseInt(root.getAttribute('data-slides-mobile') || '1', 10);
+      if (width <= 989) return parseInt(root.getAttribute('data-slides-tablet') || '1', 10);
+      return parseInt(root.getAttribute('data-slides-desktop') || '2', 10);
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - slidesPerView());
+    }
+
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      var pages = maxIndex() + 1;
+      for (var i = 0; i < pages; i++) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'testimonial__dot' + (i === index ? ' is-active' : '');
+        button.setAttribute('aria-label', 'Go to slide group ' + (i + 1));
+        button.addEventListener('click', function (event) {
+          var buttons = Array.prototype.slice.call(dotsWrap.children);
+          goTo(buttons.indexOf(event.currentTarget));
+          restartAutoplay();
+        });
+        dotsWrap.appendChild(button);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsWrap) return;
+      Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+      });
+    }
+
+    function goTo(nextIndex) {
+      index = Math.min(Math.max(nextIndex, 0), maxIndex());
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translate3d(' + (-index * (slideWidth + gap)) + 'px, 0, 0)';
+      updateDots();
+    }
+
+    function next() {
+      goTo(index >= maxIndex() ? 0 : index + 1);
+    }
+
+    function prev() {
+      goTo(index <= 0 ? maxIndex() : index - 1);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (!autoplay || slides.length <= slidesPerView()) return;
+      timer = window.setInterval(next, speed);
+    }
+
+    function stopAutoplay() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { prev(); restartAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { next(); restartAutoplay(); });
+
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+
+    window.addEventListener('resize', function () {
+      if (index > maxIndex()) index = maxIndex();
+      buildDots();
+      goTo(index);
+      restartAutoplay();
+    });
+
+    buildDots();
+    goTo(0);
+    startAutoplay();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Custom Testimonial",
+  "tag": "section",
+  "class": "section-custom-testimonial",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Float for your best self"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Members and Celebrities On Float Therapy"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 22,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below header",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Slideshow"
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Slides per view (desktop)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Slides per view (tablet)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Slides per view (mobile)",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "label": "Autoplay speed",
+      "default": 5
+    },
+    {
+      "type": "paragraph",
+      "content": "Arrows show on desktop. Navigation dots show on mobile."
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 12,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "min": 48,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "Avatar size",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "review_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Review text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Name size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "designation_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Designation size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border",
+      "default": "#243044"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Subtitle accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 1000,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "User image"
+        },
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Review title",
+          "default": "I felt my anxiety melt away"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "during my first float. The silence and weightlessness gave me a sense of calm I hadn’t felt in years."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Username",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "Designation",
+          "default": "Facebook"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Testimonial",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "I felt my anxiety melt away",
+            "review_text": "during my first float. The silence and weightlessness gave me a sense of calm I hadn’t felt in years. Now I float twice a month and sleep better than ever.",
+            "name": "Sarah M.",
+            "designation": "Facebook"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "I highly recommend it.",
+            "review_text": "As an athlete, floating has become a key part of my recovery. My muscles feel looser, my mind sharper, and my performance has improved.",
+            "name": "James T.",
+            "designation": "TripAdvisor"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "A true reset for body and mind.",
+            "review_text": "Float Hub is my go-to when I need to decompress. Every session leaves me clearer, calmer, and ready for the week ahead.",
+            "name": "Aisha R.",
+            "designation": "Google"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "Best wellness decision I’ve made.",
+            "review_text": "I came in skeptical and left converted. The pods are spacious, the staff are lovely, and the afterglow lasts for days.",
+            "name": "Daniel K.",
+            "designation": "Facebook"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

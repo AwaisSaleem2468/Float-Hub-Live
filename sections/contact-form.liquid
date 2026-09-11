@@ -1,0 +1,527 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign form_width = section.settings.form_width | default: 720
+  assign field_radius = section.settings.field_radius | default: 10
+  assign button_radius = section.settings.button_radius | default: 40
+-%}
+
+{%- style -%}
+  #ContactFormSection-{{ section.id }} {
+    --cf-bg: {{ section.settings.background_color | default: '#070D16' }};
+    --cf-title: {{ section.settings.heading_color | default: '#FFFFFF' }};
+    --cf-label: {{ section.settings.label_color | default: '#A8B0BD' }};
+    --cf-text: {{ section.settings.input_text_color | default: '#FFFFFF' }};
+    --cf-placeholder: {{ section.settings.placeholder_color | default: '#8B93A1' }};
+    --cf-field-bg: {{ section.settings.field_background | default: '#121A27' }};
+    --cf-field-border: {{ section.settings.field_border_color | default: '#243041' }};
+    --cf-field-focus: {{ section.settings.field_focus_color | default: '#0DAAEF' }};
+    --cf-button-text: {{ section.settings.button_text_color | default: '#FFFFFF' }};
+    --cf-heading-size: {{ section.settings.heading_font_size | default: 36 }}px;
+    --cf-heading-size-mobile: {{ section.settings.heading_font_size_mobile | default: 28 }}px;
+    --cf-label-size: {{ section.settings.label_font_size | default: 13 }}px;
+    --cf-input-size: {{ section.settings.input_font_size | default: 15 }}px;
+    --cf-button-size: {{ section.settings.button_font_size | default: 15 }}px;
+    --cf-field-radius: {{ field_radius }}px;
+    --cf-button-radius: {{ button_radius }}px;
+    --cf-form-width: {{ form_width }}px;
+    background-color: var(--cf-bg);
+    color: var(--cf-text);
+  }
+
+  #ContactFormSection-{{ section.id }} .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  #ContactFormSection-{{ section.id }} .contact {
+    width: 100%;
+    max-width: var(--cf-form-width);
+    margin: 0 auto;
+  }
+
+  #ContactFormSection-{{ section.id }} .contact__heading {
+    margin: 0 0 {{ section.settings.heading_spacing | default: 28 }}px;
+    color: var(--cf-title);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--cf-heading-size-mobile);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-align: {{ section.settings.heading_alignment | default: 'left' }};
+  }
+
+  #ContactFormSection-{{ section.id }} .field {
+    margin-bottom: 1.25rem;
+  }
+
+  #ContactFormSection-{{ section.id }} .field__input,
+  #ContactFormSection-{{ section.id }} .text-area {
+    background-color: var(--cf-field-bg);
+    color: var(--cf-text);
+    border: 1px solid var(--cf-field-border);
+    border-radius: var(--cf-field-radius);
+    font-size: var(--cf-input-size);
+    box-shadow: none;
+  }
+
+  #ContactFormSection-{{ section.id }} .field__input::placeholder,
+  #ContactFormSection-{{ section.id }} .text-area::placeholder {
+    color: var(--cf-placeholder);
+  }
+
+  #ContactFormSection-{{ section.id }} .field__input:focus,
+  #ContactFormSection-{{ section.id }} .text-area:focus {
+    border-color: var(--cf-field-focus);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--cf-field-focus);
+  }
+
+  #ContactFormSection-{{ section.id }} .field__label,
+  #ContactFormSection-{{ section.id }} .form__label {
+    color: var(--cf-label);
+    font-size: var(--cf-label-size);
+  }
+
+  #ContactFormSection-{{ section.id }} .field__input:focus ~ .field__label,
+  #ContactFormSection-{{ section.id }} .field__input:not(:placeholder-shown) ~ .field__label,
+  #ContactFormSection-{{ section.id }} .field__input:-webkit-autofill ~ .field__label,
+  #ContactFormSection-{{ section.id }} .text-area:focus ~ .field__label,
+  #ContactFormSection-{{ section.id }} .text-area:not(:placeholder-shown) ~ .field__label {
+    color: var(--cf-field-focus);
+  }
+
+  #ContactFormSection-{{ section.id }} .contact__button {
+    margin-top: {{ section.settings.button_spacing | default: 24 }}px;
+    {% case section.settings.button_alignment %}
+      {% when 'center' %}
+        text-align: center;
+      {% when 'right' %}
+        text-align: right;
+      {% else %}
+        text-align: left;
+    {% endcase %}
+  }
+
+  #ContactFormSection-{{ section.id }} .contact__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.6rem;
+    padding: 1rem 2.2rem;
+    border: 1px solid transparent;
+    border-radius: var(--cf-button-radius);
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: var(--cf-button-text);
+    font-family: var(--font-body-family);
+    font-size: var(--cf-button-size);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #ContactFormSection-{{ section.id }} .contact__submit:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  #ContactFormSection-{{ section.id }} .form__message,
+  #ContactFormSection-{{ section.id }} .form-status-list,
+  #ContactFormSection-{{ section.id }} .form-status-list a {
+    color: var(--cf-title);
+  }
+
+  #ContactFormSection-{{ section.id }} .form-status-list a {
+    color: var(--cf-field-focus);
+  }
+
+  @media screen and (min-width: 750px) {
+    #ContactFormSection-{{ section.id }} .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    #ContactFormSection-{{ section.id }} .contact__heading {
+      font-size: var(--cf-heading-size);
+    }
+
+    #ContactFormSection-{{ section.id }} .field {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #ContactFormSection-{{ section.id }} .contact__submit {
+      width: 100%;
+    }
+  }
+{%- endstyle -%}
+
+<section id="ContactFormSection-{{ section.id }}" class="contact-form-section">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="contact">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="contact__heading inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- else -%}
+        <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+      {%- endif -%}
+
+      {%- liquid
+        assign contact_form_class = 'isolate'
+        if settings.animations_reveal_on_scroll
+          assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+        endif
+      -%}
+
+      {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+        {%- if form.posted_successfully? -%}
+          <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+            {{- 'icon-success.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.post_success' | t }}
+          </h2>
+        {%- elsif form.errors -%}
+          <div class="form__message">
+            <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+              {{- 'icon-error.svg' | inline_asset_content -}}
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+          </div>
+          <ul class="form-status-list caption-large" role="list">
+            <li>
+              <a href="#ContactForm-email" class="link">
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </a>
+            </li>
+          </ul>
+        {%- endif -%}
+
+        <div class="contact__fields">
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="name"
+              type="text"
+              id="ContactForm-name"
+              name="contact[{{ 'templates.contact.form.name' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name' | t }}"
+            >
+            <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          </div>
+          <div class="field field--with-error">
+            <input
+              autocomplete="email"
+              type="email"
+              id="ContactForm-email"
+              class="field__input"
+              name="contact[email]"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+            >
+            <label class="field__label" for="ContactForm-email">
+              {{- 'templates.contact.form.email' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="ContactForm-email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">
+                  <span class="svg-wrapper">
+                    {{- 'icon-error.svg' | inline_asset_content -}}
+                  </span>
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </span>
+              </small>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="field">
+          <input
+            type="tel"
+            id="ContactForm-phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.phone' | t }}"
+          >
+          <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+        </div>
+
+        <div class="field">
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area field__input"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.comment' | t }}"
+          >{{- form.body -}}</textarea>
+          <label class="form__label field__label" for="ContactForm-body">
+            {{- 'templates.contact.form.comment' | t -}}
+          </label>
+        </div>
+
+        <div class="contact__button">
+          <button type="submit" class="contact__submit">
+            {{ 'templates.contact.form.send' | t }}
+          </button>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.contact-form.settings.title.default",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below heading",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Form layout"
+    },
+    {
+      "type": "range",
+      "id": "form_width",
+      "min": 480,
+      "max": 1100,
+      "step": 20,
+      "unit": "px",
+      "label": "Form max width",
+      "default": 720
+    },
+    {
+      "type": "range",
+      "id": "field_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Field border radius",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Label font size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "input_font_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Input font size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment",
+      "label": "Button alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Space above button",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Field label",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder",
+      "default": "#8B93A1"
+    },
+    {
+      "type": "color",
+      "id": "field_background",
+      "label": "Field background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "field_border_color",
+      "label": "Field border",
+      "default": "#243041"
+    },
+    {
+      "type": "color",
+      "id": "field_focus_color",
+      "label": "Field focus / accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name"
+    }
+  ]
+}
+{% endschema %}

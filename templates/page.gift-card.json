@@ -1,0 +1,591 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_innerpage_banner_pNm8iL": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/FloatHub-Floatation-Tank-London-500Floats-5-Star-Reviews-Merrique-Floating.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 30,
+        "section_height": 70,
+        "section_height_mobile": 70,
+        "show_badge": false,
+        "badge_text": "200+ Five-Star Reviews | London's #1",
+        "eyebrow": "",
+        "eyebrow_size": 13,
+        "heading": "Moments of calm. Months of recovery.",
+        "heading_accent": "",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "description": "<p>Give the gift of peace and recovery this year. From single sessions to year-long wellness journeys, set them up for a healthier, calmer, and more energized 2026.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "button_label_1": "Explore Gift Card Option",
+        "button_link_1": "",
+        "show_button_arrow": true,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "left",
+        "content_position_vertical": "middle",
+        "text_alignment": "left",
+        "content_width": 700
+      }
+    },
+    "custom_section_richtext_brq7KT": {
+      "type": "custom-section-richtext",
+      "name": "Custom Rich Text",
+      "settings": {
+        "show_badge": true,
+        "show_stars": false,
+        "badge_text": "What is floating?",
+        "badge_size_desktop": 16,
+        "badge_size_mobile": 14,
+        "badge_spacing": 28,
+        "content": "<p>With more than 575kg of high-quality epsom salt, you will float <em>effortlessly </em>in the waters of our spacious float pods for 60 minutes with no light, sound, or external pressures to refresh your mind and restore your health to new levels.</p>",
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "content_width": 760,
+        "background_color": "#070d16",
+        "text_color": "#c8ced8",
+        "strong_color": "#ffffff",
+        "badge_background": "#243044",
+        "badge_text_color": "#c8ced8",
+        "star_color": "#f5c518",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_gqHEwF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rtk3fE": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Unique Gift to Show That You Care"
+          }
+        },
+        "text_tXrGeP": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown. </em></p>"
+          }
+        },
+        "button_wF7pXe": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_product": "",
+            "button_redirect_checkout": false,
+            "button_link": "shopify://pages/pricing",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_product_2": "",
+            "button_redirect_checkout_2": false,
+            "button_link_2": "shopify://pages/pricing",
+            "button_style_secondary_2": false,
+            "button_label_3": "",
+            "button_product_3": "",
+            "button_redirect_checkout_3": false,
+            "button_link_3": "",
+            "button_style_secondary_3": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rtk3fE",
+        "text_tXrGeP",
+        "button_wF7pXe"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 900,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#121a27",
+        "heading_color": "#ffffff",
+        "caption_color": "#0daaef",
+        "text_color": "#a8b0bd",
+        "link_color": "#0daaef",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "custom_section_icon_with_text_R6TGxH": {
+      "type": "custom-section-icon-with-text",
+      "blocks": {
+        "item_9CGR3C": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "title": "Unique 5-Star Experience",
+            "text": "<p>Chances are they have not tried floating before or if they have, they'd love to do it again. Give them an experience they won't forget along with a set of enticing benefits for the mind and body!</p>"
+          }
+        },
+        "item_7HqdfX": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "title": "Deepest Rest Possible",
+            "text": "<p>We're all bombarded with too much noise, stress, and anxiety almost every moment. The lack of sensory input and pressures on your mind and body allow them to go into deep states of rest and healing.</p>"
+          }
+        },
+        "item_LgMJRn": {
+          "type": "item",
+          "settings": {
+            "icon": "silhouette",
+            "title": "Benefits Tailored to Them",
+            "text": "<h5></h5><p>With a wide range of benefits for the mind and body, each person is bound to get what they need from floating whether it's profound reduction in stress, pain relief or peaceful time for themselves.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_9CGR3C",
+        "item_7HqdfX",
+        "item_LgMJRn"
+      ],
+      "name": "Custom Icon with Text",
+      "settings": {
+        "heading": "Why Floating Makes The Best Gift",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "center",
+        "title_max_width": 700,
+        "heading_size_desktop": 36,
+        "heading_size_tablet": 30,
+        "heading_size_mobile": 28,
+        "description_size": 16,
+        "header_gap": 40,
+        "columns_desktop": 3,
+        "grid_gap": 16,
+        "slide_gap": 16,
+        "enable_autoplay": false,
+        "autoplay_speed": 5,
+        "card_alignment": "center",
+        "card_text_align": "center",
+        "icon_size": 40,
+        "icon_spacing": 16,
+        "card_title_size": 18,
+        "card_title_size_mobile": 16,
+        "card_text_size": 16,
+        "card_text_size_mobile": 14,
+        "card_radius": 12,
+        "card_padding": 16,
+        "bg_color": "#070d16",
+        "heading_color": "#ffffff",
+        "body_color": "#a8b0bd",
+        "icon_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "card_bg": "#121a27",
+        "card_border": "#243041",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_testimonial_78FTcw": {
+      "type": "custom-section-testimonial",
+      "blocks": {
+        "testimonial_QcbPUn": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.46.55-PM-300x296.jpg",
+            "review_title": "The most relaxing hour of my year so far!",
+            "review_text": "This experience is honestly not to be underestimated - I was in so much pain from a gym session... and it wiped away all my pain in that hour alone! p.s. it’s not claustrophobic at all, I’ll be back!",
+            "name": "Elizabeth S.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_qLhb3c": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.18.45-PM.png",
+            "review_title": "Cannot recommend this place enough.",
+            "review_text": "For anyone that is sitting on the fence about this kind of Therapy. I suffer from insomnia, depression and anxiety. This is goal changing for me and thats after ONE session. I will be back. Frequently.",
+            "name": "Wayne Gibbons",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_GHgYdW": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/avatar008.jpg",
+            "review_title": "My first float, but definitely not my last.",
+            "review_text": "I wasn’t really sure what to expect but it had been highly recommended by a friend so I thought I’d give it a go - I’m glad I did. I left feeling completely relaxed and really set up for the week ahead. It was the perfect opportunity to switch off from everything and recharge",
+            "name": "Andrew",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_QeaLgg": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-08-31-at-14.35.16-300x268.png",
+            "review_title": "One of my favourite ways to bring myself into a parasympathetic state, is to do an evening float therapy session.",
+            "review_text": "The magnesium salts, restful position of my body, and focusing on my breath all help my body and mind to relax. Combining this with some yoga poses, and writing down my thoughts, can really help me get a good sleep.\"",
+            "name": "Charlie Tunmore",
+            "designation": ""
+          }
+        },
+        "testimonial_NUXeQW": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/11222227_10152970901417396_9044583712647267181_n.jpg",
+            "review_title": "I've used floatation for over 10 years",
+            "review_text": "For relaxation and as a reset, it was great to try out such a lovely new space. The tanks were fabulous and spacious, and the facility was beautifully designed. Looking forward to coming back again soon.",
+            "name": "Beccy Reese",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_iU4wWW": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "It’s like floating in space!",
+            "review_text": "This is amazing! So relaxing. Very friendly and helpful staff - Tony was very knowledgable and put me at ease. I would highly recommend this.",
+            "name": "Louise",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_cAWhAH": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-11-at-8.06.14-PM-245x300.png",
+            "review_title": "An Absolute Dream",
+            "review_text": "If you've never tried this before, you really should. A total dream from start to finish. The staff are attentive, the decor is high-end and looks great, the vibe is super chilled, and you hear nothing from the busy streets above you. I had never done anything like it before. I felt safe and warm and completely at peace. My lower back felt great (which is very rare).",
+            "name": "Christopher",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_73nHtB": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/14991347_10157759337275158_2328856854046519928_o-225x300.jpg",
+            "review_title": "I felt my anxiety melt away I",
+            "review_text": "I had never tried floating before, but it was an incredible experience. I left feeling completely relaxed and reinvigorated. The staff were wonderful and helpful, the facilities were clean and luxurious, and the floatation pods were state of the art.",
+            "name": "J Sergio Del Guidici",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_FLmfqP": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar050-300x300.jpg",
+            "review_title": "I highly recommend it.",
+            "review_text": "This was my first float experience. I found it very interesting and very relaxing. The float equipment is obviously brand new and of first class quality. I did not quite drift off to sleep, but was on the brink. I think that, on a second trip, I would slip into the zone more easily! I have practised meditation in the past (but over 10 years ago) and found that I was able to remember some simply breathing techniques to help me relax.",
+            "name": "Rob",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_BQtRYC": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "From the moment you enter, a sense of calm and quiet descends over you.",
+            "review_text": "This is embodied by the chic and simple surroundings which promote a sense of wellness and relaxation. The facilities were clean and new and the team looked after my friend and I amazingly. I would relish the opportunity to go back again, making a floating tank a regular part of my wellness regime. I came away feeling as though I'd spent all day in a spa!",
+            "name": "Fabian H.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_MCBFYe": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar055-300x300.jpg",
+            "review_title": "It’s definitely a place I would recommend everyone to visit!",
+            "review_text": "The actual float for me was a positive sensorial challenge, and it opened a personal depth which allowed for deep meditation and self-knowledge. I also liked that, from the moment I stepped through the door until the end, each step of the process was mindfully considered.",
+            "name": "Patricia",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_aMLbTW": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-07-27-at-13.39.26-300x285.png",
+            "review_title": "I had a fantastic experience.",
+            "review_text": "The session was super relaxing and I felt I could let go of tensions and stress. The stuff is very friendly and helpful. The facility is clean and comfortable. I highly recommend it.”",
+            "name": "Francesco Gatti",
+            "designation": "TripAMeditation & Lifestyle expert, author and co-founder of Blissdvisor"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_QcbPUn",
+        "testimonial_qLhb3c",
+        "testimonial_GHgYdW",
+        "testimonial_QeaLgg",
+        "testimonial_NUXeQW",
+        "testimonial_iU4wWW",
+        "testimonial_cAWhAH",
+        "testimonial_73nHtB",
+        "testimonial_FLmfqP",
+        "testimonial_BQtRYC",
+        "testimonial_MCBFYe",
+        "testimonial_aMLbTW"
+      ],
+      "name": "Custom Testimonial",
+      "settings": {
+        "subtitle": "",
+        "subtitle_size": 12,
+        "heading": "Members and Celebrities On Float Therapy",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 28,
+        "header_spacing": 40,
+        "slides_desktop": 2,
+        "slides_tablet": 1,
+        "slides_mobile": 1,
+        "enable_autoplay": true,
+        "autoplay_speed": 8,
+        "card_gap": 16,
+        "card_radius": 12,
+        "avatar_size": 64,
+        "review_size": 16,
+        "name_size": 16,
+        "designation_size": 14,
+        "show_button": true,
+        "button_label": "View All Reviews",
+        "button_link": "shopify://pages/all-reviews",
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border_color": "#243044",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "content_width": 1200,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_stacked_image_text_overly_DnjMpJ": {
+      "type": "custom-section-stacked-image-text-overly",
+      "blocks": {
+        "panel_yb7r94": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/624292321_18089226653472903_2926321886989038639_n.jpg",
+            "eyebrow": "GIFT CARDS",
+            "heading": "Give The Gift Of Deep Relaxation",
+            "description": "",
+            "button_label": "Choose An Amount",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        },
+        "panel_XJFGTF": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/481112418_2741467312704498_3456577850477813194_n.jpg",
+            "eyebrow": "WELLNESS PROGRAMS",
+            "heading": "Reward Your Employees, See Greater ROI",
+            "description": "",
+            "button_label": "Request More Info",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "panel_yb7r94",
+        "panel_XJFGTF"
+      ],
+      "name": "Stacked Image Overlay",
+      "settings": {
+        "accessibility_label": "Featured promotions",
+        "columns_desktop": 2,
+        "panel_height": 720,
+        "panel_height_mobile": 360,
+        "content_max_width": 520,
+        "content_padding_y": 32,
+        "content_padding_x": 16,
+        "eyebrow_size": 14,
+        "eyebrow_size_mobile": 11,
+        "heading_size": 24,
+        "heading_size_mobile": 20,
+        "eyebrow_spacing": 12,
+        "heading_spacing": 16,
+        "description_size": 15,
+        "description_size_mobile": 14,
+        "description_line_height": 15,
+        "description_item_spacing": 12,
+        "description_spacing": 28,
+        "button_style": "gradient",
+        "button_size": 16,
+        "button_height": 48,
+        "button_padding_x": 28,
+        "button_radius": 8,
+        "fallback_background": "#121a27",
+        "overlay_color": "#070d16",
+        "overlay_opacity": 80,
+        "eyebrow_color": "#ffffff",
+        "text_color": "#ffffff",
+        "description_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#ffffff"
+      }
+    },
+    "collapsible_content_cKxmFk": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_napRwH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I send an electronic gift card?",
+            "icon": "none",
+            "row_content": "<p>Yes,  when you go to purchase one from our online store, you will have the option of sending it via email on a scheduled date that you choose (ex. birthday or anniversary).</p><p>Simply click on Gift Card page and follow the instructions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tMYept": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Am I able to get a physical gift card to give to someone?",
+            "icon": "none",
+            "row_content": "<p>We can only offer digital gift cards, with a code to use upon check out.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ymGBc4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I book with a gift card I received?",
+            "icon": "none",
+            "row_content": "<p>If you received an electronic gift card, you can easily book your session online.</p><p>Go to our booking system and login or create an account.</p><p>www.floathub.co.uk and click Book Now</p><p>You’ll need to choose the services that correspond with your gift card and enter your card number upon checkout.</p><p>Email us at info@floathub.co.uk</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_napRwH",
+        "collapsible_row_tMYept",
+        "collapsible_row_ymGBc4"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_KHt7yT": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_innerpage_banner_pNm8iL",
+    "custom_section_richtext_brq7KT",
+    "rich_text_gqHEwF",
+    "custom_section_icon_with_text_R6TGxH",
+    "custom_section_testimonial_78FTcw",
+    "custom_section_stacked_image_text_overly_DnjMpJ",
+    "collapsible_content_cKxmFk",
+    "custom_section_small_banner_KHt7yT"
+  ]
+}

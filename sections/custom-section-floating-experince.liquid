@@ -1,0 +1,860 @@
+{%- liquid
+  assign fe_image_alt = section.settings.image_alt
+  if section.settings.image != blank and section.settings.image.alt != blank
+    assign fe_image_alt = section.settings.image.alt
+  endif
+  assign fe_step_count = section.blocks.size
+  if fe_step_count < 1
+    assign fe_step_count = 1
+  endif
+-%}
+
+{% style %}
+  #FloatExperience-{{ section.id }} {
+    --fe-bg: {{ section.settings.bg_color }};
+    --fe-text: {{ section.settings.heading_color }};
+    --fe-muted: {{ section.settings.body_color }};
+    --fe-line: {{ section.settings.timeline_color }};
+    --fe-circle-bg: {{ section.settings.timeline_circle_bg }};
+    --fe-accent: {{ section.settings.accent_color }};
+    --fe-card: {{ section.settings.card_bg }};
+    --fe-card-border: {{ section.settings.card_border }};
+    background-color: var(--fe-bg);
+    color: var(--fe-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__inner {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.row_gap }}px;
+    width: 100%;
+    {% case section.settings.content_align %}
+      {% when 'left' %}
+        align-items: flex-start;
+      {% when 'right' %}
+        align-items: flex-end;
+      {% else %}
+        align-items: center;
+    {% endcase %}
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__row {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.column_gap }}px;
+    width: 100%;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__media {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__image {
+    display: block;
+    width: 100%;
+    height: {{ section.settings.image_height }}px;
+    object-fit: cover;
+    border-radius: {{ section.settings.image_radius }}px;
+    background: #0b1220;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__placeholder {
+    width: 100%;
+    height: {{ section.settings.image_height }}px;
+    border-radius: {{ section.settings.image_radius }}px;
+    background: linear-gradient(160deg, #152033 0%, #0b1220 100%);
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__steps-wrap {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__steps {
+    display: grid;
+    grid-template-columns: repeat({{ fe_step_count }}, minmax(0, 1fr));
+    gap: {{ section.settings.step_gap }}px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    text-align: {{ section.settings.text_align | default: 'center' }};
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    {% case section.settings.text_align %}
+      {% when 'left' %}
+        justify-content: flex-start;
+      {% when 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: center;
+    {% endcase %}
+    margin-bottom: 1.25rem;
+    height: 3.2rem;
+    flex-shrink: 0;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__marker::before,
+  #FloatExperience-{{ section.id }} .float-exp__marker::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: {{ section.settings.line_thickness }}px;
+    background: var(--fe-line);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__marker::before {
+    left: 0;
+    right: 50%;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__marker::after {
+    left: 50%;
+    right: 0;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__step:first-child .float-exp__marker::before {
+    display: none;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__step:last-child .float-exp__marker::after {
+    display: none;
+  }
+
+  {% if section.settings.text_align == 'left' %}
+    #FloatExperience-{{ section.id }} .float-exp__marker::before {
+      display: none;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::after {
+      left: 1.6rem;
+      right: calc(-1 * {{ section.settings.step_gap }}px / 2);
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:last-child .float-exp__marker::after {
+      display: none;
+    }
+  {% elsif section.settings.text_align == 'right' %}
+    #FloatExperience-{{ section.id }} .float-exp__marker::after {
+      display: none;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::before {
+      left: calc(-1 * {{ section.settings.step_gap }}px / 2);
+      right: 1.6rem;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:first-child .float-exp__marker::before {
+      display: none;
+    }
+  {% else %}
+    #FloatExperience-{{ section.id }} .float-exp__marker::before {
+      left: calc(-1 * {{ section.settings.step_gap }}px / 2);
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::after {
+      right: calc(-1 * {{ section.settings.step_gap }}px / 2);
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:first-child .float-exp__marker::before {
+      display: none;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:last-child .float-exp__marker::after {
+      display: none;
+    }
+  {% endif %}
+
+  #FloatExperience-{{ section.id }} .float-exp__number {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    border: {{ section.settings.circle_border_width }}px solid var(--fe-accent);
+    background: var(--fe-circle-bg);
+    color: var(--fe-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.number_size }}px;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: 0 0 0 4px var(--fe-bg);
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__card {
+    display: flex;
+    flex-direction: column;
+    {% case section.settings.text_align %}
+      {% when 'left' %}
+        align-items: flex-start;
+      {% when 'right' %}
+        align-items: flex-end;
+      {% else %}
+        align-items: center;
+    {% endcase %}
+    flex: 1 1 auto;
+    height: 100%;
+    padding: {{ section.settings.card_padding }}px;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--fe-card);
+    border: 1px solid var(--fe-card-border);
+    text-align: {{ section.settings.text_align | default: 'center' }};
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__card:hover {
+    border-color: color-mix(in srgb, var(--fe-accent) 45%, var(--fe-card-border));
+    transform: translateY(-2px);
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__title {
+    margin: 0 0 0.75rem;
+    width: 100%;
+    color: var(--fe-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.step_title_size }}px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__text {
+    margin: 0;
+    width: 100%;
+    color: var(--fe-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.step_text_size }}px;
+    line-height: 1.55;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__text p {
+    margin: 0;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__text p + p {
+    margin-top: 0.55rem;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__actions {
+    display: flex;
+    {% case section.settings.button_align %}
+      {% when 'left' %}
+        justify-content: flex-start;
+      {% when 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: center;
+    {% endcase %}
+    width: 100%;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #FloatExperience-{{ section.id }} .float-exp__btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  @media screen and (max-width: 989px) {
+    #FloatExperience-{{ section.id }} .float-exp__image,
+    #FloatExperience-{{ section.id }} .float-exp__placeholder {
+      height: {{ section.settings.image_height_mobile }}px;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 2rem;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:nth-child(2) .float-exp__marker::after,
+    #FloatExperience-{{ section.id }} .float-exp__step:nth-child(odd):last-child .float-exp__marker::after {
+      display: none;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:nth-child(3) .float-exp__marker::before {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #FloatExperience-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__steps {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step {
+      display: grid;
+      grid-template-columns: 3.2rem minmax(0, 1fr);
+      column-gap: 1rem;
+      align-items: stretch;
+      height: auto;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker {
+      grid-row: 1 / span 1;
+      grid-column: 1;
+      align-self: stretch;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: auto;
+      min-height: 100%;
+      margin: 0;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::before,
+    #FloatExperience-{{ section.id }} .float-exp__marker::after {
+      left: 50%;
+      right: auto;
+      width: {{ section.settings.line_thickness }}px;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::before {
+      display: none !important;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__marker::after {
+      display: block !important;
+      top: 3.2rem;
+      bottom: calc(-1 * 1.25rem);
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__step:last-child .float-exp__marker::after {
+      display: none !important;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__card {
+      grid-column: 2;
+      height: auto;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__card:hover {
+      transform: none;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__title {
+      margin-top: 0;
+      font-size: {{ section.settings.step_title_size_mobile }}px;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__text {
+      font-size: {{ section.settings.step_text_size_mobile }}px;
+    }
+
+    #FloatExperience-{{ section.id }} .float-exp__actions {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="FloatExperience-{{ section.id }}"
+  class="float-exp"
+>
+  <div class="page-width">
+    <div class="float-exp__inner">
+      <div class="float-exp__row">
+        <div class="float-exp__media">
+          {% if section.settings.image != blank %}
+            {{
+              section.settings.image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'float-exp__image',
+                loading: 'lazy',
+                widths: '400, 600, 800, 1000, 1200',
+                sizes: '100vw',
+                alt: fe_image_alt
+            }}
+          {% else %}
+            <div class="float-exp__placeholder" aria-hidden="true"></div>
+          {% endif %}
+        </div>
+
+        <div class="float-exp__steps-wrap">
+          {% if section.blocks.size > 0 %}
+            <ol class="float-exp__steps" role="list">
+              {% for block in section.blocks %}
+                <li class="float-exp__step" {{ block.shopify_attributes }}>
+                  <div class="float-exp__marker">
+                    <span class="float-exp__number" aria-hidden="true">
+                      {% if block.settings.number != blank %}
+                        {{ block.settings.number }}
+                      {% else %}
+                        {{ forloop.index }}
+                      {% endif %}
+                    </span>
+                  </div>
+
+                  <div class="float-exp__card">
+                    {% if block.settings.title != blank %}
+                      <h3 class="float-exp__title">{{ block.settings.title }}</h3>
+                    {% endif %}
+
+                    {% if block.settings.text != blank %}
+                      <div class="float-exp__text">{{ block.settings.text }}</div>
+                    {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ol>
+          {% endif %}
+
+          {% if section.settings.button_label != blank %}
+            <div class="float-exp__actions">
+              <a
+                class="float-exp__btn"
+                href="{{ section.settings.button_link | default: '#' }}"
+                {% if section.settings.button_link == blank %}
+                  aria-disabled="true"
+                {% endif %}
+              >
+                {{ section.settings.button_label }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Floating Experience",
+  "tag": "section",
+  "class": "section-floating-experience",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Floating experience"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 220,
+      "max": 720,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height (desktop)",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "min": 180,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height (mobile)",
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "Content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "info": "Aligns the section content block."
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "info": "Alignment of step titles and text."
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between image and steps",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "step_gap",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between step cards",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Inner row gap",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Timeline"
+    },
+    {
+      "type": "color",
+      "id": "timeline_color",
+      "label": "Line / circle border",
+      "default": "#3A4556"
+    },
+    {
+      "type": "color",
+      "id": "timeline_circle_bg",
+      "label": "Circle background",
+      "default": "#070D16"
+    },
+    {
+      "type": "range",
+      "id": "line_thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Connecting line thickness",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "circle_border_width",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Circle border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Number size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card border",
+      "default": "#243041"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Step title size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_mobile",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Step title size (mobile)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "step_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "step_text_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Step text size (mobile)",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_align",
+      "label": "Button alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "info": "Leave blank to use automatic numbering."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Step title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Describe this step of the floating experience.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floating Experience",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Pre-Float",
+            "text": "<p>Our staff will give you a full walkthrough of the process to ensure that you're informed and feel at home in our center.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Preparing",
+            "text": "<p>You will enter your private float room and take a shower before starting your session to ensure any oils, dirt, and perfumes are removed.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Letting Go",
+            "text": "<p>It will take some time to get used to the unique environment of the float tank so we encourage you to focus on your breath and try to let go.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "4",
+            "title": "Post-Float Glow",
+            "text": "<p>You will be notified your session is over by music in the pod. After your session you will shower again to remove any salt and are welcome to enjoy your new state in our relaxation suite.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

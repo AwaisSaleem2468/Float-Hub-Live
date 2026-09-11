@@ -1,0 +1,22 @@
+{% comment %}
+  Resolves a CTA URL for a product or custom link.
+
+  Accepts:
+  - link: {String} optional custom URL override
+  - product: {Product} optional product
+  - redirect_to_checkout: {Boolean} if true and product is set, go to checkout
+
+  Usage:
+  {% capture href %}{% render 'product-cta-url', link: section.settings.button_link_1, product: section.settings.button_product_1, redirect_to_checkout: section.settings.button_redirect_checkout_1 %}{% endcapture %}
+{% endcomment %}
+{%- liquid
+  if link != blank
+    echo link
+  elsif product != blank
+    if redirect_to_checkout and product.selected_or_first_available_variant != blank
+      echo routes.cart_add_url | append: '?id=' | append: product.selected_or_first_available_variant.id | append: '&quantity=1&return_to=/checkout'
+    else
+      echo product.url
+    endif
+  endif
+-%}

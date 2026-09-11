@@ -1,0 +1,863 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "center",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_membership_card_Mi3GRp": {
+      "type": "custom-section-membership-card",
+      "blocks": {
+        "product_card_QwRCEa": {
+          "type": "product_card",
+          "settings": {
+            "product": "flexi-float-plan",
+            "badge_text": "",
+            "caption": "per month | Rolling agreement",
+            "price_override": "",
+            "price_note": "",
+            "features": "",
+            "allow_subscription": true,
+            "button_label": "Book As Member",
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=11007974801735&servicify-event=27d8e984-eaf6-4292-a90a-bd27f38e9457&servicify-variant=54626640593223"
+          }
+        },
+        "product_card_AqAUaw": {
+          "type": "product_card",
+          "settings": {
+            "product": "float-for-two-couples-monthly",
+            "badge_text": "",
+            "caption": "per month | Rolling agreement",
+            "price_override": "",
+            "price_note": "",
+            "features": "",
+            "allow_subscription": true,
+            "button_label": "Book As Member",
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=11007982993735&servicify-event=330729ad-9846-4050-95fb-efe5620ef3ef&servicify-variant=54626668904775"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_QwRCEa",
+        "product_card_AqAUaw"
+      ],
+      "name": "Membership cards",
+      "settings": {
+        "heading": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "",
+        "description_size": 16,
+        "header_spacing": 48,
+        "columns_desktop": 3,
+        "content_width": 1280,
+        "card_gap": 16,
+        "caption_size": 14,
+        "title_size": 22,
+        "price_size": 31,
+        "feature_size": 16,
+        "button_size": 16,
+        "background_color": "#121a27",
+        "card_background": "#070d16",
+        "card_border_color": "#23a3df",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "badge_background": "#23a3df",
+        "badge_text_color": "#061018",
+        "button_background": "#23a3df",
+        "button_text_color": "#ffffff",
+        "show_banner": false,
+        "banner_heading": "Become a member",
+        "banner_text": "Unlock member rates, free upgrades, and flexible floating every month.",
+        "banner_button_label": "CLICK FOR MEMBERSHIPS",
+        "banner_button_link": "",
+        "banner_background": "#23a3df",
+        "banner_text_color": "#ffffff",
+        "banner_button_background": "#ffffff",
+        "banner_button_text_color": "#061018",
+        "banner_heading_size": 28,
+        "banner_text_size": 15,
+        "banner_button_size": 13,
+        "banner_spacing": 48,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_icon_with_text_qgeGJR": {
+      "type": "custom-section-icon-with-text",
+      "blocks": {
+        "item_CNremM": {
+          "type": "item",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Improved Sleep",
+            "text": "<p>Floating brings your sympathetic and parasympathetic nervous systems back into sync for deeper, more restorative sleep.</p>"
+          }
+        },
+        "item_yLnwqT": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "title": "Stress Relief",
+            "text": "<p>The lack of sensory input and pressures on your mind and body allow them to go into deep states of rest and healing processes.</p>"
+          }
+        },
+        "item_7LkXF6": {
+          "type": "item",
+          "settings": {
+            "icon": "silhouette",
+            "title": "Mental Health",
+            "text": "<p>Studies are starting to show the benefits of floating for people who struggle with anxiety, depression and PTSD.</p>"
+          }
+        },
+        "item_db83rx": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "title": "Pain Relief",
+            "text": "<p>Floating's weightlessness relieves all pressure on your body so it can release endorphins that help with chronic pain, fibromyalgia and other conditions.</p>"
+          }
+        },
+        "item_6XKV44": {
+          "type": "item",
+          "settings": {
+            "icon": "lightning_bolt",
+            "title": "Faster Recovery",
+            "text": "<p>Many of the world's top performing athletes rely on floating thanks to its role in speeding up recovery times, aiding visualization techniques and supporting injury healing.</p>"
+          }
+        },
+        "item_tmyBLU": {
+          "type": "item",
+          "settings": {
+            "icon": "silhouette",
+            "title": "Pregnancy Support",
+            "text": "<p>Women who are pregnant have found profound relief from floating to alleviate the weight and pressures on their body, while allowing a deeper connection to their child.</p>"
+          }
+        },
+        "item_fPRX48": {
+          "type": "item",
+          "settings": {
+            "icon": "lightning_bolt",
+            "title": "Faster Learning",
+            "text": "<p>The Navy Seals reduced learning languages from 6 months to 6 weeks, thanks to the improved focus, creativity and state of \"super-learning\" from floating.</p>"
+          }
+        },
+        "item_K74mpL": {
+          "type": "item",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Effortless Mindfulness",
+            "text": "<p>The environment and practice of floating allows anyone new to mindfulness to achieve the same deep meditation and Theta brainwaves as expert meditators and yogis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_CNremM",
+        "item_yLnwqT",
+        "item_7LkXF6",
+        "item_db83rx",
+        "item_6XKV44",
+        "item_tmyBLU",
+        "item_fPRX48",
+        "item_K74mpL"
+      ],
+      "name": "Custom Icon with Text",
+      "settings": {
+        "heading": "",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "center",
+        "title_max_width": 700,
+        "heading_size_desktop": 36,
+        "heading_size_tablet": 32,
+        "heading_size_mobile": 28,
+        "description_size": 15,
+        "header_gap": 36,
+        "columns_desktop": 4,
+        "grid_gap": 16,
+        "slide_gap": 12,
+        "enable_autoplay": false,
+        "autoplay_speed": 3,
+        "card_alignment": "center",
+        "card_text_align": "center",
+        "icon_size": 40,
+        "icon_spacing": 16,
+        "card_title_size": 16,
+        "card_title_size_mobile": 16,
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "card_radius": 12,
+        "card_padding": 16,
+        "bg_color": "#070d16",
+        "heading_color": "#ffffff",
+        "body_color": "#a8b0bd",
+        "icon_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "card_bg": "#121a27",
+        "card_border": "#243041",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_membership_XDMQyJ": {
+      "type": "custom-section-membership",
+      "blocks": {
+        "pricing_row_gTRMEp": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Monthly float",
+            "value": "Included",
+            "value_style": "default"
+          }
+        },
+        "pricing_row_tQXxjF": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Extra floats",
+            "value": "£45 each",
+            "value_style": "default"
+          }
+        },
+        "pricing_row_HMMLnh": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Member guest rate",
+            "value": "-20% off",
+            "value_style": "accent"
+          }
+        },
+        "pricing_row_AGiFia": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Priority booking",
+            "value": "Free",
+            "value_style": "accent"
+          }
+        },
+        "pricing_row_pGG9cU": {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Referral reward",
+            "value": "£10 credit",
+            "value_style": "gold"
+          }
+        },
+        "benefit_yiTKn4": {
+          "type": "benefit",
+          "settings": {
+            "text": "1 float included monthly"
+          }
+        },
+        "benefit_w48H6R": {
+          "type": "benefit",
+          "settings": {
+            "text": "Member guest rate"
+          }
+        },
+        "benefit_bxq3HX": {
+          "type": "benefit",
+          "settings": {
+            "text": "Retail discount"
+          }
+        },
+        "benefit_RB9ePp": {
+          "type": "benefit",
+          "settings": {
+            "text": "Priority booking"
+          }
+        },
+        "benefit_pU7q6y": {
+          "type": "benefit",
+          "settings": {
+            "text": "Referral rewards"
+          }
+        },
+        "benefit_PrqVXY": {
+          "type": "benefit",
+          "settings": {
+            "text": "Cancel anytime"
+          }
+        }
+      },
+      "block_order": [
+        "pricing_row_gTRMEp",
+        "pricing_row_tQXxjF",
+        "pricing_row_HMMLnh",
+        "pricing_row_AGiFia",
+        "pricing_row_pGG9cU",
+        "benefit_yiTKn4",
+        "benefit_w48H6R",
+        "benefit_bxq3HX",
+        "benefit_RB9ePp",
+        "benefit_pU7q6y",
+        "benefit_PrqVXY"
+      ],
+      "name": "Custom Membership",
+      "settings": {
+        "label": "FLOAT HUB Referral Program",
+        "heading": "Share, Refer, Earn Credit!",
+        "heading_accent": "Transform deeply.",
+        "subheading": "REFER A FRIEND & BOTH RECEIVE £10 OFF YOUR NEXT PURCHASE",
+        "text": "<p>New customers can enter your code in the Promotional Code box on our online booking page and will automatically get £10.00 off their first purchase.</p><p>You’ll receive a free £10.00 account credit for every new customer who uses your code. We’ll send you an email every time someone uses your code.</p><p>Ask our hosts to enrol you in the Referral Scheme, and you will receive your promotional code.</p><p>If you have any questions, please email <a href=\"mailto:team@floathub.co.uk\" title=\"mailto:team@floathub.co.uk\"><strong>team@floathub.co.uk</strong></a></p>",
+        "label_size": 12,
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "subheading_size": 18,
+        "text_size": 16,
+        "content_alignment": "left",
+        "card_title": "Exclusive Member Benefits",
+        "card_title_size": 12,
+        "row_text_size": 16,
+        "card_padding": 20,
+        "card_radius": 12,
+        "benefits_title": "MEMBER BENEFITS",
+        "benefits": "1 float included monthly\nMember guest rate\nRetail discount\nPriority booking\nReferral rewards\nCancel anytime",
+        "benefits_title_size": 14,
+        "benefit_text_size": 13,
+        "show_highlight": true,
+        "highlight_label": "Your monthly cost",
+        "highlight_price": "£45",
+        "highlight_compare": "vs £65 pay-as-you-go",
+        "highlight_save": "Save £20 per session · £240 per year",
+        "highlight_label_size": 14,
+        "highlight_price_size": 42,
+        "highlight_compare_size": 16,
+        "highlight_save_size": 16,
+        "highlight_radius": 12,
+        "button_label": "",
+        "button_link": "",
+        "button_note": "Cancel anytime · No minimum term",
+        "button_size": 16,
+        "button_note_size": 14,
+        "button_radius": 12,
+        "background_color": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "gold_color": "#d4af37",
+        "card_background": "#0f1827",
+        "card_border_color": "#1e2a3c",
+        "highlight_background": "#0f2436",
+        "content_width": 1400,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_section_testimonial_ew4ECx": {
+      "type": "custom-section-testimonial",
+      "blocks": {
+        "testimonial_dtNNXb": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.46.55-PM-300x296.jpg",
+            "review_title": "The most relaxing hour of my year so far!",
+            "review_text": "This experience is honestly not to be underestimated - I was in so much pain from a gym session... and it wiped away all my pain in that hour alone! p.s. it’s not claustrophobic at all, I’ll be back!",
+            "name": "Elizabeth S.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_UKpATV": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-10-at-4.18.45-PM.png",
+            "review_title": "Cannot recommend this place enough.",
+            "review_text": "For anyone that is sitting on the fence about this kind of Therapy. I suffer from insomnia, depression and anxiety. This is goal changing for me and thats after ONE session. I will be back. Frequently.",
+            "name": "Wayne Gibbons",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_RMMxmq": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/avatar008.jpg",
+            "review_title": "My first float, but definitely not my last.",
+            "review_text": "I wasn’t really sure what to expect but it had been highly recommended by a friend so I thought I’d give it a go - I’m glad I did. I left feeling completely relaxed and really set up for the week ahead. It was the perfect opportunity to switch off from everything and recharge",
+            "name": "Andrew",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_MEhWJg": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-08-31-at-14.35.16-300x268.png",
+            "review_title": "One of my favourite ways to bring myself into a parasympathetic state, is to do an evening float therapy session.",
+            "review_text": "The magnesium salts, restful position of my body, and focusing on my breath all help my body and mind to relax. Combining this with some yoga poses, and writing down my thoughts, can really help me get a good sleep.\"",
+            "name": "Charlie Tunmore",
+            "designation": ""
+          }
+        },
+        "testimonial_8gptHb": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/11222227_10152970901417396_9044583712647267181_n.jpg",
+            "review_title": "I've used floatation for over 10 years",
+            "review_text": "For relaxation and as a reset, it was great to try out such a lovely new space. The tanks were fabulous and spacious, and the facility was beautifully designed. Looking forward to coming back again soon.",
+            "name": "Beccy Reese",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_LpBJBD": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "It’s like floating in space!",
+            "review_text": "This is amazing! So relaxing. Very friendly and helpful staff - Tony was very knowledgable and put me at ease. I would highly recommend this.",
+            "name": "Louise",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_JrQ89F": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screen-Shot-2019-07-11-at-8.06.14-PM-245x300.png",
+            "review_title": "An Absolute Dream",
+            "review_text": "If you've never tried this before, you really should. A total dream from start to finish. The staff are attentive, the decor is high-end and looks great, the vibe is super chilled, and you hear nothing from the busy streets above you. I had never done anything like it before. I felt safe and warm and completely at peace. My lower back felt great (which is very rare).",
+            "name": "Christopher",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_3pzkME": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/14991347_10157759337275158_2328856854046519928_o-225x300.jpg",
+            "review_title": "I felt my anxiety melt away I",
+            "review_text": "I had never tried floating before, but it was an incredible experience. I left feeling completely relaxed and reinvigorated. The staff were wonderful and helpful, the facilities were clean and luxurious, and the floatation pods were state of the art.",
+            "name": "J Sergio Del Guidici",
+            "designation": "Facebook"
+          }
+        },
+        "testimonial_7mRKDJ": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar050-300x300.jpg",
+            "review_title": "I highly recommend it.",
+            "review_text": "This was my first float experience. I found it very interesting and very relaxing. The float equipment is obviously brand new and of first class quality. I did not quite drift off to sleep, but was on the brink. I think that, on a second trip, I would slip into the zone more easily! I have practised meditation in the past (but over 10 years ago) and found that I was able to remember some simply breathing techniques to help me relax.",
+            "name": "Rob",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_c4MN8J": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar059.jpg",
+            "review_title": "From the moment you enter, a sense of calm and quiet descends over you.",
+            "review_text": "This is embodied by the chic and simple surroundings which promote a sense of wellness and relaxation. The facilities were clean and new and the team looked after my friend and I amazingly. I would relish the opportunity to go back again, making a floating tank a regular part of my wellness regime. I came away feeling as though I'd spent all day in a spa!",
+            "name": "Fabian H.",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_KHwVrL": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/avatar055-300x300.jpg",
+            "review_title": "It’s definitely a place I would recommend everyone to visit!",
+            "review_text": "The actual float for me was a positive sensorial challenge, and it opened a personal depth which allowed for deep meditation and self-knowledge. I also liked that, from the moment I stepped through the door until the end, each step of the process was mindfully considered.",
+            "name": "Patricia",
+            "designation": "TripAdvisor"
+          }
+        },
+        "testimonial_8DDT6z": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot-2022-07-27-at-13.39.26-300x285.png",
+            "review_title": "I had a fantastic experience.",
+            "review_text": "The session was super relaxing and I felt I could let go of tensions and stress. The stuff is very friendly and helpful. The facility is clean and comfortable. I highly recommend it.”",
+            "name": "Francesco Gatti",
+            "designation": "TripAMeditation & Lifestyle expert, author and co-founder of Blissdvisor"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_dtNNXb",
+        "testimonial_UKpATV",
+        "testimonial_RMMxmq",
+        "testimonial_MEhWJg",
+        "testimonial_8gptHb",
+        "testimonial_LpBJBD",
+        "testimonial_JrQ89F",
+        "testimonial_3pzkME",
+        "testimonial_7mRKDJ",
+        "testimonial_c4MN8J",
+        "testimonial_KHwVrL",
+        "testimonial_8DDT6z"
+      ],
+      "name": "Custom Testimonial",
+      "settings": {
+        "subtitle": "",
+        "subtitle_size": 12,
+        "heading": "Members and Celebrities On Float Therapy",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 28,
+        "header_spacing": 40,
+        "slides_desktop": 2,
+        "slides_tablet": 1,
+        "slides_mobile": 1,
+        "enable_autoplay": true,
+        "autoplay_speed": 8,
+        "card_gap": 16,
+        "card_radius": 12,
+        "avatar_size": 64,
+        "review_size": 16,
+        "name_size": 16,
+        "designation_size": 14,
+        "show_button": true,
+        "button_label": "View All Reviews",
+        "button_link": "shopify://pages/all-reviews",
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border_color": "#243044",
+        "text_color": "#ffffff",
+        "muted_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "content_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_stacked_image_text_overly_w4Q6Wn": {
+      "type": "custom-section-stacked-image-text-overly",
+      "blocks": {
+        "panel_zdqgBh": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/FloatHub-float-therapy-center-shoreditch-london-membership-3months.jpg",
+            "eyebrow": "3 Months",
+            "heading": "Find Your Flow",
+            "description": "Feel the initial benefits\nGet comfortable floating\nExperience different floats\nUncover a new state of calm",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "outline"
+          }
+        },
+        "panel_mQGpYK": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/FloatHub-float-therapy-center-shoreditch-london-membership-6months.jpg",
+            "eyebrow": "6 Months",
+            "heading": "Feel Deep Changes",
+            "description": "ind a new baseline\nExperience greater energy\nMore consistent calm\nStable, brighter mood",
+            "button_label": "",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        },
+        "panel_Fq4bHa": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/FloatHub-float-therapy-center-shoreditch-london-12months-2.jpg",
+            "eyebrow": "12 Months",
+            "heading": "Meet The New You",
+            "description": "Significant health shifts\nLess pain in past injuries\nDeep state of calm\nDramatic life improvements",
+            "button_label": "",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "panel_zdqgBh",
+        "panel_mQGpYK",
+        "panel_Fq4bHa"
+      ],
+      "name": "Stacked Image Overlay",
+      "settings": {
+        "accessibility_label": "Featured promotions",
+        "columns_desktop": 3,
+        "panel_height": 720,
+        "panel_height_mobile": 360,
+        "content_max_width": 520,
+        "content_padding_y": 32,
+        "content_padding_x": 16,
+        "eyebrow_size": 14,
+        "eyebrow_size_mobile": 11,
+        "heading_size": 24,
+        "heading_size_mobile": 20,
+        "eyebrow_spacing": 12,
+        "heading_spacing": 16,
+        "description_size": 15,
+        "description_size_mobile": 14,
+        "description_line_height": 15,
+        "description_item_spacing": 12,
+        "description_spacing": 28,
+        "button_style": "gradient",
+        "button_size": 16,
+        "button_height": 48,
+        "button_padding_x": 28,
+        "button_radius": 8,
+        "fallback_background": "#121a27",
+        "overlay_color": "#070d16",
+        "overlay_opacity": 30,
+        "eyebrow_color": "#ffffff",
+        "text_color": "#ffffff",
+        "description_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#ffffff"
+      }
+    },
+    "collapsible_content_8TVzKk": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_8z9phk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the terms and conditions of membership?",
+            "icon": "none",
+            "row_content": "<ol><li>Our membership begins on the date of your first payment or a later date of your choosing, and payment will be taken each month on the same date as the start of your membership.</li><li>My Float Hub membership recurs monthly or annually and includes 1 or 2 floats/month.</li><li>As a member, I am able to purchase additional float sessions for £45 each.</li><li>For every new member I refer to Float Hub, I will receive free float credit (currently £25) on my account as well as offer an exclusive referral discount to each new customer I refer.</li><li>Any unused floats on my account rollover and are valid for 12 months.</li><li>If my membership falls out of good standing for non-payment, or I choose to terminate my membership, all float credits will expire within 30 days</li><li>My membership fees are not refundable</li><li><strong>Memberships have no minimum initial term are month-to-month. </strong></li><li>You can cancel this contract with 10 days written cancellation notice (<a href=\"mailto:info@floathub.co.uk\" target=\"_blank\">info@floathub.co.uk</a>)</li><li>You can Pause for up to 3 months per calendar year.</li><li><strong>Share floats</strong> with friends and family.</li><li>We have now introduced a new 12 Float Annual Membership £500/Year (~£42/Float) and 24 Float Annual Membership £950/Year (~£40/Float).</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_m8P7wW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the membership work?",
+            "icon": "none",
+            "row_content": "<p>You receive our best possible price on floats and lock it in for as long as your membership stays active. There is no contractual commitment to your membership, but we hope you will love the benefits to your wellbeing that regular float therapy offers, and want to stay forever.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DwNixf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I share my floats with others?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! With the exception of the free float on signup, member floats can be gifted or shared to friends or loved ones with no extra charge. You can also also earn credit against membership fees by making use of our referral scheme.  Check the ‘me’ page when logged in for full details.</p><p><strong>Share floats</strong> with friends and family.<br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GApbaa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long are float sessions?",
+            "icon": "none",
+            "row_content": "<p>All floats are 60 minutes long, which is a standard length, especially for those getting started with the practice. <strong>By becoming a member at Float Hub, you unlock the ability to extend your floats to 90 minutes when available.</strong> <em>Please contact us for more information or to extend an upcoming appointment.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9xqxgr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there any commitment, sign up, or cancellation fee for membership?",
+            "icon": "none",
+            "row_content": "<p>No, our memberships are flexible and month-to-month. There is no sign up or cancellation fee to become a member. There is no minimum term we only ask for 10 days written cancellation notice before the payment is due.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WgtxnK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change the date of the payment for the monthly fee?",
+            "icon": "none",
+            "row_content": "<p>Yes of course, simply call us in store or email us to team@floathub.co.uk and we will change the autopay date for you in few minutes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aTJDPT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I book a 90-minute session?",
+            "icon": "none",
+            "row_content": "<p>The 90 min upgrade is free for members subject to availability, meaning that when you arrive in store you can ask for the upgrade and if the room after your session is free and nobody has booked it, the host will extend your session to 90 minutes.</p><p>If you would like to be sure 100% to have the 90 minute upgrade you can simply book  one of the first four sessions of the day, and let us know you’ll arrive early.</p><p>OR evening:</p><p>booking  at 7.30 or 8:00 pm and you can float for 90 min guaranteed.</p><p>For more information or help please email to team@floathub.co.uk</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_b4qEhn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do update the credit card on my account?",
+            "icon": "none",
+            "row_content": "<p>Simply log into your account with your email and password and click ‘ ME ” , scroll down and you will find an option to update the credit card.</p><p>Or simply call in store and we will update for you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4m94Ue": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your refund policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We offer full refund for any reason within 14 days from the purchase.</strong></p><p>Refunds are available within 14 days of purchase, if the sessions have not been used. If you need a refund for any reason, please get in touch and we can help you with this.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_8z9phk",
+        "collapsible_row_m8P7wW",
+        "collapsible_row_DwNixf",
+        "collapsible_row_GApbaa",
+        "collapsible_row_9xqxgr",
+        "collapsible_row_WgtxnK",
+        "collapsible_row_aTJDPT",
+        "collapsible_row_b4qEhn",
+        "collapsible_row_4m94Ue"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequent Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_caQGjh": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Nzeaa4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I manage my account?",
+            "icon": "none",
+            "row_content": "<p>Click book now and you can choose the availability for your float.</p><p>You will also see Account option so you can log in with your username and password.</p><p>Once into your account click ” ME” to manage your account and to see all your history.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MTfiUq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change the time or date of my appointment?",
+            "icon": "none",
+            "row_content": "<p>Yes, we ask that you only change appointments at least 24 hours before your scheduled time. Please give us a quick call or message to arrange your new appointment time.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bAYeUd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How are memberships cancelled?",
+            "icon": "none",
+            "row_content": "<p>We only ask that people pay for the month they are in, and should someone decide they don’t want to keep their membership for the best value, we’d simply stop the auto-pay to prevent further payments being taken. We hope that most people will love the experience, and want to continue to experience the compounding benefits of a regular floating practice!</p><p>You can cancel this contract  with 10 days written cancellation notice (manager@floathub.co.uk). We don’t accept cancellations over the phone, please confirm in writing via email.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_t6p9db": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When do membership payments get charged?",
+            "icon": "none",
+            "row_content": "<p>Membership payments are made every 30 days based on when you signed up. Every month provides you with one float session credit on your account which rolls over for up to 12 months and can be used at any time as long as your membership is active.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Nzeaa4",
+        "collapsible_row_MTfiUq",
+        "collapsible_row_bAYeUd",
+        "collapsible_row_t6p9db"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Managing Your Account",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_BnkBNT": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_membership_card_Mi3GRp",
+    "custom_section_icon_with_text_qgeGJR",
+    "custom_section_membership_XDMQyJ",
+    "custom_section_testimonial_ew4ECx",
+    "custom_section_stacked_image_text_overly_w4Q6Wn",
+    "collapsible_content_8TVzKk",
+    "collapsible_content_caQGjh",
+    "custom_section_small_banner_BnkBNT"
+  ]
+}

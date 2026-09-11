@@ -1,0 +1,729 @@
+{% style %}
+  #TestimonialGrid-{{ section.id }} {
+    --tg-bg: {{ section.settings.background_color }};
+    --tg-card: {{ section.settings.card_background }};
+    --tg-border: {{ section.settings.card_border }};
+    --tg-title: {{ section.settings.title_color }};
+    --tg-text: {{ section.settings.text_color }};
+    --tg-name: {{ section.settings.name_color }};
+    --tg-muted: {{ section.settings.muted_color }};
+    --tg-accent: {{ section.settings.accent_color }};
+    --tg-gap: {{ section.settings.card_gap }}px;
+    --tg-radius: {{ section.settings.card_radius }}px;
+    --tg-avatar: {{ section.settings.avatar_size }}px;
+    background-color: var(--tg-bg);
+    color: var(--tg-title);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__inner {
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__header {
+    margin: 0 0 {{ section.settings.header_gap }}px;
+    max-width: {{ section.settings.heading_max_width }}px;
+    text-align: {{ section.settings.heading_alignment }};
+    {% if section.settings.heading_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif section.settings.heading_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% endif %}
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--tg-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__heading {
+    margin: 0;
+    color: var(--tg-title);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__heading-accent {
+    color: var(--tg-accent);
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__description {
+    margin: 0.85rem 0 0;
+    color: var(--tg-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.description_size }}px;
+    line-height: 1.6;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__description p {
+    margin: 0;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__masonry {
+    column-count: {{ section.settings.columns_desktop }};
+    column-gap: var(--tg-gap);
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__card {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.card_content_gap }}px;
+    margin: 0 0 var(--tg-gap);
+    padding: {{ section.settings.card_padding }}px;
+    border-radius: var(--tg-radius);
+    background: var(--tg-card);
+    border: 1px solid var(--tg-border);
+    box-sizing: border-box;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__card-title {
+    margin: 0;
+    color: var(--tg-title);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: 700;
+    font-size: {{ section.settings.card_title_size }}px;
+    line-height: 1.3;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__card-text {
+    margin: 0;
+    color: var(--tg-text);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.card_text_size }}px;
+    line-height: 1.55;
+    white-space: pre-line;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.25rem;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__avatar,
+  #TestimonialGrid-{{ section.id }} .tg__avatar-placeholder {
+    flex: 0 0 auto;
+    width: var(--tg-avatar);
+    height: var(--tg-avatar);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__avatar-placeholder {
+    background: linear-gradient(145deg, #243147, #121a27);
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__author-copy {
+    min-width: 0;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__name {
+    margin: 0;
+    color: var(--tg-name);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.name_size }}px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  #TestimonialGrid-{{ section.id }} .tg__designation {
+    margin: 0.2rem 0 0;
+    color: var(--tg-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.designation_size }}px;
+    line-height: 1.35;
+  }
+
+  @media screen and (max-width: 989px) {
+    #TestimonialGrid-{{ section.id }} .tg__masonry {
+      column-count: {{ section.settings.columns_tablet }};
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__heading {
+      font-size: {{ section.settings.heading_size_tablet }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #TestimonialGrid-{{ section.id }} .tg__inner {
+      padding: 0 1rem;
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__masonry {
+      column-count: {{ section.settings.columns_mobile }};
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__card {
+      padding: {{ section.settings.card_padding_mobile }}px;
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__card-title {
+      font-size: {{ section.settings.card_title_size_mobile }}px;
+    }
+
+    #TestimonialGrid-{{ section.id }} .tg__card-text {
+      font-size: {{ section.settings.card_text_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="TestimonialGrid-{{ section.id }}"
+  class="tg"
+  aria-label="{{ section.settings.heading | default: 'Testimonials' | escape }}"
+>
+  <div class="tg__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.heading_accent != blank or section.settings.description != blank -%}
+      <div class="tg__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tg__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+          <h2 class="tg__heading">
+            {%- if section.settings.heading != blank -%}
+              <span>{{ section.settings.heading | escape }}</span>
+            {%- endif -%}
+            {%- if section.settings.heading_accent != blank -%}
+              {%- if section.settings.heading != blank %} {% endif -%}
+              <span class="tg__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="tg__description rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="tg__masonry">
+        {%- for block in section.blocks -%}
+          <article class="tg__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.review_title != blank -%}
+              <h3 class="tg__card-title">{{ block.settings.review_title | escape }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.review_text != blank -%}
+              <p class="tg__card-text">{{ block.settings.review_text | escape }}</p>
+            {%- endif -%}
+
+            {%- if block.settings.image != blank or block.settings.name != blank or block.settings.designation != blank -%}
+              <div class="tg__author">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 160
+                    | image_tag:
+                      class: 'tg__avatar',
+                      loading: 'lazy',
+                      widths: '64, 96, 128, 160',
+                      sizes: 'var(--tg-avatar)',
+                      alt: block.settings.name | default: block.settings.review_title | escape
+                  }}
+                {%- elsif block.settings.name != blank -%}
+                  <span class="tg__avatar-placeholder" aria-hidden="true"></span>
+                {%- endif -%}
+
+                {%- if block.settings.name != blank or block.settings.designation != blank -%}
+                  <div class="tg__author-copy">
+                    {%- if block.settings.name != blank -%}
+                      <p class="tg__name">{{ block.settings.name | escape }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.designation != blank -%}
+                      <p class="tg__designation">{{ block.settings.designation | escape }}</p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </article>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonial Grid",
+  "tag": "section",
+  "class": "section-custom-testimonial-grid",
+  "max_blocks": 24,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "REVIEWS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What our floaters say"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "min": 400,
+      "max": 1100,
+      "step": 20,
+      "unit": "px",
+      "label": "Heading max width",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_tablet",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (tablet)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Space below heading",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 800,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (desktop)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns (tablet)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns (mobile)",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Card radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap",
+      "min": 8,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Space between card items",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 15,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Card text size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "min": 36,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Avatar size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Name size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "designation_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Designation size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card border",
+      "default": "#243041"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading / title",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Review text",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Designation / muted",
+      "default": "#8B93A1"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Title",
+          "default": "The most relaxing hour of my year so far!"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Testimonial text",
+          "default": "I had a 60 minute float at Float Hub and it was blissful. The room was very clean and the staff were so friendly and helpful."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "User image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "User name",
+          "default": "Elizabeth S."
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "Designation",
+          "default": "TripAdvisor"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Grid",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "The most relaxing hour of my year so far!",
+            "review_text": "I had a 60 minute float at Float Hub and it was blissful. The room was very clean and the staff were so friendly and helpful.",
+            "name": "Elizabeth S.",
+            "designation": "TripAdvisor"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "I felt my anxiety melt away",
+            "review_text": "During my first float, the silence and weightlessness gave me a sense of calm I hadn’t felt in years.",
+            "name": "Sarah M.",
+            "designation": "Google"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "Best recovery tool I’ve tried",
+            "review_text": "As someone who trains hard, floating has become my favourite reset. My body feels lighter and my sleep is better.",
+            "name": "James T.",
+            "designation": "Facebook"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "Beautifully designed space",
+            "review_text": "From the moment I arrived I felt looked after. The float itself was deep and restorative.",
+            "name": "Priya K.",
+            "designation": "Google"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "I’ll definitely be back",
+            "review_text": "Friendly team, spotless rooms, and a truly peaceful experience. Highly recommend for anyone needing a mental reset.",
+            "name": "Daniel R.",
+            "designation": "TripAdvisor"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "review_title": "A true escape from the city",
+            "review_text": "Shoreditch can be intense — this place is the opposite. Quiet, dark, and completely immersive.",
+            "name": "Olivia W.",
+            "designation": "Facebook"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

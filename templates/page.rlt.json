@@ -1,0 +1,820 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_section_innerpage_banner_MhmbJQ": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/rltmanside.png",
+        "overlay_color": "#061018",
+        "overlay_opacity": 30,
+        "section_height": 80,
+        "section_height_mobile": 65,
+        "show_badge": false,
+        "badge_text": "",
+        "eyebrow": "",
+        "eyebrow_size": 14,
+        "heading": "Shoreditch’s Most Powerful",
+        "heading_accent": "Full-Body Recovery.",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "<p>Experience a total cellular reboot with medical-grade Red Light Therapy. Powered by 26,000+ LEDs and 4 scientific wavelengths, our bed is loved by members for the energy boost, radiant skin, and mental clarity it delivers. Backed by 100s of 5-star reviews, you can now claim our exclusive one-time intro offer: 3 sessions for £99 (single session £60).<br/></p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "button_label_1": "Single Session - £60",
+        "button_link_1": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743",
+        "show_button_arrow": false,
+        "button_label_2": "Intro Offer 3 X £129",
+        "button_link_2": "shopify://products/3x-red-light-discovery-pack",
+        "text_color": "#ffffff",
+        "accent_color": "#dd3333",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "left",
+        "content_position_vertical": "middle",
+        "text_alignment": "left",
+        "content_width": 980
+      }
+    },
+    "custom_section_featured_collection_GVN7xR": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_3mjKfh": {
+          "type": "product_card",
+          "settings": {
+            "product": "red-light-therapy",
+            "featured": false,
+            "badge_text": "",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Session",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743"
+          }
+        },
+        "product_card_zKqzVa": {
+          "type": "product_card",
+          "settings": {
+            "product": "3x-red-light-discovery-pack",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "/ month",
+            "button_label": "Buy Discovery pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_3mjKfh",
+        "product_card_zKqzVa"
+      ],
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "",
+        "heading": "Red Light Therapy",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 14,
+        "description": "<p>Experience London's premier professional-grade FloatLightPBM bed. Engineered with over 26,000 high-density LEDs and 3000w of pure power to deliver a uniform, systemic biological upgrade from head to toe.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "caption_size": 16,
+        "title_size": 20,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1120,
+        "header_spacing": 48,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#061018",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": false,
+        "view_all_label": "View all",
+        "view_all_link": "",
+        "view_all_style": "ghost",
+        "view_all_spacing": 32,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_packages_pJtRQM": {
+      "type": "custom-section-packages",
+      "blocks": {
+        "package_PtkXPe": {
+          "type": "package",
+          "settings": {
+            "product": "starter-pack",
+            "caption_override": "",
+            "button_label": "Buy Starter Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_tG6NHe": {
+          "type": "package",
+          "settings": {
+            "product": "gold-pack",
+            "caption_override": "",
+            "button_label": "Buy Gold Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_i6T4bn": {
+          "type": "package",
+          "settings": {
+            "product": "platinum-pack",
+            "caption_override": "",
+            "button_label": "Buy Platinum Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_ABT7hf": {
+          "type": "package",
+          "settings": {
+            "product": "intensive-pack",
+            "caption_override": "",
+            "button_label": "Buy Intensive Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "package_PtkXPe",
+        "package_tG6NHe",
+        "package_i6T4bn",
+        "package_ABT7hf"
+      ],
+      "name": "Custom Packages",
+      "settings": {
+        "heading": "",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "left",
+        "heading_max_width": 700,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "description_size": 15,
+        "header_gap": 28,
+        "content_width": 1100,
+        "card_radius": 12,
+        "row_padding_y": 28,
+        "row_padding_x": 32,
+        "column_gap": 28,
+        "title_size": 22,
+        "title_size_mobile": 18,
+        "caption_size": 14,
+        "price_size": 28,
+        "price_size_mobile": 22,
+        "button_label": "BUY COURSE",
+        "button_size": 12,
+        "button_height": 44,
+        "button_min_width": 140,
+        "button_radius": 6,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border": "#243041",
+        "divider_color": "#243041",
+        "title_color": "#ffffff",
+        "caption_color": "#c8ced8",
+        "price_color": "#ffffff",
+        "accent_color": "#23a3df",
+        "button_color": "#23a3df",
+        "button_hover_color": "#22d3ee",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_WgwFFp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tyNaJR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Advanced Full-Body Red Light Therapy"
+          }
+        },
+        "text_n9FMnq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Photobiomodulation therapy (PBMT), also known as red light therapy, is a non-invasive and non-toxic treatment that involves the use of specific wavelengths of light to stimulate tissue repair and reduce pain in sick, injured, or degenerating tissues.</p><p>FloatLightPBM red light therapy beds are FDA-registered and made with the highest quality electronics and manufacturing processes.</p>"
+          }
+        },
+        "button_ygEL7K": {
+          "type": "button",
+          "settings": {
+            "button_label": "A CLINICAL REVIEW ON PSORIASIS",
+            "button_product": "",
+            "button_redirect_checkout": false,
+            "button_link": "https://pubmed.ncbi.nlm.nih.gov/29067616/",
+            "button_style_secondary": false,
+            "button_label_2": "RED LIGHT THERAPY AND PSORIASIS",
+            "button_product_2": "",
+            "button_redirect_checkout_2": false,
+            "button_link_2": "https://www.healthline.com/health/red-light-therapy-psoriasis",
+            "button_style_secondary_2": false,
+            "button_label_3": "RED LIGHT AND SKIN REJUVENATION",
+            "button_product_3": "",
+            "button_redirect_checkout_3": false,
+            "button_link_3": "https://pubmed.ncbi.nlm.nih.gov/31345324/",
+            "button_style_secondary_3": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_tyNaJR",
+        "text_n9FMnq",
+        "button_ygEL7K"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 18,
+        "text_size_mobile": 16,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#070d16",
+        "heading_color": "#ffffff",
+        "caption_color": "#0daaef",
+        "text_color": "#a8b0bd",
+        "link_color": "#0daaef",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_innerpage_banner_CWBLhz": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/IMG_2957.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 30,
+        "section_height": 80,
+        "section_height_mobile": 70,
+        "show_badge": false,
+        "badge_text": "",
+        "eyebrow": "",
+        "eyebrow_size": 14,
+        "heading": "Red light therapy is a treatment option that can be used to address a range of health conditions.",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "button_label_1": "",
+        "button_link_1": "",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#dd3333",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "center",
+        "content_position_vertical": "middle",
+        "text_alignment": "center",
+        "content_width": 980
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": false,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 36,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 24,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.5",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_XbEcrj": {
+      "type": "rich-text",
+      "blocks": {
+        "button_PQxqrR": {
+          "type": "button",
+          "settings": {
+            "button_label": "TRY ONE SESSION - £60",
+            "button_product": "",
+            "button_redirect_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_product_2": "",
+            "button_redirect_checkout_2": false,
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "button_label_3": "",
+            "button_product_3": "",
+            "button_redirect_checkout_3": false,
+            "button_link_3": "",
+            "button_style_secondary_3": false
+          }
+        }
+      },
+      "block_order": [
+        "button_PQxqrR"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "full_width": true,
+        "content_max_width": 1400,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 16,
+        "button_radius": 8,
+        "background_color": "#070d16",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_3dA4Ga": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_AqiRTA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I see immediate results with one session?",
+            "icon": "none",
+            "row_content": "<p>When it comes to results, keep in mind that they’re more cumulative than immediate. There may be some immediate, superficial and temporary improvements after each treatment, but ultimately, light therapies are a cumulative effect.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mcji8t": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you guarantee all the results ?",
+            "icon": "none",
+            "row_content": "<p>No guarantee can be given regarding final results, and the results are dependent on age, skin condition and lifestyle. Please understand that further treatments will be required to obtain optimal results.</p><p>We also recommend to seek medical advice for any condition and <strong>this is not a substitute of medical profession</strong>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6gXNna": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer saving money packs?",
+            "icon": "none",
+            "row_content": "<p>Yes we do offer packages of 4,6,12,16 sessions.</p><p>The more sessions you buy and they cheaper they are, take advantage of our money saver packs.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VaKYN8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer any Special Offer to try this?",
+            "icon": "none",
+            "row_content": "<p>You can try one single session at £60, or our discovery 3 x £99 course as a one-time offer.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ihVXgc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear makeup in the Red Light Therapy bed?",
+            "icon": "none",
+            "row_content": "<p>Yes, makeup can be worn and should not affect the performance of the therapy.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4DAjfK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear my clothes in the Red Light Therapy bed or should I be nude?",
+            "icon": "none",
+            "row_content": "<p>The skin that you wish to be treated should be fully exposed to the light.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VMYMyb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the treatment interfere with or be affected by any medications I use?",
+            "icon": "none",
+            "row_content": "<p>If you use medication for heart irregularities tranquilizers, sulfa drugs, oral antidiabetic drugs, antidepressants, and steroids,  please consult your physician before using Red Light.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fDVhrL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are there any special lotions I am supposed to use during or after treatment?",
+            "icon": "none",
+            "row_content": "<p>No, there are no special lotion to use.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XBX3YB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will Red Light help with Seasonal Affective Disorder (SAD)?",
+            "icon": "none",
+            "row_content": "<p>Red Light, as well as other light therapies, has been proven to improve Seasonal Affective Disorder (SAD).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dL4X7b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How warm does the Red Light Therapy bed get?",
+            "icon": "none",
+            "row_content": "<p>The feeling of the heat has been compared to a nice warm 80-degree day (not actual temperature of the room).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pQkD4X": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long after the previous user do I have to wait to use the Red Light bed?",
+            "icon": "none",
+            "row_content": "<p>We tend to schedule 40 minutes between appointments so that we can allow the bed to cool down (not required) for the next user’s comfort.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_w8DB3G": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to wear some sort of eye protection (eye goggles)?",
+            "icon": "none",
+            "row_content": "<p>It is not required that you wear eye protection, nevertheless the lights are very bright and may be uncomfortable for some individuals with sensitivities to light.</p><p>We do recommend to use eye googles.</p><p>Please ask our hosts if you wish to purchase eye goggles for £5 at reception.</p><p>We do not provide free eye stickers (they are for sunbeds).</p><p>Yes you can bring your own.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_BQGAwj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Red Light Therapy similar to tanning?",
+            "icon": "none",
+            "row_content": "<p>No not at all. You will not get a tan from Red Light Therapy, nor does it expose you to damaging UV rays.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aJY3wH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I have to do this indefinitely to maintain results?",
+            "icon": "none",
+            "row_content": "<p>Yes, it is recommended to start with a commitment of 20 minutes 3-5 times per week for the first 1-4 weeks, then 2-3 times per week for the following 4-16 weeks, and finally 1-2 times per week to maintain results.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gwWke6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What beds do you use, and at what frequencies? Irradiance?",
+            "icon": "none",
+            "row_content": "<p>FloatLightPBM light therapy beds are designed to produce the most bioactive wavelengths known to science, including 630nm, 660nm, 830nm, and 940nm.FloatLightPBM red light therapy beds are FDA-registered and made with the highest quality electronics and manufacturing processes.FloatLightPBM is the premier choice for red light therapy. Irradiance is about 80 mW/cm2</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Baag49": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I book Float and Red Light together?",
+            "icon": "none",
+            "row_content": "<p>Absolutely, yes, they are a perfect Combo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iNtwb4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shall I Float first and then Red Light or the other way round if I book together?",
+            "icon": "none",
+            "row_content": "<p>They are a perfect combo together.It doesn’t matter which order to do them as its’ really a matter of preference or availability of rooms.Some people prefer to Float first and others prefer Red light first.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6xJ33N": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are there any side effects?",
+            "icon": "none",
+            "row_content": "<p>Side effects from LED light therapy are rare, but you may experience any of the following:irritability, headaches, increased inflammation, redness, or rashes.These are also on the waiver form to fill out before the first session.If you have any doubts in relation to any medical condition, please check with your GP or medical professionals.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HCgdDq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use Red Light Therapy if Pregnant or lactating?",
+            "icon": "none",
+            "row_content": "<p>We are sorry but you cannot.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_C47qbt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "The Photobiomodulation therapy (PBMT) is this conducted by a registered professional ?",
+            "icon": "none",
+            "row_content": "<p>No it’s not conducted by a registered professional because it’s not a medical device and we are in the field of holistic therapies or complementary therapies.We are not doctors and we clearly specify on our website and all our information  that you seek medical advice for any pathology or condition before using Red Light Therapy.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_paygTa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you do a medical check prior to see if your suitable?",
+            "icon": "none",
+            "row_content": "<p>The vast majority of people use red light therapy for aesthetic reasons, but if there are medical reasons, we cannot stress enough to ask you to seek medical advice.We are not doctors.This is not a substitute for medicine and professional doctors and specialists.We cannot advise or diagnose medical issues as we are not qualified.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gbPKm9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How many sessions should I use to see results?",
+            "icon": "none",
+            "row_content": "<p>The recommendation is 2/3 sessions x week for 3/4 months and then 1 session x week as maintenance.Clearly, we understand that sometimes we have a busy life and are unable to come 2/3 times per week, so the minimum would be once a week.You can also use red light therapy 3/5 times per week max.Please leave 24 hours between sessions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6zmY6U": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I am not sick, can I use Red Light Therapy?",
+            "icon": "none",
+            "row_content": "<p>You don’t need to be sick to use Red Light Therapy.Photobiomodulation can be used for so many reasons and perfectly healthy people  also use it for de-stress, relaxation, skin rejuvenation and much more.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6DG4rT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will my skin go red after the treatment?",
+            "icon": "none",
+            "row_content": "<p>For the vast majority of people the skin doesn’t go red but you can feel the heat of the lights.We all have different skin types so while for the vast majority of people the skin will not go red, there is also a chance than in few people will go red if this is the reaction of their skin when found in a warm condition.You might feel a little bit of stinging when using  the light, but for most people, you might feel your skin get warm, and<strong>maybe you’ll look red right after the treatment, but that should go away in a few minutes or in a day or two, depend from the skin type.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_czQjrJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can my friend wait in store? Can I bring kids waiting in reception?",
+            "icon": "none",
+            "row_content": "<p>We are very sorry for the limited space available reserved for clients only.</p><p>Please do not bring friends or kids or pushchairs in the centre as for insurance reasons we can only have people aged over 18.</p><p>Please kindly tell your friends to come back and wait outside when you finish as we do not have space for them to wait in our centre, sorry about that.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_x6h8CM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I listen my own music?",
+            "icon": "none",
+            "row_content": "<p>Yes absolutely, if you have your headphones.</p><p>Not with loudspeakers, as would disturb the adjacent floating rooms.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_AqiRTA",
+        "collapsible_row_mcji8t",
+        "collapsible_row_6gXNna",
+        "collapsible_row_VaKYN8",
+        "collapsible_row_ihVXgc",
+        "collapsible_row_4DAjfK",
+        "collapsible_row_VMYMyb",
+        "collapsible_row_fDVhrL",
+        "collapsible_row_XBX3YB",
+        "collapsible_row_dL4X7b",
+        "collapsible_row_pQkD4X",
+        "collapsible_row_w8DB3G",
+        "collapsible_row_BQGAwj",
+        "collapsible_row_aJY3wH",
+        "collapsible_row_gwWke6",
+        "collapsible_row_Baag49",
+        "collapsible_row_iNtwb4",
+        "collapsible_row_6xJ33N",
+        "collapsible_row_HCgdDq",
+        "collapsible_row_C47qbt",
+        "collapsible_row_paygTa",
+        "collapsible_row_gbPKm9",
+        "collapsible_row_6zmY6U",
+        "collapsible_row_6DG4rT",
+        "collapsible_row_czQjrJ",
+        "collapsible_row_x6h8CM"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequent Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_ckrwTV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_aFem4h": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I manage my account?",
+            "icon": "none",
+            "row_content": "<p>Click book now and you can choose the availability for your float.</p><p>You will also see Account option so you can log in with your username and password.</p><p>Once into your account click ” ME” to manage your account and to see all your history.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TkRtXx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your refund policy?",
+            "icon": "none",
+            "row_content": "<p>We offer full refund within 14 days from the date of purchase, if the package is unused.</p><p>Please Note: If you have used a single session or more we do not offer any refund.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_neXhkJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I am not able to come to your Centre can I transfer the remaining session to another person?",
+            "icon": "none",
+            "row_content": "<p>Yes you can transfer the unused sessions and we can transform them into gift vouchers for your friends and family.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NPk4BR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are the package shareable?",
+            "icon": "none",
+            "row_content": "<p>To have the best results they are individual but if there are particular circumstances and you are unable to come to the centre to complete your package please email to <strong>tony@floathub.co.uk</strong> and we will transfer for you to another person.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3DeggN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the expiration on red light?",
+            "icon": "none",
+            "row_content": "<p>1 single session of £60 is valid for 6 months from the date of purchase.</p><p>All packs are valid for 12 months from the date of purchase.</p><p><strong>The expiration is very clearly indicated at the purchase price for everything in the online shop, as well as on the receipts.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jib4hA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to sign a Waiver or Consent Form?",
+            "icon": "none",
+            "row_content": "<p>Yes, at the time of booking you will receive a waiver form to read and sign via email and sms.</p><p>Please make sure you sign your waiver before coming in shop to save time so you can use your red light as soon as possible.</p><p>Having to sign the waiver in the centre may delay your sessions and other after you, plus the internet connection is not very good because we are in a basement.</p><p>Thank you for your cooperation.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_aFem4h",
+        "collapsible_row_TkRtXx",
+        "collapsible_row_neXhkJ",
+        "collapsible_row_NPk4BR",
+        "collapsible_row_3DeggN",
+        "collapsible_row_jib4hA"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Managing Your Account",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_UHzCKC": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "custom_section_innerpage_banner_MhmbJQ",
+    "custom_section_featured_collection_GVN7xR",
+    "custom_section_packages_pJtRQM",
+    "rich_text_WgwFFp",
+    "custom_section_innerpage_banner_CWBLhz",
+    "main",
+    "rich_text_XbEcrj",
+    "collapsible_content_3dA4Ga",
+    "collapsible_content_ckrwTV",
+    "custom_section_small_banner_UHzCKC"
+  ]
+}

@@ -1,0 +1,432 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_innerpage_banner_6tmC4g": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/FloatHub-London-Shoreditch-Orbit-Float-Pod-Float-Therapy.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 50,
+        "section_height": 60,
+        "section_height_mobile": 65,
+        "show_badge": false,
+        "badge_text": "300+ Five-Star Reviews | London's #1 Float & Recovery Centre",
+        "eyebrow": "",
+        "eyebrow_size": 13,
+        "heading": "We’re Driven to Provide",
+        "heading_accent": "Deeper Rest For All",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "description": "",
+        "description_size_desktop": 16,
+        "description_size_mobile": 14,
+        "button_label_1": "",
+        "button_link_1": "",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "center",
+        "content_position_vertical": "middle",
+        "text_alignment": "center",
+        "content_width": 1400
+      }
+    },
+    "rich_text_Y83DQw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CcPkk6": {
+          "type": "heading",
+          "settings": {
+            "heading": "More than 50% of people in Britain struggle with sleep and getting proper rest."
+          }
+        },
+        "text_xYqgGA": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>This is the data from one of the </em><a href=\"https://www.theguardian.com/uk/2011/nov/13/insomnia-health-warning-sleep-survey\" target=\"_blank\"><em>largest survey’s done </em></a><em>on sleep in the UK and our mission is to help facilitate deep rest and restorative sleep once again.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CcPkk6",
+        "text_xYqgGA"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 820,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 40,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 18,
+        "text_size_mobile": 16,
+        "button_size": 15,
+        "button_radius": 40,
+        "background_color": "#070d16",
+        "heading_color": "#ffffff",
+        "caption_color": "#0daaef",
+        "text_color": "#a8b0bd",
+        "link_color": "#0daaef",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_img_with_text_8e3bzH": {
+      "type": "custom-section-img-with-text",
+      "name": "Custom Img with text",
+      "settings": {
+        "image": "shopify://shop_images/FloatHub-Floatation-Tank-Centre-London-Owner-Tom-Euinton-IMG_3475-web.jpg",
+        "layout": "left",
+        "image_width": "small",
+        "image_height": "fixed",
+        "image_fixed_height": 600,
+        "image_radius": 12,
+        "mobile_image_first": true,
+        "subtitle": "Founder",
+        "subtitle_size": 12,
+        "heading": "Tom Euinton, founder of",
+        "heading_accent": "Float Hub",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "description": "<p>After struggling with sleep apnea and insomnia for a long time, I received profound rest from floating that helped provide the deep recovery I wasn’t getting from sleep.</p>",
+        "description_size": 20,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "button_label_1": "",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "",
+        "button_label_2": "",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "button_size": 16,
+        "button_radius": 10,
+        "background_color": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "content_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_gallery_hGTJgP": {
+      "type": "custom-section-gallery",
+      "blocks": {
+        "feature_EyGQgD": {
+          "type": "feature",
+          "settings": {
+            "label": "PRIVATE ROOMS",
+            "text": "Control your experience"
+          }
+        },
+        "feature_9QawQy": {
+          "type": "feature",
+          "settings": {
+            "label": "RELAXATION SUITE",
+            "text": "Enjoy the post-float glow"
+          }
+        },
+        "feature_8qJH7c": {
+          "type": "feature",
+          "settings": {
+            "label": "PREMIUM PODS",
+            "text": "6 Orbit Float Tanks"
+          }
+        },
+        "feature_DBwbha": {
+          "type": "feature",
+          "settings": {
+            "label": "VANITY ROOM",
+            "text": "Everything you need"
+          }
+        },
+        "feature_8qhpt7": {
+          "type": "feature",
+          "settings": {
+            "label": "CENTRAL LOCATION",
+            "text": "Shoreditch, London"
+          }
+        },
+        "image_y9GMwp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/photo0jpg.jpg",
+            "caption": ""
+          }
+        },
+        "image_3ENyAY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-18-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_iUjW7H": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-19-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_CiQWAG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/a-selection-of-reading.jpg",
+            "caption": ""
+          }
+        },
+        "image_63J6Ka": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/we-ve-worked-to-create.jpg",
+            "caption": ""
+          }
+        },
+        "image_bQXqFq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-17-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_YPxyt6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-15-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_jJJCU6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-10-London.jpg",
+            "caption": ""
+          }
+        },
+        "image_fFMHnk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Float-Hub-Float-Center-11-London_adf576f2-921c-4f3a-a86c-555b93d39e52.jpg",
+            "caption": ""
+          }
+        },
+        "image_gYdEEh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/caption.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_EyGQgD",
+        "feature_9QawQy",
+        "feature_8qJH7c",
+        "feature_DBwbha",
+        "feature_8qhpt7",
+        "image_y9GMwp",
+        "image_3ENyAY",
+        "image_iUjW7H",
+        "image_CiQWAG",
+        "image_63J6Ka",
+        "image_bQXqFq",
+        "image_YPxyt6",
+        "image_jJJCU6",
+        "image_fFMHnk",
+        "image_gYdEEh"
+      ],
+      "name": "Custom Gallery",
+      "settings": {
+        "subtitle": "",
+        "heading": "Our float center is meticulously engineered for your rest.",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "subtitle_size": 14,
+        "header_spacing": 40,
+        "title_max_width": 800,
+        "show_features": true,
+        "enable_features_marquee": true,
+        "features_pause_on_hover": true,
+        "features_marquee_speed": 28,
+        "features_spacing": 40,
+        "feature_gap": 16,
+        "feature_card_width": 240,
+        "feature_card_width_mobile": 220,
+        "feature_card_bg": "#121a27",
+        "feature_card_border": "#243041",
+        "feature_card_radius": 12,
+        "feature_card_padding": 16,
+        "feature_text_align": "center",
+        "feature_label_size": 14,
+        "feature_label_size_mobile": 13,
+        "feature_text_size": 14,
+        "feature_text_size_mobile": 13,
+        "feature_label_color": "#23a3df",
+        "feature_text_color": "#c8ced8",
+        "grid_gap": 16,
+        "image_radius": 12,
+        "large_image_ratio": "1 / 1",
+        "side_padding": 0,
+        "background_color": "#030915",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "lightbox_background": "#121a27",
+        "control_color": "#c8ced8",
+        "content_width": 1000,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_img_with_text_VMa8rf": {
+      "type": "custom-section-img-with-text",
+      "name": "Custom Img with text",
+      "settings": {
+        "image": "shopify://shop_images/622435122_17995071761880493_1454273044264578395_n_1.jpg",
+        "layout": "right",
+        "image_width": "medium",
+        "image_height": "adapt",
+        "image_fixed_height": 600,
+        "image_radius": 12,
+        "mobile_image_first": true,
+        "subtitle": "",
+        "subtitle_size": 12,
+        "heading": "Feel Good.",
+        "heading_accent": "Do Good.",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "<p>The Blue Light Card discount gives you a 30% discount on single float sessions, 30% discount on single red light sessions, and 20% discount on float-for-two sessions</p><p>We acknowledge that emergency service workers work extremely hard to keep us safe & well. This is our way of saying thank you!</p><p>Please note that discounted sessions are for the cardholder only. Any sessions purchased for anyone other than the card holder will be charged at full price.</p><p>For more information, please visit our <a href=\"/pages/faq\" title=\"Frequently Asked Questions.\">FAQ</a> page</p><p>Please feel free to get in touch via <a href=\"mailto:manager@floathub.co.uk\" title=\"mailto:manager@floathub.co.uk\">manager@floathub.co.uk</a></p>",
+        "description_size": 16,
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "button_size": 16,
+        "button_radius": 10,
+        "background_color": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "content_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_Rpc8EA": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_innerpage_banner_6tmC4g",
+    "rich_text_Y83DQw",
+    "custom_section_img_with_text_8e3bzH",
+    "custom_section_gallery_hGTJgP",
+    "custom_section_img_with_text_VMa8rf",
+    "custom_section_small_banner_Rpc8EA"
+  ]
+}

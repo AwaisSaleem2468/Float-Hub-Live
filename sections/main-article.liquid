@@ -1,0 +1,1092 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign overlay_color = section.settings.overlay_color | default: '#070D16'
+  assign overlay_opacity = section.settings.overlay_opacity | default: 55
+  assign overlay_alpha = overlay_opacity | times: 1.0 | divided_by: 100.0
+  assign overlay_fill = overlay_color | color_modify: 'alpha', overlay_alpha
+  assign overlay_edge = overlay_color | color_modify: 'alpha', 0.9
+  assign overlay_mid = overlay_color | color_modify: 'alpha', 0.25
+  assign overlay_top = overlay_color | color_modify: 'alpha', 0.5
+
+  assign title_block = section.blocks | where: 'type', 'title' | first
+  assign show_date = false
+  assign show_author = false
+  if title_block
+    assign show_date = title_block.settings.blog_show_date
+    assign show_author = title_block.settings.blog_show_author
+  endif
+
+  assign title_over_image = section.settings.title_over_image
+  if title_over_image == nil
+    assign title_over_image = true
+  endif
+  assign has_featured_image = false
+  if article.image != blank
+    assign has_featured_image = true
+  endif
+  assign overlay_title = false
+  if title_over_image and has_featured_image and title_block
+    assign overlay_title = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.section_background }};
+  }
+
+  #MainArticle-{{ section.id }} {
+    --ma-bg: {{ section.settings.section_background }};
+    --ma-heading: {{ section.settings.heading_color }};
+    --ma-text: {{ section.settings.text_color }};
+    --ma-meta: {{ section.settings.meta_color }};
+    --ma-link: {{ section.settings.link_color }};
+    --ma-accent: {{ section.settings.accent_color }};
+    --ma-title-size: {{ section.settings.title_font_size }}px;
+    --ma-body-size: {{ section.settings.body_font_size }}px;
+    --ma-meta-size: {{ section.settings.meta_font_size }}px;
+    --ma-h2-size: {{ section.settings.h2_font_size }}px;
+    --ma-h3-size: {{ section.settings.h3_font_size }}px;
+    --ma-content-padding: {{ section.settings.content_padding }}px;
+    --ma-hero-height: {{ section.settings.image_height_custom }}px;
+    background-color: var(--ma-bg);
+    color: var(--ma-text);
+    min-height: 100%;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__inner {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding-left: var(--ma-content-padding);
+    padding-right: var(--ma-content-padding);
+    box-sizing: border-box;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-media.article-template__hero-small,
+  #MainArticle-{{ section.id }} .article-template__hero-media.article-template__hero-medium,
+  #MainArticle-{{ section.id }} .article-template__hero-media.article-template__hero-large,
+  #MainArticle-{{ section.id }} .article-template__hero-media.article-template__hero-custom {
+    height: var(--ma-hero-height);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-media.article-template__hero-adapt {
+    height: 0;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-color: {{ overlay_fill }};
+    background-image:
+      radial-gradient(
+        ellipse 70% 55% at 50% 42%,
+        rgba(0, 0, 0, 0) 0%,
+        {{ overlay_mid }} 50%,
+        {{ overlay_edge }} 100%
+      ),
+      linear-gradient(
+        180deg,
+        {{ overlay_top }} 0%,
+        rgba(0, 0, 0, 0.12) 42%,
+        {{ overlay_edge }} 100%
+      );
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-overlay--hidden {
+    display: none;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: {{ section.settings.title_vertical_position | default: 'flex-end' }};
+    justify-content: {{ section.settings.title_horizontal_position | default: 'flex-start' }};
+    padding: {{ section.settings.hero_title_padding_top }}px var(--ma-content-padding) {{ section.settings.hero_title_padding_bottom }}px;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content .article-template__hero-title-wrap {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    pointer-events: auto;
+    text-align: {{ section.settings.title_alignment | default: 'left' }};
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content .article-template__title {
+    margin: 0;
+    max-width: 52rem;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content .article-template__title--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content .article-template__title--right {
+    margin-left: auto;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__hero-content .article-template__meta {
+    margin-top: 0.85rem;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  #MainArticle-{{ section.id }} .article-template header:not(.article-template__hero-header) {
+    margin-top: {{ section.settings.header_top_gap }}px;
+    margin-bottom: {{ section.settings.header_bottom_gap }}px;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__title {
+    color: var(--ma-heading);
+    font-size: var(--ma-title-size);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__meta,
+  #MainArticle-{{ section.id }} .circle-divider,
+  #MainArticle-{{ section.id }} .caption-with-letter-spacing {
+    color: var(--ma-meta);
+    font-size: var(--ma-meta-size);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content {
+    color: var(--ma-text);
+    font-size: var(--ma-body-size);
+    line-height: 1.7;
+    margin-top: {{ section.settings.content_top_gap }}px;
+    margin-bottom: {{ section.settings.content_bottom_gap }}px;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content a {
+    color: var(--ma-link);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content h1,
+  #MainArticle-{{ section.id }} .article-template__content h2,
+  #MainArticle-{{ section.id }} .article-template__content h3,
+  #MainArticle-{{ section.id }} .article-template__content h4,
+  #MainArticle-{{ section.id }} .article-template__content h5,
+  #MainArticle-{{ section.id }} .article-template__content h6 {
+    color: var(--ma-heading);
+    line-height: 1.25;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content h2 {
+    font-size: var(--ma-h2-size);
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content h3 {
+    font-size: var(--ma-h3-size);
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content p {
+    margin: 0 0 1.15em;
+    color: var(--ma-text);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ul {
+    list-style: none;
+    margin: 0 0 1.4em;
+    padding: 0;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.7em;
+    color: var(--ma-text);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 1.1em;
+    height: 1.1em;
+    background-color: var(--ma-accent);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.2 8.2 6.4 11.4 12.8 4.6' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.2 8.2 6.4 11.4 12.8 4.6' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ol {
+    margin: 0 0 1.4em;
+    padding-left: 1.4em;
+    color: var(--ma-text);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ol li {
+    margin-bottom: 0.7em;
+    padding-left: 0.4em;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content ol li::marker {
+    color: var(--ma-accent);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__content blockquote {
+    border-left: 3px solid var(--ma-accent);
+    margin: 1.5em 0;
+    padding: 0.4em 0 0.4em 1.2em;
+    color: var(--ma-meta);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__social-sharing {
+    margin-top: 0;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__social-sharing .share-button__button,
+  #MainArticle-{{ section.id }} .article-template__social-sharing summary {
+    color: var(--ma-meta);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__social-sharing .svg-wrapper,
+  #MainArticle-{{ section.id }} .article-template__social-sharing svg {
+    color: var(--ma-meta);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__link {
+    color: var(--ma-link);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__back {
+    padding-left: var(--ma-content-padding);
+    padding-right: var(--ma-content-padding);
+    margin-top: 2.4rem;
+    margin-bottom: 0;
+    padding-bottom: 3.2rem;
+  }
+
+  #MainArticle-{{ section.id }} .article-template__comment-wrapper {
+    background: {{ section.settings.comments_background }};
+    color: var(--ma-text);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__comment-wrapper h2 {
+    color: var(--ma-heading);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__comments-comment {
+    background: {{ section.settings.card_background }};
+    color: var(--ma-text);
+  }
+
+  #MainArticle-{{ section.id }} .article-template__comments-fields .field__input,
+  #MainArticle-{{ section.id }} .article-template__comments-fields .text-area {
+    background: {{ section.settings.card_background }};
+    color: var(--ma-heading);
+  }
+
+  @media screen and (max-width: 749px) {
+    #MainArticle-{{ section.id }} {
+      --ma-title-size: {{ section.settings.title_font_size_mobile }}px;
+      --ma-body-size: {{ section.settings.body_font_size_mobile }}px;
+      --ma-meta-size: {{ section.settings.meta_font_size_mobile }}px;
+      --ma-h2-size: {{ section.settings.h2_font_size_mobile }}px;
+      --ma-h3-size: {{ section.settings.h3_font_size_mobile }}px;
+      --ma-content-padding: {{ section.settings.content_padding_mobile }}px;
+      --ma-hero-height: {{ section.settings.image_height_custom_mobile }}px;
+    }
+  }
+{%- endstyle -%}
+
+<article id="MainArticle-{{ section.id }}" class="article-template">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        <div class="article-template__inner">
+          {% render block %}
+        </div>
+      {%- when 'featured_image' -%}
+        {%- if article.image -%}
+          {%- liquid
+            assign hero_height = block.settings.image_height | default: 'custom'
+            if hero_height == 'small'
+              assign hero_height_px = 275
+            elsif hero_height == 'medium'
+              assign hero_height_px = 420
+            elsif hero_height == 'large'
+              assign hero_height_px = 560
+            else
+              assign hero_height_px = section.settings.image_height_custom
+            endif
+          -%}
+          <div
+            class="article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div
+              class="article-template__hero-media media article-template__hero-{{ hero_height }}"
+              {% if hero_height == 'adapt' and article.image %}
+                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+              {% elsif hero_height != 'adapt' and hero_height != 'custom' %}
+                style="--ma-hero-height: {{ hero_height_px }}px;"
+              {% endif %}
+            >
+              <img
+                srcset="
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
+                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
+                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
+                  {{ article.image | image_url }} {{ article.image.width }}w
+                "
+                sizes="100vw"
+                src="{{ article.image | image_url: width: 1800 }}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+              >
+              <div
+                class="article-template__hero-overlay{% unless section.settings.show_gradient %} article-template__hero-overlay--hidden{% endunless %}"
+                aria-hidden="true"
+              ></div>
+
+              {%- if overlay_title -%}
+                <div class="article-template__hero-content">
+                  <header
+                    class="article-template__hero-title-wrap article-template__hero-header"
+                    {{ title_block.shopify_attributes }}
+                  >
+                    <h1
+                      class="article-template__title{% if section.settings.title_alignment == 'center' %} article-template__title--center{% elsif section.settings.title_alignment == 'right' %} article-template__title--right{% endif %}"
+                    >
+                      {{ article.title | escape }}
+                    </h1>
+                    {%- if show_date or show_author -%}
+                      <div class="article-template__meta">
+                        {%- if show_date -%}
+                          <span class="circle-divider caption-with-letter-spacing">
+                            {{- article.published_at | time_tag: format: 'date' -}}
+                          </span>
+                        {%- endif -%}
+                        {%- if show_author -%}
+                          <span class="caption-with-letter-spacing">
+                            <span>{{ article.author }}</span>
+                          </span>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                  </header>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- when 'title' -%}
+        {%- unless overlay_title -%}
+          <header
+            class="article-template__inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <h1 class="article-template__title">
+              {{ article.title | escape }}
+            </h1>
+            {%- if block.settings.blog_show_date or block.settings.blog_show_author -%}
+              <div class="article-template__meta">
+                {%- if block.settings.blog_show_date -%}
+                  <span class="circle-divider caption-with-letter-spacing">
+                    {{- article.published_at | time_tag: format: 'date' -}}
+                  </span>
+                {%- endif -%}
+                {%- if block.settings.blog_show_author -%}
+                  <span class="caption-with-letter-spacing">
+                    <span>{{ article.author }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </header>
+        {%- endunless -%}
+
+      {%- when 'content' -%}
+        <div
+          class="article-template__content article-template__inner rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {{ article.content }}
+        </div>
+
+      {%- when 'share' -%}
+        <div
+          class="article-template__social-sharing article-template__inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {% assign share_url = request.origin | append: article.url %}
+          {% render 'share-button', block: block, share_link: share_url %}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+
+  <div class="article-template__back center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+      <span class="icon-wrap">
+        <span class="svg-wrapper">
+          {{- 'icon-arrow.svg' | inline_asset_content -}}
+        </span>
+      </span>
+      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+    </a>
+  </div>
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comment-wrapper">
+      <div
+        id="comments"
+        class="article-template__inner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      >
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h2 id="Comments-{{ article.id }}" tabindex="-1">
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h2>
+          {% paginate article.comments by 5 %}
+            <div class="article-template__comments">
+              {%- if comment.status == 'pending' and comment.content -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                  </footer>
+                </article>
+              {%- endif -%}
+
+              {%- for comment in article.comments -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span
+                    ><span class="caption-with-letter-spacing">
+                      {{- comment.created_at | time_tag: format: 'date' -}}
+                    </span>
+                  </footer>
+                </article>
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+        {% form 'new_comment', article %}
+          {%- liquid
+            assign post_message = 'blogs.article.success'
+            if blog.moderated? and comment.status == 'unapproved'
+              assign post_message = 'blogs.article.success_moderated'
+            endif
+          -%}
+          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          {%- if form.errors -%}
+            <div class="form__message" role="alert">
+              <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
+                <span class="svg-wrapper">
+                  {{- 'icon-error.svg' | inline_asset_content -}}
+                </span>
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h3>
+            </div>
+            <ul class="form-status-list caption-large">
+              {%- for field in form.errors -%}
+                <li>
+                  <a href="#CommentForm-{{ field }}" class="link">
+                    {%- if form.errors.translated_fields[field] contains 'author' -%}
+                      {{ 'blogs.article.name' | t }}
+                    {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                      {{ 'blogs.article.message' | t }}
+                    {%- else -%}
+                      {{ form.errors.translated_fields[field] }}
+                    {%- endif -%}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- elsif form.posted_successfully? -%}
+            <div class="form-status-list form__message" role="status">
+              <h3 class="form-status" tabindex="-1" autofocus>
+                <span class="svg-wrapper">
+                  {{- 'icon-success.svg' | inline_asset_content -}}
+                </span>
+                {{ post_message | t }}
+              </h3>
+            </div>
+          {%- endif -%}
+
+          <div
+            {% if blog.moderated? == false %}
+              class="article-template__comments-fields"
+            {% endif %}
+          >
+            <div class="article-template__comment-fields">
+              <div class="field field--with-error">
+                <input
+                  type="text"
+                  name="comment[author]"
+                  id="CommentForm-author"
+                  class="field__input"
+                  autocomplete="name"
+                  value="{{ form.author }}"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'author' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-author-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.name' | t }}"
+                >
+                <label class="field__label" for="CommentForm-author">
+                  {{- 'blogs.article.name' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'author' -%}
+                  <small id="CommentForm-author-error">
+                    <span class="form__message">
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      {{- 'blogs.article.name' | t }}
+                      {{ form.errors.messages.author }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+              <div class="field field--with-error">
+                <input
+                  type="email"
+                  name="comment[email]"
+                  id="CommentForm-email"
+                  autocomplete="email"
+                  class="field__input"
+                  value="{{ form.email }}"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.email' | t }}"
+                >
+                <label class="field__label" for="CommentForm-email">
+                  {{- 'blogs.article.email' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'email' -%}
+                  <small id="CommentForm-email-error">
+                    <span class="form__message">
+                      <span class="svg-wrapper">
+                        {{- 'icon-error.svg' | inline_asset_content -}}
+                      </span>
+                      {{- 'blogs.article.email' | t }}
+                      {{ form.errors.messages.email }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="field field--with-error">
+              <textarea
+                rows="5"
+                name="comment[body]"
+                id="CommentForm-body"
+                class="text-area field__input"
+                aria-required="true"
+                required
+                {% if form.errors contains 'body' %}
+                  aria-invalid="true"
+                  aria-describedby="CommentForm-body-error"
+                {% endif %}
+                placeholder="{{ 'blogs.article.message' | t }}"
+              >{{ form.body }}</textarea>
+              <label class="form__label field__label" for="CommentForm-body">
+                {{- 'blogs.article.message' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+            </div>
+            {%- if form.errors contains 'body' -%}
+              <small id="CommentForm-body-error">
+                <span class="form__message">
+                  <span class="svg-wrapper">
+                    {{- 'icon-error.svg' | inline_asset_content -}}
+                  </span>
+                  {{- 'blogs.article.message' | t }}
+                  {{ form.errors.messages.body }}.</span
+                >
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if blog.moderated? -%}
+            <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
+          {%- endif -%}
+          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+        {% endform %}
+      </div>
+    </div>
+  {%- endif -%}
+</article>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Featured image"
+    },
+    {
+      "type": "range",
+      "id": "image_height_custom",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height (desktop)",
+      "default": 420,
+      "info": "Used when the Featured image block height is set to Custom."
+    },
+    {
+      "type": "range",
+      "id": "image_height_custom_mobile",
+      "min": 160,
+      "max": 560,
+      "step": 10,
+      "unit": "px",
+      "label": "Image height (mobile)",
+      "default": 280
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gradient",
+      "default": true,
+      "label": "Show image gradient overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Gradient color",
+      "default": "#070D16"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Gradient opacity",
+      "default": 55
+    },
+    {
+      "type": "header",
+      "content": "Title over image"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_over_image",
+      "default": true,
+      "label": "Show title over featured image"
+    },
+    {
+      "type": "select",
+      "id": "title_vertical_position",
+      "label": "Vertical position",
+      "options": [
+        { "value": "flex-start", "label": "Top" },
+        { "value": "center", "label": "Middle" },
+        { "value": "flex-end", "label": "Bottom" }
+      ],
+      "default": "flex-end"
+    },
+    {
+      "type": "select",
+      "id": "title_horizontal_position",
+      "label": "Horizontal position",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_padding_top",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Title padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "hero_title_padding_bottom",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Title padding bottom",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text",
+      "default": "#C8CED8"
+    },
+    {
+      "type": "color",
+      "id": "meta_color",
+      "label": "Date / author / muted",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Links",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent (ticks / markers)",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card / form background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "comments_background",
+      "label": "Comments background",
+      "default": "#0B1220"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (desktop)",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 22,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "h2_font_size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "H2 size (desktop)",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "h2_font_size_mobile",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "H2 size (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "h3_font_size",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "H3 size (desktop)",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "h3_font_size_mobile",
+      "min": 15,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "H3 size (mobile)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size (desktop)",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "body_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "meta_font_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Date / author size (desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "meta_font_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Date / author size (mobile)",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Content padding (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_mobile",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Content padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_top_gap",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Space above title",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_gap",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Space below title",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_top_gap",
+      "min": 8,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Space above content",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_bottom_gap",
+      "min": 8,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Space below content",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+            },
+            {
+              "value": "custom",
+              "label": "Custom (use section height sliders)"
+            }
+          ],
+          "default": "custom",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "t:sections.main-article.blocks.share.settings.text.default"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

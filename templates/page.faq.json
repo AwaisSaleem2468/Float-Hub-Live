@@ -1,0 +1,630 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": false,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_innerpage_banner_3MfNkG": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/635023591_18573033625022215_124986833144175593_n.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 60,
+        "section_height": 60,
+        "section_height_mobile": 65,
+        "show_badge": false,
+        "badge_text": "",
+        "eyebrow": "Need more info?",
+        "eyebrow_size": 13,
+        "heading": "Check Out Our Most ",
+        "heading_accent": "Frequently Asked Questions.",
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "description": "",
+        "description_size_desktop": 16,
+        "description_size_mobile": 14,
+        "button_label_1": "",
+        "button_link_1": "",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "center",
+        "content_position_vertical": "middle",
+        "text_alignment": "center",
+        "content_width": 1400
+      }
+    },
+    "collapsible_content_j6nPij": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_hCYDyr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What services do you offer?",
+            "icon": "none",
+            "row_content": "<p>We offer four premium recovery modalities in our Shoreditch Centre:</p><ul><li><strong>Float Therapy:</strong> Available as Single or Duo sessions in our world-class pods.</li><li><strong>Hyperbaric Oxygen Therapy (HBOT):</strong> Launching early April 2026 in our professional <strong>London Oxygen Suite</strong>.</li><li><strong>Red Light Therapy (RLT):</strong> Targeted cellular energy and skin health.</li><li><strong>Duo/Couple Options:</strong> Both our Float and HBOT services can be booked for either one or two people to experience together in the same private suite (single and duo/couple options are booked & charged as distinct services, make sure you choose the ‘For Two’ option if you wish to float or dive with a friend or partner).</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7CC3Qi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Hyperbaric Oxygen Therapy",
+            "icon": "none",
+            "row_content": "<p><strong>What is HBOT and how does it work?</strong> HBOT involves breathing ~96% pure oxygen in a pressurized chamber. Our suite utilizes a clinical-grade <strong>1.5 ATA pressure</strong>. At this specific level, oxygen dissolves directly into your blood plasma, reaching tissues and brain cells that standard breathing cannot—accelerating repair and sharpening cognitive focus.</p><p><strong>Can two people use the HBOT chamber together?</strong> Yes. Our suite is a spacious environment designed for both individual “deep-dives” or shared duo sessions. Note that solo and duo sessions are booked and charged as distinct services.</p><p><strong>How long are the sessions and what can I do inside?</strong></p><ul><li><strong>Duration:</strong> Each session includes <strong>60 minutes</strong> of total “dive time” under pressure.</li><li><strong>Activity:</strong> You are welcome to meditate, sleep, read, or watch content.</li><li><strong>Electronics:</strong> iPhones and iPads are permitted, but <strong>headphones must be used</strong> as we do not allow external speakers.</li></ul><p><strong>Is this medical treatment?</strong> No. We provide a strictly therapeutic HBOT environment for wellness and recovery. We are not a medical clinic and do not provide medical advice, diagnosis, or treatments. If you have a specific condition, please consult your GP before booking.</p><p><strong>Can I adjust the pressure myself?</strong> The suite has internal controls for comfort, but users are strictly prohibited from exceeding 1.5 ATA. Higher pressures are medical protocols that we do not offer.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yLA7Fg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I prepare for my first session?",
+            "icon": "none",
+            "row_content": "<p><strong>When should I arrive for my first appointment?</strong></p><ul><li><strong>First Timers:</strong> For your first session of any service (Float, HBOT, or RLT), please arrive <strong>15 minutes early</strong>. This allows us to give you a full walkthrough of the technology and ensure you are comfortable before your session begins.</li><li><strong>Returning Guests:</strong> For all subsequent visits, arriving <strong>5 minutes early</strong> is sufficient.</li></ul><p><strong>Do I need to bring anything with me?</strong></p><ul><li><strong>We provide everything:</strong> You don’t need to bring a thing. We provide fresh towels, organic body wash, shampoo, conditioner, earplugs, and high-end hair dryers.</li><li><strong>Footwear:</strong> We suggest bringing your own <strong>slippers</strong> if you prefer not to walk barefoot in the center.</li></ul><p><strong>What should I wear for my session?</strong></p><ul><li><strong>Floating:</strong> We recommend floating in your “birthday suit” for the best sensory experience, though you may wear a swimsuit if you prefer.</li><li><strong>Red Light Therapy (RLT):</strong> For the light to be effective, it must have direct contact with your skin. You will undress in your private, lockable room to the point where the areas you want to treat are exposed to the light—underwear is the most common approach.</li><li><strong>HBOT:</strong> Please wear <strong>comfortable, loose-fitting clothes</strong>. It is essential that you do <strong>not</strong> wear anything sharp (such as jewelry, belts with sharp buckles, or studded denim) as these can damage the specialized materials of the oxygen suite.</li></ul><p><strong>Can I use my phone during the session?</strong></p><ul><li><strong>HBOT & RLT:</strong> Yes, you can take your phone or tablet into these sessions. However, you <strong>must use headphones</strong> for any audio; external speakers are not permitted to ensure the center remains a quiet sanctuary.</li><li><strong>Floating:</strong> We strictly prohibit electronics inside the float pods to protect the equipment from the salt and to ensure you achieve a true sensory-deprived state.</li></ul><p><strong>Is there anything I should avoid doing before I arrive?</strong></p><ul><li><strong>Caffeine & Heavy Meals:</strong> Avoid caffeine for 3–4 hours before a float to help your mind settle. A light meal 90 minutes beforehand is ideal.</li><li><strong>Shaving:</strong> Avoid shaving or waxing on the day of a float, as the Epsom salt can cause a stinging sensation on fresh skin.</li><li><strong>Hair Dye/Tanning:</strong> Ensure you have not dyed your hair or had a spray tan within <strong>14 days</strong> of your float session, as this can damage our pods.</li></ul><p><strong>What if I feel uncomfortable or want to stop?</strong></p><ul><li><strong>Total Control:</strong> You are in complete control of your environment. Whether you are in a float pod, the RLT suite, or the oxygen suite, you can exit the equipment or the room at any time during your session.</li><li><strong>Step-In Design:</strong> All of our facilities are designed for simple entry and exit, ensuring you feel secure and at ease throughout your recovery.</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4wQqbX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Float for two - (Couple Float) for 2 people floating together in the same tank.",
+            "icon": "none",
+            "row_content": "<p>Float for Two (Couple Float) is for two people wishing to float together in the same tank and in the same room.</p><p>You can book Float for two sessions in rooms  3 and 5.</p><p>Our Orbit pods are one of the largest pods available. They comfortably offer enough space for two. This could be perfect for parents who wish to float with their children, for anyone who is anxious about floating alone, or for friends and couples who wish to float together.</p><p>The pods are all the same size for single and couple floats. Our pods are 8″5 x 5″5 , making them the largest type of float pod in the UK. They are designed to fit athletes up to 7″3. We have several members who are around 6″7 and enjoy the larger tanks.</p><p>If you have purchased a Single Float or 2 x Single Floats and wish to transfer to a Float for Two, please send your request to <a href=\"mailto:manager@floathub.co.uk\" title=\"mailto:manager@floathub.co.uk\">manager@floathub.co.uk</a></p><p>Please note: If you purchase a Float for Two and come to float alone, you are very welcome to float but you are not entitled to a refund for the person missing.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LhRjDe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How big are your tanks?",
+            "icon": "none",
+            "row_content": "<p>Our pods are 8″5 x 5″5 , making them the largest type of float pod in the UK. They are designed to fit athletes up to 7″3. We have several members who are around 6″7 and enjoy the larger tanks.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YW7pa3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I am claustrophobic?",
+            "icon": "none",
+            "row_content": "<p>Claustrophobia is one of the most common initial concerns. However, due to the size of our pods, people who have claustrophobia rarely find this an issue. You have the option to float with the light on and the pod door open.  The pod door is never locked and you can open the pod door at any point during your float… <em>you’re in control of your float.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yFT6h7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I drown if I fall asleep?",
+            "icon": "none",
+            "row_content": "<p>No. It’s common to fall asleep for parts or sometimes all of your float and the water is so buoyant that you always stay afloat.</p><p><em>The worst that can happen is being woken by a little salt water in your eyes, though our non-drip tanks make this unlikely.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xXiBDX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to sign a waiver?",
+            "icon": "none",
+            "row_content": "<p>Yes, you will need to read and sign the waiver before you float. This is a must for the following reasons:</p><p>1: If you discover on the waiver that you cannot float, you will have the time to cancel or reschedule your session.</p><p>2: We have limited WiFi access in store. This makes it difficult to access the waiver in store and may delay the start of your session. So, we strongly recommend signing your waiver beforehand.</p><p>We will send you the waiver form automatically as soon as you book a session via email and text message. If you cannot find it, please check in the spam folder.</p><p>Thank you for your cooperation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_A8GDxV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How is the water cleaned?",
+            "icon": "none",
+            "row_content": "<p>Our tanks are among the most hygienic systems available. The highly sterile salt water is 100% filtered between floats, as our tanks empty and refill for each float. A small amount of steriliser is added and the water is also sanitised with UV light.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kAjWA9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How often do you replace the water?",
+            "icon": "none",
+            "row_content": "<p>The highly sterile salt water has 575KG of medical grade Epsom salts and is 100% filtered between floats through a 1 micron filter & ozone filter, as our tanks empty and refill for each float. A small amount of steriliser is added and the water is also sanitised with UV light.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kYDQmi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to bring anything?",
+            "icon": "none",
+            "row_content": "<p>No. We have some tips and recommendations above to consider the day of your appointment, however we provide everything you need for your session. Due to covid restrictions we are unable to provide slippers so you can bring your own if you do now wish to walk barefoot or with socks.</p><p>We do not provide combs (personal hygiene).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XTxfTk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the minimum age for floating?",
+            "icon": "none",
+            "row_content": "<p>The minimum age is 18 for anyone wishing to float with us.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MGeLCV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who is unable to float? When can I not float?",
+            "icon": "none",
+            "row_content": "<p><strong>You can’t float if:</strong></p><ul><li>You have open wounds</li><li>You had diarrhea in the past 14 days</li><li>You’re under the influence of drugs or alcohol</li><li>You have recently dyed your hair (within 14 days) or applied tanning products</li><li>You have infectious diseases</li><li>You have got a recent tattoo</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hGVqDT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I recently dyed my hair or spray tanned?",
+            "icon": "none",
+            "row_content": "<p>No, the spray tan or hair dye can leak into the water and damage the float tanks. You want to make completely sure that no dye is coming out of your hair in the shower or on a towel after washing (usually within a few days to weeks depending on the treatment). Leave a minimum of 48 hours after a spray tan before floating.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mP3VLH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I am pregnant?",
+            "icon": "none",
+            "row_content": "<p>Yes! There are many unique benefits that helps relieve the pressure and tensions on the body during pregnancy, while also providing a deeper connection to your child.</p><p><em><strong>We recommend confirming with your doctor first however.</strong></em></p><p>We ask for people not to float in their first trimester, purely because it’s a higher risk stage for pregnancy generally.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HUK7ig": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I have a new tattoo?",
+            "icon": "none",
+            "row_content": "<p>You want to make sure it’s been at least 30 days (or your tattoo has fully healed) before floating as the salt water can cause painful burning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LDrV4d": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your cancellation policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We have a 24 hour cancellation process.</strong> If you have booked an appointment with us and need to reschedule, please let us know at least 24 hours before your scheduled time to avoid losing your float credit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gh6bwi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long are float sessions?",
+            "icon": "none",
+            "row_content": "<p><strong>Each float session appointment includes 60 minutes for you to be inside of the pod floating,</strong> with an additional 25 minutes that allows you to change and shower both before and after the appointment. <em>Members have the opportunity to upgrade to 90 minute float sessions when available. (Subject to availability)</em></p><p>We ask that you try to keep your showering brief to ensure we have enough time to clean up the room and get it ready for the next appointment. You can freshen up and take your time getting ready in our Vanity Room where we have moisturizer, hair dryers and other amenities. Plus, feel free to keep relaxing for as long as you’d like in our Relaxation Room with tea and some reading materials.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MtcjDf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I arrive for my appointment?",
+            "icon": "none",
+            "row_content": "<p>For your first float session, we recommend arriving no later than 15 minutes before your scheduled appointment time. This ensures we can give you a full walkthrough beforehand without taking away from your time floating.</p><p><em>Any float sessions past your first time, you can arrive 5 minutes before.</em></p><p>Please note: If you arrive late we might have to shorten your session or reschedule to avoid delay to other customers after you.</p><p>Please note: If you arrive too early and we are fully booked we might ask you to come back 15 minutes before your time because the relaxation room is for after float people who are meditating and or relaxing, so we don’t want to disturb them.</p><p>PS  Please refrain from using the mobile phone in the relaxation room, thanks</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PLYnQN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your refund policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We do offer full refund within 14 days from the purchase.</strong></p><p>Refunds are available within 14 days of purchase, if the sessions have not been used. If you need a refund for any reason, please get in touch and we can help you with this.</p><p>Booking a session with a NO SHOW doesn’t entitled to a refund.</p><p>https://www.gov.uk/accepting-returns-and-giving-refunds</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AcGCqz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can couples float together?",
+            "icon": "none",
+            "row_content": "<p>With the largest float pods on the market, they’re big enough for two.</p><p>To float together with a friend or loved one, please book into rooms 3 or 5.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EPbXKp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are there any differences between the rooms?",
+            "icon": "none",
+            "row_content": "<p>Each room is equipped with exactly the same facilities, with the exception of the larger showers in rooms 3 & 5 designed for two people. Every room provides a luxurious, comfortable, soundproofed float therapy experience.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YTiDUg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens if I get the salt in my ears?",
+            "icon": "none",
+            "row_content": "<p>We provide earplugs with every booking to keep the solution out of customers’ ears. If they are not correctly fitted and some salt finds it’s way in, there’s no cause for concern – just rinse your ears thoroughly in the shower afterwards.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JTJEJx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I have to get my hair wet?",
+            "icon": "none",
+            "row_content": "<p><strong>Yes, it is IMPOSSIBLE to keep your hair dry during a float session</strong>, even if you wear a swim cap (many people have tried!). If your hair comes in contact with the water (as it inevitably will.)</p><p>To prevent any tactile distractions, <em>we</em> recommend not using a shower cap or swim cap in the <em>float pod</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pnePwL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear contact lens in a float tank?",
+            "icon": "none",
+            "row_content": "<p><strong>It’s best not to wear your contact lenses in the tank</strong>. If you wear contacts please bring a case and solution so you can keep them safe while your float.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ybDE3H": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I shower before or after using the float pod?",
+            "icon": "none",
+            "row_content": "<p>Both times actually. … After stepping out of the float pod<strong>you have another quick rinsing shower</strong>that will remove any leftover Epsom salts accumulated during the float. Rinse your hair thoroughly as well as cleaning out left over salt water from your ears is recommended.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3BtRKP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I send an electronic gift card?",
+            "icon": "none",
+            "row_content": "<p>Yes, you have the option of an electronic the gift card. When you go to purchase one from our online store choose GIFT CARDS, you will have the option of sending it via email on a scheduled date that you choose (ex. birthday or anniversary).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aDpnC8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I redeem or use a gift card I received?",
+            "icon": "none",
+            "row_content": "<p>If you received an electronic gift card, you can easily book your session online.</p><p>Go to our booking system and login or create an account. You’ll need to choose the services that correspond with your gift card and enter your card number upon checkout.</p><p>Email us at <a href=\"mailto:info@floathub.co.uk\" title=\"mailto:info@floathub.co.uk\">info@floathub.co.uk</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DnjeRc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to create an account in order to purchase ?",
+            "icon": "none",
+            "row_content": "<p>\\You must make an account to purchase a service credit, package, or membership, as well as booking a reservation. Reservations are always tied to a customer account.</p><p>Gift Cards can be purchased online without creating an account, but they would still need to create an account in order to book a reservation or be booked for a reservation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rfMFUj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the terms and conditions of membership?",
+            "icon": "none",
+            "row_content": "<ol><li>Our membership begins on the date of your first payment or a later date of your choosing, and payment will be taken each month on the same date as the start of your membership.</li><li>My Float Hub membership recurs at £45 or £80/month and includes 1 or 4 floats/month. Annual Membership 12 Floats at £500/Year</li><li>As a member, I am able to purchase additional float sessions for £40 each.</li><li>For every new member I refer to Float Hub, I will receive free float credit (currently £25) on my account as well as offer an exclusive referral discount to each new customer I refer.</li><li><strong>Share floats</strong> with friends and family.</li><li>Any unused floats on my account rollover and are valid for 12 months.</li><li>If my membership falls out of good standing for non-payment, or I choose to terminate my membership, all float credits will expire within 30 days.</li><li><strong>My membership fees are not refundable.</strong></li><li><strong>Memberships have no minimum term.</strong></li><li>You can cancel this contract at any time with 10 days written cancellation notice (<a href=\"mailto:info@floathub.co.uk\" target=\"_blank\">manager@floathub.co.uk</a>)</li><li>You can pause your membership from 1 to 3 months per calendar year</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xe67qa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the membership work?",
+            "icon": "none",
+            "row_content": "<ol><li>You receive our best possible price on floats and lock it in for as long as your membership stays active. There is no minimum term commitment, meaning that even to try out a single session, membership is a great choice. We hope you’ll love it so much you’ll decide to keep up a regular float practice for the longer lasting benefits it offers.</li><li>Your sessions will never expire as long as your membership is active and there are no missing payments.</li><li>You can pause/freeze up to three months per calendar year.</li><li>If you wish to cancel membership please send an email to manager@floathub.co.uk 10 days before the payment.</li><li>Please note when you cancel /terminate your membership, all your existing sessions/credit will expire after 30 days.</li><li>If you miss the payments and we are unable to collect the fee for more than 30 days, the system will automatically terminate your membership and your sessions will expire after 30 days.</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_H4VDBG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I share my membership floats with others?",
+            "icon": "none",
+            "row_content": "<ol><li>Our memberships are now shareable,  you can also  refer others to receive an exclusive referral discount, and be rewarded with float credit onto your own account. Check the ‘me’ page when logged in for full details.</li><li><strong>Share floats</strong> with friends and family.</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_79LgrG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there any commitment, sign up, or cancellation fee for membership?",
+            "icon": "none",
+            "row_content": "<ol><li>There is no signing fee to become a member.</li><li>There is no minimum term.</li><li>The membership can be paused up to 3 months per calendar year.</li><li>You can cancel your membership with an email to manager@floathub.co.uk 10 days before the payment is due.</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EJzbEi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are there any side-effects?",
+            "icon": "none",
+            "row_content": "<p>There are no known negative side-effects of floating. But there are numerous scientifically proven benefits – see our benefits pages or read <a href=\"http://www.clinicalfloatation.com/\" target=\"_blank\">www.clinicalfloatation.com</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dzc3ne": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What can I expect for my first float?",
+            "icon": "none",
+            "row_content": "<p>The majority of people emerge from their float feeling refreshed and relaxed, with a clearer head. The benefits are different for everyone, so it’s best to be open-minded about what you’ll experience. Sometimes it can take a few floats to learn how to switch off fully – so stick with it if you felt like you could have relaxed more deeply.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pKEJBt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much salt do you use?",
+            "icon": "none",
+            "row_content": "<p>We use 575 kg of Epsom salt in each floatation tank.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HdJeV3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float using drugs or alcohol?",
+            "icon": "none",
+            "row_content": "<p><strong>People under the effects of drugs or alcohol, intoxicated, cannot float.</strong></p><p>Your account will be disabled and you not be permitted to float and your session will be treated as a late cancellation with <strong>NO REFUNDS.</strong></p><p>We have a  Zero tolerance on drugs for your own safety.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_89ACDP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Students - NHS - Blue Light Card - Discounts",
+            "icon": "none",
+            "row_content": "<p>Student discount – 15% discount on all services.</p><p>Blue Light Card discount – 30% discount on single float sessions, 30% discount on single red light sessions and 20% discount on float-for-two sessions (the card holder must be one of the people floating).</p><p>Please note:</p><p>These discounts cannot be used in conjunction with other packages, offers, gift cards or promotions.</p><p>Discounts are for the card holder only.</p><p>NHS ID cards will not be accepted.</p><p>Please email a clear image of your Blue Light Card or Student Card to: manager@floathub.co.uk</p><p>Ensure your name and expiry date are visible. Management will apply an automatic discount code on your account.</p><p>Please send a new Blue Light Card or Student Card image when your current one expires. Please have your Blue Light Card or Student Card to hand when you visit us.</p><p>Feel free to contact: manager@floathub.co.uk if you have any queries.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xBEJPk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "No Shows",
+            "icon": "none",
+            "row_content": "<p>Payment will be charged in full for any missed appointments, unless it has been agreed in advance by the management to reschedule or cancel the appointment.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_hCYDyr",
+        "collapsible_row_7CC3Qi",
+        "collapsible_row_yLA7Fg",
+        "collapsible_row_4wQqbX",
+        "collapsible_row_LhRjDe",
+        "collapsible_row_YW7pa3",
+        "collapsible_row_yFT6h7",
+        "collapsible_row_xXiBDX",
+        "collapsible_row_A8GDxV",
+        "collapsible_row_kAjWA9",
+        "collapsible_row_kYDQmi",
+        "collapsible_row_XTxfTk",
+        "collapsible_row_MGeLCV",
+        "collapsible_row_hGVqDT",
+        "collapsible_row_mP3VLH",
+        "collapsible_row_HUK7ig",
+        "collapsible_row_LDrV4d",
+        "collapsible_row_gh6bwi",
+        "collapsible_row_MtcjDf",
+        "collapsible_row_PLYnQN",
+        "collapsible_row_AcGCqz",
+        "collapsible_row_EPbXKp",
+        "collapsible_row_YTiDUg",
+        "collapsible_row_JTJEJx",
+        "collapsible_row_pnePwL",
+        "collapsible_row_ybDE3H",
+        "collapsible_row_3BtRKP",
+        "collapsible_row_aDpnC8",
+        "collapsible_row_DnjeRc",
+        "collapsible_row_rfMFUj",
+        "collapsible_row_xe67qa",
+        "collapsible_row_H4VDBG",
+        "collapsible_row_79LgrG",
+        "collapsible_row_EJzbEi",
+        "collapsible_row_dzc3ne",
+        "collapsible_row_pKEJBt",
+        "collapsible_row_HdJeV3",
+        "collapsible_row_89ACDP",
+        "collapsible_row_xBEJPk"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_NAMghC": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_qQLipP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I manage my account?",
+            "icon": "none",
+            "row_content": "<p>Click book now and you can choose the availability for your float.</p><p>You will also see Account option so you can log in with your username and password.</p><p>Once into your account click ” ME” to manage your account and to see all your history.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Tyb7Wx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do update the credit card on my account?",
+            "icon": "none",
+            "row_content": "<p>If you wish to update a credit or debit card on your account,  log in to your account and scroll down. You will find an option to update the credit or debit card. Or call us and we will update it for you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YbTHbc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I cancel my membership?",
+            "icon": "none",
+            "row_content": "<p>You can cancel your membership at any time. We kindly ask that you provide at least 10 days’ notice before your next payment is due.</p><p>To cancel, please email: <a><strong>manager@floathub.co.uk</strong></a>.</p><p>Please note: we do not accept membership cancellations via telephone.</p><p>All remaining sessions will expire 30 days after your membership is cancelled.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CYyTzU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When do membership payments get charged?",
+            "icon": "none",
+            "row_content": "<p>Membership payments are made every 30 days based on when you signed up. Every month provides you with one float session credit on your account which rolls over for up to 12 months and can be used at any time as long as your membership is active.</p><p>You can change the autopay date simply email us to: team@floathub.co.uk</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kLCgna": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I pause/freeze my membership?",
+            "icon": "none",
+            "row_content": "<p>Yes you can pause/freeze your membership from 1 to 3 months per each calendar year.</p><p>You can change the autopay date simply email us to: team@floathub.co.uk.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GAwx8k": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why didn't I get a booking confirmation?",
+            "icon": "none",
+            "row_content": "<p>Either the email address on your file is incorrect, or we don’t have your email on file or,  you opted out of receiving schedule reminders and appointment updates. To change your registered email address, or opt back into these emails, log in to your account and update it or send an email to <a href=\"mailto:team@floathub.co.uk\" target=\"_blank\">team@floathub.co.uk </a></p><p>Simply login to your account and click ” ME” to update any detail on your account, like email, telephone number, credit card details, etc.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gKcCe8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I have a VAT receipt?",
+            "icon": "none",
+            "row_content": "<p>Absolutely. Please let us know if you need one, and we will arrange it for you.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_qQLipP",
+        "collapsible_row_Tyb7Wx",
+        "collapsible_row_YbTHbc",
+        "collapsible_row_CYyTzU",
+        "collapsible_row_kLCgna",
+        "collapsible_row_GAwx8k",
+        "collapsible_row_gKcCe8"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Managing Your Account",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_fbWnfF": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_link_1": "",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_link_2": "",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_innerpage_banner_3MfNkG",
+    "collapsible_content_j6nPij",
+    "collapsible_content_NAMghC",
+    "custom_section_small_banner_fbWnfF"
+  ]
+}

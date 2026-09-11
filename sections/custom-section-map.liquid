@@ -1,0 +1,479 @@
+{%- liquid
+  assign map_title = section.settings.heading | default: 'Shoreditch, London'
+  assign map_address = section.settings.address | default: '346 Old Street, Lower Ground Floor, London, EC1V 9NQ'
+  assign map_query = map_address | strip | url_encode
+  assign map_zoom = section.settings.map_zoom | default: 16
+  assign map_embed = 'https://maps.google.com/maps?q=' | append: map_query | append: '&z=' | append: map_zoom | append: '&output=embed'
+  assign map_directions = 'https://www.google.com/maps/dir/?api=1&destination=' | append: map_query
+  assign show_info = true
+  if section.settings.show_info == false
+    assign show_info = false
+  endif
+-%}
+
+{% style %}
+  #MapSection-{{ section.id }} {
+    --map-bg: {{ section.settings.background_color }};
+    --map-text: {{ section.settings.text_color }};
+    --map-muted: {{ section.settings.muted_color }};
+    --map-accent: {{ section.settings.accent_color }};
+    --map-panel: {{ section.settings.panel_background }};
+    --map-panel-border: {{ section.settings.panel_border }};
+    --map-height: {{ section.settings.map_height }}px;
+    --map-height-mobile: {{ section.settings.map_height_mobile }}px;
+    position: relative;
+    width: 100%;
+    background-color: var(--map-bg);
+    color: var(--map-text);
+    overflow: hidden;
+  }
+
+  #MapSection-{{ section.id }} .map-section__frame-wrap {
+    position: relative;
+    width: 100%;
+    height: var(--map-height);
+    background-color: #0b1220;
+  }
+
+  #MapSection-{{ section.id }} .map-section__frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  #MapSection-{{ section.id }} .map-section__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 13, 22, 0.15) 0%,
+      rgba(7, 13, 22, 0.05) 45%,
+      rgba(7, 13, 22, 0.55) 100%
+    );
+  }
+
+  #MapSection-{{ section.id }} .map-section__info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    padding: {{ section.settings.panel_padding }}px clamp(1.25rem, 4vw, 3rem);
+  }
+
+  #MapSection-{{ section.id }} .map-section__panel {
+    pointer-events: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+    max-width: {{ section.settings.panel_max_width }}px;
+    padding: 1.35rem 1.5rem;
+    background: var(--map-panel);
+    border: 1px solid var(--map-panel-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  #MapSection-{{ section.id }} .map-section__copy {
+    flex: 1 1 16rem;
+    min-width: 0;
+  }
+
+  #MapSection-{{ section.id }} .map-section__eyebrow {
+    margin: 0 0 0.45rem;
+    color: var(--map-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  #MapSection-{{ section.id }} .map-section__heading {
+    margin: 0;
+    color: var(--map-text);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  #MapSection-{{ section.id }} .map-section__address {
+    margin: 0.65rem 0 0;
+    color: var(--map-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.address_size }}px;
+    line-height: 1.55;
+  }
+
+  #MapSection-{{ section.id }} .map-section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  #MapSection-{{ section.id }} .map-section__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.35rem;
+    border: 0;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: linear-gradient(90deg, #3b82f6 0%, #22d3ee 100%);
+    color: #fff;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  #MapSection-{{ section.id }} .map-section__button:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  #MapSection-{{ section.id }} .map-section__button--outline {
+    background: transparent;
+    border: 1px solid var(--map-panel-border);
+    color: var(--map-text);
+  }
+
+  #MapSection-{{ section.id }} .map-section__button--outline:hover {
+    border-color: var(--map-accent);
+    color: var(--map-accent);
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    #MapSection-{{ section.id }} .map-section__frame-wrap {
+      height: var(--map-height-mobile);
+    }
+
+    #MapSection-{{ section.id }} .map-section__info {
+      padding: 1rem;
+    }
+
+    #MapSection-{{ section.id }} .map-section__panel {
+      padding: 1.1rem 1.15rem;
+    }
+
+    #MapSection-{{ section.id }} .map-section__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #MapSection-{{ section.id }} .map-section__actions {
+      width: 100%;
+    }
+
+    #MapSection-{{ section.id }} .map-section__button {
+      flex: 1 1 auto;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="MapSection-{{ section.id }}"
+  class="map-section"
+  aria-label="{{ map_title | escape }}"
+>
+  <div class="map-section__frame-wrap">
+    <iframe
+      class="map-section__frame"
+      src="{{ map_embed }}"
+      title="Map to {{ map_title | escape }}"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+
+    {%- if section.settings.show_overlay -%}
+      <div class="map-section__overlay" aria-hidden="true"></div>
+    {%- endif -%}
+
+    {%- if show_info -%}
+      <div class="map-section__info">
+        <div class="map-section__panel">
+          <div class="map-section__copy">
+            {%- if section.settings.eyebrow != blank -%}
+              <p class="map-section__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+            {%- endif -%}
+            <h2 class="map-section__heading">{{ map_title | escape }}</h2>
+            {%- if map_address != blank -%}
+              <p class="map-section__address">{{ map_address | escape | newline_to_br }}</p>
+            {%- endif -%}
+          </div>
+
+          {%- if section.settings.show_directions or section.settings.show_open_maps -%}
+            <div class="map-section__actions">
+              {%- if section.settings.show_directions -%}
+                <a
+                  class="map-section__button"
+                  href="{{ map_directions }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.directions_label | default: 'Get directions' | escape }}
+                </a>
+              {%- endif -%}
+              {%- if section.settings.show_open_maps -%}
+                <a
+                  class="map-section__button map-section__button--outline"
+                  href="https://www.google.com/maps/search/?api=1&query={{ map_query }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ section.settings.open_maps_label | default: 'Open in Maps' | escape }}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Map",
+  "tag": "section",
+  "class": "section-custom-map",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Location"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Visit us"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shoreditch, London"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address",
+      "default": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ"
+    },
+    {
+      "type": "range",
+      "id": "map_zoom",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "label": "Map zoom",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "map_height",
+      "min": 320,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Map height",
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "map_height_mobile",
+      "min": 280,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Map height (mobile)",
+      "default": 420
+    },
+    {
+      "type": "checkbox",
+      "id": "show_info",
+      "label": "Show location panel",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show map overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "panel_max_width",
+      "min": 420,
+      "max": 1100,
+      "step": 20,
+      "unit": "px",
+      "label": "Panel max width",
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "panel_padding",
+      "min": 12,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Panel outer padding",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_directions",
+      "label": "Show directions button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "directions_label",
+      "label": "Directions button label",
+      "default": "Get directions"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_open_maps",
+      "label": "Show open maps button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "open_maps_label",
+      "label": "Open maps button label",
+      "default": "Open in Maps"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 22,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "address_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Address size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "panel_background",
+      "label": "Panel background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "panel_border",
+      "label": "Panel border",
+      "default": "#243041"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Address color",
+      "default": "#B7C0CC"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#0DAAEF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Map"
+    }
+  ]
+}
+{% endschema %}

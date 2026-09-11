@@ -1,0 +1,1039 @@
+{%- liquid
+  assign media_type = section.settings.media_type
+  assign desktop_video = section.settings.video
+  assign mobile_video = section.settings.video_mobile
+  if mobile_video == blank
+    assign mobile_video = desktop_video
+  endif
+  assign desktop_image = section.settings.image
+  assign mobile_image = section.settings.image_mobile
+  if mobile_image == blank
+    assign mobile_image = desktop_image
+  endif
+
+  assign overlay_opacity = section.settings.overlay_opacity | default: 60
+  assign overlay_alpha = overlay_opacity | times: 1.0 | divided_by: 100.0
+  assign gradient_opacity = section.settings.gradient_opacity | default: 85
+  assign gradient_alpha = gradient_opacity | times: 1.0 | divided_by: 100.0
+  assign image_fit = section.settings.image_fit | default: 'cover'
+-%}
+
+{% style %}
+  #SmallBanner-{{ section.id }} {
+    --sb-accent: {{ section.settings.accent_color }};
+    --sb-text: {{ section.settings.text_color }};
+    --sb-min-height: {{ section.settings.section_height }}vh;
+    --sb-min-height-mobile: {{ section.settings.section_height_mobile }}vh;
+    --sb-heading-size: {{ section.settings.heading_size_desktop }}px;
+    --sb-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --sb-image-fit: {{ image_fit }};
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--sb-min-height);
+    overflow: hidden;
+    color: var(--sb-text);
+    background-color: {{ section.settings.fallback_background }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: {{ section.settings.fallback_background }};
+    overflow: hidden;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media img,
+  #SmallBanner-{{ section.id }} .small-banner__media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    display: block;
+    object-position: {{ section.settings.image_position }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media img {
+    object-fit: var(--sb-image-fit);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media video {
+    object-fit: cover;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media-desktop {
+    display: block;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__media-mobile {
+    display: none !important;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block !important;
+    pointer-events: none;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay--dark {
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ overlay_alpha }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay--brand {
+    background: linear-gradient(
+      90deg,
+      {{ section.settings.gradient_start }} 0%,
+      {{ section.settings.gradient_end }} 100%
+    );
+    opacity: {{ gradient_alpha }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay--brand-dark {
+    background: linear-gradient(
+      90deg,
+      {{ section.settings.gradient_start }} 0%,
+      {{ section.settings.gradient_end }} 100%
+    );
+    opacity: 1;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay--brand-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      {{ section.settings.gradient_start }} 0%,
+      {{ section.settings.gradient_end }} 100%
+    );
+    opacity: {{ gradient_alpha }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__overlay--brand-dark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ overlay_alpha }};
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__eyebrow {
+    margin: 0 0 0.85rem;
+    color: var(--sb-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__heading {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: {{ section.settings.heading_weight }};
+    font-size: var(--sb-heading-size);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--sb-text);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 {{ section.settings.content_spacing }}px;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__contact {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.contact_size }}px;
+    line-height: 1.45;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__contact a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__contact a:hover {
+    color: var(--sb-accent);
+    text-decoration: underline;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.8rem;
+    padding: 1.2rem 2.4rem;
+    border-radius: {{ section.settings.button_radius }}px;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    appearance: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn:hover {
+    transform: translateY(-1px);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn--primary {
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn--primary:hover {
+    filter: brightness(1.05);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn--secondary {
+    background: transparent;
+    color: var(--sb-text);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #fff;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: rgba(7, 13, 22, 0.72);
+    backdrop-filter: blur(4px);
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-modal.is-open {
+    display: flex;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-dialog {
+    position: relative;
+    width: min(920px, 100%);
+    max-height: calc(100vh - 2.5rem);
+    overflow: auto;
+    border-radius: 16px;
+    background: #121A27;
+    border: 1px solid #1E2A3C;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    color: #fff;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.4rem 1.4rem 1rem;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-title {
+    margin: 0 0 0.4rem;
+    color: var(--sb-accent);
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-address {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.5rem;
+    line-height: 1.45;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-close {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-close svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 280px;
+    border: 0;
+    background: #0b1220;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem 1.4rem 1.4rem;
+  }
+
+  #SmallBanner-{{ section.id }} .small-banner__map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 1rem 1.6rem;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  body.small-banner-map-open-{{ section.id }} {
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    #SmallBanner-{{ section.id }} {
+      min-height: var(--sb-min-height-mobile);
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__media-desktop {
+      display: none !important;
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__media-mobile {
+      display: block !important;
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__inner {
+      padding: 2rem 1.25rem;
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__heading {
+      font-size: var(--sb-heading-size-mobile);
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #SmallBanner-{{ section.id }} .small-banner__btn {
+      width: 100%;
+      max-width: 28rem;
+      min-height: 4.4rem;
+      padding: 1rem 1.8rem;
+      font-size: {{ section.settings.button_size | minus: 1 }}px;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="SmallBanner-{{ section.id }}"
+  class="small-banner section-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="small-banner__media" aria-hidden="true">
+    {%- if media_type == 'video' -%}
+      {%- if desktop_video != blank -%}
+        <video
+          class="small-banner__media-desktop"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if desktop_image != blank %}poster="{{ desktop_image | image_url: width: 2400 }}"{% endif %}
+        >
+          {%- for source in desktop_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+        <video
+          class="small-banner__media-mobile"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if mobile_image != blank %}poster="{{ mobile_image | image_url: width: 1400 }}"{% endif %}
+        >
+          {%- for source in mobile_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 2880
+          | image_tag:
+            class: 'small-banner__media-desktop',
+            widths: '800, 1200, 1600, 2000, 2400, 2880',
+            sizes: '100vw',
+            loading: 'lazy',
+            alt: ''
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1600
+          | image_tag:
+            class: 'small-banner__media-mobile',
+            widths: '400, 700, 1000, 1400, 1600',
+            sizes: '100vw',
+            loading: 'lazy',
+            alt: ''
+        }}
+      {%- endif -%}
+    {%- elsif desktop_image != blank -%}
+      {{
+        desktop_image
+        | image_url: width: 2880
+        | image_tag:
+          class: 'small-banner__media-desktop',
+          widths: '800, 1200, 1600, 2000, 2400, 2880',
+          sizes: '100vw',
+          loading: 'lazy',
+          alt: ''
+      }}
+      {{
+        mobile_image
+        | image_url: width: 1600
+        | image_tag:
+          class: 'small-banner__media-mobile',
+          widths: '400, 700, 1000, 1400, 1600',
+          sizes: '100vw',
+          loading: 'lazy',
+          alt: ''
+      }}
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.enable_overlay -%}
+    <div
+      class="small-banner__overlay small-banner__overlay--{{ section.settings.overlay_style }}"
+      aria-hidden="true"
+    ></div>
+  {%- endif -%}
+
+  <div class="small-banner__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="small-banner__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="small-banner__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.address != blank or section.settings.phone != blank or section.settings.email != blank -%}
+      <div class="small-banner__contacts">
+        {%- if section.settings.address != blank -%}
+          <p class="small-banner__contact small-banner__contact--address">{{ section.settings.address | escape | newline_to_br }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.phone != blank -%}
+          <p class="small-banner__contact small-banner__contact--phone">
+            <a href="tel:{{ section.settings.phone | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' | escape }}">
+              {{ section.settings.phone | escape }}
+            </a>
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.email != blank -%}
+          <p class="small-banner__contact small-banner__contact--email">
+            <a href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
+      <div class="small-banner__actions">
+        {%- if section.settings.button_label_1 != blank -%}
+          {%- capture button_href_1 -%}
+            {%- render 'product-cta-url',
+              link: section.settings.button_link_1,
+              product: section.settings.button_product_1,
+              redirect_to_checkout: section.settings.button_redirect_checkout_1
+            -%}
+          {%- endcapture -%}
+          {%- assign button_href_1 = button_href_1 | strip -%}
+          <a
+            class="small-banner__btn small-banner__btn--primary"
+            {% if button_href_1 != blank %}
+              href="{{ button_href_1 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            {{ section.settings.button_label_1 | escape }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_2 != blank -%}
+          {%- if section.settings.secondary_opens_map -%}
+            <button
+              type="button"
+              class="small-banner__btn small-banner__btn--secondary"
+              data-small-banner-map-open
+            >
+              {{ section.settings.button_label_2 | escape }}
+            </button>
+          {%- else -%}
+            {%- capture button_href_2 -%}
+              {%- render 'product-cta-url',
+                link: section.settings.button_link_2,
+                product: section.settings.button_product_2,
+                redirect_to_checkout: section.settings.button_redirect_checkout_2
+              -%}
+            {%- endcapture -%}
+            {%- assign button_href_2 = button_href_2 | strip -%}
+            <a
+              class="small-banner__btn small-banner__btn--secondary"
+              {% if button_href_2 != blank %}
+                href="{{ button_href_2 }}"
+              {% else %}
+                role="link"
+                aria-disabled="true"
+              {% endif %}
+            >
+              {{ section.settings.button_label_2 | escape }}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.secondary_opens_map -%}
+    {%- liquid
+      assign map_title = section.settings.map_title | default: 'SHOREDITCH, LONDON'
+      assign map_address = section.settings.map_address | default: '346 Old Street, Lower Ground Floor, London, EC1V 9NQ'
+      assign map_query = map_address | strip | url_encode
+      assign map_embed = 'https://maps.google.com/maps?q=' | append: map_query | append: '&z=16&output=embed'
+      assign map_directions = 'https://www.google.com/maps/dir/?api=1&destination=' | append: map_query
+    -%}
+    <div
+      class="small-banner__map-modal"
+      data-small-banner-map-modal
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ map_title | escape }}"
+    >
+      <div class="small-banner__map-dialog" role="document">
+        <div class="small-banner__map-header">
+          <div>
+            <p class="small-banner__map-title">{{ map_title | escape }}</p>
+            <p class="small-banner__map-address">{{ map_address | escape | newline_to_br }}</p>
+          </div>
+          <button type="button" class="small-banner__map-close" data-small-banner-map-close aria-label="Close map">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <iframe
+          class="small-banner__map-frame"
+          data-small-banner-map-frame
+          data-src="{{ map_embed }}"
+          title="Map to {{ map_title | escape }}"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+        <div class="small-banner__map-footer">
+          <a class="small-banner__map-link" href="{{ map_directions }}" target="_blank" rel="noopener noreferrer">
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var root = document.getElementById('SmallBanner-{{ section.id }}');
+        if (!root) return;
+
+        var modal = root.querySelector('[data-small-banner-map-modal]');
+        var openBtn = root.querySelector('[data-small-banner-map-open]');
+        var closeBtn = root.querySelector('[data-small-banner-map-close]');
+        var frame = root.querySelector('[data-small-banner-map-frame]');
+        var bodyClass = 'small-banner-map-open-{{ section.id }}';
+        if (!modal || !openBtn) return;
+
+        function openMap() {
+          if (frame && frame.dataset.src && !frame.getAttribute('src')) {
+            frame.setAttribute('src', frame.dataset.src);
+          }
+          modal.hidden = false;
+          modal.classList.add('is-open');
+          document.body.classList.add(bodyClass);
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeMap() {
+          modal.classList.remove('is-open');
+          modal.hidden = true;
+          document.body.classList.remove(bodyClass);
+          openBtn.focus();
+        }
+
+        openBtn.addEventListener('click', openMap);
+        if (closeBtn) closeBtn.addEventListener('click', closeMap);
+
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) closeMap();
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeMap();
+          }
+        });
+      })();
+    </script>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Custom Small Banner",
+  "tag": "section",
+  "class": "section-small-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner image / video"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Background type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image (desktop)",
+      "info": "Full-width background image for the banner."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Banner image (mobile)",
+      "info": "Optional. Falls back to the desktop banner image."
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Banner image size",
+      "options": [
+        { "value": "cover", "label": "Full crop (fill & crop)" },
+        { "value": "contain", "label": "Show full image (no crop)" },
+        { "value": "fill", "label": "Stretch to 100%" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Media focus position",
+      "options": [
+        { "value": "center center", "label": "Center" },
+        { "value": "top center", "label": "Top" },
+        { "value": "bottom center", "label": "Bottom" },
+        { "value": "left center", "label": "Left" },
+        { "value": "right center", "label": "Right" }
+      ],
+      "default": "center center",
+      "info": "Video always fills full width (same as video banner). This controls crop focus."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Background video (desktop)",
+      "info": "Plays automatically (muted, looping)."
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Background video (mobile)",
+      "info": "Optional. Falls back to the desktop video."
+    },
+    {
+      "type": "color",
+      "id": "fallback_background",
+      "label": "Fallback background",
+      "default": "#0DAAEF",
+      "info": "Shown behind the image/video or when no media is set."
+    },
+    {
+      "type": "header",
+      "content": "Section height"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (desktop)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (mobile)",
+      "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "Enable overlay",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "overlay_style",
+      "label": "Overlay style",
+      "options": [
+        { "value": "dark", "label": "Dark overlay" },
+        { "value": "brand", "label": "Teal to blue gradient" },
+        { "value": "brand-dark", "label": "Brand gradient + dark" }
+      ],
+      "default": "brand"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Dark overlay color",
+      "default": "#061018"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Dark overlay opacity",
+      "default": 55
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Brand gradient start",
+      "default": "#14B8A6"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Brand gradient end",
+      "default": "#38BDF8"
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Brand gradient opacity",
+      "default": 85
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "VISIT FLOAT HUB"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 13
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title",
+      "default": "Ready to discover who you will become with float therapy?"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (mobile)",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Title weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "300"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address",
+      "default": "SHOREDITCH, LONDON\n346 Old Street, Lower Ground Floor, London, EC1V 9NQ"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone number",
+      "default": "+44 20 1234 5678"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "hello@floathub.com"
+    },
+    {
+      "type": "range",
+      "id": "contact_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Contact text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Space above buttons",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Primary button label",
+      "default": "Book A Float Now"
+    },
+    {
+      "type": "product",
+      "id": "button_product_1",
+      "label": "Primary button product",
+      "info": "Optional. Used when no custom link is set."
+    },
+    {
+      "type": "checkbox",
+      "id": "button_redirect_checkout_1",
+      "label": "Primary button redirect to checkout",
+      "default": false,
+      "info": "If a product is selected, skip the product page and go straight to checkout."
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Primary button link",
+      "info": "Optional override. Takes priority over product / checkout."
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "Get Directions"
+    },
+    {
+      "type": "checkbox",
+      "id": "secondary_opens_map",
+      "label": "Secondary button opens map popup",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "button_product_2",
+      "label": "Secondary button product",
+      "info": "Optional. Used only if map popup is disabled and no custom link is set."
+    },
+    {
+      "type": "checkbox",
+      "id": "button_redirect_checkout_2",
+      "label": "Secondary button redirect to checkout",
+      "default": false,
+      "info": "Used only if map popup is disabled."
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link",
+      "info": "Used only if map popup is disabled. Takes priority over product / checkout."
+    },
+    {
+      "type": "header",
+      "content": "Map popup"
+    },
+    {
+      "type": "text",
+      "id": "map_title",
+      "label": "Map title",
+      "default": "SHOREDITCH, LONDON"
+    },
+    {
+      "type": "textarea",
+      "id": "map_address",
+      "label": "Map address",
+      "default": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button corner radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Eyebrow accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 600,
+      "max": 1100,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 820
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Small Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

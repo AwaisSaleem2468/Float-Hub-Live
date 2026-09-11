@@ -1,0 +1,968 @@
+{%- liquid
+  assign media_type = section.settings.media_type
+  assign desktop_video = section.settings.video
+  assign mobile_video = section.settings.video_mobile
+  if mobile_video == blank
+    assign mobile_video = desktop_video
+  endif
+  assign desktop_image = section.settings.image
+  assign mobile_image = section.settings.image_mobile
+  if mobile_image == blank
+    assign mobile_image = desktop_image
+  endif
+
+  assign overlay_color = section.settings.overlay_color | default: '#061018'
+  assign overlay_opacity = section.settings.overlay_opacity | default: 60
+  assign overlay_alpha = overlay_opacity | times: 1.0 | divided_by: 100.0
+  assign overlay_fill = overlay_color | color_modify: 'alpha', overlay_alpha
+  assign overlay_edge = overlay_color | color_modify: 'alpha', 0.85
+  assign overlay_mid = overlay_color | color_modify: 'alpha', 0.2
+  assign overlay_top = overlay_color | color_modify: 'alpha', 0.55
+-%}
+
+{% style %}
+  #VideoBanner-{{ section.id }} {
+    --vb-accent: {{ section.settings.accent_color }};
+    --vb-badge: {{ section.settings.badge_color }};
+    --vb-text: {{ section.settings.text_color }};
+    --vb-min-height: {{ section.settings.section_height }}vh;
+    --vb-min-height-mobile: {{ section.settings.section_height_mobile }}vh;
+    --vb-heading-size: {{ section.settings.heading_size_desktop }}px;
+    --vb-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --vb-description-size: {{ section.settings.description_size_desktop }}px;
+    --vb-description-size-mobile: {{ section.settings.description_size_mobile }}px;
+    --vb-btn-primary-bg: {{ section.settings.button_primary_bg }};
+    --vb-btn-primary-text: {{ section.settings.button_primary_text }};
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--vb-min-height);
+    overflow: hidden;
+    color: var(--vb-text);
+    background: #0a0a0c;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__media video,
+  #VideoBanner-{{ section.id }} .video-banner__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__media-mobile {
+    display: none;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    background-color: {{ overlay_fill }};
+    background-image:
+      radial-gradient(
+        ellipse 70% 55% at 50% 42%,
+        rgba(0, 0, 0, 0) 0%,
+        {{ overlay_mid }} 50%,
+        {{ overlay_edge }} 100%
+      ),
+      linear-gradient(
+        180deg,
+        {{ overlay_top }} 0%,
+        rgba(0, 0, 0, 0.12) 42%,
+        {{ overlay_edge }} 100%
+      );
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: {{ section.settings.inner_max_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.inner_padding_top }}px {{ section.settings.inner_padding_horizontal }}px {{ section.settings.inner_padding_bottom }}px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.5rem;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid color-mix(in srgb, var(--vb-badge) 55%, transparent);
+    border-radius: 999px;
+    color: var(--vb-badge);
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;   
+    line-height: 1.2;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__stars {
+    display: inline-flex;
+    gap: 0.12rem;
+    color: var(--vb-badge);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__heading {
+    margin: 0 0 1.15rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--vb-heading-size);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--vb-text);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__heading-main {
+    display: block;
+    color: var(--vb-text);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__heading-accent {
+    display: block;
+    color: var(--vb-accent);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__text {
+    max-width: 100%;
+    margin: 0 auto 1.85rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: var(--vb-description-size);
+    line-height: 1.6;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__text p {
+    margin: 0;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__text p + p {
+    margin-top: 0.75rem;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 3rem;
+    padding: 1.5rem 2.5rem;
+    border-radius: 999px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn:hover {
+    transform: translateY(-1px);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn--primary {
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    border: 1px solid transparent;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn--primary:hover {
+    filter: brightness(1.05);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn--secondary {
+    background: transparent;
+    color: var(--vb-text);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #fff;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__btn-arrow {
+    font-size: 1.05em;
+    line-height: 1;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__discover {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+  }
+  #VideoBanner-{{ section.id }} .video-banner__discover-label {
+   font-size: 1.4rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__discover-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    animation: video-banner-bounce-{{ section.id }} 1.8s ease-in-out infinite;
+  }
+
+  @keyframes video-banner-bounce-{{ section.id }} {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(5px);
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #VideoBanner-{{ section.id }} {
+      min-height: var(--vb-min-height-mobile);
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__media-desktop {
+      display: none;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__media-mobile {
+      display: block;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__inner {
+      padding: {{ section.settings.inner_padding_top_mobile }}px {{ section.settings.inner_padding_horizontal_mobile }}px {{ section.settings.inner_padding_bottom_mobile }}px;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__badge {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+        gap: 0.8rem;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__heading {
+      font-size: var(--vb-heading-size-mobile);
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__text {
+      font-size: var(--vb-description-size-mobile);
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__btn {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.4rem;
+        min-height: auto;
+        padding: 1rem;
+    }
+  }
+{% endstyle %}
+
+<section
+  id="VideoBanner-{{ section.id }}"
+  class="video-banner section-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="video-banner__media" aria-hidden="true">
+    {%- if media_type == 'video' -%}
+      {%- if desktop_video != blank -%}
+        <video
+          class="video-banner__media-desktop"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if desktop_image != blank %}poster="{{ desktop_image | image_url: width: 2000 }}"{% endif %}
+        >
+          {%- for source in desktop_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+        <video
+          class="video-banner__media-mobile"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if mobile_image != blank %}poster="{{ mobile_image | image_url: width: 1200 }}"{% endif %}
+        >
+          {%- for source in mobile_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 2400
+          | image_tag:
+            class: 'video-banner__media-desktop',
+            widths: '800, 1200, 1600, 2000, 2400',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'video-banner__media-mobile',
+            widths: '400, 600, 800, 1200',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- endif -%}
+    {%- else -%}
+      {%- if desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 2400
+          | image_tag:
+            class: 'video-banner__media-desktop',
+            widths: '800, 1200, 1600, 2000, 2400',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'video-banner__media-mobile',
+            widths: '400, 600, 800, 1200',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+
+  <div class="video-banner__overlay"></div>
+
+  <div class="video-banner__inner">
+    {%- if section.settings.show_badge and section.settings.badge_text != blank -%}
+      <div class="video-banner__badge">
+        <span class="video-banner__stars" aria-hidden="true">★★★★★</span>
+        <span>{{ section.settings.badge_text }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.heading_accent != blank -%}
+      <h2 class="video-banner__heading">
+        {%- if section.settings.heading != blank -%}
+          <span class="video-banner__heading-main">{{ section.settings.heading | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="video-banner__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <div class="video-banner__text rte">
+        {{ section.settings.description }}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank or section.settings.button_label_3 != blank -%}
+      <div class="video-banner__actions">
+        {%- if section.settings.button_label_1 != blank -%}
+          {%- assign button_style_1 = section.settings.button_style_1 | default: 'primary' -%}
+          {%- capture button_href_1 -%}
+            {%- render 'product-cta-url',
+              link: section.settings.button_link_1,
+              product: section.settings.button_product_1,
+              redirect_to_checkout: section.settings.button_redirect_checkout_1
+            -%}
+          {%- endcapture -%}
+          {%- assign button_href_1 = button_href_1 | strip -%}
+          <a
+            class="video-banner__btn video-banner__btn--{{ button_style_1 }}"
+            {% if button_href_1 != blank %}
+              href="{{ button_href_1 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            <span>{{ section.settings.button_label_1 | escape }}</span>
+            {%- if section.settings.show_button_arrow_1 -%}
+              <span class="video-banner__btn-arrow" aria-hidden="true">→</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_2 != blank -%}
+          {%- assign button_style_2 = section.settings.button_style_2 | default: 'secondary' -%}
+          {%- capture button_href_2 -%}
+            {%- render 'product-cta-url',
+              link: section.settings.button_link_2,
+              product: section.settings.button_product_2,
+              redirect_to_checkout: section.settings.button_redirect_checkout_2
+            -%}
+          {%- endcapture -%}
+          {%- assign button_href_2 = button_href_2 | strip -%}
+          <a
+            class="video-banner__btn video-banner__btn--{{ button_style_2 }}"
+            {% if button_href_2 != blank %}
+              href="{{ button_href_2 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            <span>{{ section.settings.button_label_2 | escape }}</span>
+            {%- if section.settings.show_button_arrow_2 -%}
+              <span class="video-banner__btn-arrow" aria-hidden="true">→</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_3 != blank -%}
+          {%- assign button_style_3 = section.settings.button_style_3 | default: 'secondary' -%}
+          {%- capture button_href_3 -%}
+            {%- render 'product-cta-url',
+              link: section.settings.button_link_3,
+              product: section.settings.button_product_3,
+              redirect_to_checkout: section.settings.button_redirect_checkout_3
+            -%}
+          {%- endcapture -%}
+          {%- assign button_href_3 = button_href_3 | strip -%}
+          <a
+            class="video-banner__btn video-banner__btn--{{ button_style_3 }}"
+            {% if button_href_3 != blank %}
+              href="{{ button_href_3 }}"
+            {% else %}
+              role="link"
+              aria-disabled="true"
+            {% endif %}
+          >
+            <span>{{ section.settings.button_label_3 | escape }}</span>
+            {%- if section.settings.show_button_arrow_3 -%}
+              <span class="video-banner__btn-arrow" aria-hidden="true">→</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.show_discover -%}
+    <button
+      type="button"
+      class="video-banner__discover"
+      data-video-banner-discover
+      aria-label="{{ section.settings.discover_label | default: 'Discover' | escape }}"
+    >
+      <span class="video-banner__discover-label">{{ section.settings.discover_label | default: 'Discover' | escape }}</span>
+      <svg class="video-banner__discover-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  {%- endif -%}
+</section>
+
+{%- if section.settings.show_discover -%}
+  <script>
+    (function () {
+      var section = document.getElementById('VideoBanner-{{ section.id }}');
+      if (!section) return;
+      var button = section.querySelector('[data-video-banner-discover]');
+      if (!button) return;
+      button.addEventListener('click', function () {
+        var next = section.nextElementSibling;
+        if (next) {
+          next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollBy({ top: section.offsetHeight, behavior: 'smooth' });
+        }
+      });
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Custom Video Banner",
+  "tag": "section",
+  "class": "section-video-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Background type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image",
+      "info": "Choose whether to show a background image or an autoplaying video."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background image (mobile)",
+      "info": "Optional. Falls back to the desktop image."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Background video (desktop)",
+      "info": "Plays automatically (muted, looping)."
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Background video (mobile)",
+      "info": "Optional. Falls back to the desktop video."
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#061018"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay darkness",
+      "default": 60,
+      "info": "Darkens the background so text stays readable, matching the reference look."
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (desktop)",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section height (mobile)",
+      "default": 85
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show review badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "200+ Five-Star Reviews | London's #1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Float Beyond"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent line",
+      "default": "Every Limit."
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 36
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>London’s premier float therapy centre in Shoreditch. Zero gravity. Zero sound. Zero distraction. Just profound, effortless calm.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size (desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "header",
+      "content": "Button 1"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Label",
+      "default": "Book Your First Float"
+    },
+    {
+      "type": "product",
+      "id": "button_product_1",
+      "label": "Product",
+      "info": "Optional. Used when no custom link is set."
+    },
+    {
+      "type": "checkbox",
+      "id": "button_redirect_checkout_1",
+      "label": "Redirect to checkout",
+      "default": false,
+      "info": "If a product is selected, skip the product page and go straight to checkout."
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Link",
+      "info": "Optional override. Takes priority over product / checkout."
+    },
+    {
+      "type": "select",
+      "id": "button_style_1",
+      "label": "Style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_arrow_1",
+      "label": "Show arrow",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Button 2"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Label",
+      "default": "Explore Services"
+    },
+    {
+      "type": "product",
+      "id": "button_product_2",
+      "label": "Product",
+      "info": "Optional. Used when no custom link is set."
+    },
+    {
+      "type": "checkbox",
+      "id": "button_redirect_checkout_2",
+      "label": "Redirect to checkout",
+      "default": false,
+      "info": "If a product is selected, skip the product page and go straight to checkout."
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Link",
+      "info": "Optional override. Takes priority over product / checkout."
+    },
+    {
+      "type": "select",
+      "id": "button_style_2",
+      "label": "Style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "secondary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_arrow_2",
+      "label": "Show arrow",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Button 3"
+    },
+    {
+      "type": "text",
+      "id": "button_label_3",
+      "label": "Label",
+      "info": "Leave blank to hide this button."
+    },
+    {
+      "type": "product",
+      "id": "button_product_3",
+      "label": "Product",
+      "info": "Optional. Used when no custom link is set."
+    },
+    {
+      "type": "checkbox",
+      "id": "button_redirect_checkout_3",
+      "label": "Redirect to checkout",
+      "default": false,
+      "info": "If a product is selected, skip the product page and go straight to checkout."
+    },
+    {
+      "type": "url",
+      "id": "button_link_3",
+      "label": "Link",
+      "info": "Optional override. Takes priority over product / checkout."
+    },
+    {
+      "type": "select",
+      "id": "button_style_3",
+      "label": "Style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "secondary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_arrow_3",
+      "label": "Show arrow",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Inner content padding"
+    },
+    {
+      "type": "range",
+      "id": "inner_max_width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Inner content max width",
+      "default": 1120
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 112
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 104
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_horizontal",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding left/right (desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_top_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_bottom_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "inner_padding_horizontal_mobile",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding left/right (mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Discover cue"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discover",
+      "label": "Show discover scroll cue",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "discover_label",
+      "label": "Discover label",
+      "default": "Discover"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Heading accent color",
+      "default": "#2DE2C5"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_bg",
+      "label": "Primary button background",
+      "default": "#2DE2C5"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_text",
+      "label": "Primary button text",
+      "default": "#0A1F1C"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Video Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

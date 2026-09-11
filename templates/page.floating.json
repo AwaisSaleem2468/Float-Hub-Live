@@ -1,0 +1,720 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_section_innerpage_banner_yHjrxw": {
+      "type": "custom-section-innerpage-banner",
+      "name": "Custom Innerpage Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/PCH_3785-scaled.jpg",
+        "overlay_color": "#061018",
+        "overlay_opacity": 50,
+        "section_height": 60,
+        "section_height_mobile": 65,
+        "show_badge": false,
+        "badge_text": " London's #1 Float & Recovery Centre",
+        "eyebrow": "",
+        "eyebrow_size": 13,
+        "heading": "Find Out Who You",
+        "heading_accent": "Become With Floating",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "<p>Here's a guide to your first float experience to help ensure you tap into the deep relaxation and many benefits that it can provide.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 16,
+        "button_label_1": "Book Your Float Now",
+        "button_link_1": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10869487665479&servicify-event=3b1aa34f-8168-40d5-9f61-df2e2b5f08ff&servicify-variant=54664191410503",
+        "show_button_arrow": false,
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "content_position_horizontal": "left",
+        "content_position_vertical": "middle",
+        "text_alignment": "left",
+        "content_width": 700
+      }
+    },
+    "custom_section_richtext_PLBrGJ": {
+      "type": "custom-section-richtext",
+      "name": "Custom Rich Text",
+      "settings": {
+        "show_badge": true,
+        "show_stars": false,
+        "badge_text": "What should I expect?",
+        "badge_size_desktop": 16,
+        "badge_size_mobile": 14,
+        "badge_spacing": 28,
+        "content": "<p>Every float is unique and it often provides you with what you need currently during the 60 minute session. There’s a learning curve to the environment and being able to fully, deeply relax, which is why we recommend <em>at least 3</em> sessions in 45 – 60 days.</p>",
+        "text_size_desktop": 18,
+        "text_size_mobile": 15,
+        "content_width": 760,
+        "background_color": "#0f1827",
+        "text_color": "#c8ced8",
+        "strong_color": "#ffffff",
+        "badge_background": "#243044",
+        "badge_text_color": "#c8ced8",
+        "star_color": "#f5c518",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_floating_experince_EyBTEB": {
+      "type": "custom-section-floating-experince",
+      "blocks": {
+        "step_BMejLb": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Pre-Float",
+            "text": "<p>Our staff will give you a full walkthrough of the process to ensure that you're informed and feel at home in our center.</p>"
+          }
+        },
+        "step_fwcbQk": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Preparing",
+            "text": "<p>You will enter your private float room and take a shower before starting your session to ensure any oils, dirt, and perfumes are removed.</p>"
+          }
+        },
+        "step_BJ9mb3": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Letting Go",
+            "text": "<p>It will take some time to get used to the unique environment of the float tank so we encourage you to focus on your breath and try to let go.</p>"
+          }
+        },
+        "step_CfEcht": {
+          "type": "step",
+          "settings": {
+            "number": "4",
+            "title": "Post-Float Glow",
+            "text": "<p>You will be notified your session is over by music in the pod. After your session you will shower again to remove any salt and are welcome to enjoy your new state in our relaxation suite.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_BMejLb",
+        "step_fwcbQk",
+        "step_BJ9mb3",
+        "step_CfEcht"
+      ],
+      "name": "Floating Experience",
+      "settings": {
+        "image": "shopify://shop_images/WhatsApp-Image-2024-11-08-at-05.28.10-scaled.jpg",
+        "image_alt": "Floating experience",
+        "image_height": 420,
+        "image_height_mobile": 300,
+        "image_radius": 0,
+        "content_align": "center",
+        "text_align": "center",
+        "column_gap": 48,
+        "step_gap": 16,
+        "row_gap": 16,
+        "timeline_color": "#3a4556",
+        "timeline_circle_bg": "#070d16",
+        "line_thickness": 1,
+        "circle_border_width": 1,
+        "number_size": 18,
+        "card_bg": "#121a27",
+        "card_border": "#243041",
+        "card_radius": 12,
+        "card_padding": 16,
+        "step_title_size": 22,
+        "step_title_size_mobile": 18,
+        "step_text_size": 14,
+        "step_text_size_mobile": 14,
+        "button_label": "Book Now",
+        "button_link": "shopify://pages/booking",
+        "button_align": "center",
+        "button_size": 15,
+        "bg_color": "#070d16",
+        "heading_color": "#ffffff",
+        "body_color": "#a8b0bd",
+        "accent_color": "#0daaef",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_video_banner_ECKCtV": {
+      "type": "custom-section-video-banner",
+      "name": "Custom Video Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/FloatHub-Float-Therapy-Floatation-Tank-London-Woman-Floating-Shoreditch-VD.jpg",
+        "video": "shopify://files/videos/Floathub Video.mp4",
+        "overlay_color": "#061018",
+        "overlay_opacity": 0,
+        "section_height": 80,
+        "section_height_mobile": 50,
+        "show_badge": false,
+        "badge_text": "200+ Five-Star Reviews | London's #1",
+        "heading": "",
+        "heading_accent": "",
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 36,
+        "description": "",
+        "description_size_desktop": 18,
+        "description_size_mobile": 16,
+        "button_label_1": "",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "show_button_arrow_1": true,
+        "button_label_2": "",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "button_style_2": "secondary",
+        "show_button_arrow_2": false,
+        "button_label_3": "",
+        "button_product_3": "",
+        "button_redirect_checkout_3": false,
+        "button_link_3": "",
+        "button_style_3": "secondary",
+        "show_button_arrow_3": false,
+        "inner_max_width": 1120,
+        "inner_padding_top": 112,
+        "inner_padding_bottom": 104,
+        "inner_padding_horizontal": 24,
+        "inner_padding_top_mobile": 88,
+        "inner_padding_bottom_mobile": 88,
+        "inner_padding_horizontal_mobile": 20,
+        "show_discover": false,
+        "discover_label": "Discover",
+        "text_color": "#ffffff",
+        "accent_color": "#2de2c5",
+        "badge_color": "#d4af37",
+        "button_primary_bg": "#2de2c5",
+        "button_primary_text": "#0a1f1c"
+      }
+    },
+    "custom_section_float_tip_pCLHRC": {
+      "type": "custom-section-float-tip",
+      "blocks": {
+        "tip_KUFg3z": {
+          "type": "tip",
+          "settings": {
+            "icon": "coffee",
+            "title": "No Stimulants",
+            "text": "<p>Avoid caffeine and other stimulants before your float to make it easier for your body and mind to relax.</p>"
+          }
+        },
+        "tip_4rfQQV": {
+          "type": "tip",
+          "settings": {
+            "icon": "bottle",
+            "title": "Be Hydrated",
+            "text": "<p>Try to ensure that you are well hydrated before your session, but don't drink too much right beforehand.</p>"
+          }
+        },
+        "tip_diYDEa": {
+          "type": "tip",
+          "settings": {
+            "icon": "apple",
+            "title": "Eat A Light Meal",
+            "text": "<p>It's best to have a light meal 60 to 90 mins. before your session, rather than floating with a full or empty stomach.</p>"
+          }
+        },
+        "tip_Kpj3HC": {
+          "type": "tip",
+          "settings": {
+            "icon": "face",
+            "title": "No Shaving Before",
+            "text": "<p>Please don't shave anywhere on your face or body before your float session as the epsom salt may sting for some time in the beginning making it more difficult to relax and enjoy your float.</p>"
+          }
+        },
+        "tip_mktXrT": {
+          "type": "tip",
+          "settings": {
+            "icon": "swim",
+            "title": "Float Nude",
+            "text": "<p>We recommend floating in the nude to ensure there are no external pressures or restrictions on your body. Our tanks are extremely filtered to ensure cleanliness and the water is kept at skin temperature.</p>"
+          }
+        },
+        "tip_CKpbDf": {
+          "type": "tip",
+          "settings": {
+            "icon": "clock",
+            "title": "Don't Stress Over Time",
+            "text": "<p>It's fairly common to obsess or stress over time while floating, try to return your focus to your breath and know that our staff and the music in the pod will let you know when your session is over.</p>"
+          }
+        },
+        "tip_EUQDNg": {
+          "type": "tip",
+          "settings": {
+            "icon": "breath",
+            "title": "Focus On Your Breath",
+            "text": "<p>If your mind is busy, you have difficulty relaxing, or any challenge with the unique environment, it's helpful to focus on your breathing. Take deep breathes and keep your attention on that process.</p>"
+          }
+        },
+        "tip_gt8KkM": {
+          "type": "tip",
+          "settings": {
+            "icon": "arm",
+            "title": "Try Different Positions",
+            "text": "<p>Everyone has different preferences: arms above head, pointed up at your side, or down by your body and if you find yourself getting uncomfortable, it can help to switch your arm position.</p>"
+          }
+        },
+        "tip_Ybzjkp": {
+          "type": "tip",
+          "settings": {
+            "icon": "heart",
+            "title": "No Expectations",
+            "text": "<p>There is no 'right' way to float, each and every session is different and it's important to not get caught up thinking you're doing it wrong. Breathe, let go and relax to go deeper.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tip_KUFg3z",
+        "tip_4rfQQV",
+        "tip_diYDEa",
+        "tip_Kpj3HC",
+        "tip_mktXrT",
+        "tip_CKpbDf",
+        "tip_EUQDNg",
+        "tip_gt8KkM",
+        "tip_Ybzjkp"
+      ],
+      "name": "Float Tips",
+      "settings": {
+        "heading": "Tips To Improve Your",
+        "heading_accent": "Float Experience",
+        "description": "",
+        "description_size": 16,
+        "title_align": "center",
+        "heading_size_desktop": 36,
+        "heading_size_tablet": 30,
+        "heading_size_mobile": 28,
+        "columns_desktop": 3,
+        "column_gap": 16,
+        "slide_gap": 12,
+        "card_min_height": 120,
+        "enable_autoplay": false,
+        "autoplay_speed": 5,
+        "header_gap": 40,
+        "card_bg": "#121a27",
+        "card_border": "#243044",
+        "card_radius": 12,
+        "card_padding": 16,
+        "show_icons": true,
+        "icon_size": 40,
+        "tip_title_size": 20,
+        "tip_title_size_mobile": 16,
+        "tip_text_size": 14,
+        "tip_text_size_mobile": 14,
+        "button_label": "View All Pricing  & Packages",
+        "button_link": "shopify://pages/pricing",
+        "button_alignment": "center",
+        "button_gap": 40,
+        "button_size": 16,
+        "button_radius": 8,
+        "bg_color": "#040b16",
+        "heading_color": "#ffffff",
+        "body_color": "#c8ced8",
+        "icon_color": "#c8ced8",
+        "accent_color": "#0daaef",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "image_banner_Ugktcy": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_yWyCep": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_zDPgpA": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_EgiwLW": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yWyCep",
+        "text_zDPgpA",
+        "buttons_EgiwLW"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Float-Hub-Float-Center-11-London_adf576f2-921c-4f3a-a86c-555b93d39e52.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "collapsible_content_8Pq4CU": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_fTHJXq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I’m claustrophobic?",
+            "icon": "none",
+            "row_content": "<p>Claustrophobia is one of the most common initial concerns and people who struggle with it consistently report no problems with floating, as the lack of light in our spacious tanks (the largest available) gives more of an expansive feeling without any boundaries. <em>You also have the option to float with the lights on, lid open, or however you prefer — you’re in control of your float.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gr4U83": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When Can I drown if I fall asleep?I arrive for my appointment?",
+            "icon": "none",
+            "row_content": "<p>No. It’s common to fall asleep for parts or sometimes all of your float and the water is so buoyant that you always stay afloat. <em>The worst that can happen is being woken by a little salt water in your eyes, though our non-drip tanks make this unlikely.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Cb3BLt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How is the water cleaned?",
+            "icon": "none",
+            "row_content": "<p>Our tanks are among the most hygienic systems available. The highly sterile salt water is 100% filtered between floats, as our tanks empty and refill for each float. A small amount of steriliser is added and the water is also sanitised with UV light.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dBthLy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How often do you replace the water?",
+            "icon": "none",
+            "row_content": "<p>Our tanks are among the most hygienic systems available. The highly sterile salt water has 525KG of medical grade Epsom salts and is 100% filtered between floats through a 1 micron filter & ozone filter, as our tanks empty and refill for each float. A small amount of steriliser is added and the water is also sanitised with UV light. The water is not wasted, but returns clean enough to drink each time (except it’s very salty)!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qnzyfe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to bring anything?",
+            "icon": "none",
+            "row_content": "<p>No. We have some tips and recommendations above to consider the day of your appointment, however we provide everything you need for your session.</p><p>After covid we do not provide slippers anymore, so you can bring your own slippers if you do not wish to walk barefoot or with socks that can get wet.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_fTHJXq",
+        "collapsible_row_gr4U83",
+        "collapsible_row_Cb3BLt",
+        "collapsible_row_dBthLy",
+        "collapsible_row_qnzyfe"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Common Concerns",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_bKiXQC": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_HtNeT3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who is unable to float? When can I not float?",
+            "icon": "none",
+            "row_content": "<p><strong>You can’t float if:</strong></p><ul><li>You have open wounds</li><li>You had diarrhea in the past 14 days</li><li>You’re under the influence of drugs or alcohol</li><li>You have recently dyed your hair or applied tanning products</li><li>You have infectious diseases</li><li>You have got a recent tattoo</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Ce4nHJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I recently dyed my hair or spray tanned?",
+            "icon": "none",
+            "row_content": "<p>No, the spray tan or hair dye can leak into the water and damage the float tanks. You want to make completely sure that no dye is coming out of your hair in the shower or on a towel after washing (usually within a few days to weeks depending on the treatment). Leave a minimum of 48 hours after a spray tan before floating.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cKkAXU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I'm pregnant?",
+            "icon": "none",
+            "row_content": "<p>Yes! There are many unique benefits that helps relieve the pressure and tensions on the body during pregnancy, while also providing a deeper connection to your child. <em>We recommend confirming with your doctor first however</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UAVxR3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I float if I have a new tattoo?",
+            "icon": "none",
+            "row_content": "<p>You want to make sure it’s been at least 30 days (or your tattoo has fully healed) before floating as the salt water can cause painful burning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_483fVt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "n I float if I'm menstruating?",
+            "icon": "none",
+            "row_content": "<p>Yes, we simply recommend you follow the same protocol you would for a swimming pool.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_HtNeT3",
+        "collapsible_row_Ce4nHJ",
+        "collapsible_row_cKkAXU",
+        "collapsible_row_UAVxR3",
+        "collapsible_row_483fVt"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Can I float?",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-3",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_aRyEkj": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_PCXDnf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long are the floats sessions?",
+            "icon": "none",
+            "row_content": "<p><strong>Each float session appointment includes 60 minutes for you to be inside of the pod floating,</strong> with an additional 25 minutes that allows you to change and shower both before and after the appointment. <em>Members have the opportunity to upgrade to 90 minute float sessions when available.</em></p><p>We ask that you try to keep your showering brief to ensure we have enough time to clean up the room and get it ready for the next appointment. You can freshen up and take your time getting ready in our Vanity Room where we have moisturizer, hair dryers and other amenities. Plus, feel free to keep relaxing for as long as you’d like in our Relaxation Room with tea and some reading materials.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_63g7Xz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I arrive for my appointment?",
+            "icon": "none",
+            "row_content": "<p>For your first float session, we recommend arriving no later than 15 minutes before your scheduled appointment time. This ensures we can give you a full walkthrough beforehand without taking away from your time floating.</p><p><em>Any float sessions past your first time, you can arrive 5 minutes before.</em></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AdNTTr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your cancellation policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We have a 24 hour cancellation process.</strong> If you have booked an appointment with us and need to reschedule, please let us know at least 24 hours before your scheduled time to avoid losing your float credit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LgwGLE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your refund or return policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We do offer full refund from 14 days of purchase and if not been used.</strong></p><p>If you buy a package and you use one session, we are sorry but we are unable to offer refund.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6dNJFE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can couples float together?",
+            "icon": "none",
+            "row_content": "<p>Yes, only if you purchase ” Float for Two” (Couple Float)</p><p>Not if you have single sessions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6iNJb4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the minimum age for floating?",
+            "icon": "none",
+            "row_content": "<p>Anyone 18 years old and up is able to float at our centre currently.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QTA3TM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are there any differences between the rooms?",
+            "icon": "none",
+            "row_content": "<p>No, each room is identical in the floatation tank, shower and amenities to provide you with the most premium float experience no matter which room you’re in!</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UeGQfC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens if I get the saltwater in my eyes?",
+            "icon": "none",
+            "row_content": "<p>It may sting a bit due to the amount of epsom salt in the water, so we recommend you avoid touching your face or placing your hands over your head at any time. Our float tanks are non-drip and we provide a water bottle to help flush out your eyes if this happens.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PCXDnf",
+        "collapsible_row_63g7Xz",
+        "collapsible_row_AdNTTr",
+        "collapsible_row_LgwGLE",
+        "collapsible_row_6dNJFE",
+        "collapsible_row_6iNJb4",
+        "collapsible_row_QTA3TM",
+        "collapsible_row_UeGQfC"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Question",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_Gr3F78": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "shopify://pages/contact",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_innerpage_banner_yHjrxw",
+    "custom_section_richtext_PLBrGJ",
+    "custom_section_floating_experince_EyBTEB",
+    "custom_section_video_banner_ECKCtV",
+    "custom_section_float_tip_pCLHRC",
+    "image_banner_Ugktcy",
+    "collapsible_content_8Pq4CU",
+    "collapsible_content_bKiXQC",
+    "collapsible_content_aRyEkj",
+    "custom_section_small_banner_Gr3F78"
+  ]
+}

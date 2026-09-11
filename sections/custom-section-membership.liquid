@@ -1,0 +1,943 @@
+{% style %}
+  #Membership-{{ section.id }} {
+    --mb-bg: {{ section.settings.background_color }};
+    --mb-text: {{ section.settings.text_color }};
+    --mb-muted: {{ section.settings.muted_color }};
+    --mb-accent: {{ section.settings.accent_color }};
+    --mb-gold: {{ section.settings.gold_color }};
+    --mb-card: {{ section.settings.card_background }};
+    --mb-card-border: {{ section.settings.card_border_color }};
+    --mb-highlight: {{ section.settings.highlight_background }};
+    background-color: var(--mb-bg);
+    color: var(--mb-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #Membership-{{ section.id }} .membership__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+
+  #Membership-{{ section.id }} .membership__content {
+    text-align: {{ section.settings.content_alignment }};
+  }
+
+  #Membership-{{ section.id }} .membership__label {
+    margin: 0 0 0.9rem;
+    color: var(--mb-gold);
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-size: {{ section.settings.label_size }}px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  #Membership-{{ section.id }} .membership__heading {
+    margin: 0 0 1.1rem;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: {{ section.settings.heading_size_desktop }}px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--mb-text);
+  }
+
+  #Membership-{{ section.id }} .membership__heading-accent {
+    color: var(--mb-accent);
+  }
+
+  #Membership-{{ section.id }} .membership__subheading {
+    margin: 0 0 1.25rem;
+    color: var(--mb-text);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.subheading_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  #Membership-{{ section.id }} .membership__text {
+    margin: 0;
+    color: var(--mb-muted);
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.65;
+  }
+
+  #Membership-{{ section.id }} .membership__text p {
+    margin: 0;
+  }
+
+  #Membership-{{ section.id }} .membership__text p + p {
+    margin-top: 0.9rem;
+  }
+
+  #Membership-{{ section.id }} .membership__card {
+    padding: {{ section.settings.card_padding }}px;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--mb-card);
+    border: 1px solid var(--mb-card-border);
+  }
+
+  #Membership-{{ section.id }} .membership__card-title {
+    margin: 0 0 1.4rem;
+    color: var(--mb-accent);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.card_title_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  #Membership-{{ section.id }} .membership__rows {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  #Membership-{{ section.id }} .membership__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--mb-card-border) 90%, transparent);
+  }
+
+  #Membership-{{ section.id }} .membership__row:first-child {
+    border-top: 1px solid color-mix(in srgb, var(--mb-card-border) 90%, transparent);
+  }
+
+  #Membership-{{ section.id }} .membership__row-label {
+    color: var(--mb-text);
+    font-size: {{ section.settings.row_text_size }}px;
+    line-height: 1.4;
+  }
+
+  #Membership-{{ section.id }} .membership__row-value {
+    flex: 0 0 auto;
+    color: var(--mb-text);
+    font-size: {{ section.settings.row_text_size }}px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  #Membership-{{ section.id }} .membership__row-value--accent {
+    color: var(--mb-accent);
+  }
+
+  #Membership-{{ section.id }} .membership__row-value--gold {
+    color: var(--mb-gold);
+  }
+
+  #Membership-{{ section.id }} .membership__benefits {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  #Membership-{{ section.id }} .membership__benefits-title {
+    margin: 0 0 0.85rem;
+    color: var(--mb-text);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.benefits_title_size }}px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  #Membership-{{ section.id }} .membership__benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 1rem;
+  }
+
+  #Membership-{{ section.id }} .membership__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--mb-text);
+    font-size: {{ section.settings.benefit_text_size }}px;
+    line-height: 1.45;
+  }
+
+  #Membership-{{ section.id }} .membership__tick {
+    flex: 0 0 auto;
+    width: 1.05em;
+    height: 1.05em;
+    margin-top: 0.15em;
+    color: var(--mb-accent);
+  }
+
+  #Membership-{{ section.id }} .membership__tick svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #Membership-{{ section.id }} .membership__highlight {
+    margin: 0 0 1.5rem;
+    padding: 1.15rem 1.25rem;
+    border-radius: {{ section.settings.highlight_radius }}px;
+    background: var(--mb-highlight);
+  }
+
+  #Membership-{{ section.id }} .membership__highlight-label {
+    margin: 0 0 0.35rem;
+    color: var(--mb-muted);
+    font-size: {{ section.settings.highlight_label_size }}px;
+  }
+
+  #Membership-{{ section.id }} .membership__highlight-price {
+    margin: 0 0 0.4rem;
+    color: var(--mb-accent);
+    font-family: var(--font-heading-family);
+    font-size: {{ section.settings.highlight_price_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  #Membership-{{ section.id }} .membership__highlight-compare {
+    color: var(--mb-muted);
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.highlight_compare_size }}px;
+    font-weight: 500;
+  }
+
+  #Membership-{{ section.id }} .membership__highlight-save {
+    margin: 0;
+    color: var(--mb-gold);
+    font-size: {{ section.settings.highlight_save_size }}px;
+    line-height: 1.4;
+  }
+
+  #Membership-{{ section.id }} .membership__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  #Membership-{{ section.id }} .membership__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.2rem;
+    padding: 1.5rem 2.5rem;
+    border-radius: {{ section.settings.button_radius }}px;
+    background: linear-gradient(to right, #3b82f6, #22d3ee);
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  #Membership-{{ section.id }} .membership__btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  #Membership-{{ section.id }} .membership__cta-note {
+    margin: 0;
+    text-align: center;
+    color: var(--mb-muted);
+    font-size: {{ section.settings.button_note_size }}px;
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 989px) {
+    #Membership-{{ section.id }} .membership__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    #Membership-{{ section.id }} .membership__heading {
+      font-size: {{ section.settings.heading_size_mobile }}px;
+    }
+
+    #Membership-{{ section.id }} .membership__content {
+      text-align: center;
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #Membership-{{ section.id }} .membership__inner {
+      padding: 0 1.25rem;
+    }
+
+    #Membership-{{ section.id }} .membership__card {
+      padding: {{ section.settings.card_padding | times: 0.85 | round: 0 }}px;
+    }
+
+    #Membership-{{ section.id }} .membership__benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<section id="Membership-{{ section.id }}" class="membership">
+  <div class="page-width membership__inner">
+    <div class="membership__content">
+      {% if section.settings.label != blank %}
+        <p class="membership__label">{{ section.settings.label | escape }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank or section.settings.heading_accent != blank %}
+        <h2 class="membership__heading">
+          {% if section.settings.heading != blank %}
+            {{ section.settings.heading | escape }}
+          {% endif %}
+          {% if section.settings.heading_accent != blank %}
+            {% if section.settings.heading != blank %}<br>{% endif %}
+            <span class="membership__heading-accent">{{ section.settings.heading_accent | escape }}</span>
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <p class="membership__subheading">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="membership__text">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+
+    <aside class="membership__card">
+      {% if section.settings.card_title != blank %}
+        <h3 class="membership__card-title">{{ section.settings.card_title | escape }}</h3>
+      {% endif %}
+
+      {% assign pricing_rows = section.blocks | where: 'type', 'pricing_row' %}
+      {% if pricing_rows.size > 0 %}
+        <ul class="membership__rows">
+          {% for block in pricing_rows %}
+            <li class="membership__row" {{ block.shopify_attributes }}>
+              <span class="membership__row-label">{{ block.settings.label | escape }}</span>
+              <span class="membership__row-value membership__row-value--{{ block.settings.value_style }}">
+                {{ block.settings.value | escape }}
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% assign benefit_blocks = section.blocks | where: 'type', 'benefit' %}
+      {% if benefit_blocks.size > 0 or section.settings.benefits != blank %}
+        <div class="membership__benefits-wrap">
+          {% if section.settings.benefits_title != blank %}
+            <p class="membership__benefits-title">{{ section.settings.benefits_title | escape }}</p>
+          {% endif %}
+
+          <ul class="membership__benefits membership__benefits-grid">
+            {% if benefit_blocks.size > 0 %}
+              {% for block in benefit_blocks %}
+                {% if block.settings.text != blank %}
+                  <li class="membership__benefit" {{ block.shopify_attributes }}>
+                    <span class="membership__tick" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <span>{{ block.settings.text | escape }}</span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {% assign lines = section.settings.benefits | newline_to_br | split: '<br />' %}
+              {% for line in lines %}
+                {% assign item = line | strip %}
+                {% if item != blank %}
+                  <li class="membership__benefit">
+                    <span class="membership__tick" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5 10 17.5 19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <span>{{ item | escape }}</span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_highlight %}
+        <div class="membership__highlight">
+          {% if section.settings.highlight_label != blank %}
+            <p class="membership__highlight-label">{{ section.settings.highlight_label | escape }}</p>
+          {% endif %}
+          {% if section.settings.highlight_price != blank %}
+            <p class="membership__highlight-price">
+              {{ section.settings.highlight_price | escape }}
+              {% if section.settings.highlight_compare != blank %}
+                <span class="membership__highlight-compare">{{ section.settings.highlight_compare | escape }}</span>
+              {% endif %}
+            </p>
+          {% endif %}
+          {% if section.settings.highlight_save != blank %}
+            <p class="membership__highlight-save">{{ section.settings.highlight_save | escape }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <div class="membership__cta">
+          <a
+            class="membership__btn"
+            href="{{ section.settings.button_link | default: '#' }}"
+            {% if section.settings.button_link == blank %}aria-disabled="true"{% endif %}
+          >
+            {{ section.settings.button_label | escape }}
+          </a>
+          {% if section.settings.button_note != blank %}
+            <p class="membership__cta-note">{{ section.settings.button_note | escape }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Membership",
+  "tag": "section",
+  "class": "section-custom-membership",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left content (referral)"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "FLOAT HUB MEMBERSHIP"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Share, Refer, Earn Credit!"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent line",
+      "default": "Transform deeply."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "REFER A FRIEND & BOTH RECEIVE £10 OFF YOUR NEXT PURCHASE"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Referral text",
+      "default": "<p>Love floating? Share Float Hub with a friend. When they book their first session using your referral, you both receive £10 credit toward your next visit.</p><p>Membership makes floating a habit — and now your friends can discover it with you.</p>"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 28,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 24,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Left content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Member card"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card title",
+      "default": "MEMBER SNAPSHOT"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "row_text_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Pricing row text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "text",
+      "id": "benefits_title",
+      "label": "Benefits title",
+      "default": "MEMBER BENEFITS"
+    },
+    {
+      "type": "textarea",
+      "id": "benefits",
+      "label": "Benefits list",
+      "info": "One benefit per line. Used if no Benefit blocks are added.",
+      "default": "1 float included monthly\nMember guest rate\nRetail discount\nPriority booking\nReferral rewards\nCancel anytime"
+    },
+    {
+      "type": "range",
+      "id": "benefits_title_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefits title size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "benefit_text_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Monthly cost highlight"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_highlight",
+      "label": "Show monthly cost box",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "highlight_label",
+      "label": "Label",
+      "default": "Your monthly cost"
+    },
+    {
+      "type": "text",
+      "id": "highlight_price",
+      "label": "Price",
+      "default": "£45"
+    },
+    {
+      "type": "text",
+      "id": "highlight_compare",
+      "label": "Compare text",
+      "default": "vs £60 pay-as-you-go"
+    },
+    {
+      "type": "text",
+      "id": "highlight_save",
+      "label": "Savings text",
+      "default": "Save £15 per session · £180 per year"
+    },
+    {
+      "type": "range",
+      "id": "highlight_label_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Highlight label size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "highlight_price_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Highlight price size",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "highlight_compare_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Compare text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "highlight_save_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Savings text size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Highlight corner radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join for £45 / month"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_note",
+      "label": "Button note",
+      "default": "Cancel anytime · No minimum term"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_note_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Button note size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button corner radius",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#070D16"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "gold_color",
+      "label": "Gold accent",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#121A27"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border",
+      "default": "#1E2A3C"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlight box background",
+      "default": "#0F2436"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 1000,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pricing_row",
+      "name": "Pricing row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Monthly float"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Included"
+        },
+        {
+          "type": "select",
+          "id": "value_style",
+          "label": "Value color",
+          "options": [
+            { "value": "default", "label": "Default" },
+            { "value": "accent", "label": "Accent" },
+            { "value": "gold", "label": "Gold" }
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit text",
+          "default": "1 float included monthly"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Membership",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Monthly float",
+            "value": "Included",
+            "value_style": "default"
+          }
+        },
+        {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Extra floats",
+            "value": "£45 each",
+            "value_style": "default"
+          }
+        },
+        {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Member guest rate",
+            "value": "-20% off",
+            "value_style": "accent"
+          }
+        },
+        {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Priority booking",
+            "value": "Free",
+            "value_style": "accent"
+          }
+        },
+        {
+          "type": "pricing_row",
+          "settings": {
+            "label": "Referral reward",
+            "value": "£10 credit",
+            "value_style": "gold"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "1 float included monthly" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Member guest rate" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Retail discount" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Priority booking" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Referral rewards" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Cancel anytime" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

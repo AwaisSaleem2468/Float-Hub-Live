@@ -1,0 +1,1191 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "page",
+        "text_alignment": "left",
+        "show_title": true,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "title_spacing": 32,
+        "rte_heading_size": 28,
+        "rte_heading_size_mobile": 22,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": "1.7",
+        "background_color": "#070d16",
+        "title_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#8b93a1",
+        "link_color": "#0daaef",
+        "link_hover_color": "#22d3ee",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_section_video_banner_KqNJmD": {
+      "type": "custom-section-video-banner",
+      "name": "Custom Video Banner",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/FloatHub-London-Shoreditch-Orbit-Float-Pod-Float-Therapy.jpg",
+        "video": "shopify://files/videos/Floathub Video.mp4",
+        "overlay_color": "#061018",
+        "overlay_opacity": 50,
+        "section_height": 65,
+        "section_height_mobile": 60,
+        "show_badge": false,
+        "badge_text": "London's #1 Float & Recovery Centre",
+        "heading": "Pricing  & Packages",
+        "heading_accent": "",
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 36,
+        "description": "<p>Explore full pricing options for London’s best Float Therapy, clinical HBOT, and full-body Red Light Therapy. </p>",
+        "description_size_desktop": 18,
+        "description_size_mobile": 16,
+        "button_label_1": "",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "",
+        "button_style_1": "primary",
+        "show_button_arrow_1": true,
+        "button_label_2": "",
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "",
+        "button_style_2": "secondary",
+        "show_button_arrow_2": false,
+        "button_label_3": "",
+        "button_product_3": "",
+        "button_redirect_checkout_3": false,
+        "button_link_3": "",
+        "button_style_3": "secondary",
+        "show_button_arrow_3": false,
+        "inner_max_width": 1120,
+        "inner_padding_top": 112,
+        "inner_padding_bottom": 104,
+        "inner_padding_horizontal": 24,
+        "inner_padding_top_mobile": 88,
+        "inner_padding_bottom_mobile": 88,
+        "inner_padding_horizontal_mobile": 20,
+        "show_discover": false,
+        "discover_label": "Scroll Down",
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "badge_color": "#d4af37",
+        "button_primary_bg": "#0daaef",
+        "button_primary_text": "#ffffff"
+      }
+    },
+    "custom_section_richtext_awCARH": {
+      "type": "custom-section-richtext",
+      "name": "Custom Rich Text",
+      "settings": {
+        "show_badge": true,
+        "show_stars": true,
+        "badge_text": "London's best Float Therapy",
+        "badge_size_desktop": 16,
+        "badge_size_mobile": 14,
+        "badge_spacing": 28,
+        "content": "<p>Our premium recovery centre offers a luxurious, multi-modality wellness experience. Discover London's best Float Therapy featuring 100% water filtration twice between sessions, our extra spacious 1.5ATA double HBOT chamber, and our 26K German-engineered LED full body red light bed. Book your session today to experience reduced anxiety, deeper sleep, and peak physical recovery.</p>",
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "content_width": 900,
+        "background_color": "#0f1827",
+        "text_color": "#c8ced8",
+        "strong_color": "#ffffff",
+        "badge_background": "#243044",
+        "badge_text_color": "#c8ced8",
+        "star_color": "#f5c518",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_featured_collection_GUUAE9": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_3LtQ9e": {
+          "type": "product_card",
+          "settings": {
+            "product": "single-float-60-min",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Session",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10869487665479&servicify-event=3b1aa34f-8168-40d5-9f61-df2e2b5f08ff&servicify-variant=54664191410503"
+          }
+        },
+        "product_card_KDrfdL": {
+          "type": "product_card",
+          "settings": {
+            "product": "3-float-intro-pack",
+            "featured": true,
+            "badge_text": "One-Time Purchase",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy Intro Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_zqyc3e": {
+          "type": "product_card",
+          "settings": {
+            "product": "float-for-two-couples",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Couples  POD",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868832534855&servicify-event=15b2c8e2-2408-4c8f-b518-ea6f0b0fe335&servicify-variant=54213836964167"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_3LtQ9e",
+        "product_card_KDrfdL",
+        "product_card_zqyc3e"
+      ],
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "",
+        "heading": "Float Therapy",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 14,
+        "description": "<p>While a single session is highly effective at reducing anxiety and improving sleep patterns for around 36 hours, the core biological benefits of floating compound over several sessions. Committing to regular practice fundamentally resets your baseline stress level, unlocking sustained improvements in focus, deep sleep, and emotional well-being that can endure for weeks or months at a time.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "caption_size": 16,
+        "title_size": 20,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1120,
+        "header_spacing": 48,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#061018",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": false,
+        "view_all_label": "View all",
+        "view_all_link": "",
+        "view_all_style": "ghost",
+        "view_all_spacing": 32,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_packages_6F8Eei": {
+      "type": "custom-section-packages",
+      "blocks": {
+        "package_iFjnrF": {
+          "type": "package",
+          "settings": {
+            "product": "2-single-use-floats-pack",
+            "caption_override": "",
+            "button_label": "Buy Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_zPdEKr": {
+          "type": "package",
+          "settings": {
+            "product": "4-float-sharer-course",
+            "caption_override": "",
+            "button_label": "Buy Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_7btLNL": {
+          "type": "package",
+          "settings": {
+            "product": "annual-course-package-12-floats",
+            "caption_override": "",
+            "button_label": "Buy Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_C6wBjD": {
+          "type": "package",
+          "settings": {
+            "product": "corporate-group-pack-12-floats",
+            "caption_override": "",
+            "button_label": "Buy Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "package_iFjnrF",
+        "package_zPdEKr",
+        "package_7btLNL",
+        "package_C6wBjD"
+      ],
+      "name": "Custom Packages",
+      "settings": {
+        "heading": "",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "left",
+        "heading_max_width": 700,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "description_size": 15,
+        "header_gap": 28,
+        "content_width": 1100,
+        "card_radius": 12,
+        "row_padding_y": 28,
+        "row_padding_x": 32,
+        "column_gap": 28,
+        "title_size": 22,
+        "title_size_mobile": 18,
+        "caption_size": 14,
+        "price_size": 28,
+        "price_size_mobile": 22,
+        "button_label": "BUY COURSE",
+        "button_size": 12,
+        "button_height": 44,
+        "button_min_width": 140,
+        "button_radius": 6,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border": "#243041",
+        "divider_color": "#243041",
+        "title_color": "#ffffff",
+        "caption_color": "#c8ced8",
+        "price_color": "#ffffff",
+        "accent_color": "#23a3df",
+        "button_color": "#23a3df",
+        "button_hover_color": "#22d3ee",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_featured_collection_3T7nJK": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_FyTyWE": {
+          "type": "product_card",
+          "settings": {
+            "product": "intro-3-pack",
+            "featured": true,
+            "badge_text": "One Time Purchase",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy Intro Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_YGtyJ7": {
+          "type": "product_card",
+          "settings": {
+            "product": "5-session-starter",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy Statter Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_4cpbfU": {
+          "type": "product_card",
+          "settings": {
+            "product": "10-session-performance",
+            "featured": true,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy 10 Session Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_r8fTgw": {
+          "type": "product_card",
+          "settings": {
+            "product": "20-session-deep-repair",
+            "featured": false,
+            "badge_text": "",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy 20 Session Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "product_card_jiHPRb": {
+          "type": "product_card",
+          "settings": {
+            "product": "40-hour-longevity",
+            "featured": true,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Buy 40 Hours Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_FyTyWE",
+        "product_card_YGtyJ7",
+        "product_card_4cpbfU",
+        "product_card_r8fTgw",
+        "product_card_jiHPRb"
+      ],
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "",
+        "heading": "Hyperbaric Oxygen (HBOT)",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 14,
+        "description": "<p>Step into London's premier Oxygen Suite. Bypassing the red blood cell bottleneck via plasma saturation to reverse neural oxygen debts and clear systemic inflammation.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "caption_size": 16,
+        "title_size": 20,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1120,
+        "header_spacing": 48,
+        "background_color": "#121a27",
+        "card_background": "#070d16",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#061018",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": false,
+        "view_all_label": "View all",
+        "view_all_link": "",
+        "view_all_style": "ghost",
+        "view_all_spacing": 32,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_packages_wAGBgM": {
+      "type": "custom-section-packages",
+      "blocks": {
+        "package_3L63W3": {
+          "type": "package",
+          "settings": {
+            "product": "hbot-session-60-min",
+            "caption_override": "",
+            "button_label": "Book Now",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868844003655&servicify-event=c76a40b9-728a-4f8a-bd87-639001141a54&servicify-variant=54213881266503"
+          }
+        },
+        "package_YzbHXR": {
+          "type": "package",
+          "settings": {
+            "product": "hbot-for-two-session-60-min",
+            "caption_override": "",
+            "button_label": "Book Due Session",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868839514439&servicify-event=923219a3-cc08-4d0c-b243-b6e80a70cc96&servicify-variant=54213863113031"
+          }
+        }
+      },
+      "block_order": [
+        "package_3L63W3",
+        "package_YzbHXR"
+      ],
+      "name": "Custom Packages",
+      "settings": {
+        "heading": "",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "left",
+        "heading_max_width": 700,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "description_size": 15,
+        "header_gap": 28,
+        "content_width": 1100,
+        "card_radius": 12,
+        "row_padding_y": 28,
+        "row_padding_x": 32,
+        "column_gap": 28,
+        "title_size": 22,
+        "title_size_mobile": 18,
+        "caption_size": 14,
+        "price_size": 28,
+        "price_size_mobile": 22,
+        "button_label": "BUY COURSE",
+        "button_size": 12,
+        "button_height": 44,
+        "button_min_width": 140,
+        "button_radius": 6,
+        "background_color": "#121a27",
+        "card_background": "#070d16",
+        "card_border": "#243041",
+        "divider_color": "#243041",
+        "title_color": "#ffffff",
+        "caption_color": "#c8ced8",
+        "price_color": "#ffffff",
+        "accent_color": "#23a3df",
+        "button_color": "#23a3df",
+        "button_hover_color": "#22d3ee",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_featured_collection_bk8fiW": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_t3rAwH": {
+          "type": "product_card",
+          "settings": {
+            "product": "red-light-therapy",
+            "featured": false,
+            "badge_text": "",
+            "price_override": "",
+            "price_note": "",
+            "button_label": "Book Session",
+            "redirect_to_checkout": false,
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743"
+          }
+        },
+        "product_card_xDNAPt": {
+          "type": "product_card",
+          "settings": {
+            "product": "3x-red-light-discovery-pack",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "",
+            "price_note": "/ month",
+            "button_label": "Buy Discovery pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_t3rAwH",
+        "product_card_xDNAPt"
+      ],
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "",
+        "heading": "Red Light Therapy",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 14,
+        "description": "<p>Experience London's premier professional-grade FloatLightPBM bed. Engineered with over 26,000 high-density LEDs and 3000w of pure power to deliver a uniform, systemic biological upgrade from head to toe.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "caption_size": 16,
+        "title_size": 20,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1120,
+        "header_spacing": 48,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#061018",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": false,
+        "view_all_label": "View all",
+        "view_all_link": "",
+        "view_all_style": "ghost",
+        "view_all_spacing": 32,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_packages_pLCUyq": {
+      "type": "custom-section-packages",
+      "blocks": {
+        "package_TVzNzr": {
+          "type": "package",
+          "settings": {
+            "product": "starter-pack",
+            "caption_override": "",
+            "button_label": "Buy Starter Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_9Qpxqk": {
+          "type": "package",
+          "settings": {
+            "product": "gold-pack",
+            "caption_override": "",
+            "button_label": "Buy Gold Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_k848eB": {
+          "type": "package",
+          "settings": {
+            "product": "platinum-pack",
+            "caption_override": "",
+            "button_label": "Buy Platinum Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        },
+        "package_p8fUw4": {
+          "type": "package",
+          "settings": {
+            "product": "intensive-pack",
+            "caption_override": "",
+            "button_label": "Buy Intensive Pack",
+            "redirect_to_checkout": true,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "package_TVzNzr",
+        "package_9Qpxqk",
+        "package_k848eB",
+        "package_p8fUw4"
+      ],
+      "name": "Custom Packages",
+      "settings": {
+        "heading": "",
+        "heading_accent": "",
+        "description": "",
+        "heading_alignment": "left",
+        "heading_max_width": 700,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "description_size": 15,
+        "header_gap": 28,
+        "content_width": 1100,
+        "card_radius": 12,
+        "row_padding_y": 28,
+        "row_padding_x": 32,
+        "column_gap": 28,
+        "title_size": 22,
+        "title_size_mobile": 18,
+        "caption_size": 14,
+        "price_size": 28,
+        "price_size_mobile": 22,
+        "button_label": "BUY COURSE",
+        "button_size": 12,
+        "button_height": 44,
+        "button_min_width": 140,
+        "button_radius": 6,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border": "#243041",
+        "divider_color": "#243041",
+        "title_color": "#ffffff",
+        "caption_color": "#c8ced8",
+        "price_color": "#ffffff",
+        "accent_color": "#23a3df",
+        "button_color": "#23a3df",
+        "button_hover_color": "#22d3ee",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_featured_collection_YzTPLt": {
+      "type": "custom-section-featured-collection",
+      "blocks": {
+        "product_card_KdHkCK": {
+          "type": "product_card",
+          "settings": {
+            "product": "flexi-float-plan",
+            "featured": true,
+            "badge_text": "Welcome Bonus",
+            "price_override": "£45.00",
+            "price_note": "/ month",
+            "button_label": "Book As Member",
+            "redirect_to_checkout": false,
+            "button_link": "https://app.cowlendar.com/cal/6a84de83b21db33053c96a24/54626640593223"
+          }
+        },
+        "product_card_aBttrG": {
+          "type": "product_card",
+          "settings": {
+            "product": "2-float-monthly",
+            "featured": true,
+            "badge_text": "Most Popular",
+            "price_override": "£80.00",
+            "price_note": "/ month",
+            "button_label": "Book As Member",
+            "redirect_to_checkout": false,
+            "button_link": "https://app.cowlendar.com/cal/6a84ee0db21db33053c991a0/54626668904775"
+          }
+        },
+        "product_card_c6iC9b": {
+          "type": "product_card",
+          "disabled": true,
+          "settings": {
+            "product": "float-for-two-couples-monthly",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "price_override": "£80.00",
+            "price_note": "/ month",
+            "button_label": "Join Membership",
+            "redirect_to_checkout": false,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_KdHkCK",
+        "product_card_aBttrG",
+        "product_card_c6iC9b"
+      ],
+      "disabled": true,
+      "name": "Custom Feat collection",
+      "settings": {
+        "label": "",
+        "heading": "Flexi-Float Memberships",
+        "heading_accent": "",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "label_size": 14,
+        "description": "<p>Join our rolling monthly plans for London's best value. Total freedom with no long-term contracts, plus 20% off all additional services & gift cards, exclusive 90-minute upgrades, and fully shareable member floats.</p>",
+        "description_size_desktop": 16,
+        "description_size_mobile": 15,
+        "caption_size": 16,
+        "title_size": 20,
+        "price_size": 36,
+        "feature_size": 16,
+        "button_size": 16,
+        "content_width": 1120,
+        "header_spacing": 48,
+        "background_color": "#121a27",
+        "card_background": "#070d16",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "accent_text_color": "#061018",
+        "gold_color": "#23a3df",
+        "gold_text_color": "#1a1208",
+        "show_view_all": false,
+        "view_all_label": "View all",
+        "view_all_link": "",
+        "view_all_style": "ghost",
+        "view_all_spacing": 32,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_membership_card_xAkxkP": {
+      "type": "custom-section-membership-card",
+      "blocks": {
+        "product_card_BjQEEP": {
+          "type": "product_card",
+          "settings": {
+            "product": "flexi-float-plan",
+            "badge_text": "",
+            "caption": "per month | Rolling agreement",
+            "price_override": "",
+            "price_note": "",
+            "features": "",
+            "allow_subscription": true,
+            "button_label": "Book As Member",
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=11007974801735&servicify-event=27d8e984-eaf6-4292-a90a-bd27f38e9457&servicify-variant=54626640593223"
+          }
+        },
+        "product_card_LNtwdV": {
+          "type": "product_card",
+          "settings": {
+            "product": "float-for-two-couples-monthly",
+            "badge_text": "",
+            "caption": "per month | Rolling agreement",
+            "price_override": "",
+            "price_note": "",
+            "features": "",
+            "allow_subscription": true,
+            "button_label": "Book As Member",
+            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=11007982993735&servicify-event=330729ad-9846-4050-95fb-efe5620ef3ef&servicify-variant=54626668904775"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_BjQEEP",
+        "product_card_LNtwdV"
+      ],
+      "name": "Membership cards",
+      "settings": {
+        "heading": "Flexi-Float Memberships",
+        "heading_size_desktop": 42,
+        "heading_size_mobile": 32,
+        "description": "<p>Join Float Hub for the best rates, free session upgrades, and flexible rolling memberships with no long-term commitment.</p>",
+        "description_size": 16,
+        "header_spacing": 48,
+        "columns_desktop": 3,
+        "content_width": 1280,
+        "card_gap": 16,
+        "caption_size": 14,
+        "title_size": 22,
+        "price_size": 31,
+        "feature_size": 16,
+        "button_size": 16,
+        "background_color": "#121a27",
+        "card_background": "#070d16",
+        "card_border_color": "#23a3df",
+        "text_color": "#ffffff",
+        "muted_color": "#c8ced8",
+        "accent_color": "#23a3df",
+        "badge_background": "#23a3df",
+        "badge_text_color": "#061018",
+        "button_background": "#23a3df",
+        "button_text_color": "#ffffff",
+        "show_banner": false,
+        "banner_heading": "Become a member",
+        "banner_text": "Unlock member rates, free upgrades, and flexible floating every month.",
+        "banner_button_label": "CLICK FOR MEMBERSHIPS",
+        "banner_button_link": "",
+        "banner_background": "#23a3df",
+        "banner_text_color": "#ffffff",
+        "banner_button_background": "#ffffff",
+        "banner_button_text_color": "#061018",
+        "banner_heading_size": 28,
+        "banner_text_size": 15,
+        "banner_button_size": 13,
+        "banner_spacing": 48,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_become_a_member_j48k7w": {
+      "type": "custom-section-become-a-member",
+      "name": "Custom Become a Member",
+      "settings": {
+        "heading": "Become a member",
+        "text": "<p>Memberships offer the best price, no minimum term, free 90-min upgrades (subject to availability), and amazing partner benefits.</p>",
+        "button_label": "CLICK FOR MEMBERSHIPS",
+        "button_link": "shopify://pages/float-hub-memberships",
+        "content_width": 880,
+        "text_max_width": 560,
+        "content_gap": 40,
+        "content_gap_mobile": 24,
+        "padding_horizontal": 40,
+        "mobile_alignment": "left",
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "text_size": 15,
+        "text_size_mobile": 14,
+        "text_spacing": 12,
+        "button_size": 13,
+        "button_height": 52,
+        "button_padding_x": 28,
+        "button_radius": 6,
+        "background_color": "#23a3df",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "button_background": "#ffffff",
+        "button_hover_background": "#c8ced8",
+        "button_text_color": "#070d16",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_richtext_8mj6iw": {
+      "type": "custom-section-richtext",
+      "name": "Custom Rich Text",
+      "settings": {
+        "show_badge": false,
+        "show_stars": false,
+        "badge_text": "21K+ Happy Customers",
+        "badge_size_desktop": 12,
+        "badge_size_mobile": 11,
+        "badge_spacing": 28,
+        "content": "<p>Memberships – Our members get the best prices on floats, free 90 minute float, and discounted float for friends and family. Pay monthly, no minimum term.</p><p></p><p>Memberships are a great option even if you just want to try out floating – only stay with us if you want to.</p><p></p><p>Since floating is a practice that has a learning curve and an accumulative effect, the more often you float, the better and more effective they get.</p><p>If you are interested in adding a float practice to your routine, you’ll get the best value by becoming a member.</p>",
+        "text_size_desktop": 20,
+        "text_size_mobile": 18,
+        "content_width": 1000,
+        "background_color": "#070d16",
+        "text_color": "#e8edf5",
+        "strong_color": "#ffffff",
+        "badge_background": "#1a2436",
+        "badge_text_color": "#d5dce8",
+        "star_color": "#f5c518",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_icon_with_text_horizontal_gGtMdr": {
+      "type": "custom-section-icon-with-text-horizontal",
+      "name": "Icon Text Horizontal",
+      "settings": {
+        "text": "<p><strong>Want to treat a friend or loved one?</strong> <a href=\"/products/gift-card\" title=\"Gift cards\">Grab one of our gift cards </a>and</p><p>give them deep relaxation, recovery and an unforgettable experience!</p>",
+        "accessibility_label": "Gift cards",
+        "icon": "heart",
+        "icon_style": "gradient",
+        "icon_color": "#ff6b4a",
+        "icon_gradient_from": "#ff7a45",
+        "icon_gradient_to": "#d62828",
+        "icon_size": 64,
+        "icon_size_mobile": 48,
+        "content_width": 800,
+        "text_max_width": 680,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "content_gap": 20,
+        "content_gap_mobile": 16,
+        "stack_on_mobile": false,
+        "text_size": 20,
+        "text_size_mobile": 18,
+        "background_color": "#070d16",
+        "text_color": "#c8ced8",
+        "strong_color": "#ffffff",
+        "link_color": "#23a3df",
+        "link_hover_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "rich_text_a8NMDt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YfrfcC": {
+          "type": "heading",
+          "settings": {
+            "heading": "How often should I float?"
+          }
+        },
+        "text_dMVDyt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Everyone floats for different reasons. We <em>highly recommend </em>you try at least 3 floats within a period of around 45 – 60 days to experience the full benefits. Most people develop a practice of 1 – 4 floats per month.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YfrfcC",
+        "text_dMVDyt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 700,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 36,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 15,
+        "button_radius": 40,
+        "background_color": "#121a27",
+        "heading_color": "#ffffff",
+        "caption_color": "#23a3df",
+        "text_color": "#c8ced8",
+        "link_color": "#23a3df",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_stacked_image_text_overly_TgjGw7": {
+      "type": "custom-section-stacked-image-text-overly",
+      "blocks": {
+        "panel_U7FBBf": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/624292321_18089226653472903_2926321886989038639_n.jpg",
+            "eyebrow": "GIFT CARDS",
+            "heading": "Give The Gift Of Deep Relaxation",
+            "description": "",
+            "button_label": "Choose An Amount",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        },
+        "panel_PwcyWt": {
+          "type": "panel",
+          "settings": {
+            "image": "shopify://shop_images/481112418_2741467312704498_3456577850477813194_n.jpg",
+            "eyebrow": "WELLNESS PROGRAMS",
+            "heading": "Reward Your Employees, See Greater ROI",
+            "description": "",
+            "button_label": "Request More Info",
+            "button_link": "#",
+            "button_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "panel_U7FBBf",
+        "panel_PwcyWt"
+      ],
+      "name": "Stacked Image Overlay",
+      "settings": {
+        "accessibility_label": "Featured promotions",
+        "columns_desktop": 2,
+        "panel_height": 720,
+        "panel_height_mobile": 360,
+        "content_max_width": 520,
+        "content_padding_y": 32,
+        "content_padding_x": 16,
+        "eyebrow_size": 14,
+        "eyebrow_size_mobile": 11,
+        "heading_size": 24,
+        "heading_size_mobile": 20,
+        "eyebrow_spacing": 12,
+        "heading_spacing": 16,
+        "description_size": 15,
+        "description_size_mobile": 14,
+        "description_line_height": 15,
+        "description_item_spacing": 12,
+        "description_spacing": 28,
+        "button_style": "gradient",
+        "button_size": 16,
+        "button_height": 48,
+        "button_padding_x": 28,
+        "button_radius": 8,
+        "fallback_background": "#121a27",
+        "overlay_color": "#070d16",
+        "overlay_opacity": 40,
+        "eyebrow_color": "#ffffff",
+        "text_color": "#ffffff",
+        "description_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#ffffff"
+      }
+    },
+    "collapsible_content_7y8TFD": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_GkJa8q": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I share my floats or membership?",
+            "icon": "none",
+            "row_content": "<p>Our memberships are individual, however you earn free floats by referring new members, previous unused floats can be gifted, members can buy discounted guest passes, and also get 20% off any packs we might offer from time to time.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pNAhXE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do float credits ever expire?",
+            "icon": "none",
+            "row_content": "<p>No, floats on your account rollover and never expire for single float purchases or active members.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GNmjGm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I want to float more than once a month?",
+            "icon": "none",
+            "row_content": "<p>The best option is to sign up for our membership <strong>(every 4th float within a calendar month is free!),</strong> which gives you the best price on floats, additional floats at the same price, and many additional perks.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Q8qmTF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I have to buy a float before booking an appointment?",
+            "icon": "none",
+            "row_content": "<p>Yes, if you are not currently a member, you will need to first purchase a float session that you can put towards your appointment that you will be booking. Active members are able to pre-book appointments and can set up recurring times to help build your floating practice.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QNyGti": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there any commitment, sign up, or cancellation fee for membership?",
+            "icon": "none",
+            "row_content": "<p>No, our memberships are flexible and month-to-month. There is no sign up or cancellation fee to become a member. There is no minimum term and if you wish to cancel we require a written request to team@floathub.co.uk 10 days before the payment is due.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dqzEdk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your refund policy?",
+            "icon": "none",
+            "row_content": "<p><strong>We do offer full refund within 14 days from the purchase.</strong></p><p>Refunds are available within 14 days of purchase, if the sessions have not been used. If you need a refund for any reason, please get in touch and we can help you with this.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_GkJa8q",
+        "collapsible_row_pNAhXE",
+        "collapsible_row_GNmjGm",
+        "collapsible_row_Q8qmTF",
+        "collapsible_row_QNyGti",
+        "collapsible_row_dqzEdk"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collapsible_content_UXFXUY": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_ftWWqL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I send an electronic gift card?",
+            "icon": "none",
+            "row_content": "<p>Yes, you have the option of a digital gift card. When you go to purchase one from our online store, you will have the option of sending it via email on a scheduled date that you choose (ex. birthday or anniversary).  You can also write a personalised message for the recipient. Simply choose Gift Cards on the Menu.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UxKkEw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I redeem a gift card I received?",
+            "icon": "none",
+            "row_content": "<p>If you received an electronic gift card, you can easily book your session online. Go to our booking system and login or create an account. You’ll need to choose the services that correspond with your gift card and enter your card number upon checkout.</p><p>Give us a call at +020 3666 0895 or email us at info@floathub.co.uk if you received a physical gift card or if you have any questions or issues!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_ftWWqL",
+        "collapsible_row_UxKkEw"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Gift Cards",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "custom_section_small_banner_a8hPby": {
+      "type": "custom-section-small-banner",
+      "name": "Custom Small Banner",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/float-hub--benefit.png",
+        "image_mobile": "shopify://shop_images/float-hub--benefit.png",
+        "image_fit": "cover",
+        "image_position": "top center",
+        "video": "shopify://files/videos/AQM9irMDVPSnxFB-hqE62AG8i68vwFaCI08_XqqjW_d_zqvu4myh-1uW5OnguAwtRFPZCwTeykMOj8-iwfrBABFC89R2OuMFtudiO-x_LzgxfA.mp4",
+        "video_mobile": "shopify://files/videos/(20+) Facebook.mp4",
+        "fallback_background": "#0daaef",
+        "section_height": 65,
+        "section_height_mobile": 70,
+        "enable_overlay": true,
+        "overlay_style": "dark",
+        "overlay_color": "#061018",
+        "overlay_opacity": 65,
+        "gradient_start": "#14b8a6",
+        "gradient_end": "#38bdf8",
+        "gradient_opacity": 60,
+        "eyebrow": "Now Open",
+        "eyebrow_size": 13,
+        "heading": "SHOREDITCH, LONDON",
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 30,
+        "heading_weight": "700",
+        "address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "phone": "+44 20 1234 5678",
+        "email": "team@floathub.co.uk",
+        "contact_size": 18,
+        "content_spacing": 24,
+        "button_label_1": "Contact Us",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
+        "button_link_1": "shopify://pages/contact",
+        "button_label_2": "Get Directions",
+        "secondary_opens_map": true,
+        "button_product_2": "",
+        "button_redirect_checkout_2": false,
+        "button_link_2": "shopify://pages/contact",
+        "map_title": "SHOREDITCH, LONDON",
+        "map_address": "346 Old Street, Lower Ground Floor, London, EC1V 9NQ",
+        "button_size": 16,
+        "button_radius": 8,
+        "text_color": "#ffffff",
+        "accent_color": "#0daaef",
+        "content_width": 820
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_video_banner_KqNJmD",
+    "custom_section_richtext_awCARH",
+    "custom_section_featured_collection_GUUAE9",
+    "custom_section_packages_6F8Eei",
+    "custom_section_featured_collection_3T7nJK",
+    "custom_section_packages_wAGBgM",
+    "custom_section_featured_collection_bk8fiW",
+    "custom_section_packages_pLCUyq",
+    "custom_section_featured_collection_YzTPLt",
+    "custom_section_membership_card_xAkxkP",
+    "custom_section_become_a_member_j48k7w",
+    "custom_section_richtext_8mj6iw",
+    "custom_section_icon_with_text_horizontal_gGtMdr",
+    "rich_text_a8NMDt",
+    "custom_section_stacked_image_text_overly_TgjGw7",
+    "collapsible_content_7y8TFD",
+    "collapsible_content_UXFXUY",
+    "custom_section_small_banner_a8hPby"
+  ]
+}

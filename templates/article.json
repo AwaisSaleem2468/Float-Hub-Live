@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "custom"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content"
+      ],
+      "settings": {
+        "image_height_custom": 600,
+        "image_height_custom_mobile": 360,
+        "show_gradient": true,
+        "overlay_color": "#070d16",
+        "overlay_opacity": 40,
+        "title_over_image": true,
+        "title_vertical_position": "center",
+        "title_horizontal_position": "center",
+        "title_alignment": "center",
+        "hero_title_padding_top": 44,
+        "hero_title_padding_bottom": 44,
+        "section_background": "#070d16",
+        "heading_color": "#ffffff",
+        "text_color": "#c8ced8",
+        "meta_color": "#a8b0bd",
+        "link_color": "#23A3DF",
+        "accent_color": "#23A3DF",
+        "card_background": "#121a27",
+        "comments_background": "#0b1220",
+        "title_font_size": 42,
+        "title_font_size_mobile": 32,
+        "h2_font_size": 36,
+        "h2_font_size_mobile": 24,
+        "h3_font_size": 30,
+        "h3_font_size_mobile": 20,
+        "body_font_size": 16,
+        "body_font_size_mobile": 14,
+        "meta_font_size": 14,
+        "meta_font_size_mobile": 12,
+        "content_padding": 56,
+        "content_padding_mobile": 16,
+        "header_top_gap": 20,
+        "header_bottom_gap": 20,
+        "content_top_gap": 48,
+        "content_bottom_gap": 28
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
