@@ -14,18 +14,17 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement_TcnM6N": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Have existing credits? Sign In via email to & head to 'My Bookings' to use your sessions.",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement_TcnM6N"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
