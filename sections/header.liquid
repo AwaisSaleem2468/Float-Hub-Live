@@ -93,29 +93,13 @@
   }
 
   shopify-account.header__icon::part(dialog) {
+    position: fixed !important;
     top: var(--account-dialog-top, var(--header-height, 0px)) !important;
-    right: var(--account-dialog-right, 0px) !important;
-    left: auto !important;
-    inset-inline-start: auto !important;
-    inset-inline-end: var(--account-dialog-right, 0px) !important;
+    left: var(--account-dialog-left, auto) !important;
+    right: auto !important;
+    inset: var(--account-dialog-top, var(--header-height, 0px)) auto auto var(--account-dialog-left, auto) !important;
     transform: none !important;
-  }
-
-  @supports (anchor-name: --header-account) {
-    shopify-account.header__icon {
-      anchor-name: --header-account;
-    }
-
-    shopify-account.header__icon::part(dialog) {
-      position-anchor: --header-account;
-      inset-inline-end: anchor(right);
-      inset-inline-start: auto;
-      inset-block-start: calc(anchor(bottom) + 8px);
-      top: auto !important;
-      right: auto !important;
-      left: auto !important;
-      transform: none !important;
-    }
+    margin: 0 !important;
   }
 
   shopify-account.header__icon:not(:defined) {
@@ -697,17 +681,36 @@
   // Anchor the dialog to the bottom of the account button itself. The header group can be
   // much taller than the button's row (for example, a top-left logo pushes the menu to a
   // second row), so anchoring to the section bottom drops the dialog too low.
+  const positionAccountDialog = (accountEl) => {
+    const rect = accountEl.getBoundingClientRect();
+    const top = Math.max(0, Math.round(rect.bottom + 8));
+    const dialog =
+      accountEl.shadowRoot?.querySelector('[part~="dialog"], dialog, [popover], [role="dialog"]') || null;
+    const dialogWidth = Math.round(dialog?.getBoundingClientRect().width || 320);
+    const left = Math.max(8, Math.round(rect.right - dialogWidth));
+
+    accountEl.style.setProperty('--account-dialog-top', `${top}px`);
+    accountEl.style.setProperty('--account-dialog-left', `${left}px`);
+    accountEl.style.setProperty('--shopify-account-dialog-position-top', `${top}px`);
+
+    if (dialog) {
+      dialog.style.setProperty('position', 'fixed', 'important');
+      dialog.style.setProperty('top', `${top}px`, 'important');
+      dialog.style.setProperty('left', `${left}px`, 'important');
+      dialog.style.setProperty('right', 'auto', 'important');
+      dialog.style.setProperty('inset', `${top}px auto auto ${left}px`, 'important');
+      dialog.style.setProperty('transform', 'none', 'important');
+      dialog.style.setProperty('margin', '0', 'important');
+    }
+  };
+
   document.addEventListener(
     'open',
     (event) => {
       if (!(event.target instanceof HTMLElement) || !event.target.matches('shopify-account')) return;
 
-      const rect = event.target.getBoundingClientRect();
-      const bottom = Math.max(0, Math.round(rect.bottom));
-      const right = Math.max(0, Math.round(window.innerWidth - rect.right));
-      event.target.style.setProperty('--account-dialog-top', `${bottom}px`);
-      event.target.style.setProperty('--account-dialog-right', `${right}px`);
-      event.target.style.setProperty('--shopify-account-dialog-position-top', `${bottom}px`);
+      positionAccountDialog(event.target);
+      requestAnimationFrame(() => positionAccountDialog(event.target));
     },
     true
   );
