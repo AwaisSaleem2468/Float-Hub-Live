@@ -76,6 +76,7 @@
   }
 
   shopify-account.header__icon {
+    position: relative;
     --shopify-account-font-heading: var(--font-heading-family);
     --shopify-account-font-heading-weight: var(--font-heading-weight);
     --shopify-account-font-body: var(--font-body-family);
@@ -89,6 +90,32 @@
     --shopify-account-color-accent: rgb(var(--color-button));
     --shopify-account-color-accent-text: rgb(var(--color-button-text));
     --shopify-account-dialog-position-top: var(--account-dialog-top, var(--header-height, 0px));
+  }
+
+  shopify-account.header__icon::part(dialog) {
+    top: var(--account-dialog-top, var(--header-height, 0px)) !important;
+    right: var(--account-dialog-right, 0px) !important;
+    left: auto !important;
+    inset-inline-start: auto !important;
+    inset-inline-end: var(--account-dialog-right, 0px) !important;
+    transform: none !important;
+  }
+
+  @supports (anchor-name: --header-account) {
+    shopify-account.header__icon {
+      anchor-name: --header-account;
+    }
+
+    shopify-account.header__icon::part(dialog) {
+      position-anchor: --header-account;
+      inset-inline-end: anchor(right);
+      inset-inline-start: auto;
+      inset-block-start: calc(anchor(bottom) + 8px);
+      top: auto !important;
+      right: auto !important;
+      left: auto !important;
+      transform: none !important;
+    }
   }
 
   shopify-account.header__icon:not(:defined) {
@@ -675,8 +702,12 @@
     (event) => {
       if (!(event.target instanceof HTMLElement) || !event.target.matches('shopify-account')) return;
 
-      const bottom = Math.max(0, Math.round(event.target.getBoundingClientRect().bottom));
+      const rect = event.target.getBoundingClientRect();
+      const bottom = Math.max(0, Math.round(rect.bottom));
+      const right = Math.max(0, Math.round(window.innerWidth - rect.right));
       event.target.style.setProperty('--account-dialog-top', `${bottom}px`);
+      event.target.style.setProperty('--account-dialog-right', `${right}px`);
+      event.target.style.setProperty('--shopify-account-dialog-position-top', `${bottom}px`);
     },
     true
   );
