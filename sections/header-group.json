@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_TcnM6N": {
+          "type": "announcement",
+          "settings": {
+            "text": "Have existing credits? Sign In via email to & head to 'My Bookings' to use your sessions.",
+            "link": ""
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -23,6 +30,7 @@
         }
       },
       "block_order": [
+        "announcement_TcnM6N",
         "announcement-bar-0"
       ],
       "disabled": true,
