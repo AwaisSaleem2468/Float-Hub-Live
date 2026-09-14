@@ -20,18 +20,10 @@
             "text": "Have existing credits? Sign In via email to & head to 'My Bookings' to use your sessions.",
             "link": ""
           }
-        },
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "announcement_TcnM6N",
-        "announcement-bar-0"
+        "announcement_TcnM6N"
       ],
       "disabled": true,
       "settings": {
