@@ -219,6 +219,17 @@
     line-height: 1;
   }
 
+  #VideoBanner-{{ section.id }} .video-banner__microcopy {
+    margin-top: 1.25rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #VideoBanner-{{ section.id }} .video-banner__microcopy p {
+    margin: 0;
+  }
+
   #VideoBanner-{{ section.id }} .video-banner__discover {
     position: absolute;
     left: 50%;
@@ -303,6 +314,10 @@
         font-size: 1.4rem;
         min-height: auto;
         padding: 1rem;
+    }
+
+    #VideoBanner-{{ section.id }} .video-banner__microcopy {
+      font-size: 1.2rem;
     }
   }
 {% endstyle %}
@@ -495,6 +510,12 @@
             {%- endif -%}
           </a>
         {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.microcopy != blank -%}
+      <div class="video-banner__microcopy rte">
+        {{ section.settings.microcopy }}
       </div>
     {%- endif -%}
   </div>
@@ -832,6 +853,12 @@
       "id": "show_button_arrow_3",
       "label": "Show arrow",
       "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "microcopy",
+      "label": "Microcopy below buttons",
+      "default": "<p><em>* <strong>3 Float Intro (£99):</strong> Purchase first to book via email.<br>* <strong>Float for Two (£95):</strong> Select date and time on calendar.</em></p>"
     },
     {
       "type": "header",
