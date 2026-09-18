@@ -546,7 +546,8 @@
         "email_or_phone_label": "Email address (Instant credit & account access)",
         "email_or_phone_placeholder": "Email address (Instant credit & account access)",
         "address_title": "Billing Address",
-        "contact_method_title": "Contact Details"
+        "contact_method_title": "Contact Details",
+        "email_placeholder": "Your email (No password required)"
       },
       "general": {
         "pay_now_button_label": "Complete Order & Get Instant Access"
