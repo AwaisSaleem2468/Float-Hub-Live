@@ -26,10 +26,12 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {}
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker": {
@@ -46,11 +48,31 @@
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "button_label": "Buy now",
             "redirect_to_checkout": true,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
+          }
+        },
+        "text_BcywQT": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "icon_with_text_WLAcwU": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "none",
+            "heading_1": "Your sessions have already been credited to your account. Please log in to your account to book and manage your sessions.",
+            "icon_2": "return",
+            "heading_2": "",
+            "icon_3": "none",
+            "heading_3": ""
           }
         },
         "share": {
@@ -69,17 +91,19 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "text_BcywQT",
+        "icon_with_text_WLAcwU",
         "share"
       ],
       "settings": {
         "enable_sticky_info": false,
         "content_alignment": "center",
         "title_color": "#ffffff",
-        "text_color": "#C8CED8",
+        "text_color": "#c8ced8",
         "price_color": "#ffffff",
         "title_size_desktop": 42,
         "title_size_mobile": 32,
-        "text_size_desktop": 18,
+        "text_size_desktop": 16,
         "text_size_mobile": 16,
         "price_size_desktop": 24,
         "price_size_mobile": 20,
@@ -99,6 +123,7 @@
     },
     "disclosures": {
       "type": "disclosures",
+      "disabled": true,
       "settings": {
         "heading": "Disclosures",
         "heading_size": "h2",
