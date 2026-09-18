@@ -552,6 +552,9 @@
       },
       "general": {
         "pay_now_button_label": "Complete Order & Get Instant Access"
+      },
+      "payment": {
+        "card_security_notice": "All transactions are secure and encrypted. ⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking"
       }
     }
   }
