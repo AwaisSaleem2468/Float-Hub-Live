@@ -543,8 +543,8 @@
         "accept_marketing_checkbox_label": "Email me with exclusive subscriber offers and news"
       },
       "contact": {
-        "email_or_phone_label": "Email address (Package credits auto-assigned - no password required)",
-        "email_or_phone_placeholder": "Email address (Package credits auto-assigned - no password required)"
+        "email_or_phone_label": "Email address (Package credits secured to email, no password required)",
+        "email_or_phone_placeholder": "Email address (Package credits secured to email, no password required)"
       }
     }
   }
