@@ -544,7 +544,9 @@
       },
       "contact": {
         "email_or_phone_label": "Email address (Package credits secured to email account, no password required)",
-        "email_or_phone_placeholder": "Email address (Package credits secured to email account, no password required)"
+        "email_or_phone_placeholder": "Email address (Package credits secured to email account, no password required)",
+        "address_title": "Billing Address",
+        "contact_method_title": "Contact Details (Instant Email Access)"
       }
     }
   }
