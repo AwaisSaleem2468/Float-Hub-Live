@@ -96,7 +96,7 @@
         "button_style_1": "primary",
         "show_button_arrow_1": false,
         "button_label_2": "Claim 40% Off 5-Session Starter",
-        "button_product_2": "",
+        "button_product_2": "5-session-starter",
         "button_redirect_checkout_2": true,
         "button_link_2": "",
         "button_style_2": "secondary",
