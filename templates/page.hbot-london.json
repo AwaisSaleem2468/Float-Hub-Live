@@ -92,7 +92,7 @@
         "button_label_1": "View September Packages & Save 40%",
         "button_product_1": "",
         "button_redirect_checkout_1": false,
-        "button_link_1": "#our-hbot-london-protocols",
+        "button_link_1": "shopify://collections/hbot-packages",
         "button_style_1": "primary",
         "show_button_arrow_1": false,
         "button_label_2": "",
