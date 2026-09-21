@@ -305,13 +305,13 @@
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "All payments are secure and encrypted | 300+ 5★ Reviews Online",
       "taxes_included_shipping_at_checkout_with_policy_html": "Taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
-      "taxes_included_shipping_at_checkout_without_policy": "⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking",
+      "taxes_included_shipping_at_checkout_without_policy": "All payments are secure and encrypted | 300+ 5★ Reviews Online",
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Duties included. Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "All payments are secure and encrypted | 300+ 5★ Reviews Online",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "All payments are secure and encrypted | 300+ 5★ Reviews Online",
       "headings": {
         "product": "Product",
         "price": "Price",
@@ -554,7 +554,7 @@
         "pay_now_button_label": "Complete Order & Book Now"
       },
       "payment": {
-        "card_security_notice": "⭐️⭐️⭐️⭐️⭐️ Rated 4.9/5 by Londoners | ⚡️ Instant online booking"
+        "card_security_notice": "All payments are secure and encrypted | 300+ 5★ Reviews Online"
       }
     }
   }
