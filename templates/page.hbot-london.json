@@ -133,9 +133,9 @@
             "product": "5-session-starter",
             "featured": false,
             "badge_text": "Most Popular",
-            "price_override": "",
-            "price_note": "",
-            "button_label": "Buy Statter Pack",
+            "price_override": "£225",
+            "price_note": "Was £375 | Save 40%",
+            "button_label": "Buy Starter Pack",
             "redirect_to_checkout": true,
             "button_link": ""
           }
@@ -145,9 +145,9 @@
           "settings": {
             "product": "10-session-performance",
             "featured": true,
-            "badge_text": "Most Popular",
-            "price_override": "",
-            "price_note": "",
+            "badge_text": "Best Seller | Save 40%",
+            "price_override": "£420.00",
+            "price_note": "Was £700 | Save 40%",
             "button_label": "Buy 10 Session Pack",
             "redirect_to_checkout": true,
             "button_link": ""
@@ -159,8 +159,8 @@
             "product": "20-session-deep-repair",
             "featured": false,
             "badge_text": "",
-            "price_override": "",
-            "price_note": "",
+            "price_override": "£780.00",
+            "price_note": "Was £1,300 | Save 40%",
             "button_label": "Buy 20 Session Pack",
             "redirect_to_checkout": true,
             "button_link": ""
@@ -171,9 +171,9 @@
           "settings": {
             "product": "40-hour-longevity",
             "featured": true,
-            "badge_text": "Most Popular",
-            "price_override": "",
-            "price_note": "",
+            "badge_text": "Max Value",
+            "price_override": "£1,440",
+            "price_note": "Was £2,400 | Save 58% per session",
             "button_label": "Buy 40 Hours Pack",
             "redirect_to_checkout": true,
             "button_link": ""
