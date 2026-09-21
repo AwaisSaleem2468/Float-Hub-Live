@@ -86,12 +86,12 @@
         "heading_accent": "",
         "heading_size_desktop": 42,
         "heading_size_mobile": 36,
-        "description": "<p>Experience London’s premier 1.5 ATA Hyperbaric Oxygen Suite offering HBOT in London. Our advanced London Oxygen Suite is designed for high-performance recovery, offering a spacious, non-claustrophobic environment for solo deep-dives or shared duo sessions. By breathing ~96% pure oxygen at 1.5 ATA pressure, you dissolve life-giving fuel directly into your blood plasma, reaching tissues and brain cells that standard breathing cannot to accelerate repair and sharpen cognitive edge. Learn the science below.</p><p>Securing your hyperbaric sessions is now entirely frictionless. You can complete your booking in seconds via <strong>Apple Pay</strong> or <strong>Google Pay</strong> on your phone, or split the investment of your clinical recovery courses interest-free using <strong>Klarna</strong> at checkout.</p><p>Maximize your results and your investment by committing to a multi-session protocol, or experience the initial shift today with our exclusive new client Intro 3-Pack.</p>",
+        "description": "<p>Experience high-performance cellular recovery in London’s most spacious 1.5 ATA Hyperbaric Oxygen Suite. Engineered for deep mental clarity and rapid tissue repair, our non-claustrophobic environment allows you to breathe ~96% pure oxygen under clinical pressure to dissolve life-giving fuel directly into your blood plasma.   </p><p>True biological shifts require a consistent protocol. Commit to a multi-session package this September to lock in <strong>40% off package pricing</strong> and save <strong>up to 58% per session</strong> compared to standard single rates. Scroll down to view our protocols and claim your discount below.</p>",
         "description_size_desktop": 16,
         "description_size_mobile": 18,
-        "button_label_1": "HBOT Intro 3-Pack - £149",
-        "button_product_1": "intro-3-pack",
-        "button_redirect_checkout_1": true,
+        "button_label_1": "",
+        "button_product_1": "",
+        "button_redirect_checkout_1": false,
         "button_link_1": "",
         "button_style_1": "primary",
         "show_button_arrow_1": false,
@@ -107,6 +107,7 @@
         "button_link_3": "",
         "button_style_3": "secondary",
         "show_button_arrow_3": false,
+        "microcopy": "<p><em>Spread costs interest-free with ShopPay, Klarna, or PayPal. Book instantly online after purchase.</em></p>",
         "inner_max_width": 1120,
         "inner_padding_top": 112,
         "inner_padding_bottom": 104,
@@ -126,19 +127,6 @@
     "custom_section_featured_collection_LaVgdk": {
       "type": "custom-section-featured-collection",
       "blocks": {
-        "product_card_f3KpWX": {
-          "type": "product_card",
-          "settings": {
-            "product": "intro-3-pack",
-            "featured": true,
-            "badge_text": "One-Time Purchase",
-            "price_override": "",
-            "price_note": "",
-            "button_label": "Buy Intro Pack",
-            "redirect_to_checkout": true,
-            "button_link": ""
-          }
-        },
         "product_card_aPUUMa": {
           "type": "product_card",
           "settings": {
@@ -193,7 +181,6 @@
         }
       },
       "block_order": [
-        "product_card_f3KpWX",
         "product_card_aPUUMa",
         "product_card_tdLRRF",
         "product_card_DfJYMd",
@@ -207,7 +194,7 @@
         "heading_size_desktop": 42,
         "heading_size_mobile": 32,
         "label_size": 14,
-        "description": "<p>Experience the power of advanced 1.5 ATA oxygen therapy. We recommend a consistent protocol to experience the full cumulative benefits of systemic cellular repair.<strong>New to Float Hub?</strong>Start with our exclusive Intro 3-Pack to feel the initial shift.<br/><br/></p>",
+        "description": "<p>Experience the power of advanced 1.5 ATA oxygen therapy. We recommend a consistent protocol to experience the full cumulative benefits of systemic cellular repair.</p>",
         "description_size_desktop": 16,
         "description_size_mobile": 15,
         "caption_size": 16,
