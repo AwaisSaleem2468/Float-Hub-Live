@@ -72,6 +72,7 @@
         "button_link_3": "",
         "button_style_3": "secondary",
         "show_button_arrow_3": false,
+        "microcopy": "<p><em>* <strong>3 Float Intro (£99):</strong> Purchase first to book via email.<br>* <strong>Float for Two (£95):</strong> Select date and time on calendar.</em></p>",
         "inner_max_width": 1120,
         "inner_padding_top": 112,
         "inner_padding_bottom": 104,
@@ -477,7 +478,7 @@
             "price_note": "",
             "button_label": "Book Session",
             "redirect_to_checkout": false,
-            "button_link": "https://book.floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743"
+            "button_link": "https://floathub.co.uk/servicify-calendar?servicify-product=10868849246535&servicify-event=221600fe-898d-4d83-af5e-402b0729d80c&servicify-variant=54213903548743"
           }
         },
         "product_card_xDNAPt": {
