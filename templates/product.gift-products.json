@@ -42,7 +42,7 @@
             "button_label": "Buy now",
             "redirect_to_checkout": false,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "share": {
