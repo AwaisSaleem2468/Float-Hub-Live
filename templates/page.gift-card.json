@@ -164,6 +164,72 @@
         "padding_bottom": 60
       }
     },
+    "custom_section_gift_product": {
+      "type": "custom-section-gift-product",
+      "blocks": {
+        "tab_gift_cards": {
+          "type": "tab",
+          "settings": {
+            "label": "Gift cards",
+            "products_to_show": 8,
+            "background_color": "#070d16",
+            "dot_color": "#0daaef"
+          }
+        },
+        "tab_sessions": {
+          "type": "tab",
+          "settings": {
+            "label": "Sessions",
+            "products_to_show": 8,
+            "background_color": "#0b1524",
+            "dot_color": "#22d3ee"
+          }
+        },
+        "tab_memberships": {
+          "type": "tab",
+          "settings": {
+            "label": "Memberships",
+            "products_to_show": 8,
+            "background_color": "#121a27",
+            "dot_color": "#3b82f6"
+          }
+        },
+        "tab_bundles": {
+          "type": "tab",
+          "settings": {
+            "label": "Bundles",
+            "products_to_show": 8,
+            "background_color": "#0a1622",
+            "dot_color": "#67e8f9"
+          }
+        }
+      },
+      "block_order": [
+        "tab_gift_cards",
+        "tab_sessions",
+        "tab_memberships",
+        "tab_bundles"
+      ],
+      "name": "Gift Products",
+      "settings": {
+        "eyebrow": "GIFT CARDS",
+        "heading": "Choose the perfect gift",
+        "description": "<p>From single sessions to year-long wellness journeys, pick a gift that sets them up for a calmer year.</p>",
+        "button_label": "Buy As Gift",
+        "products_to_show": 8,
+        "show_rating": true,
+        "layout": "carousel",
+        "columns": 4,
+        "card_image_bg": "#1a2433",
+        "fallback_bg": "#070d16",
+        "eyebrow_color": "#22d3ee",
+        "heading_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "active_tab_bg": "#0daaef",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "custom_section_icon_with_text_R6TGxH": {
       "type": "custom-section-icon-with-text",
       "blocks": {
@@ -582,6 +648,7 @@
     "custom_section_innerpage_banner_pNm8iL",
     "custom_section_richtext_brq7KT",
     "rich_text_gqHEwF",
+    "custom_section_gift_product",
     "custom_section_icon_with_text_R6TGxH",
     "custom_section_testimonial_78FTcw",
     "custom_section_stacked_image_text_overly_DnjMpJ",

@@ -1,0 +1,146 @@
+{% comment %}
+  Gift product card for the dark tabbed collection slider.
+
+  Accepts:
+  - product: {Object} Product
+  - tab_id: {String}
+  - button_label: {String}
+  - show_rating: {Boolean}
+  - image_bg: {String}
+
+  Product metafields used:
+  - custom.product_rating (decimal)
+  - custom.product_rating_stars (integer)
+{% endcomment %}
+{%- liquid
+  assign card_product = product
+  assign variant = card_product.selected_or_first_available_variant
+  assign current_price = variant.price
+  assign compare_at = variant.compare_at_price
+
+  if settings.currency_code_enabled
+    assign money_current = current_price | money_with_currency
+    if compare_at > current_price
+      assign money_compare = compare_at | money_with_currency
+    endif
+  else
+    assign money_current = current_price | money
+    if compare_at > current_price
+      assign money_compare = compare_at | money
+    endif
+  endif
+
+  assign rating_value = blank
+  assign rating_scale = 5
+  assign rating_stars = blank
+  assign show_rating_row = false
+
+  if card_product.metafields.custom.product_rating != blank
+    assign rating_value = card_product.metafields.custom.product_rating.value
+  endif
+
+  if card_product.metafields.custom.product_rating_stars != blank
+    assign rating_stars = card_product.metafields.custom.product_rating_stars.value | plus: 0
+  elsif rating_value != blank
+    assign rating_stars = rating_value | round
+    if rating_stars > rating_scale
+      assign rating_stars = rating_scale
+    endif
+  endif
+
+  if rating_stars != blank
+    if rating_stars > rating_scale
+      assign rating_stars = rating_scale
+    endif
+    if rating_stars < 0
+      assign rating_stars = 0
+    endif
+  endif
+
+  if show_rating
+    if rating_value != blank or rating_stars != blank
+      assign show_rating_row = true
+    endif
+  endif
+
+  assign media_bg = image_bg | default: '#1A2433'
+  assign image_alt = card_product.title
+  if card_product.featured_media != blank and card_product.featured_media.alt != blank
+    assign image_alt = card_product.featured_media.alt
+  endif
+-%}
+
+<article
+  class="gift-product__card"
+  data-gp-card
+  data-tab="{{ tab_id | escape }}"
+  data-variant-id="{{ variant.id }}"
+  data-available="{{ variant.available }}"
+>
+  <a
+    class="gift-product__card-media"
+    href="{{ card_product.url }}"
+    style="--card-media-bg: {{ media_bg }};"
+    aria-label="{{ card_product.title | escape }}"
+  >
+    {%- if card_product.featured_media != blank -%}
+      {{
+        card_product.featured_media
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '240, 360, 480, 640, 800',
+          sizes: '(max-width: 768px) 65vw, (min-width: 991px) 22vw, 33vw',
+          class: 'gift-product__card-image',
+          alt: image_alt
+      }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'gift-product__card-image placeholder-svg' }}
+    {%- endif -%}
+  </a>
+
+  <div class="gift-product__card-body">
+    <h3 class="gift-product__card-title">
+      <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+    </h3>
+
+    {%- if show_rating_row -%}
+      <div
+        class="gift-product__rating"
+        aria-label="{% if rating_value != blank %}Rated {{ rating_value }} out of {{ rating_scale }}{% endif %}"
+      >
+        {%- if rating_stars != blank -%}
+          <span class="gift-product__stars" aria-hidden="true">
+            {%- for i in (1..rating_scale) -%}
+              <svg
+                class="gift-product__star{% if i > rating_stars %} gift-product__star--empty{% endif %}"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="currentColor"
+                focusable="false"
+              >
+                <path d="M7 0.5l1.76 3.57 3.94.57-2.85 2.78.67 3.92L7 9.5l-3.52 1.84.67-3.92L1.3 4.64l3.94-.57L7 .5z"/>
+              </svg>
+            {%- endfor -%}
+          </span>
+        {%- endif -%}
+
+        {%- if rating_value != blank -%}
+          <span class="gift-product__rating-value">{{ rating_value }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="gift-product__price">
+      <span class="gift-product__price-current">{{ money_current }}</span>
+      {%- if money_compare -%}
+        <span class="gift-product__price-compare">{{ money_compare }}</span>
+      {%- endif -%}
+    </div>
+
+    <a class="gift-product__atc" href="{{ card_product.url }}">
+      {{ button_label | escape }}
+    </a>
+  </div>
+</article>
