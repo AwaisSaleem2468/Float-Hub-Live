@@ -168,6 +168,16 @@
     "custom_section_gift_product": {
       "type": "custom-section-gift-product",
       "blocks": {
+        "tab_pYWnQT": {
+          "type": "tab",
+          "settings": {
+            "collection": "all-gift-products",
+            "label": "All",
+            "products_to_show": 8,
+            "background_color": "#070d16",
+            "dot_color": "#0daaef"
+          }
+        },
         "tab_gift_cards": {
           "type": "tab",
           "settings": {
@@ -175,7 +185,7 @@
             "label": "Float",
             "products_to_show": 8,
             "background_color": "#070d16",
-            "dot_color": "#000000"
+            "dot_color": "#22D3EE"
           }
         },
         "tab_sessions": {
@@ -210,6 +220,7 @@
         }
       },
       "block_order": [
+        "tab_pYWnQT",
         "tab_gift_cards",
         "tab_sessions",
         "tab_memberships",
