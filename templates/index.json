@@ -27,7 +27,7 @@
         "heading_accent": "",
         "heading_size_desktop": 64,
         "heading_size_mobile": 36,
-        "description": "<p><strong>September Exclusive: 3 Float Intro Pack for £99</strong><br/>Experience London's premier Floatation, Hyperbaric Oxygen, and Red Light Therapy centre. Available this month only. Every option includes full relaxation suite access, complimentary herbal tea, and luxury amenities.<br/></p>",
+        "description": "<p><strong>September Exclusive: 3 Float Intro Pack for £99</strong><br/>Experience London's premier Floatation, Hyperbaric Oxygen, and Red Light Therapy centre. Available this month only. Every option includes full relaxation suite access, complimentary herbal tea, and luxury amenities.</p><p><em>(Plus, scroll down to explore our September HBOT Exclusive and save 40%)</em><br/></p>",
         "description_size_desktop": 18,
         "description_size_mobile": 16,
         "button_label_1": "Buy Intro Pack",
@@ -63,6 +63,77 @@
         "badge_color": "#d4af37",
         "button_primary_bg": "#0daaef",
         "button_primary_text": "#ffffff"
+      }
+    },
+    "rich_text_7DkXnE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wHBykH": {
+          "type": "heading",
+          "settings": {
+            "heading": "&nbsp;<strong>September Exclusive:</strong> 40% Off HBOT Packs&nbsp;"
+          }
+        },
+        "text_K4pQmU": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Ultimate Comfort:</strong> Double-sized, oversize chambers so you never feel cramped.</p><p><strong>Perfect Balance:</strong> 1.5 ATA pressure for the optimal blend of therapeutic benefits and safety.</p><p><strong>Deep Healing:</strong> Breathe ~96% pure medical-grade oxygen.</p><p><strong>Maximum Results:</strong> Achieve 10-15x normal blood oxygen saturation to drastically reduce inflammation and speed up healing.</p>"
+          }
+        },
+        "button_twFrVX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Protocols & Save 40%",
+            "button_product": "",
+            "button_redirect_checkout": false,
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_product_2": "",
+            "button_redirect_checkout_2": false,
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "button_label_3": "",
+            "button_product_3": "",
+            "button_redirect_checkout_3": false,
+            "button_link_3": "",
+            "button_style_secondary_3": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wHBykH",
+        "text_K4pQmU",
+        "button_twFrVX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "content_max_width": 800,
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "border_color": "#243041",
+        "border_thickness": 1,
+        "heading_size": 40,
+        "heading_size_mobile": 28,
+        "caption_size": 14,
+        "caption_size_mobile": 13,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "button_size": 15,
+        "button_radius": 40,
+        "background_color": "#070D16",
+        "heading_color": "#FFFFFF",
+        "caption_color": "#0DAAEF",
+        "text_color": "#A8B0BD",
+        "link_color": "#0DAAEF",
+        "button_text_color": "#FFFFFF",
+        "button_secondary_text_color": "#FFFFFF",
+        "button_secondary_border_color": "#FFFFFF",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "custom_section_static_feature": {
@@ -1057,77 +1128,6 @@
         "text_color": "#ffffff",
         "accent_color": "#0daaef",
         "content_width": 820
-      }
-    },
-    "rich_text_7DkXnE": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_wHBykH": {
-          "type": "heading",
-          "settings": {
-            "heading": "&nbsp;<strong>September Exclusive:</strong> 40% Off HBOT Packs&nbsp;"
-          }
-        },
-        "text_K4pQmU": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Ultimate Comfort:</strong> Double-sized, oversize chambers so you never feel cramped.</p><p><strong>Perfect Balance:</strong> 1.5 ATA pressure for the optimal blend of therapeutic benefits and safety.</p><p><strong>Deep Healing:</strong> Breathe ~96% pure medical-grade oxygen.</p><p><strong>Maximum Results:</strong> Achieve 10-15x normal blood oxygen saturation to drastically reduce inflammation and speed up healing.</p>"
-          }
-        },
-        "button_twFrVX": {
-          "type": "button",
-          "settings": {
-            "button_label": "Explore Protocols & Save 40%",
-            "button_product": "",
-            "button_redirect_checkout": false,
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_product_2": "",
-            "button_redirect_checkout_2": false,
-            "button_link_2": "",
-            "button_style_secondary_2": false,
-            "button_label_3": "",
-            "button_product_3": "",
-            "button_redirect_checkout_3": false,
-            "button_link_3": "",
-            "button_style_secondary_3": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_wHBykH",
-        "text_K4pQmU",
-        "button_twFrVX"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "full_width": true,
-        "content_max_width": 800,
-        "show_border_top": false,
-        "show_border_bottom": false,
-        "border_color": "#243041",
-        "border_thickness": 1,
-        "heading_size": 40,
-        "heading_size_mobile": 28,
-        "caption_size": 14,
-        "caption_size_mobile": 13,
-        "text_size": 16,
-        "text_size_mobile": 15,
-        "button_size": 15,
-        "button_radius": 40,
-        "background_color": "#070D16",
-        "heading_color": "#FFFFFF",
-        "caption_color": "#0DAAEF",
-        "text_color": "#A8B0BD",
-        "link_color": "#0DAAEF",
-        "button_text_color": "#FFFFFF",
-        "button_secondary_text_color": "#FFFFFF",
-        "button_secondary_border_color": "#FFFFFF",
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     }
   },
