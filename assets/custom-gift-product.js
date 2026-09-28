@@ -24,7 +24,14 @@
       this.section.querySelector('[data-gp-next]')?.addEventListener('click', () => this.scrollBy(1));
     }
 
+    applyColumns(tab) {
+      const columns = Number(tab?.dataset.columns);
+      if (!columns) return;
+      this.section.style.setProperty('--gp-columns', String(columns));
+    }
+
     showTab(tabId, activeTab) {
+      this.applyColumns(activeTab);
       this.tabs.forEach((tab) => {
         const selected = tab === activeTab;
         tab.classList.toggle('is-active', selected);

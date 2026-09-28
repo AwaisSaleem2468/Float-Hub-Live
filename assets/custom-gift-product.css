@@ -139,8 +139,8 @@
 }
 
 .gift-product__slide {
-  flex: 0 0 calc(25% - 1.2rem);
-  min-width: 24rem;
+  flex: 0 0 calc((100% - calc(var(--gp-columns, 4) - 1) * 1.6rem) / var(--gp-columns, 4));
+  min-width: 0;
   scroll-snap-align: start;
 }
 

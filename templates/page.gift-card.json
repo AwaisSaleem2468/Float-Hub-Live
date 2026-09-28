@@ -172,7 +172,8 @@
           "settings": {
             "collection": "all-gift-products",
             "label": "All",
-            "products_to_show": 8
+            "products_to_show": 8,
+            "columns": 3
           }
         },
         "tab_gift_cards": {
@@ -180,7 +181,8 @@
           "settings": {
             "collection": "float-therapy-gift",
             "label": "Float",
-            "products_to_show": 8
+            "products_to_show": 8,
+            "columns": 3
           }
         },
         "tab_sessions": {
@@ -188,7 +190,8 @@
           "settings": {
             "collection": "hbot-gift",
             "label": "HBOT",
-            "products_to_show": 8
+            "products_to_show": 8,
+            "columns": 3
           }
         },
         "tab_T83xD3": {
@@ -196,7 +199,8 @@
           "settings": {
             "collection": "",
             "label": "Red Light  Therapy",
-            "products_to_show": 8
+            "products_to_show": 8,
+            "columns": 3
           }
         }
       },

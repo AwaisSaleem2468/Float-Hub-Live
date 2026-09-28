@@ -22,6 +22,9 @@
 
   if first_tab
     assign active_tab_id = first_tab.id
+    if first_tab.settings.columns != blank
+      assign columns = first_tab.settings.columns
+    endif
   endif
 -%}
 
@@ -86,6 +89,7 @@
                 if this_tab_id == active_tab_id
                   assign is_active = true
                 endif
+                assign tab_columns = block.settings.columns | default: section.settings.columns | default: 4
               -%}
               <button
                 type="button"
@@ -95,6 +99,7 @@
                 aria-selected="{{ is_active }}"
                 data-gp-tab
                 data-tab-id="{{ this_tab_id }}"
+                data-columns="{{ tab_columns }}"
                 {{ block.shopify_attributes }}
               >
                 <span class="gift-product__tab-label">{{ tab_label | escape }}</span>
@@ -269,7 +274,7 @@
       "step": 1,
       "label": "Products per row",
       "default": 4,
-      "info": "Used when layout is Grid on desktop. Mobile always shows a slider."
+      "info": "Default for tabs that do not set their own products per row. Desktop only."
     },
     {
       "type": "header",
@@ -427,6 +432,16 @@
           "step": 1,
           "label": "Products to show",
           "default": 8
+        },
+        {
+          "type": "range",
+          "id": "columns",
+          "min": 2,
+          "max": 4,
+          "step": 1,
+          "label": "Products per row",
+          "default": 4,
+          "info": "Desktop grid and carousel. Mobile always shows a 1.3-card slider."
         }
       ]
     }
@@ -441,6 +456,7 @@
           "settings": {
             "label": "Gift cards",
             "products_to_show": 8,
+            "columns": 4
           }
         },
         {
@@ -448,6 +464,7 @@
           "settings": {
             "label": "Sessions",
             "products_to_show": 8,
+            "columns": 4
           }
         },
         {
@@ -455,6 +472,7 @@
           "settings": {
             "label": "Memberships",
             "products_to_show": 8,
+            "columns": 4
           }
         },
         {
@@ -462,6 +480,7 @@
           "settings": {
             "label": "Bundles",
             "products_to_show": 8,
+            "columns": 4
           }
         }
       ]
