@@ -298,9 +298,7 @@
                                     class="quantity__button"
                                     name="minus"
                                     type="button"
-                                    {% if item.instructions and item.instructions.can_update_quantity == false %}
-                                      disabled
-                                    {% endif %}
+                                    disabled
                                   >
                                     <span class="visually-hidden">
                                       {{-
@@ -332,17 +330,13 @@
                                     aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                                     id="Drawer-quantity-{{ item.index | plus: 1 }}"
                                     data-index="{{ item.index | plus: 1 }}"
-                                    {% if item.instructions and item.instructions.can_update_quantity == false %}
-                                      disabled
-                                    {% endif %}
+                                    readonly
                                   >
                                   <button
                                     class="quantity__button"
                                     name="plus"
                                     type="button"
-                                    {% if item.instructions and item.instructions.can_update_quantity == false %}
-                                      disabled
-                                    {% endif %}
+                                    disabled
                                   >
                                     <span class="visually-hidden">
                                       {{-

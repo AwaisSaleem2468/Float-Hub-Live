@@ -1,0 +1,5 @@
+/* Hide purchase actions on gift-products until EAB gift details are saved. */
+[data-eab-gift-gate]:not(.is-eab-gift-ready) .product-form__buttons,
+[data-eab-gift-gate]:not(.is-eab-gift-ready) .shopify-payment-button {
+  display: none !important;
+}

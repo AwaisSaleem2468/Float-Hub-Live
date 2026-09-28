@@ -16,7 +16,15 @@
   if block.settings.redirect_to_checkout
     assign redirect_to_checkout = true
   endif
+  assign eab_gift_gate = false
+  if template.suffix == 'gift-products'
+    assign eab_gift_gate = true
+  endif
 -%}
+{%- if eab_gift_gate -%}
+  {{ 'eab-gift-gate.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'eab-gift-gate.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -35,6 +43,9 @@
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
+      {% if eab_gift_gate %}
+        data-eab-gift-gate
+      {% endif %}
       {% if redirect_to_checkout %}
         data-redirect-to-checkout="true"
       {% endif %}

@@ -57,6 +57,10 @@
           "type": "icon-with-text",
           "settings": {
             "layout": "vertical",
+            "text_size_desktop": 16,
+            "text_size_mobile": 14,
+            "icon_size_desktop": 24,
+            "icon_size_mobile": 20,
             "icon_1": "heart",
             "image_1": "shopify://shop_images/info--v4_1.png",
             "heading_1": "&nbsp;Please select “<strong>This is a gift</strong>” and enter the recipient’s details to send this package as a gift.&nbsp;",

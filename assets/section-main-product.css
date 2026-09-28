@@ -393,7 +393,7 @@ a.product__text {
 .product__info-container--align-left .product-form > .form,
 .product__info-container--align-right .product-form > .form {
   width: 100%;
-  max-width: 30rem;
+  max-width: none;
 }
 
 .product__description.rte ul {
@@ -457,7 +457,7 @@ a.product__text {
 }
 
 .product--no-media .product-form > .form {
-  max-width: 30rem;
+  max-width: none;
   width: 100%;
 }
 
@@ -479,7 +479,8 @@ a.product__text {
 }
 
 .product-form__buttons {
-  max-width: 44rem;
+  max-width: none;
+  width: 100%;
 }
 
 .product--no-media .product__info-container > modal-opener {
@@ -1329,7 +1330,7 @@ a.product__text {
 
 /* Icon with text */
 .icon-with-text {
-  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-size: var(--iwt-icon-size, calc(var(--font-heading-scale) * 3rem));
   --icon-spacing: calc(var(--font-heading-scale) * 1rem);
 }
 
@@ -1341,7 +1342,7 @@ a.product__text {
 }
 
 .icon-with-text--vertical {
-  --icon-size: calc(var(--font-heading-scale) * 2rem);
+  --icon-size: var(--iwt-icon-size, calc(var(--font-heading-scale) * 2rem));
 }
 
 .icon-with-text .svg-wrapper {
@@ -1369,6 +1370,22 @@ a.product__text {
 
 .icon-with-text--vertical img {
   margin-right: var(--icon-spacing);
+}
+
+.icon-with-text .h4 {
+  font-size: var(--iwt-text-size, 1.4rem);
+  line-height: 1.45;
+}
+
+@media screen and (min-width: 750px) {
+  .icon-with-text,
+  .icon-with-text--vertical {
+    --icon-size: var(--iwt-icon-size-desktop, var(--iwt-icon-size, calc(var(--font-heading-scale) * 3rem)));
+  }
+
+  .icon-with-text .h4 {
+    font-size: var(--iwt-text-size-desktop, 1.6rem);
+  }
 }
 
 .icon-with-text--horizontal .h4 {

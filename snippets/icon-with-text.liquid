@@ -38,6 +38,12 @@
 -%}
 <ul
   class="icon-with-text icon-with-text--{{ block.settings.layout }} list-unstyled{% if text_only_all_items %} icon-with-text--text-only{% endif %}"
+  style="
+    --iwt-text-size: {{ block.settings.text_size_mobile | default: 14 }}px;
+    --iwt-text-size-desktop: {{ block.settings.text_size_desktop | default: 16 }}px;
+    --iwt-icon-size: {{ block.settings.icon_size_mobile | default: 20 }}px;
+    --iwt-icon-size-desktop: {{ block.settings.icon_size_desktop | default: 24 }}px;
+  "
   {{ block.shopify_attributes }}
 >
   {%- unless heading_1_empty -%}
