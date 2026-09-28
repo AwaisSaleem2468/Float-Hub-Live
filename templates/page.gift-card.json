@@ -71,6 +71,7 @@
     },
     "custom_section_richtext_brq7KT": {
       "type": "custom-section-richtext",
+      "disabled": true,
       "name": "Custom Rich Text",
       "settings": {
         "show_badge": true,
@@ -105,7 +106,7 @@
         "text_tXrGeP": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown. </em></p>"
+            "text": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown.&nbsp;</em></p>"
           }
         },
         "button_wF7pXe": {
@@ -170,15 +171,17 @@
         "tab_gift_cards": {
           "type": "tab",
           "settings": {
-            "label": "Gift cards",
+            "collection": "float-therapy-gift",
+            "label": "Float",
             "products_to_show": 8,
             "background_color": "#070d16",
-            "dot_color": "#0daaef"
+            "dot_color": "#000000"
           }
         },
         "tab_sessions": {
           "type": "tab",
           "settings": {
+            "collection": "",
             "label": "Sessions",
             "products_to_show": 8,
             "background_color": "#0b1524",
@@ -188,6 +191,7 @@
         "tab_memberships": {
           "type": "tab",
           "settings": {
+            "collection": "",
             "label": "Memberships",
             "products_to_show": 8,
             "background_color": "#121a27",
@@ -197,6 +201,7 @@
         "tab_bundles": {
           "type": "tab",
           "settings": {
+            "collection": "",
             "label": "Bundles",
             "products_to_show": 8,
             "background_color": "#0a1622",
@@ -213,12 +218,12 @@
       "name": "Gift Products",
       "settings": {
         "eyebrow": "GIFT CARDS",
-        "heading": "Choose the perfect gift",
-        "description": "<p>From single sessions to year-long wellness journeys, pick a gift that sets them up for a calmer year.</p>",
+        "heading": "A Unique Gift to Show That You Care",
+        "description": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown.&nbsp;</em></p>",
         "button_label": "Buy As Gift",
         "products_to_show": 8,
         "show_rating": true,
-        "layout": "carousel",
+        "layout": "grid",
         "columns": 4,
         "card_image_bg": "#1a2433",
         "fallback_bg": "#070d16",
