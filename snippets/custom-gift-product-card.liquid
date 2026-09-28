@@ -100,10 +100,6 @@
   </a>
 
   <div class="gift-product__card-body">
-    <h3 class="gift-product__card-title">
-      <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
-    </h3>
-
     {%- if show_rating_row -%}
       <div
         class="gift-product__rating"
@@ -131,6 +127,10 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+
+    <h3 class="gift-product__card-title">
+      <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+    </h3>
 
     <div class="gift-product__price">
       <span class="gift-product__price-current">{{ money_current }}</span>
