@@ -36,6 +36,19 @@
           "disabled": true,
           "settings": {}
         },
+        "icon_with_text_Fd4GMX": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/info--v4_1.png",
+            "heading_1": "&nbsp;Please select “This is a gift” and enter the recipient’s details to send this package as a gift.&nbsp;",
+            "icon_2": "return",
+            "heading_2": "",
+            "icon_3": "truck",
+            "heading_3": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -59,6 +72,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
+        "icon_with_text_Fd4GMX",
         "buy_buttons",
         "share"
       ],
