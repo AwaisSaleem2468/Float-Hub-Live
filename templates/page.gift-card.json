@@ -93,77 +93,6 @@
         "padding_bottom": 80
       }
     },
-    "rich_text_gqHEwF": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_rtk3fE": {
-          "type": "heading",
-          "settings": {
-            "heading": "A Unique Gift to Show That You Care"
-          }
-        },
-        "text_tXrGeP": {
-          "type": "text",
-          "settings": {
-            "text": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown.&nbsp;</em></p>"
-          }
-        },
-        "button_wF7pXe": {
-          "type": "button",
-          "settings": {
-            "button_label": "Buy Now",
-            "button_product": "",
-            "button_redirect_checkout": false,
-            "button_link": "shopify://pages/pricing",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_product_2": "",
-            "button_redirect_checkout_2": false,
-            "button_link_2": "shopify://pages/pricing",
-            "button_style_secondary_2": false,
-            "button_label_3": "",
-            "button_product_3": "",
-            "button_redirect_checkout_3": false,
-            "button_link_3": "",
-            "button_style_secondary_3": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_rtk3fE",
-        "text_tXrGeP",
-        "button_wF7pXe"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "full_width": true,
-        "content_max_width": 900,
-        "show_border_top": false,
-        "show_border_bottom": false,
-        "border_color": "#243041",
-        "border_thickness": 1,
-        "heading_size": 36,
-        "heading_size_mobile": 28,
-        "caption_size": 14,
-        "caption_size_mobile": 13,
-        "text_size": 16,
-        "text_size_mobile": 15,
-        "button_size": 16,
-        "button_radius": 8,
-        "background_color": "#121a27",
-        "heading_color": "#ffffff",
-        "caption_color": "#0daaef",
-        "text_color": "#a8b0bd",
-        "link_color": "#0daaef",
-        "button_text_color": "#ffffff",
-        "button_secondary_text_color": "#ffffff",
-        "button_secondary_border_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "custom_section_gift_product": {
       "type": "custom-section-gift-product",
       "blocks": {
@@ -646,7 +575,6 @@
     "main",
     "custom_section_innerpage_banner_pNm8iL",
     "custom_section_richtext_brq7KT",
-    "rich_text_gqHEwF",
     "custom_section_gift_product",
     "custom_section_icon_with_text_R6TGxH",
     "custom_section_testimonial_78FTcw",
