@@ -7,15 +7,18 @@
       this.tabs = Array.from(section.querySelectorAll('[data-gp-tab]'));
       this.slides = Array.from(section.querySelectorAll('[data-gp-slide]'));
       this.layout = section.dataset.layout || 'carousel';
+      this.mobileQuery = window.matchMedia('(max-width: 749px)');
       this.bind();
+    }
+
+    isCarousel() {
+      return this.layout === 'carousel' || this.mobileQuery.matches;
     }
 
     bind() {
       this.tabs.forEach((tab) => {
         tab.addEventListener('click', () => this.showTab(tab.dataset.tabId, tab));
       });
-
-      if (this.layout !== 'carousel') return;
 
       this.section.querySelector('[data-gp-prev]')?.addEventListener('click', () => this.scrollBy(-1));
       this.section.querySelector('[data-gp-next]')?.addEventListener('click', () => this.scrollBy(1));
@@ -34,18 +37,14 @@
         slide.hidden = !match;
       });
 
-      if (activeTab?.dataset.tabBg) {
-        this.section.style.setProperty('--gp-featured-bg', activeTab.dataset.tabBg);
-      }
-
-      if (this.layout !== 'carousel') return;
+      if (!this.isCarousel()) return;
 
       const scroller = this.track || this.viewport;
       if (scroller) scroller.scrollTo({ left: 0, behavior: 'smooth' });
     }
 
     scrollBy(direction) {
-      if (this.layout !== 'carousel') return;
+      if (!this.isCarousel()) return;
       const scroller = this.track || this.viewport;
       if (!scroller) return;
       const slide = this.slides.find((item) => !item.hidden);

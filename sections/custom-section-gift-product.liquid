@@ -18,12 +18,10 @@
   assign layout = section.settings.layout | default: 'carousel'
   assign columns = section.settings.columns | default: 4
   assign active_tab_id = ''
-  assign active_bg = section.settings.fallback_bg
   assign card_image_bg = section.settings.card_image_bg
 
   if first_tab
     assign active_tab_id = first_tab.id
-    assign active_bg = first_tab.settings.background_color | default: section.settings.fallback_bg
   endif
 -%}
 
@@ -34,11 +32,20 @@
   data-section-id="{{ section.id }}"
   data-layout="{{ layout }}"
   style="
-    --gp-featured-bg: {{ active_bg }};
+    --gp-featured-bg: {{ section.settings.fallback_bg }};
     --gp-eyebrow: {{ section.settings.eyebrow_color }};
     --gp-heading: {{ section.settings.heading_color }};
     --gp-text: {{ section.settings.text_color }};
+    --gp-tab-size: {{ section.settings.tab_size_desktop }}px;
+    --gp-tab-size-mobile: {{ section.settings.tab_size_mobile }}px;
+    --gp-tab-color: {{ section.settings.tab_text_color }};
+    --gp-tab-color-mobile: {{ section.settings.tab_text_color_mobile }};
+    --gp-tab-bg: {{ section.settings.tab_bg }};
+    --gp-tab-bg-mobile: {{ section.settings.tab_bg_mobile }};
+    --gp-tab-active-color: {{ section.settings.tab_active_text_color }};
+    --gp-tab-active-color-mobile: {{ section.settings.tab_active_text_color_mobile }};
     --gp-active-tab: {{ section.settings.active_tab_bg }};
+    --gp-active-tab-mobile: {{ section.settings.active_tab_bg_mobile }};
     --gp-columns: {{ columns }};
     --gp-pad-top: {{ section.settings.padding_top }}px;
     --gp-pad-bottom: {{ section.settings.padding_bottom }}px;
@@ -88,41 +95,36 @@
                 aria-selected="{{ is_active }}"
                 data-gp-tab
                 data-tab-id="{{ this_tab_id }}"
-                data-tab-bg="{{ block.settings.background_color }}"
-                style="--tab-dot: {{ block.settings.dot_color }};"
                 {{ block.shopify_attributes }}
               >
-                <span class="gift-product__tab-dot" aria-hidden="true"></span>
                 <span class="gift-product__tab-label">{{ tab_label | escape }}</span>
               </button>
             {%- endif -%}
           {%- endfor -%}
         </div>
 
-        {%- if layout == 'carousel' -%}
-          <div class="gift-product__arrows">
-            <button
-              type="button"
-              class="gift-product__arrow"
-              data-gp-prev
-              aria-label="Previous products"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-                <path d="M11.25 4.5L6.75 9l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button
-              type="button"
-              class="gift-product__arrow"
-              data-gp-next
-              aria-label="Next products"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-                <path d="M6.75 4.5L11.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        {%- endif -%}
+        <div class="gift-product__arrows">
+          <button
+            type="button"
+            class="gift-product__arrow"
+            data-gp-prev
+            aria-label="Previous products"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <path d="M11.25 4.5L6.75 9l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="gift-product__arrow"
+            data-gp-next
+            aria-label="Next products"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <path d="M6.75 4.5L11.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     {%- endif -%}
 
@@ -267,7 +269,79 @@
       "step": 1,
       "label": "Products per row",
       "default": 4,
-      "info": "Used when layout is Grid. Tablet shows 2 columns, mobile shows 1."
+      "info": "Used when layout is Grid on desktop. Mobile always shows a slider."
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "range",
+      "id": "tab_size_desktop",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Tab font size — desktop",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tab_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Tab font size — mobile",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text — desktop",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color_mobile",
+      "label": "Tab text — mobile",
+      "default": "#A8B0BD"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text_color",
+      "label": "Active tab text — desktop",
+      "default": "#061018"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text_color_mobile",
+      "label": "Active tab text — mobile",
+      "default": "#061018"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg",
+      "label": "Tab background — desktop",
+      "default": "#1A2433"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg_mobile",
+      "label": "Tab background — mobile",
+      "default": "#1A2433"
+    },
+    {
+      "type": "color",
+      "id": "active_tab_bg",
+      "label": "Active tab background — desktop",
+      "default": "#0DAAEF"
+    },
+    {
+      "type": "color",
+      "id": "active_tab_bg_mobile",
+      "label": "Active tab background — mobile",
+      "default": "#0DAAEF"
     },
     {
       "type": "color",
@@ -282,7 +356,7 @@
     {
       "type": "color",
       "id": "fallback_bg",
-      "label": "Default section background",
+      "label": "Section background",
       "default": "#070D16"
     },
     {
@@ -302,12 +376,6 @@
       "id": "text_color",
       "label": "Description",
       "default": "#A8B0BD"
-    },
-    {
-      "type": "color",
-      "id": "active_tab_bg",
-      "label": "Active tab background",
-      "default": "#0DAAEF"
     },
     {
       "type": "header",
@@ -359,18 +427,6 @@
           "step": 1,
           "label": "Products to show",
           "default": 8
-        },
-        {
-          "type": "color",
-          "id": "background_color",
-          "label": "Section background when active",
-          "default": "#070D16"
-        },
-        {
-          "type": "color",
-          "id": "dot_color",
-          "label": "Tab dot color",
-          "default": "#0DAAEF"
         }
       ]
     }
@@ -385,8 +441,6 @@
           "settings": {
             "label": "Gift cards",
             "products_to_show": 8,
-            "background_color": "#070D16",
-            "dot_color": "#0DAAEF"
           }
         },
         {
@@ -394,8 +448,6 @@
           "settings": {
             "label": "Sessions",
             "products_to_show": 8,
-            "background_color": "#0B1524",
-            "dot_color": "#22D3EE"
           }
         },
         {
@@ -403,8 +455,6 @@
           "settings": {
             "label": "Memberships",
             "products_to_show": 8,
-            "background_color": "#121A27",
-            "dot_color": "#3B82F6"
           }
         },
         {
@@ -412,8 +462,6 @@
           "settings": {
             "label": "Bundles",
             "products_to_show": 8,
-            "background_color": "#0A1622",
-            "dot_color": "#67E8F9"
           }
         }
       ]

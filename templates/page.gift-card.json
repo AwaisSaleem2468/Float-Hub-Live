@@ -173,9 +173,7 @@
           "settings": {
             "collection": "all-gift-products",
             "label": "All",
-            "products_to_show": 8,
-            "background_color": "#070d16",
-            "dot_color": "#0daaef"
+            "products_to_show": 8
           }
         },
         "tab_gift_cards": {
@@ -183,9 +181,7 @@
           "settings": {
             "collection": "float-therapy-gift",
             "label": "Float",
-            "products_to_show": 8,
-            "background_color": "#070d16",
-            "dot_color": "#22D3EE"
+            "products_to_show": 8
           }
         },
         "tab_sessions": {
@@ -193,9 +189,7 @@
           "settings": {
             "collection": "",
             "label": "Sessions",
-            "products_to_show": 8,
-            "background_color": "#0b1524",
-            "dot_color": "#22d3ee"
+            "products_to_show": 8
           }
         },
         "tab_memberships": {
@@ -203,9 +197,7 @@
           "settings": {
             "collection": "",
             "label": "Memberships",
-            "products_to_show": 8,
-            "background_color": "#121a27",
-            "dot_color": "#3b82f6"
+            "products_to_show": 8
           }
         },
         "tab_bundles": {
@@ -213,9 +205,7 @@
           "settings": {
             "collection": "",
             "label": "Bundles",
-            "products_to_show": 8,
-            "background_color": "#0a1622",
-            "dot_color": "#67e8f9"
+            "products_to_show": 8
           }
         }
       },
@@ -236,12 +226,21 @@
         "show_rating": true,
         "layout": "grid",
         "columns": 4,
+        "tab_size_desktop": 14,
+        "tab_size_mobile": 13,
+        "tab_text_color": "#a8b0bd",
+        "tab_text_color_mobile": "#a8b0bd",
+        "tab_active_text_color": "#061018",
+        "tab_active_text_color_mobile": "#061018",
+        "tab_bg": "#1a2433",
+        "tab_bg_mobile": "#1a2433",
+        "active_tab_bg": "#0daaef",
+        "active_tab_bg_mobile": "#0daaef",
         "card_image_bg": "#1a2433",
         "fallback_bg": "#070d16",
         "eyebrow_color": "#22d3ee",
         "heading_color": "#ffffff",
         "text_color": "#a8b0bd",
-        "active_tab_bg": "#0daaef",
         "padding_top": 64,
         "padding_bottom": 64
       }
