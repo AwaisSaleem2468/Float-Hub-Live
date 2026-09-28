@@ -187,24 +187,16 @@
         "tab_sessions": {
           "type": "tab",
           "settings": {
-            "collection": "",
-            "label": "Sessions",
+            "collection": "hbot-gift",
+            "label": "HBOT",
             "products_to_show": 8
           }
         },
-        "tab_memberships": {
+        "tab_T83xD3": {
           "type": "tab",
           "settings": {
             "collection": "",
-            "label": "Memberships",
-            "products_to_show": 8
-          }
-        },
-        "tab_bundles": {
-          "type": "tab",
-          "settings": {
-            "collection": "",
-            "label": "Bundles",
+            "label": "Red Light  Therapy",
             "products_to_show": 8
           }
         }
@@ -213,9 +205,9 @@
         "tab_pYWnQT",
         "tab_gift_cards",
         "tab_sessions",
-        "tab_memberships",
-        "tab_bundles"
+        "tab_T83xD3"
       ],
+      "disabled": true,
       "name": "Gift Products",
       "settings": {
         "eyebrow": "GIFT CARDS",
@@ -225,7 +217,7 @@
         "products_to_show": 8,
         "show_rating": true,
         "layout": "grid",
-        "columns": 4,
+        "columns": 3,
         "tab_size_desktop": 14,
         "tab_size_mobile": 13,
         "tab_text_color": "#a8b0bd",
