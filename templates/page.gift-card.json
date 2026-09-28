@@ -191,31 +191,21 @@
         "tab_sessions": {
           "type": "tab",
           "settings": {
-            "collection": "",
-            "label": "Sessions",
+            "collection": "hbot-gift",
+            "label": "HBOT",
             "products_to_show": 8,
             "background_color": "#0b1524",
             "dot_color": "#22d3ee"
           }
         },
-        "tab_memberships": {
+        "tab_T83xD3": {
           "type": "tab",
           "settings": {
             "collection": "",
-            "label": "Memberships",
+            "label": "Red Light  Therapy",
             "products_to_show": 8,
-            "background_color": "#121a27",
-            "dot_color": "#3b82f6"
-          }
-        },
-        "tab_bundles": {
-          "type": "tab",
-          "settings": {
-            "collection": "",
-            "label": "Bundles",
-            "products_to_show": 8,
-            "background_color": "#0a1622",
-            "dot_color": "#67e8f9"
+            "background_color": "#070d16",
+            "dot_color": "#0daaef"
           }
         }
       },
@@ -223,9 +213,9 @@
         "tab_pYWnQT",
         "tab_gift_cards",
         "tab_sessions",
-        "tab_memberships",
-        "tab_bundles"
+        "tab_T83xD3"
       ],
+      "disabled": true,
       "name": "Gift Products",
       "settings": {
         "eyebrow": "GIFT CARDS",
@@ -235,7 +225,7 @@
         "products_to_show": 8,
         "show_rating": true,
         "layout": "grid",
-        "columns": 4,
+        "columns": 3,
         "card_image_bg": "#1a2433",
         "fallback_bg": "#070d16",
         "eyebrow_color": "#22d3ee",
