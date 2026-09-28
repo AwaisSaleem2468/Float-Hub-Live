@@ -33,6 +33,60 @@
       --product-title-size: {{ section.settings.title_size_mobile }}px;
       --product-text-size: {{ section.settings.text_size_mobile }}px;
       --product-price-size: {{ section.settings.price_size_mobile }}px;
+      --media-radius: {{ section.settings.image_radius | default: 0 }}px;
+    }
+
+    #MainProduct-{{ section.id }} .product-media-container.global-media-settings,
+    #MainProduct-{{ section.id }} .product__media,
+    #MainProduct-{{ section.id }} .product__media img,
+    #MainProduct-{{ section.id }} .product__media video {
+      border-radius: var(--media-radius);
+    }
+
+    #MainProduct-{{ section.id }} .product-media-container.global-media-settings {
+      overflow: hidden !important;
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0 0 1.2rem;
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: var(--product-custom-rating-star, #f5c518);
+      line-height: 1;
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating-star {
+      width: var(--product-custom-rating-star-size, 16px);
+      height: var(--product-custom-rating-star-size, 16px);
+      flex-shrink: 0;
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating-star--empty {
+      color: var(--product-custom-rating-star-empty, #2a3548);
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating-score {
+      margin: 0;
+      color: var(--product-custom-rating-score, #ffffff);
+      font-size: var(--product-custom-rating-score-size, 16px);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    #MainProduct-{{ section.id }} .product__custom-rating-caption {
+      margin: 0;
+      width: 100%;
+      color: var(--product-custom-rating-caption, #a8b0bd);
+      font-size: var(--product-custom-rating-caption-size, 14px);
+      line-height: 1.4;
     }
 
     #MainProduct-{{ section.id }} .product__info-container .product__title h1,
@@ -535,6 +589,55 @@
                     section_id: section.id,
                     show_pickup_availability: true
                   -%}
+                {%- when 'custom_rating' -%}
+                  {%- liquid
+                    assign custom_star_count = block.settings.star_count | default: 5
+                    if custom_star_count < 0
+                      assign custom_star_count = 0
+                    endif
+                    if custom_star_count > 5
+                      assign custom_star_count = 5
+                    endif
+                  -%}
+                  <div
+                    class="product__custom-rating"
+                    style="
+                      --product-custom-rating-star: {{ block.settings.star_color }};
+                      --product-custom-rating-star-empty: {{ block.settings.star_empty_color }};
+                      --product-custom-rating-score: {{ block.settings.score_color }};
+                      --product-custom-rating-caption: {{ block.settings.caption_color }};
+                      --product-custom-rating-star-size: {{ block.settings.star_size }}px;
+                      --product-custom-rating-score-size: {{ block.settings.score_size }}px;
+                      --product-custom-rating-caption-size: {{ block.settings.caption_size }}px;
+                    "
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if block.settings.show_stars -%}
+                      <span
+                        class="product__custom-rating-stars"
+                        role="img"
+                        aria-label="Rated {{ block.settings.rating_value | escape }} out of 5"
+                      >
+                        {%- for i in (1..5) -%}
+                          <svg
+                            class="product__custom-rating-star{% if i > custom_star_count %} product__custom-rating-star--empty{% endif %}"
+                            viewBox="0 0 14 14"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M7 0.5l1.76 3.57 3.94.57-2.85 2.78.67 3.92L7 9.5l-3.52 1.84.67-3.92L1.3 4.64l3.94-.57L7 .5z"/>
+                          </svg>
+                        {%- endfor -%}
+                      </span>
+                    {%- endif -%}
+                    {%- if block.settings.show_score and block.settings.rating_value != blank -%}
+                      <p class="product__custom-rating-score">{{ block.settings.rating_value | escape }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.caption != blank -%}
+                      <p class="product__custom-rating-caption">{{ block.settings.caption | escape }}</p>
+                    {%- endif -%}
+                  </div>
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">
@@ -1285,6 +1388,99 @@
           "id": "page",
           "type": "page",
           "label": "t:sections.main-product.blocks.popup.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "custom_rating",
+      "name": "Custom rating",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating_value",
+          "label": "Rating score",
+          "default": "4.9"
+        },
+        {
+          "type": "range",
+          "id": "star_count",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Filled stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "500+ five-star reviews"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Show stars",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_score",
+          "label": "Show score",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "star_size",
+          "min": 10,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Star size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "score_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Score size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "caption_size",
+          "min": 11,
+          "max": 18,
+          "step": 1,
+          "unit": "px",
+          "label": "Caption size",
+          "default": 14
+        },
+        {
+          "type": "color",
+          "id": "star_color",
+          "label": "Star color",
+          "default": "#F5C518"
+        },
+        {
+          "type": "color",
+          "id": "star_empty_color",
+          "label": "Empty star color",
+          "default": "#2A3548"
+        },
+        {
+          "type": "color",
+          "id": "score_color",
+          "label": "Score color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "caption_color",
+          "label": "Caption color",
+          "default": "#A8B0BD"
         }
       ]
     },
@@ -2426,6 +2622,16 @@
       ],
       "default": "lightbox",
       "label": "t:sections.main-product.settings.image_zoom.label"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Product image radius",
+      "default": 0
     },
     {
       "type": "checkbox",
