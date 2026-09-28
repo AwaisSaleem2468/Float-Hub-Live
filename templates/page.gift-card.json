@@ -71,7 +71,6 @@
     },
     "custom_section_richtext_brq7KT": {
       "type": "custom-section-richtext",
-      "disabled": true,
       "name": "Custom Rich Text",
       "settings": {
         "show_badge": true,
@@ -80,7 +79,7 @@
         "badge_size_desktop": 16,
         "badge_size_mobile": 14,
         "badge_spacing": 28,
-        "content": "<p>With more than 575kg of high-quality epsom salt, you will float <em>effortlessly </em>in the waters of our spacious float pods for 60 minutes with no light, sound, or external pressures to refresh your mind and restore your health to new levels.</p>",
+        "content": "<p>With more than 575kg of high-quality epsom salt, you will float&nbsp;<em>effortlessly&nbsp;</em>in the waters of our spacious float pods for 60 minutes with no light, sound, or external pressures to refresh your mind and restore your health to new levels.</p>",
         "text_size_desktop": 18,
         "text_size_mobile": 16,
         "content_width": 760,
@@ -207,7 +206,6 @@
         "tab_sessions",
         "tab_T83xD3"
       ],
-      "disabled": true,
       "name": "Gift Products",
       "settings": {
         "eyebrow": "GIFT CARDS",
@@ -218,8 +216,8 @@
         "show_rating": true,
         "layout": "grid",
         "columns": 3,
-        "tab_size_desktop": 14,
-        "tab_size_mobile": 13,
+        "tab_size_desktop": 16,
+        "tab_size_mobile": 14,
         "tab_text_color": "#a8b0bd",
         "tab_text_color_mobile": "#a8b0bd",
         "tab_active_text_color": "#061018",
