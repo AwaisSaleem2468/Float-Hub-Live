@@ -40,7 +40,7 @@
           "type": "buy_buttons",
           "settings": {
             "button_label": "Buy now",
-            "redirect_to_checkout": true,
+            "redirect_to_checkout": false,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
