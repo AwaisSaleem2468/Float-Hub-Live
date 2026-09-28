@@ -150,10 +150,88 @@
         "active_tab_bg": "#0daaef",
         "active_tab_bg_mobile": "#0daaef",
         "card_image_bg": "#1a2433",
+        "image_radius": 0,
         "fallback_bg": "#070d16",
         "eyebrow_color": "#22d3ee",
         "heading_color": "#ffffff",
         "text_color": "#a8b0bd",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "custom_section_rating": {
+      "type": "custom-section-rating",
+      "blocks": {
+        "rating_google": {
+          "type": "rating",
+          "settings": {
+            "label": "Google",
+            "rating_value": "4.9",
+            "star_count": 5,
+            "caption": "500+ five-star reviews"
+          }
+        },
+        "rating_tripadvisor": {
+          "type": "rating",
+          "settings": {
+            "label": "TripAdvisor",
+            "rating_value": "5.0",
+            "star_count": 5,
+            "caption": "Excellent guest rating"
+          }
+        },
+        "rating_facebook": {
+          "type": "rating",
+          "settings": {
+            "label": "Facebook",
+            "rating_value": "4.8",
+            "star_count": 5,
+            "caption": "Loved by the community"
+          }
+        }
+      },
+      "block_order": [
+        "rating_google",
+        "rating_tripadvisor",
+        "rating_facebook"
+      ],
+      "name": "Custom Rating",
+      "settings": {
+        "eyebrow": "REVIEWS",
+        "heading": "Loved by floaters across London",
+        "description": "<p>Join hundreds of five-star reviews from people who gifted calm, recovery, and a reset.</p>",
+        "show_stars": true,
+        "content_alignment": "center",
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "card_gap": 16,
+        "card_padding": 24,
+        "card_radius": 16,
+        "content_width": 1100,
+        "eyebrow_size": 12,
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 28,
+        "description_size": 16,
+        "header_spacing": 40,
+        "star_size_desktop": 18,
+        "star_size_mobile": 16,
+        "score_size_desktop": 32,
+        "score_size_mobile": 28,
+        "label_size_desktop": 16,
+        "label_size_mobile": 15,
+        "caption_size_desktop": 14,
+        "caption_size_mobile": 13,
+        "background_color": "#070d16",
+        "card_background": "#121a27",
+        "card_border": "#243041",
+        "star_color": "#f5c518",
+        "star_empty_color": "#2a3548",
+        "score_color": "#ffffff",
+        "eyebrow_color": "#22d3ee",
+        "heading_color": "#ffffff",
+        "text_color": "#a8b0bd",
+        "muted_color": "#a8b0bd",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -576,6 +654,7 @@
     "custom_section_innerpage_banner_pNm8iL",
     "custom_section_richtext_brq7KT",
     "custom_section_gift_product",
+    "custom_section_rating",
     "custom_section_icon_with_text_R6TGxH",
     "custom_section_testimonial_78FTcw",
     "custom_section_stacked_image_text_overly_DnjMpJ",

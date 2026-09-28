@@ -164,6 +164,7 @@
   aspect-ratio: 1 / 1;
   background: var(--card-media-bg, #1a2433);
   overflow: hidden;
+  border-radius: var(--gp-image-radius, 0px);
 }
 
 .gift-product__card-image {
@@ -171,6 +172,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: inherit;
 }
 
 .gift-product__card-image.placeholder-svg {

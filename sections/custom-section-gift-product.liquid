@@ -50,6 +50,7 @@
     --gp-active-tab: {{ section.settings.active_tab_bg }};
     --gp-active-tab-mobile: {{ section.settings.active_tab_bg_mobile }};
     --gp-columns: {{ columns }};
+    --gp-image-radius: {{ section.settings.image_radius | default: 0 }}px;
     --gp-pad-top: {{ section.settings.padding_top }}px;
     --gp-pad-bottom: {{ section.settings.padding_bottom }}px;
   "
@@ -353,6 +354,16 @@
       "id": "card_image_bg",
       "label": "Card image background",
       "default": "#1A2433"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Product image radius",
+      "default": 0
     },
     {
       "type": "header",
