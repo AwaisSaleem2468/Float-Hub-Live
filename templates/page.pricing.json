@@ -949,7 +949,7 @@
             "heading": "Reward Your Employees, See Greater ROI",
             "description": "",
             "button_label": "Request More Info",
-            "button_link": "#",
+            "button_link": "shopify://pages/contact",
             "button_style": "outline"
           }
         }
