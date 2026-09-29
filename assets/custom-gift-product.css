@@ -36,7 +36,7 @@
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  font-size: clamp(2.8rem, 4vw, 4.4rem);
+  font-size: var(--gp-heading-size, 36px);
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
@@ -44,12 +44,14 @@
 .gift-product__desc {
   margin: 0;
   color: var(--gp-text, #a8b0bd);
-  font-size: 1.6rem;
+  font-size: var(--gp-desc-size, 16px);
   line-height: 1.55;
 }
 
-.gift-product__desc p {
+.gift-product__desc p,
+.gift-product__desc li {
   margin: 0;
+  font-size: inherit;
 }
 
 .gift-product__toolbar {
@@ -361,6 +363,10 @@
   }
 
   .gift-product__heading {
-    font-size: 3rem;
+    font-size: var(--gp-heading-size-mobile, 30px);
+  }
+
+  .gift-product__desc {
+    font-size: var(--gp-desc-size-mobile, 15px);
   }
 }

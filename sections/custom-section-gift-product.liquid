@@ -39,6 +39,10 @@
     --gp-eyebrow: {{ section.settings.eyebrow_color }};
     --gp-heading: {{ section.settings.heading_color }};
     --gp-text: {{ section.settings.text_color }};
+    --gp-heading-size: {{ section.settings.heading_size_desktop | default: 36 }}px;
+    --gp-heading-size-mobile: {{ section.settings.heading_size_mobile | default: 30 }}px;
+    --gp-desc-size: {{ section.settings.description_size_desktop | default: 16 }}px;
+    --gp-desc-size-mobile: {{ section.settings.description_size_mobile | default: 15 }}px;
     --gp-tab-size: {{ section.settings.tab_size_desktop }}px;
     --gp-tab-size-mobile: {{ section.settings.tab_size_mobile }}px;
     --gp-tab-color: {{ section.settings.tab_text_color }};
@@ -233,6 +237,50 @@
       "id": "description",
       "label": "Description",
       "default": "<p>Each tab swaps the cards and changes this section's background. Use the arrows, or swipe on mobile.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Title & description size"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size — desktop",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size — mobile",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size — desktop",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size — mobile",
+      "default": 15
     },
     {
       "type": "text",
