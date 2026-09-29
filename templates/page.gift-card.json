@@ -444,6 +444,7 @@
         "panel_yb7r94",
         "panel_XJFGTF"
       ],
+      "disabled": true,
       "name": "Stacked Image Overlay",
       "settings": {
         "accessibility_label": "Featured promotions",
