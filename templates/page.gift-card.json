@@ -101,7 +101,7 @@
           "settings": {
             "collection": "all-gift-products",
             "label": "All",
-            "products_to_show": 8,
+            "products_to_show": 12,
             "columns": 4
           }
         },
@@ -135,7 +135,7 @@
         "heading": "A Unique Gift to Show That You Care",
         "description": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown.&nbsp;</em></p>",
         "button_label": "Buy As Gift",
-        "products_to_show": 8,
+        "products_to_show": 12,
         "show_rating": true,
         "layout": "grid",
         "columns": 3,
@@ -143,8 +143,8 @@
         "tab_size_mobile": 14,
         "tab_text_color": "#a8b0bd",
         "tab_text_color_mobile": "#a8b0bd",
-        "tab_active_text_color": "#FFFFFF",
-        "tab_active_text_color_mobile": "#FFFFFF",
+        "tab_active_text_color": "#ffffff",
+        "tab_active_text_color_mobile": "#ffffff",
         "tab_bg": "#1a2433",
         "tab_bg_mobile": "#1a2433",
         "active_tab_bg": "#0daaef",
@@ -155,83 +155,6 @@
         "eyebrow_color": "#22d3ee",
         "heading_color": "#ffffff",
         "text_color": "#a8b0bd",
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
-    "custom_section_rating": {
-      "type": "custom-section-rating",
-      "blocks": {
-        "rating_google": {
-          "type": "rating",
-          "settings": {
-            "label": "Google",
-            "rating_value": "4.9",
-            "star_count": 5,
-            "caption": "500+ five-star reviews"
-          }
-        },
-        "rating_tripadvisor": {
-          "type": "rating",
-          "settings": {
-            "label": "TripAdvisor",
-            "rating_value": "5.0",
-            "star_count": 5,
-            "caption": "Excellent guest rating"
-          }
-        },
-        "rating_facebook": {
-          "type": "rating",
-          "settings": {
-            "label": "Facebook",
-            "rating_value": "4.8",
-            "star_count": 5,
-            "caption": "Loved by the community"
-          }
-        }
-      },
-      "block_order": [
-        "rating_google",
-        "rating_tripadvisor",
-        "rating_facebook"
-      ],
-      "name": "Custom Rating",
-      "settings": {
-        "eyebrow": "REVIEWS",
-        "heading": "Loved by floaters across London",
-        "description": "<p>Join hundreds of five-star reviews from people who gifted calm, recovery, and a reset.</p>",
-        "show_stars": true,
-        "content_alignment": "center",
-        "columns_desktop": 3,
-        "columns_tablet": 2,
-        "columns_mobile": 1,
-        "card_gap": 16,
-        "card_padding": 24,
-        "card_radius": 16,
-        "content_width": 1100,
-        "eyebrow_size": 12,
-        "heading_size_desktop": 36,
-        "heading_size_mobile": 28,
-        "description_size": 16,
-        "header_spacing": 40,
-        "star_size_desktop": 18,
-        "star_size_mobile": 16,
-        "score_size_desktop": 32,
-        "score_size_mobile": 28,
-        "label_size_desktop": 16,
-        "label_size_mobile": 15,
-        "caption_size_desktop": 14,
-        "caption_size_mobile": 13,
-        "background_color": "#070d16",
-        "card_background": "#121a27",
-        "card_border": "#243041",
-        "star_color": "#f5c518",
-        "star_empty_color": "#2a3548",
-        "score_color": "#ffffff",
-        "eyebrow_color": "#22d3ee",
-        "heading_color": "#ffffff",
-        "text_color": "#a8b0bd",
-        "muted_color": "#a8b0bd",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -654,7 +577,6 @@
     "custom_section_innerpage_banner_pNm8iL",
     "custom_section_richtext_brq7KT",
     "custom_section_gift_product",
-    "custom_section_rating",
     "custom_section_icon_with_text_R6TGxH",
     "custom_section_testimonial_78FTcw",
     "custom_section_stacked_image_text_overly_DnjMpJ",
