@@ -101,7 +101,7 @@
           "settings": {
             "collection": "all-gift-products",
             "label": "All",
-            "products_to_show": 12,
+            "products_to_show": 24,
             "columns": 4
           }
         },
@@ -122,12 +122,22 @@
             "products_to_show": 8,
             "columns": 3
           }
+        },
+        "tab_4kTWrX": {
+          "type": "tab",
+          "settings": {
+            "collection": "red-light-therapy-gift",
+            "label": "Red Light",
+            "products_to_show": 8,
+            "columns": 3
+          }
         }
       },
       "block_order": [
         "tab_pYWnQT",
         "tab_gift_cards",
-        "tab_sessions"
+        "tab_sessions",
+        "tab_4kTWrX"
       ],
       "name": "Gift Products",
       "settings": {
@@ -135,7 +145,7 @@
         "heading": "A Unique Gift to Show That You Care",
         "description": "<p><em>Grab one of our gift cards to give an unforgettable experience and the perfect well-being boost after lockdown.&nbsp;</em></p>",
         "button_label": "Buy As Gift",
-        "products_to_show": 12,
+        "products_to_show": 24,
         "show_rating": true,
         "layout": "grid",
         "columns": 3,
