@@ -936,8 +936,8 @@
             "eyebrow": "GIFT CARDS",
             "heading": "Give The Gift Of Deep Relaxation",
             "description": "",
-            "button_label": "Choose An Amount",
-            "button_link": "#",
+            "button_label": "Choose A Gift",
+            "button_link": "shopify://pages/gift-card",
             "button_style": "outline"
           }
         },
