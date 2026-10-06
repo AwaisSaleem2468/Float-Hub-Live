@@ -27,7 +27,7 @@
         "heading_accent": "",
         "heading_size_desktop": 64,
         "heading_size_mobile": 36,
-        "description": "<p><strong>September Exclusive: 3 Float Intro Pack for £99</strong><br/>Experience London's premier Floatation, Hyperbaric Oxygen, and Red Light Therapy centre. Available this month only. Every option includes full relaxation suite access, complimentary herbal tea, and luxury amenities.</p><p><em>(Plus, scroll down to explore our September HBOT Exclusive and save 40%)</em><br/></p>",
+        "description": "<p><strong>Time-Limited Exclusive: 3 Float Intro Pack for £99</strong><br/>Experience London's premier Floatation, Hyperbaric Oxygen, and Red Light Therapy centre. Available this month only. Every option includes full relaxation suite access, complimentary herbal tea, and luxury amenities.</p><p><em>(Plus, scroll down to explore our HBOT Promotion and save 40%)</em><br/></p>",
         "description_size_desktop": 18,
         "description_size_mobile": 16,
         "button_label_1": "Buy Intro Pack",
@@ -71,7 +71,7 @@
         "heading_wHBykH": {
           "type": "heading",
           "settings": {
-            "heading": "&nbsp;<strong>September Exclusive:</strong> 40% Off HBOT Packs&nbsp;"
+            "heading": "&nbsp;<strong>Time-Limited Exclusive:</strong> 40% Off HBOT Packs&nbsp;"
           }
         },
         "text_K4pQmU": {
@@ -124,14 +124,14 @@
         "text_size_mobile": 15,
         "button_size": 15,
         "button_radius": 40,
-        "background_color": "#070D16",
-        "heading_color": "#FFFFFF",
-        "caption_color": "#0DAAEF",
-        "text_color": "#A8B0BD",
-        "link_color": "#0DAAEF",
-        "button_text_color": "#FFFFFF",
-        "button_secondary_text_color": "#FFFFFF",
-        "button_secondary_border_color": "#FFFFFF",
+        "background_color": "#070d16",
+        "heading_color": "#ffffff",
+        "caption_color": "#0daaef",
+        "text_color": "#a8b0bd",
+        "link_color": "#0daaef",
+        "button_text_color": "#ffffff",
+        "button_secondary_text_color": "#ffffff",
+        "button_secondary_border_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 52
       }
