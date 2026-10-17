@@ -1049,7 +1049,7 @@
         "show_view_all": true,
         "show_image": true,
         "show_date": true,
-        "show_author": true,
+        "show_author": false,
         "show_category": false,
         "show_excerpt": true,
         "color_scheme": "scheme-4",
