@@ -14,7 +14,7 @@
       "name": "Custom Innerpage Banner",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/red_light_therapy_glow.png",
+        "image": "shopify://shop_images/04-red-leds-only.png",
         "overlay_color": "#061018",
         "overlay_opacity": 30,
         "section_height": 80,
