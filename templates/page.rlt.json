@@ -14,7 +14,7 @@
       "name": "Custom Innerpage Banner",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/04-red-leds-only.png",
+        "image": "shopify://shop_images/11-lights-only-hero-light-background.png",
         "overlay_color": "#061018",
         "overlay_opacity": 30,
         "section_height": 80,
