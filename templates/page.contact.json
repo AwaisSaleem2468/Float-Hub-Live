@@ -39,7 +39,7 @@
       "name": "Custom Innerpage Banner",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/624292321_18089226653472903_2926321886989038639_n.jpg",
+        "image": "shopify://shop_images/FloatHub-Floating-Float-Therapy-Relaxed-Woman-Sensory-Deprivation-Tank.jpg",
         "overlay_color": "#061018",
         "overlay_opacity": 40,
         "section_height": 60,
@@ -48,11 +48,11 @@
         "badge_text": "",
         "eyebrow": "",
         "eyebrow_size": 13,
-        "heading": "Get in Touch",
+        "heading": "We're Here to Help",
         "heading_accent": "",
         "heading_size_desktop": 48,
         "heading_size_mobile": 36,
-        "description": "<p>We'd love to hear from you. Whether it's about your order, a question about a product, or just a hello, our team responds within 24 hours, Monday to Friday. For those questions, please consult a qualified and professional team</p>",
+        "description": "<p>Have a question or need help choosing the right experience? We'd love to hear from you.</p><p>Whether you're interested in float therapy, couples floating, hyperbaric oxygen therapy (HBOT) or red light therapy, our friendly team is here to help with bookings, enquiries and any questions you may have.</p>",
         "description_size_desktop": 16,
         "description_size_mobile": 14,
         "button_label_1": "",
@@ -173,12 +173,12 @@
         "heading_size": 32,
         "heading_size_mobile": 26,
         "address_size": 15,
-        "background_color": "#070D16",
-        "panel_background": "#121A27",
+        "background_color": "#070d16",
+        "panel_background": "#121a27",
         "panel_border": "#243041",
-        "text_color": "#FFFFFF",
-        "muted_color": "#B7C0CC",
-        "accent_color": "#0DAAEF"
+        "text_color": "#ffffff",
+        "muted_color": "#b7c0cc",
+        "accent_color": "#0daaef"
       }
     },
     "form": {
