@@ -75,7 +75,7 @@
       "settings": {
         "show_badge": true,
         "show_stars": false,
-        "badge_text": "What is floating?",
+        "badge_text": "Float Hub Gift Cards",
         "badge_size_desktop": 16,
         "badge_size_mobile": 14,
         "badge_spacing": 28,
@@ -84,10 +84,10 @@
         "text_size_mobile": 16,
         "content_width": 760,
         "background_color": "#070d16",
-        "text_color": "#c8ced8",
+        "text_color": "#C8CED8",
         "strong_color": "#ffffff",
         "badge_background": "#243044",
-        "badge_text_color": "#c8ced8",
+        "badge_text_color": "#FFFFFF",
         "star_color": "#f5c518",
         "padding_top": 80,
         "padding_bottom": 80
