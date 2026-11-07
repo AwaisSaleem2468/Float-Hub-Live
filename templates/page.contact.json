@@ -101,7 +101,7 @@
           "settings": {
             "icon": "stopwatch",
             "title": "HOURS",
-            "text": "<p>Monday to Thursday 12 noon – 10 pm</p><p>Friday 10 am – 8.30 pm</p><p>Saturday & Sunday 9 am – 8.30 pm</p>"
+            "text": "<p>Monday to Thursday&nbsp;</p><p>12 noon – 10 pm</p><p>Friday&nbsp;</p><p>10 am – 8.30 pm</p><p>Saturday & Sunday&nbsp;</p><p>9 am – 8.30 pm</p>"
           }
         }
       },
