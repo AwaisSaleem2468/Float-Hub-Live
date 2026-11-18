@@ -555,6 +555,9 @@
       },
       "payment": {
         "card_security_notice": "All payments are secure and encrypted | 300+ 5★ Reviews Online"
+      },
+      "alternative_payment_method_banner": {
+        "or": "⭐⭐⭐⭐⭐ Rate 4.9/5 by over 30,000 Satisfied Customers"
       }
     }
   }
